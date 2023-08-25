@@ -10,6 +10,14 @@ body {
   padding: 10%;
 }
 
+.resume {
+  margin-left: 15%; 
+  margin-right: 25%;
+  font-size: 22px; /* Increased text to enable scrolling */
+  line-height: 35px;
+  padding: 10%;
+}
+
 .sidenav {
   height: 100%;
   width: 20%;
