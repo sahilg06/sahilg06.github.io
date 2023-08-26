@@ -11,8 +11,8 @@ body {
 }
 
 .resume {
-  margin-top: 15%; 
-  margin-right: 25%;
+  margin-left: 20%; 
+  margin-top: 2%;
   font-size: 22px; /* Increased text to enable scrolling */
   line-height: 35px;
   padding: 10%;
