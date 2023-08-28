@@ -10,20 +10,19 @@ body {
   padding: 10%;
 }
 
-.about{
-  display: flex;
+.index{
   margin-left: 20%; /* Same as the width of the sidenav */
   font-size: 22px; /* Increased text to enable scrolling */
   line-height: 35px;
-  padding: 10%;
+  padding: 8%;
 }
 
 .resume {
-  margin-left: 20%; 
-  margin-top: 50px;
+  margin-left: 25%; 
+  /* margin-top: 1px; */
   font-size: 22px;
   line-height: 35px;
-  padding: 10%;
+  padding: 5%;
 }
 
 .sidenav {
@@ -95,14 +94,9 @@ a {
   text-decoration: none;
 }
 
-.about_image {
-  flex: 1; /* Take up available space */
-  padding: 20px; /* Add padding for spacing */
-}
-
 .about_photo{
   display: block;
-  margin-top: 5%;
+  margin-top: 0.05%;
   width: 300px;
   height:300px;
   object-fit:cover;
@@ -119,9 +113,8 @@ a {
 }
 
 .about_text {
-  flex: 2; /* Take up more space than the image */
-  padding: 20px; /* Add padding for spacing */
   text-align: center;
+  padding: 0% 0% 0% 0%;
 }
 
 .about_links {
