@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Goyal - Collaboration</title>
+    <link rel="icon" type="image/png" href="./img/GDM.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #3498DB;
+            --secondary-color: #2c3e50;
+            --background-color: #fdfdfd;
+            --text-color: #333;
+            --light-gray: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+        }
+
+        /* --- Sidebar Navigation --- */
+        .sidenav {
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            background-color: var(--light-gray);
+            padding-top: 40px;
+            border-right: 1px solid #ddd;
+            z-index: 10;
+        }
+
+        .navblock_text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidenav a {
+            padding: 12px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+            width: 80%;
+            text-align: center;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidenav a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .sidenav a.active {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        /* --- Main Content Area --- */
+        .main-content {
+            margin-left: 220px;
+            padding: 40px;
+            width: 100%;
+        }
+        
+        .collaboration-container {
+            max-width: 900px;
+        }
+
+        .collaboration-container h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* --- Collaboration Card Styling --- */
+        .collaboration-card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .collaboration-card h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.4em;
+        }
+        
+        .collaboration-card h3 a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: color 0.3s;
+        }
+
+        .collaboration-card h3 a:hover {
+            color: var(--primary-color);
+        }
+
+        .collaboration-card .role {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #7f8c8d;
+            margin: 0 0 20px 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .people-list h4 {
+            margin: 0 0 10px 0;
+            font-size: 1em;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .people-list p {
+            margin: 0 0 15px 0;
+            line-height: 1.6;
+        }
+        
+        .people-list a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .people-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidenav {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding-top: 15px;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+            .navblock_text {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="sidenav">
+    <div class="navblock">
+        <div class="navblock_text">
+            <a href="./index.html">About</a>
+            <a href="./resume.html">Resume</a>
+            <a href="./research.html">Research</a>
+            <a href="./news.html">News</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./colab.html" class="active">Collaboration</a>
+        </div>
+    </div>
+</nav>
+
+<main class="main-content">
+    <div class="collaboration-container">
+        <h2>Collaborations</h2>
+
+        <article class="collaboration-card">
+            <h3><a href="https://deepmind.google/" target="_blank">Google DeepMind</a></h3>
+            <p class="role">Research Associate</p>
+        </article>
+
+        <article class="collaboration-card">
+            <h3><a href="https://research.adobe.com/" target="_blank">Adobe Research</a></h3>
+            <p class="role">Research Intern</p>
+            <div class="people-list">
+                <h4>Mentors</h4>
+                <p>
+                    <a href="https://josephkj.in/" target="_blank">Dr. Joseph KJ</a>, 
+                    <a href="https://research.adobe.com/person/balaji-vasan-srinivasan/" target="_blank">Dr. Balaji Vasan Srinivasan</a>, and
+                    <a href="https://www.linkedin.com/in/swastishreyamishra/" target="_blank">Swasti Shreya Mishra</a>
+                </p>
+            </div>
+            <div class="people-list">
+                <h4>Fellow Interns</h4>
+                <p>
+                    <a href="https://www.linkedin.com/in/abhinav-mahajan-727068233/" target="_blank">Abhinav Mahajan</a>, 
+                    Vinay Kumar Cheerla
+                </p>
+            </div>
+        </article>
+
+        <article class="collaboration-card">
+            <h3><a href="https://midas.iiitd.ac.in/" target="_blank">MIDAS Lab, IIIT-Delhi</a></h3>
+            <p class="role">Student Researcher</p>
+            <div class="people-list">
+                <h4>Mentors</h4>
+                <p>
+                    <a href="https://scholar.google.com.sg/citations?user=WAChZv4AAAAJ&hl=en" target="_blank">Dr. Rajiv Ratn Shah</a>, 
+                    <a href="https://sarthak268.github.io/" target="_blank">Sarthak Bhagat</a>, and
+                    <a href="https://shagunuppal.github.io/" target="_blank">Shagun Uppal</a>
+                </p>
+            </div>
+        </article>
+
+    </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Goyal - Resume</title>
+    <link rel="icon" type="image/png" href="./img/GDM.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #3498DB;
+            --secondary-color: #2c3e50;
+            --background-color: #fdfdfd;
+            --text-color: #333;
+            --light-gray: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+        }
+
+        /* --- Sidebar Navigation --- */
+        .sidenav {
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            background-color: var(--light-gray);
+            padding-top: 40px;
+            border-right: 1px solid #ddd;
+            z-index: 10;
+        }
+
+        .navblock_text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidenav a {
+            padding: 12px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+            width: 80%;
+            text-align: center;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidenav a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .sidenav a.active {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        /* --- Main Content Area --- */
+        .main-content {
+            margin-left: 220px;
+            padding: 40px;
+            width: 100%;
+        }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .resume-container h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* --- PDF Viewer Styling --- */
+        .pdf-viewer {
+            width: 100%;
+            height: 80vh; /* Adjust height based on viewport height */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .pdf-viewer p {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .pdf-viewer a {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .pdf-viewer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidenav {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding-top: 15px;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+            .navblock_text {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+            .pdf-viewer {
+                height: 75vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="sidenav">
+    <div class="navblock">
+        <div class="navblock_text">
+            <a href="./index.html">About</a>
+            <a href="./resume.html" class="active">Resume</a>
+            <a href="./research.html">Research</a>
+            <a href="./news.html">News</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./colab.html">Collaboration</a>
+        </div>
+    </div>
+</nav>
+
+<main class="main-content">
+    <div class="resume-container">
+        <h2>Resume</h2>
+        <object data="./docs/sahilgoyal_resume.pdf" type="application/pdf" class="pdf-viewer">
+            <p>It appears you don't have a PDF plugin for this browser. No problem, you can <a href="./docs/sahilgoyal_resume.pdf">click here to download the PDF file instead.</a></p>
+        </object>
+    </div>
+</main>
+
+</body>
+</html>

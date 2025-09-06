@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Goyal - News</title>
+    <link rel="icon" type="image/png" href="./img/GDM.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #3498DB;
+            --secondary-color: #2c3e50;
+            --background-color: #fdfdfd;
+            --text-color: #333;
+            --light-gray: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+        }
+
+        /* --- Sidebar Navigation --- */
+        .sidenav {
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            background-color: var(--light-gray);
+            padding-top: 40px;
+            border-right: 1px solid #ddd;
+            z-index: 10;
+        }
+
+        .navblock_text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidenav a {
+            padding: 12px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+            width: 80%;
+            text-align: center;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidenav a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .sidenav a.active {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        /* --- Main Content Area --- */
+        .main-content {
+            margin-left: 220px;
+            padding: 40px;
+            width: 100%;
+        }
+        
+        .news-container {
+            max-width: 900px;
+        }
+
+        .news-container h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* --- News Timeline Styling --- */
+        .news-timeline {
+            list-style: none;
+            padding: 0;
+            position: relative;
+        }
+
+        .news-timeline::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            height: 100%;
+            width: 2px;
+            background-color: var(--light-gray);
+        }
+
+        .news-timeline li {
+            margin-bottom: 25px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .news-timeline li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 2px solid white;
+            z-index: 1;
+        }
+
+        .news-timeline .date {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-right: 15px;
+        }
+
+        .news-timeline a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .news-timeline a:hover {
+            text-decoration: underline;
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidenav {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding-top: 15px;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+            .navblock_text {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="sidenav">
+    <div class="navblock">
+        <div class="navblock_text">
+            <a href="./index.html">About</a>
+            <a href="./resume.html">Resume</a>
+            <a href="./research.html">Research</a>
+            <a href="./news.html" class="active">News</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./colab.html">Collaboration</a>
+        </div>
+    </div>
+</nav>
+
+<main class="main-content">
+    <div class="news-container">
+        <h2>News</h2>
+        <ul class="news-timeline">
+            <!-- <li><span class="date">[Nov, 2024]</span>Invited as a Reviewer for <a href="https://cvpr.thecvf.com/" target="_blank">CVPR 2025</a>.</li>
+            <li><span class="date">[Oct, 2024]</span>Invited as a Reviewer for <a href="https://iclr.cc/" target="_blank">ICLR 2025</a>.</li> -->
+            <li><span class="date">[May, 2025]</span>Paper accepted at <a href="https://icml.cc/Conferences/2025/" target="_blank">ICML 2025</a>.</li>
+            <li><span class="date">[Aug, 2024]</span>Paper accepted at <a href="https://wacv2025.thecvf.com/" target="_blank">WACV 2025</a>.</li>
+            <!-- <li><span class="date">[Aug, 2024]</span>Invited as a Reviewer for <a href="https://wacv2025.thecvf.com/" target="_blank">WACV 2025</a>.</li> -->
+            <li><span class="date">[July, 2024]</span>Awarded <b>Department Gold medal</b> (Applied Mathematics-IIT Roorkee).</li>
+            <li><span class="date">[June, 2024]</span>Joined <b>Google DeepMind India</b> (Research Associate).</li>
+            <!-- <li><span class="date">[May, 2024]</span>Invited as a Reviewer for ICML 2024 (SPIGM workshop).</li> -->
+            <li><span class="date">[Dec, 2023]</span>On-campus placement offers from <b>Microsoft</b> (SWE) and <b>Google</b> (SWE).</li>
+            <!-- <li><span class="date">[Nov, 2023]</span>Invited as a Reviewer for <a href="https://cvpr.thecvf.com/" target="_blank">CVPR 2024</a>.</li> -->
+            <li><span class="date">[Sep, 2023]</span>Paper accepted at ICCV 2023, <a href="https://cveu.github.io/" target="_blank">CVEU</a> Workshop.</li>
+            <li><span class="date">[Aug, 2023]</span>Paper accepted at ACM MM 2023, <a href="http://mcge.42web.io/?i=3" target="_blank">McGE</a> Workshop.</li>
+            <li><span class="date">[May, 2023]</span>Joined <a href="https://research.adobe.com/" target="_blank">Adobe Research</a> as a Research Intern.</li>
+            <li><span class="date">[Dec, 2022]</span>Won <b>Best Demo Paper</b> award at <a href="https://www.mmasia2022.org/" target="_blank">ACM MM Asia 2022</a>.</li>
+            <li><span class="date">[Oct, 2022]</span>Awarded ACM SigMM student travel grant for <a href="https://www.mmasia2022.org/" target="_blank">ACM MM Asia 2022</a>.</li>
+            <li><span class="date">[Sep, 2022]</span>Paper accepted at <a href="https://www.mmasia2022.org/" target="_blank">ACM MM Asia 2022</a>.</li>
+            <li><span class="date">[March, 2022]</span>Won <b>Gold Medal</b> at Inter IIT Tech Meet 2022.</li>
+            <li><span class="date">[Sep, 2021]</span>Joined <a href="https://midas.iiitd.edu.in/" target="_blank">MIDAS-IIITD Lab</a> as Student Researcher.</li>
+            <li><span class="date">[March, 2021]</span>Joined <a href="https://pando.ai/" target="_blank">Pando</a> as a Machine Learning Intern.</li>
+        </ul>
+    </div>
+</main>
+
+</body>
+</html>
