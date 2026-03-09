@@ -3,166 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Goyal - Research</title>
+    <title>Sahil Goyal — Research</title>
+    <meta name="description"
+        content="Research publications by Sahil Goyal on Efficient ML, Generative Models, and Computer Vision at Google DeepMind.">
     <link rel="icon" type="image/png" href="./img/GDM.png">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary-color: #3498DB;
-            --secondary-color: #2c3e50;
-            --background-color: #fdfdfd;
-            --text-color: #333;
-            --light-gray: #ecf0f1;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            display: flex;
-        }
-
-        /* --- Sidebar Navigation --- */
-        .sidenav {
-            width: 200px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            background-color: var(--light-gray);
-            padding-top: 40px;
-            border-right: 1px solid #ddd;
-            z-index: 10;
-        }
-
-        .navblock_text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .sidenav a {
-            padding: 12px 16px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--secondary-color);
-            display: block;
-            width: 80%;
-            text-align: center;
-            border-radius: 8px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .sidenav a:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .sidenav a.active {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-        
-        /* --- Main Content Area --- */
-        .main-content {
-            margin-left: 220px;
-            padding: 40px;
-            width: 100%;
-        }
-        
-        .research-container {
-            max-width: 900px;
-        }
-
-        .research-container h2, .research-container h3 {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        
-        /* --- Publication Item Styling --- */
-        .publication-item {
-            display: flex;
-            gap: 25px;
-            margin-bottom: 40px;
-            align-items: center; /* Vertically center the image and text */
-        }
-
-        .publication-image {
-            flex-shrink: 0;
-            width: 200px;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .publication-details h4 {
-            margin: 0 0 8px 0;
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-
-        .publication-details p {
-            margin: 0 0 12px 0;
-            line-height: 1.5;
-            font-size: 1em;
-        }
-
-        .publication-links a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-right: 15px;
-            font-size: 0.9em;
-            transition: text-decoration 0.3s;
-        }
-
-        .publication-links a:hover {
-            text-decoration: underline;
-        }
-        
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-            .sidenav {
-                position: relative;
-                width: 100%;
-                height: auto;
-                padding-top: 15px;
-                border-right: none;
-                border-bottom: 1px solid #ddd;
-            }
-            .navblock_text {
-                flex-direction: row;
-                justify-content: space-around;
-            }
-            .main-content {
-                margin-left: 0;
-                padding: 20px;
-            }
-            .publication-item {
-                flex-direction: column;
-                align-items: flex-start; /* Revert alignment for stacked view */
-            }
-            .publication-image {
-                width: 100%;
-                max-width: 300px;
-                margin-bottom: 15px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
@@ -182,17 +27,12 @@
 <main class="main-content">
     <div class="research-container">
         <h2>Research Activity</h2>
-        <p>My research focuses on developing efficient and adaptive foundational models, with a primary emphasis on Generative Models. 
-            A major theme in my recent work has been exploring the intersection of model efficiency and generative architectures, 
-            including effective techniques for model distillation and the compression of large-scale models like Mixture-of-Experts (MoE). 
-            I am also keen to explore new research directions, including the interpretability of foundational models and reasoning capabilities 
-            in vision models.
+        <p>My research focuses on developing efficient and adaptive foundational models, with a primary emphasis on Generative
+            Models.
         </p>
 
-        <p>I have also served as reviewer in conferences like CVPR, ICML, ICLR, WACV, AAMAS multiple times.</p>
+        <p>I have also served as reviewer in conferences like CVPR, ICML, ICLR, ECCV, WACV, AAMAS multiple times.</p>
 
-        <br>
-        
         <h3>Publications</h3>
         
         <article class="publication-item">
@@ -201,7 +41,7 @@
                 <h4>Masked Generative Nested Transformers with Decode Time Scaling</h4>
                 <p>
                     Sahil Goyal, Debapriya Tula, Prateek Jain, Sujoy Paul et al. <br> 
-                    <em><b>ICML</b> 2025 & <b>ICLR (DeLTa Workshop)</b> 2025</em>
+                    <em><b>ICML</b> 2025 &amp; <b>ICLR (DeLTa Workshop)</b> 2025</em>
                 </p>
                 <div class="publication-links">
                     <a href="https://openreview.net/pdf?id=h4lZMgGyAz" target="_blank">[Paper]</a> 
@@ -232,7 +72,7 @@
                 <h4>Emotionally Enhanced Talking Face Generation</h4>
                 <p>
                     Sahil Goyal, Shagun Uppal, Sarthak Bhagat, et al. <br> 
-                    <em><b>ICCV (CVEU Workshop)</b> 2023 & <b>ACM MM (McGE Workshop)</b> 2023</em>
+                    <em><b>ICCV (CVEU Workshop)</b> 2023 &amp; <b>ACM MM (McGE Workshop)</b> 2023</em>
                 </p>
                 <div class="publication-links">
                     <a href="https://arxiv.org/abs/2303.11548" target="_blank">[Paper]</a> 

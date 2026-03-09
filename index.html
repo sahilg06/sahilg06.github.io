@@ -3,179 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Goyal</title>
+    <title>Sahil Goyal — Researcher at Google DeepMind</title>
+    <meta name="description"
+        content="Sahil Goyal is a Pre-Doctoral Researcher at Google DeepMind working on Efficient ML, Computer Vision, and Generative Models.">
     <link rel="icon" type="image/png" href="./img/GDM.png">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary-color: #3498DB;
-            --secondary-color: #2c3e50;
-            --background-color: #fdfdfd;
-            --text-color: #333;
-            --light-gray: #ecf0f1;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            display: flex;
-        }
-
-        /* --- Sidebar Navigation --- */
-        .sidenav {
-            width: 200px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            background-color: var(--light-gray);
-            padding-top: 40px;
-            border-right: 1px solid #ddd;
-        }
-
-        .navblock_text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .sidenav a {
-            padding: 12px 16px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--secondary-color);
-            display: block;
-            width: 80%;
-            text-align: center;
-            border-radius: 8px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .sidenav a:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .sidenav a.active {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-        
-        /* --- Main Content Area --- */
-        .main-content {
-            margin-left: 220px; /* Space for the sidenav */
-            padding: 40px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            max-width: 900px;
-        }
-
-        .about-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .about-text h1 {
-            font-size: 2.5em;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        .about-text p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .email-info {
-            font-family: monospace;
-            background-color: var(--light-gray);
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            font-size: 0.9em;
-            text-align: center;
-            line-height: 1.5;
-        }
-
-        /* --- Social Links with Logos --- */
-        .about_links {
-            margin-top: 25px;
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .about_links a {
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--secondary-color);
-            transition: color 0.3s;
-        }
-
-        .about_links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .about_links a svg {
-            width: 28px;
-            height: 28px;
-            fill: currentColor; /* SVG color will inherit from the 'a' tag color */
-        }
-        
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-            .sidenav {
-                position: relative;
-                width: 100%;
-                height: auto;
-                padding-top: 15px;
-                border-right: none;
-                border-bottom: 1px solid #ddd;
-            }
-            .navblock_text {
-                flex-direction: row;
-                justify-content: space-around;
-            }
-            .main-content {
-                margin-left: 0;
-                padding: 20px;
-            }
-            .about-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .about_links {
-                justify-content: center;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
@@ -192,22 +24,22 @@
     </div>
 </nav>
 
-<main class="main-content">
+<main class="main-content" style="display:flex;align-items:center;justify-content:center;">
     <div class="about-container">
         
-        <div>
+        <div class="about-photo-wrapper">
             <img src="./img/sahil_goyal.png" alt="Sahil Goyal" class="about-photo">
         </div>
 
         <div class="about-text">
             <h1>Sahil Goyal</h1>
+            <p class="tagline">Pre-Doctoral Researcher · Google DeepMind</p>
             <p>
-                Hi! I'm Sahil, a Pre-Doctoral Researcher at Google DeepMind (Machine Learning & Optimization team). My research focuses on 
-                Efficient ML, Computer Vision, and Generative Models. My prior work includes 
-                efficient visual generation, talking face generation, and the evaluation/refinement 
-                of graphic designs. I also enjoy writing informative posts and blogs.
+                Hi! I'm Sahil, a Pre-Doctoral Researcher / AI Resident at Google DeepMind (Machine Learning &amp; Optimization team,
+                Frontier AI). My current research focuses on Efficient Generative Models (Veo and Gemini). My prior work includes
+                talking face generation, and the evaluation/refinement of graphic designs. I also enjoy writing informative posts and
+                blogs.
             </p>
-            
             <div class="email-info">
                 goyalsahil [at] google.com &middot; 
                 sahilgoyal6801 [at] gmail.com &middot; 
