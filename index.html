@@ -91,6 +91,30 @@
             50% { transform: translateY(-3px); }
         }
 
+        /* Label next to gamepad */
+        .game-trigger-label {
+            position: absolute;
+            left: 58px;
+            bottom: 12px;
+            white-space: nowrap;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75em;
+            font-weight: 600;
+            color: var(--color-accent);
+            opacity: 0;
+            animation: labelSlideIn 0.5s ease 3.5s forwards;
+            pointer-events: none;
+            letter-spacing: 0.01em;
+        }
+        @keyframes labelSlideIn {
+            from { opacity: 0; transform: translateX(-6px); }
+            to { opacity: 0.8; transform: translateX(0); }
+        }
+        .game-trigger:hover .game-trigger-label {
+            opacity: 0 !important;
+            transition: opacity 0.2s ease;
+        }
+
         /* Popover that appears on hover */
         .game-popover {
             position: absolute;
@@ -373,6 +397,7 @@
     <button class="game-trigger-btn" title="Play Neural Breakout!">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 6H3a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
     </button>
+    <span class="game-trigger-label">Have a little fun! ✨</span>
     <div class="game-popover" id="game-popover">
         <div class="game-popover-title">🎮 Pick an emoji & smash the rogue bots!</div>
         <div class="game-popover-grid" id="game-popover-grid">
