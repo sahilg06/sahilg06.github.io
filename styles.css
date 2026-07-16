@@ -197,6 +197,8 @@ img {
     padding: 16px 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .theme-toggle-btn {
