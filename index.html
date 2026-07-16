@@ -8,6 +8,17 @@
         content="Sahil Goyal is a Pre-Doctoral Researcher at Google DeepMind working on Efficient ML, Computer Vision, and Generative Models.">
     <link rel="icon" type="image/png" href="./img/GDM.png">
     <link rel="stylesheet" href="./styles.css">
+    <script>
+        // Apply saved theme immediately to prevent flash
+        (function() {
+            const saved = localStorage.getItem('theme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <style>
         /* --- Neural Network Canvas --- */
         #neural-canvas {
@@ -75,7 +86,7 @@
             justify-content: center;
             box-shadow: 0 4px 20px rgba(99,102,241,0.35);
             transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-            animation: triggerFloat 3s ease-in-out infinite, fadeInUp 0.8s ease 2.5s both;
+            animation: triggerFloat 3s ease-in-out infinite, fadeInUp 0.6s ease 0.5s both;
         }
         .game-trigger-btn svg {
             width: 22px;
@@ -102,7 +113,7 @@
             font-weight: 600;
             color: var(--color-accent);
             opacity: 0;
-            animation: labelSlideIn 0.5s ease 3.5s forwards;
+            animation: labelSlideIn 0.5s ease 1.5s forwards;
             pointer-events: none;
             letter-spacing: 0.01em;
         }
@@ -118,7 +129,7 @@
         /* Popover that appears on hover */
         .game-popover {
             position: absolute;
-            bottom: 58px;
+            bottom: 52px;
             left: 0;
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(16px);
@@ -131,6 +142,15 @@
             transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
             width: 280px;
             pointer-events: none;
+        }
+        /* Invisible bridge to prevent hover gap */
+        .game-popover::before {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 0;
+            width: 60px;
+            height: 16px;
         }
         .game-trigger:hover .game-popover,
         .game-popover.pinned {
@@ -221,6 +241,19 @@
         .game-popover-go:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+        }
+
+        /* Dark-mode overrides for game popover */
+        [data-theme="dark"] .game-popover {
+            background: rgba(30,41,59,0.95);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.08);
+        }
+        [data-theme="dark"] .game-popover-emoji {
+            background: rgba(255,255,255,0.06);
+        }
+        [data-theme="dark"] .game-popover-input {
+            border-color: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.05);
         }
 
         /* Game Overlay */
@@ -345,6 +378,11 @@
             <a href="./blog.html">Blog</a>
             <a href="./colab.html">Collaboration</a>
         </div>
+    </div>
+    <div class="theme-toggle">
+        <span class="theme-toggle-icon">☀️</span>
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode"></button>
+        <span class="theme-toggle-icon">🌙</span>
     </div>
 </nav>
 
@@ -1418,5 +1456,18 @@
 })();
 </script>
 
+<script>
+// Theme toggle
+(function() {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+    });
+})();
+</script>
 </body>
 </html>
