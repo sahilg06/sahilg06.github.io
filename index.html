@@ -374,7 +374,7 @@
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 6H3a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
     </button>
     <div class="game-popover" id="game-popover">
-        <div class="game-popover-title">🎮 Pick an emoji & smash through a neural network!</div>
+        <div class="game-popover-title">🎮 Pick an emoji & smash the rogue bots!</div>
         <div class="game-popover-grid" id="game-popover-grid">
             <button class="game-popover-emoji" data-emoji="🚀">🚀</button>
             <button class="game-popover-emoji" data-emoji="🔥">🔥</button>
@@ -730,82 +730,115 @@
     let running = false;
     let animId = null;
 
-    const COLORS = [
-        '#6366f1', // indigo
-        '#8b5cf6', // violet
-        '#3b82f6', // blue
-        '#06b6d4', // cyan
-        '#10b981', // emerald
-    ];
+    // Robot emoji pool per tier
+    const ROBOT_EMOJIS = ['🤖', '👾', '🛸', '🦾', '🦿'];
+    const BOSS_EMOJI = '🧟';
+    const HIT_COLORS = ['#6366f1', '#8b5cf6', '#3b82f6', '#06b6d4', '#10b981', '#f59e0b', '#ef4444'];
 
-    const LAYER_LABELS = ['Input', 'Hidden 1', 'Hidden 2', 'Hidden 3', 'Output'];
+    // Level configs
+    function getLevelConfig(level) {
+        const configs = [
+            { robots: 4,  speed: 1.2, ballSpeed: 4.5, maxHp: 1, rows: 1, boss: false, label: 'Scout Bots' },
+            { robots: 6,  speed: 1.6, ballSpeed: 5.0, maxHp: 2, rows: 2, boss: false, label: 'Patrol Units' },
+            { robots: 8,  speed: 2.0, ballSpeed: 5.4, maxHp: 2, rows: 2, boss: false, label: 'Guard Drones' },
+            { robots: 10, speed: 2.5, ballSpeed: 5.8, maxHp: 3, rows: 3, boss: false, label: 'War Machines' },
+            { robots: 8,  speed: 2.2, ballSpeed: 6.2, maxHp: 2, rows: 3, boss: true,  label: 'BOSS FIGHT' },
+        ];
+        const idx = Math.min(level - 1, configs.length - 1);
+        const cfg = { ...configs[idx] };
+        // Scale beyond level 5
+        if (level > 5) {
+            cfg.robots += (level - 5) * 2;
+            cfg.speed += (level - 5) * 0.3;
+            cfg.ballSpeed += (level - 5) * 0.3;
+            cfg.maxHp += Math.floor((level - 5) / 2);
+            cfg.boss = level % 5 === 0;
+            cfg.label = `Wave ${level}`;
+        }
+        return cfg;
+    }
 
     let state = {};
 
     function initGame(level) {
         const W = canvas.width;
         const H = canvas.height;
+        const cfg = getLevelConfig(level);
 
-        const paddleW = Math.max(80, 120 - (level - 1) * 8);
+        const paddleW = Math.max(80, 120 - (level - 1) * 6);
 
         state = {
-            W, H, level,
-            // Paddle
+            W, H, level, cfg,
             paddle: { x: W / 2 - paddleW / 2, y: H - 32, w: paddleW, h: 12, speed: 8 },
-            // Ball
             ball: {
                 x: W / 2, y: H - 50,
                 r: 7,
                 dx: 0, dy: 0,
                 launched: false,
-                speed: 4.5 + level * 0.4,
+                speed: cfg.ballSpeed,
                 trail: [],
             },
-            // Bricks
-            bricks: [],
-            // Particles
+            robots: [],
             particles: [],
-            // Input
             keys: { left: false, right: false },
             mouseX: W / 2,
             useMousePaddle: false,
-            // Scoring
             score: state.score || 0,
             lives: state.lives !== undefined ? state.lives : 3,
             combo: 0,
             comboTimer: 0,
-            // Text overlays
             message: '',
             messageTimer: 0,
             messageColor: '#fff',
-            // Game phase
-            phase: 'playing', // 'playing', 'won', 'lost'
+            phase: 'playing',
+            shakeTimer: 0,
         };
 
-        // Generate bricks (5 rows = 5 neural network layers)
-        const brickRows = 5;
-        const brickCols = 9 + Math.min(level - 1, 3);
-        const brickPad = 6;
-        const brickTopOffset = 50;
-        const totalPadX = (brickCols + 1) * brickPad;
-        const brickW = (W - totalPadX) / brickCols;
-        const brickH = 22;
+        // Spawn robots in rows
+        const robotSize = 32;
+        const rowHeight = 50;
+        const topOffset = 40;
+        const rows = cfg.rows;
+        const perRow = Math.ceil(cfg.robots / rows);
 
-        for (let row = 0; row < brickRows; row++) {
-            for (let col = 0; col < brickCols; col++) {
-                const hp = row < 2 ? 1 : (row < 4 ? 1 + Math.floor(level / 3) : 2 + Math.floor(level / 2));
-                state.bricks.push({
-                    x: brickPad + col * (brickW + brickPad),
-                    y: brickTopOffset + row * (brickH + brickPad),
-                    w: brickW,
-                    h: brickH,
-                    color: COLORS[row % COLORS.length],
+        for (let row = 0; row < rows; row++) {
+            const y = topOffset + row * rowHeight;
+            const count = row < rows - 1 ? perRow : cfg.robots - perRow * (rows - 1);
+            const spacing = W / (count + 1);
+
+            for (let i = 0; i < count; i++) {
+                const hp = row === 0 ? 1 : Math.min(cfg.maxHp, 1 + row);
+                const baseSpeed = cfg.speed * (0.8 + Math.random() * 0.4);
+                state.robots.push({
+                    x: spacing * (i + 1),
+                    y: y,
+                    size: robotSize,
+                    dx: (Math.random() > 0.5 ? 1 : -1) * baseSpeed,
                     hp: hp,
                     maxHp: hp,
                     alive: true,
-                    row: row,
+                    emoji: ROBOT_EMOJIS[(row + i) % ROBOT_EMOJIS.length],
+                    bobOffset: Math.random() * Math.PI * 2,
+                    hitFlash: 0,
                 });
             }
+        }
+
+        // Add boss if applicable
+        if (cfg.boss) {
+            state.robots.push({
+                x: W / 2,
+                y: topOffset + rows * rowHeight + 10,
+                size: 56,
+                dx: cfg.speed * 0.6 * (Math.random() > 0.5 ? 1 : -1),
+                hp: 8 + level * 2,
+                maxHp: 8 + level * 2,
+                alive: true,
+                emoji: BOSS_EMOJI,
+                bobOffset: 0,
+                hitFlash: 0,
+                isBoss: true,
+            });
         }
 
         updateUI();
@@ -817,28 +850,46 @@
         levelEl.textContent = state.level;
     }
 
-    // --- Particle system for brick destruction ---
+    // --- Particle effects ---
     function spawnParticles(x, y, color, count) {
         for (let i = 0; i < count; i++) {
             const angle = Math.random() * Math.PI * 2;
-            const speed = 1.5 + Math.random() * 3;
+            const speed = 2 + Math.random() * 4;
             state.particles.push({
                 x, y,
                 vx: Math.cos(angle) * speed,
                 vy: Math.sin(angle) * speed,
-                life: 30 + Math.random() * 20,
+                life: 25 + Math.random() * 25,
                 maxLife: 50,
-                size: 2 + Math.random() * 3,
+                size: 2 + Math.random() * 4,
                 color: color,
+            });
+        }
+    }
+
+    function spawnDeathExplosion(x, y, size) {
+        const colors = ['#fbbf24', '#ef4444', '#f97316', '#6366f1', '#fff'];
+        for (let i = 0; i < 20; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const speed = 2 + Math.random() * 5;
+            state.particles.push({
+                x: x + (Math.random() - 0.5) * size,
+                y: y + (Math.random() - 0.5) * size,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                life: 40 + Math.random() * 30,
+                maxLife: 70,
+                size: 3 + Math.random() * 5,
+                color: colors[Math.floor(Math.random() * colors.length)],
             });
         }
     }
 
     // --- Core game loop ---
     function update() {
-        const { paddle, ball, bricks, particles, keys, W, H } = state;
+        const { paddle, ball, robots, particles, keys, W, H } = state;
 
-        // --- Paddle movement ---
+        // Paddle movement
         if (state.useMousePaddle) {
             const target = state.mouseX - paddle.w / 2;
             paddle.x += (target - paddle.x) * 0.25;
@@ -848,14 +899,27 @@
         }
         paddle.x = Math.max(0, Math.min(W - paddle.w, paddle.x));
 
-        // --- Ball ---
+        // Ball pre-launch
         if (!ball.launched) {
             ball.x = paddle.x + paddle.w / 2;
             ball.y = paddle.y - ball.r - 2;
-            return;
         }
 
-        // Trail
+        // Move robots
+        for (const bot of robots) {
+            if (!bot.alive) continue;
+            bot.x += bot.dx;
+            // Bounce off walls
+            const halfSize = bot.size / 2;
+            if (bot.x - halfSize <= 0) { bot.x = halfSize; bot.dx = Math.abs(bot.dx); }
+            if (bot.x + halfSize >= W) { bot.x = W - halfSize; bot.dx = -Math.abs(bot.dx); }
+            // Decay hit flash
+            if (bot.hitFlash > 0) bot.hitFlash--;
+        }
+
+        if (!ball.launched) return;
+
+        // Ball trail
         ball.trail.unshift({ x: ball.x, y: ball.y });
         if (ball.trail.length > 8) ball.trail.pop();
 
@@ -874,17 +938,16 @@
             updateUI();
             if (state.lives <= 0) {
                 state.phase = 'lost';
-                state.message = 'GAME OVER';
+                state.message = 'SYSTEM COMPROMISED';
                 state.messageTimer = 180;
                 state.messageColor = '#ef4444';
                 return;
             }
-            // Reset ball
             ball.launched = false;
             ball.dx = 0;
             ball.dy = 0;
             ball.trail = [];
-            state.message = 'Ball lost! Click or Space to launch';
+            state.message = 'Bot escaped! Click or Space to re-launch';
             state.messageTimer = 120;
             state.messageColor = '#fbbf24';
         }
@@ -895,10 +958,9 @@
             ball.y + ball.r <= paddle.y + paddle.h + 4 &&
             ball.x >= paddle.x - ball.r &&
             ball.x <= paddle.x + paddle.w + ball.r) {
-            
-            // Calculate bounce angle based on where ball hit paddle
-            const hitPos = (ball.x - paddle.x) / paddle.w; // 0 to 1
-            const angle = (hitPos - 0.5) * Math.PI * 0.7; // -63° to +63°
+
+            const hitPos = (ball.x - paddle.x) / paddle.w;
+            const angle = (hitPos - 0.5) * Math.PI * 0.7;
             const speed = ball.speed;
             ball.dx = Math.sin(angle) * speed;
             ball.dy = -Math.cos(angle) * speed;
@@ -906,48 +968,58 @@
             state.combo = 0;
         }
 
-        // Brick collision
-        for (const brick of bricks) {
-            if (!brick.alive) continue;
+        // Robot collision (circle-based)
+        for (const bot of robots) {
+            if (!bot.alive) continue;
+            const dx = ball.x - bot.x;
+            const dy = ball.y - bot.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            const hitDist = ball.r + bot.size / 2;
 
-            // AABB collision
-            if (ball.x + ball.r > brick.x &&
-                ball.x - ball.r < brick.x + brick.w &&
-                ball.y + ball.r > brick.y &&
-                ball.y - ball.r < brick.y + brick.h) {
+            if (dist < hitDist) {
+                bot.hp--;
+                bot.hitFlash = 8;
+                state.shakeTimer = 6;
 
-                brick.hp--;
-                if (brick.hp <= 0) {
-                    brick.alive = false;
+                const hitColor = HIT_COLORS[Math.floor(Math.random() * HIT_COLORS.length)];
+                spawnParticles(bot.x, bot.y, hitColor, 6);
+
+                if (bot.hp <= 0) {
+                    bot.alive = false;
                     state.combo++;
-                    state.comboTimer = 60;
-                    const points = 10 * state.combo * state.level;
+                    state.comboTimer = 90;
+                    const points = (bot.isBoss ? 100 : 15) * state.combo * state.level;
                     state.score += points;
-                    spawnParticles(brick.x + brick.w / 2, brick.y + brick.h / 2, brick.color, 8);
+                    spawnDeathExplosion(bot.x, bot.y, bot.size);
 
-                    if (state.combo > 2) {
+                    if (bot.isBoss) {
+                        state.message = `🏆 BOSS DESTROYED! +${points}`;
+                        state.messageTimer = 80;
+                        state.messageColor = '#fbbf24';
+                    } else if (state.combo > 2) {
                         state.message = `${state.combo}x COMBO! +${points}`;
                         state.messageTimer = 40;
                         state.messageColor = '#fbbf24';
                     }
                 }
 
-                // Determine bounce direction
-                const overlapLeft = (ball.x + ball.r) - brick.x;
-                const overlapRight = (brick.x + brick.w) - (ball.x - ball.r);
-                const overlapTop = (ball.y + ball.r) - brick.y;
-                const overlapBottom = (brick.y + brick.h) - (ball.y - ball.r);
-                const minOverlapX = Math.min(overlapLeft, overlapRight);
-                const minOverlapY = Math.min(overlapTop, overlapBottom);
-
-                if (minOverlapX < minOverlapY) {
-                    ball.dx = -ball.dx;
+                // Bounce ball away from robot
+                if (dist > 0) {
+                    const nx = dx / dist;
+                    const ny = dy / dist;
+                    // Reflect velocity
+                    const dot = ball.dx * nx + ball.dy * ny;
+                    ball.dx = ball.dx - 2 * dot * nx;
+                    ball.dy = ball.dy - 2 * dot * ny;
+                    // Push ball out of robot
+                    ball.x = bot.x + nx * (hitDist + 1);
+                    ball.y = bot.y + ny * (hitDist + 1);
                 } else {
                     ball.dy = -ball.dy;
                 }
 
                 updateUI();
-                break; // one collision per frame
+                break;
             }
         }
 
@@ -960,10 +1032,13 @@
         // Message timer
         if (state.messageTimer > 0) state.messageTimer--;
 
+        // Screen shake decay
+        if (state.shakeTimer > 0) state.shakeTimer--;
+
         // Check win
-        if (bricks.every(b => !b.alive)) {
+        if (robots.every(b => !b.alive)) {
             state.phase = 'won';
-            state.message = `LAYER ${state.level} TRAINED!`;
+            state.message = state.cfg.boss ? '⚡ BOSS DEFEATED!' : `WAVE ${state.level} CLEARED!`;
             state.messageTimer = 150;
             state.messageColor = '#10b981';
         }
@@ -973,18 +1048,29 @@
             const p = particles[i];
             p.x += p.vx;
             p.y += p.vy;
-            p.vy += 0.08; // gravity
+            p.vy += 0.08;
             p.life--;
             if (p.life <= 0) particles.splice(i, 1);
         }
     }
 
     function draw() {
-        const { paddle, ball, bricks, particles, W, H } = state;
+        const { paddle, ball, robots, particles, W, H } = state;
+
+        ctx.save();
+
+        // Screen shake
+        if (state.shakeTimer > 0) {
+            const intensity = state.shakeTimer * 0.8;
+            ctx.translate(
+                (Math.random() - 0.5) * intensity * 2,
+                (Math.random() - 0.5) * intensity * 2
+            );
+        }
 
         // Background
         ctx.fillStyle = '#0f172a';
-        ctx.fillRect(0, 0, W, H);
+        ctx.fillRect(-5, -5, W + 10, H + 10);
 
         // Subtle grid
         ctx.strokeStyle = 'rgba(99,102,241,0.04)';
@@ -996,54 +1082,68 @@
             ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
         }
 
-        // Layer labels on the left
-        const layerY = [62, 90, 118, 146, 174];
-        for (let i = 0; i < LAYER_LABELS.length; i++) {
-            // Only draw if some bricks in that row are alive
-            if (bricks.some(b => b.row === i && b.alive)) {
+        // Level label
+        ctx.save();
+        ctx.font = '600 11px Inter, sans-serif';
+        ctx.fillStyle = 'rgba(255,255,255,0.08)';
+        ctx.textAlign = 'right';
+        ctx.fillText(state.cfg.label.toUpperCase(), W - 8, 20);
+        ctx.restore();
+
+        // Robots
+        const time = Date.now() / 1000;
+        for (const bot of robots) {
+            if (!bot.alive) continue;
+
+            const bobY = Math.sin(time * 2 + bot.bobOffset) * 4;
+            const drawY = bot.y + bobY;
+
+            // Shadow
+            ctx.save();
+            ctx.beginPath();
+            ctx.fillStyle = 'rgba(0,0,0,0.15)';
+            ctx.ellipse(bot.x, bot.y + bot.size / 2 + 4, bot.size / 3, 4, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+
+            // Hit flash glow
+            if (bot.hitFlash > 0) {
                 ctx.save();
-                ctx.font = '600 9px Inter, sans-serif';
-                ctx.fillStyle = 'rgba(255,255,255,0.12)';
-                ctx.textAlign = 'right';
-                ctx.fillText(LAYER_LABELS[i], W - 6, layerY[i]);
+                const flashAlpha = bot.hitFlash / 8;
+                ctx.beginPath();
+                ctx.fillStyle = `rgba(239,68,68,${flashAlpha * 0.3})`;
+                ctx.arc(bot.x, drawY, bot.size * 0.8, 0, Math.PI * 2);
+                ctx.fill();
                 ctx.restore();
             }
-        }
 
-        // Bricks
-        for (const brick of bricks) {
-            if (!brick.alive) continue;
-
-            const alpha = brick.hp / brick.maxHp;
-            ctx.fillStyle = brick.color;
-            ctx.globalAlpha = 0.3 + alpha * 0.7;
-
-            // Rounded rect
-            const r = 4;
-            ctx.beginPath();
-            ctx.moveTo(brick.x + r, brick.y);
-            ctx.lineTo(brick.x + brick.w - r, brick.y);
-            ctx.quadraticCurveTo(brick.x + brick.w, brick.y, brick.x + brick.w, brick.y + r);
-            ctx.lineTo(brick.x + brick.w, brick.y + brick.h - r);
-            ctx.quadraticCurveTo(brick.x + brick.w, brick.y + brick.h, brick.x + brick.w - r, brick.y + brick.h);
-            ctx.lineTo(brick.x + r, brick.y + brick.h);
-            ctx.quadraticCurveTo(brick.x, brick.y + brick.h, brick.x, brick.y + brick.h - r);
-            ctx.lineTo(brick.x, brick.y + r);
-            ctx.quadraticCurveTo(brick.x, brick.y, brick.x + r, brick.y);
-            ctx.closePath();
-            ctx.fill();
-
-            // HP indicator for multi-hit bricks
-            if (brick.maxHp > 1) {
-                ctx.globalAlpha = 0.8;
-                ctx.font = '600 10px Inter, sans-serif';
-                ctx.fillStyle = '#fff';
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.fillText(brick.hp, brick.x + brick.w / 2, brick.y + brick.h / 2);
+            // HP bar background
+            if (bot.maxHp > 1) {
+                const barW = bot.size * 0.8;
+                const barH = 4;
+                const barX = bot.x - barW / 2;
+                const barY = drawY - bot.size / 2 - 8;
+                ctx.fillStyle = 'rgba(255,255,255,0.1)';
+                ctx.fillRect(barX, barY, barW, barH);
+                // HP fill
+                const hpRatio = bot.hp / bot.maxHp;
+                const hpColor = hpRatio > 0.5 ? '#10b981' : hpRatio > 0.25 ? '#f59e0b' : '#ef4444';
+                ctx.fillStyle = hpColor;
+                ctx.fillRect(barX, barY, barW * hpRatio, barH);
             }
 
-            ctx.globalAlpha = 1;
+            // Draw robot emoji
+            ctx.save();
+            const fontSize = bot.isBoss ? bot.size * 1.1 : bot.size * 0.85;
+            ctx.font = `${fontSize}px sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            // Slight tilt based on direction
+            const tilt = bot.dx > 0 ? 0.05 : -0.05;
+            ctx.translate(bot.x, drawY);
+            ctx.rotate(tilt);
+            ctx.fillText(bot.emoji, 0, 0);
+            ctx.restore();
         }
 
         // Particles
@@ -1057,7 +1157,7 @@
         }
         ctx.globalAlpha = 1;
 
-        // Ball trail (emoji trail)
+        // Ball trail
         for (let i = 0; i < ball.trail.length; i++) {
             const t = ball.trail[i];
             const alpha = (1 - i / ball.trail.length) * 0.25;
@@ -1071,9 +1171,8 @@
             ctx.restore();
         }
 
-        // Ball (emoji)
+        // Ball
         if (ball.y < H + 20) {
-            // Glow behind emoji
             const grad = ctx.createRadialGradient(ball.x, ball.y, 0, ball.x, ball.y, ball.r * 2.5);
             grad.addColorStop(0, 'rgba(99,102,241,0.25)');
             grad.addColorStop(1, 'rgba(99,102,241,0)');
@@ -1082,7 +1181,6 @@
             ctx.arc(ball.x, ball.y, ball.r * 2.5, 0, Math.PI * 2);
             ctx.fill();
 
-            // Draw emoji
             ctx.save();
             ctx.font = `${ball.r * 2.2}px sans-serif`;
             ctx.textAlign = 'center';
@@ -1110,7 +1208,6 @@
         ctx.closePath();
         ctx.fill();
 
-        // Paddle glow
         ctx.shadowColor = 'rgba(99,102,241,0.4)';
         ctx.shadowBlur = 12;
         ctx.fill();
@@ -1135,8 +1232,7 @@
             ctx.globalAlpha = alpha;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            
-            // Shadow for readability
+
             ctx.shadowColor = 'rgba(0,0,0,0.5)';
             ctx.shadowBlur = 10;
             ctx.fillText(state.message, W / 2, H / 2);
@@ -1145,12 +1241,14 @@
             if (state.phase === 'won' || state.phase === 'lost') {
                 ctx.font = '500 13px Inter, sans-serif';
                 ctx.fillStyle = 'rgba(255,255,255,0.6)';
-                const subtext = state.phase === 'won' ? 'Click or Space for next level' : 'Click or Space to restart';
+                const subtext = state.phase === 'won' ? 'Click or Space for next wave' : 'Click or Space to restart';
                 ctx.fillText(subtext, W / 2, H / 2 + 30);
             }
 
             ctx.restore();
         }
+
+        ctx.restore(); // end shake transform
     }
 
     function gameLoop() {
@@ -1175,7 +1273,7 @@
             return;
         }
         if (!state.ball.launched) {
-            const angle = (Math.random() - 0.5) * 0.8; // slight random angle
+            const angle = (Math.random() - 0.5) * 0.8;
             state.ball.dx = Math.sin(angle) * state.ball.speed;
             state.ball.dy = -Math.cos(angle) * state.ball.speed;
             state.ball.launched = true;
