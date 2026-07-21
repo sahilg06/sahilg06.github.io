@@ -3,8 +3,7 @@
    Premium Light-Mode Academic Portfolio
    ============================================================ */
 
-/* --- Google Fonts (Inter 300/400/600/700) --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+/* --- System Font Stack (no external requests) --- */
 
 /* --- CSS Custom Properties --- */
 :root {
@@ -67,7 +66,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
     line-height: 1.7;
@@ -344,7 +343,7 @@ h3 {
 }
 
 .email-info {
-    font-family: 'Inter', monospace;
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
     background: var(--gradient-accent-soft);
     padding: 14px 20px;
     border-radius: var(--radius-sm);
