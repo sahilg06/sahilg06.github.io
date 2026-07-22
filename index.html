@@ -1423,7 +1423,7 @@
         if (e.key === 'ArrowRight' || e.key === 'd') state.keys.right = false;
     });
 
-    // Mouse on game canvas
+    // Mouse on game canvas — also listen on overlay for desktop
     canvas.addEventListener('mousemove', (e) => {
         if (!running) return;
         const rect = canvas.getBoundingClientRect();
@@ -1437,19 +1437,29 @@
         launchBall();
     });
 
-    // Touch support for mobile
-    canvas.addEventListener('touchmove', (e) => {
+    // Touch support — listen on the ENTIRE overlay so users can
+    // touch anywhere on screen to move the paddle (critical on mobile
+    // where touching the canvas area obscures the paddle).
+    overlay.addEventListener('touchmove', (e) => {
         if (!running) return;
         e.preventDefault();
         const rect = canvas.getBoundingClientRect();
         const scaleX = canvas.width / rect.width;
+        // Map the finger's screen X to canvas-relative X
         state.mouseX = (e.touches[0].clientX - rect.left) * scaleX;
         state.useMousePaddle = true;
     }, { passive: false });
 
-    canvas.addEventListener('touchstart', (e) => {
+    overlay.addEventListener('touchstart', (e) => {
         if (!running) return;
+        // Allow tapping the close button without intercepting
+        if (e.target.closest('#game-close')) return;
         e.preventDefault();
+        // Also set paddle position on touch start
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        state.mouseX = (e.touches[0].clientX - rect.left) * scaleX;
+        state.useMousePaddle = true;
         launchBall();
     }, { passive: false });
 
