@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Goyal — Travel</title>
+    <meta name="description" content="Places Sahil Goyal has traveled to for conferences, research, and exploration.">
+    <!-- OpenGraph / Social Meta Tags -->
+    <meta property="og:title" content="Sahil Goyal — Travel">
+    <meta property="og:description" content="Interactive 3D globe of places visited for conferences, research, and exploration.">
+    <meta property="og:image" content="./img/sahil_goyal.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sahil Goyal — Travel">
+    <link rel="icon" type="image/png" href="./img/GDM.png">
+    <link rel="stylesheet" href="./styles.css">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+<nav class="sidenav">
+    <div class="navblock">
+        <div class="navblock_text">
+            <a href="./index.html">About</a>
+            <a href="./resume.html">Resume</a>
+            <a href="./research.html">Research</a>
+            <a href="./news.html">News</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./colab.html">Collaboration</a>
+            <a href="./travel.html" class="active">Travel</a>
+        </div>
+    </div>
+    <div class="theme-toggle">
+        <span class="theme-toggle-icon">☀️</span>
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode"></button>
+        <span class="theme-toggle-icon">🌙</span>
+    </div>
+</nav>
+
+<main class="main-content">
+    <div class="travel-container">
+        <h2>Travel</h2>
+        <p>Places I've explored for conferences, research, and pure wanderlust. Drag the globe to explore!</p>
+
+        <div class="globe-wrapper" id="globe-wrapper">
+            <canvas id="globe-canvas"></canvas>
+            <div class="globe-tooltip" id="globe-tooltip"></div>
+            <div class="globe-legend">
+                <div class="legend-item" data-country="japan"><span class="legend-dot" style="background: #f43f5e;"></span> Japan</div>
+                <div class="legend-item" data-country="usa"><span class="legend-dot" style="background: #3b82f6;"></span> USA</div>
+                <div class="legend-item" data-country="canada"><span class="legend-dot" style="background: #10b981;"></span> Canada</div>
+                <div class="legend-item" data-country="india"><span class="legend-dot" style="background: #f59e0b;"></span> India</div>
+            </div>
+            <div class="globe-zoom-controls">
+                <button class="globe-zoom-btn" id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button>
+                <button class="globe-zoom-btn" id="zoom-reset" aria-label="Reset view" title="Reset view">⟲</button>
+                <button class="globe-zoom-btn" id="zoom-out" aria-label="Zoom out" title="Zoom out">−</button>
+            </div>
+        </div>
+
+        <div class="travel-cities-grid">
+            <div class="travel-country-card" data-country="japan">
+                <div class="country-header">
+                    <span class="country-flag">🇯🇵</span>
+                    <h3>Japan <span class="country-year">2022</span></h3>
+                </div>
+                <ul class="city-list">
+                    <li>Tokyo</li>
+                    <li>Kyoto</li>
+                    <li>Nikko</li>
+                    <li>Fujiyoshida</li>
+                    <li>Akihabara</li>
+                </ul>
+            </div>
+            <div class="travel-country-card" data-country="usa">
+                <div class="country-header">
+                    <span class="country-flag">🇺🇸</span>
+                    <h3>USA <span class="country-year">2025</span></h3>
+                </div>
+                <ul class="city-list">
+                    <li>San Diego</li>
+                    <li>San Francisco</li>
+                </ul>
+            </div>
+            <div class="travel-country-card" data-country="canada">
+                <div class="country-header">
+                    <span class="country-flag">🇨🇦</span>
+                    <h3>Canada <span class="country-year">2024–2025</span></h3>
+                </div>
+                <ul class="city-list">
+                    <li>Vancouver</li>
+                    <li>Toronto</li>
+                    <li>Calgary</li>
+                    <li>Niagara Falls</li>
+                    <li>Banff</li>
+                    <li>Canmore</li>
+                </ul>
+            </div>
+            <div class="travel-country-card" data-country="india">
+                <div class="country-header">
+                    <span class="country-flag">🇮🇳</span>
+                    <h3>India <span class="country-year">Explored</span></h3>
+                </div>
+                <p style="margin: 0; font-size: 13px; color: var(--color-text-muted); line-height: 1.5;">11 states and union territories explored across North and South India.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+// ============================================================
+//  INTERACTIVE 3D GLOBE — D3-Geo Orthographic Projection
+// ============================================================
+(function() {
+    'use strict';
+
+    const canvas = document.getElementById('globe-canvas');
+    const ctx = canvas.getContext('2d');
+    const tooltip = document.getElementById('globe-tooltip');
+    const wrapper = document.getElementById('globe-wrapper');
+
+    // --- City data: [lat, lon, name, country, year/conference, color] ---
+    const CITIES = [
+        // Japan
+        { lat: 35.6762, lon: 139.6503, name: 'Tokyo', country: 'Japan', year: 'ACM MM Asia 2022', color: '#f43f5e' },
+        { lat: 35.0116, lon: 135.7681, name: 'Kyoto', country: 'Japan', year: '2022', color: '#f43f5e' },
+        { lat: 36.7200, lon: 139.6982, name: 'Nikko', country: 'Japan', year: '2022', color: '#f43f5e' },
+        { lat: 35.4875, lon: 138.8075, name: 'Fujiyoshida', country: 'Japan', year: '2022', color: '#f43f5e' },
+        { lat: 35.7023, lon: 139.7745, name: 'Akihabara', country: 'Japan', year: '2022', color: '#f43f5e' },
+        // USA
+        { lat: 32.7157, lon: -117.1611, name: 'San Diego', country: 'USA', year: 'NeurIPS 2025', color: '#3b82f6' },
+        { lat: 37.7749, lon: -122.4194, name: 'San Francisco', country: 'USA', year: '2025', color: '#3b82f6' },
+        // Canada
+        { lat: 49.2827, lon: -123.1207, name: 'Vancouver', country: 'Canada', year: 'NeurIPS 2024, ICML 2025', color: '#10b981' },
+        { lat: 43.6532, lon: -79.3832, name: 'Toronto', country: 'Canada', year: '2025', color: '#10b981' },
+        { lat: 51.0447, lon: -114.0719, name: 'Calgary', country: 'Canada', year: '2025', color: '#10b981' },
+        { lat: 43.0896, lon: -79.0849, name: 'Niagara Falls', country: 'Canada', year: '2025', color: '#10b981' },
+        { lat: 51.1784, lon: -115.5708, name: 'Banff', country: 'Canada', year: '2025', color: '#10b981' },
+        { lat: 51.0884, lon: -115.3579, name: 'Canmore', country: 'Canada', year: '2025', color: '#10b981' },
+        // India (States & UTs)
+        { lat: 31.1471, lon: 75.3412, name: 'Punjab', country: 'India', year: 'India', color: '#f59e0b' },
+        { lat: 29.0588, lon: 76.0856, name: 'Haryana', country: 'India', year: 'India', color: '#f59e0b' },
+        { lat: 28.6139, lon: 77.2090, name: 'Delhi', country: 'India', year: 'India', color: '#f59e0b' },
+        { lat: 31.7433, lon: 77.1200, name: 'Himachal Pradesh', country: 'India', year: 'India', color: '#f59e0b' },
+        { lat: 26.9124, lon: 75.7873, name: 'Rajasthan', country: 'India', year: 'India', color: '#f59e0b' },
+        { lat: 27.1767, lon: 78.0081, name: 'Uttar Pradesh', country: 'India', year: 'India', color: '#f59e0b' },
+        { lat: 15.2993, lon: 74.1240, name: 'Goa', country: 'India', year: 'India', color: '#f59e0b' },
+        { lat: 12.9716, lon: 77.5946, name: 'Karnataka', country: 'India', year: 'India', color: '#f59e0b' },
+        { lat: 17.3850, lon: 78.4867, name: 'Telangana', country: 'India', year: 'India', color: '#f59e0b' },
+        { lat: 11.1271, lon: 78.6569, name: 'Tamil Nadu', country: 'India', year: 'India', color: '#f59e0b' },
+        { lat: 10.8505, lon: 76.2711, name: 'Kerala', country: 'India', year: 'India', color: '#f59e0b' },
+    ];
+
+    let globeRadius, centerX, centerY, dpr = 1;
+    let projection, pathGenerator;
+    let landGeo = null;
+    const sphere = { type: "Sphere" };
+    const graticule = d3.geoGraticule10();
+
+    // Zoom & Rotation state
+    let zoomLevel = 1.0;
+    const minZoom = 0.65, maxZoom = 2.8;
+    let rotate = [-139.6, -35.6, 0]; // Initial focus on Japan
+    let autoRotateSpeed = 0.15;      // degrees per frame
+    let isDragging = false;
+    let dragStartPos, dragStartRotate;
+    let velocity = [0, 0];
+    let lastMoveTime = 0, lastMovePos = null;
+    const friction = 0.94;
+    let hoveredCity = null;
+    let mousePos = null;
+
+    function resize() {
+        dpr = window.devicePixelRatio || 1;
+        const rect = wrapper.getBoundingClientRect();
+        const size = Math.min(rect.width, 520);
+        canvas.style.width = size + 'px';
+        canvas.style.height = size + 'px';
+        canvas.width = size * dpr;
+        canvas.height = size * dpr;
+        globeRadius = (size / 2) * 0.82;
+        centerX = size / 2;
+        centerY = size / 2;
+
+        projection = d3.geoOrthographic()
+            .scale(globeRadius * zoomLevel)
+            .translate([centerX, centerY])
+            .clipAngle(90);
+
+        pathGenerator = d3.geoPath(projection, ctx);
+    }
+
+    // Load 110m world topology
+    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json')
+        .then(r => r.json())
+        .then(topology => {
+            landGeo = topojson.feature(topology, topology.objects.land);
+        })
+        .catch(() => {});
+
+    function draw() {
+        ctx.save();
+        ctx.scale(dpr, dpr);
+        ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const currentRadius = globeRadius * zoomLevel;
+        projection.scale(currentRadius);
+        projection.rotate(rotate);
+
+        // 1. Ocean background
+        const grad = ctx.createRadialGradient(
+            centerX - currentRadius * 0.25, centerY - currentRadius * 0.25, 0,
+            centerX, centerY, currentRadius
+        );
+        if (isDark) {
+            grad.addColorStop(0, '#1e3a5f');
+            grad.addColorStop(0.7, '#0f2847');
+            grad.addColorStop(1, '#0a1628');
+        } else {
+            grad.addColorStop(0, '#dbeafe');
+            grad.addColorStop(0.7, '#bfdbfe');
+            grad.addColorStop(1, '#93c5fd');
+        }
+
+        ctx.beginPath();
+        pathGenerator(sphere);
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        // Globe outline
+        ctx.strokeStyle = isDark ? 'rgba(96,165,250,0.3)' : 'rgba(59,130,246,0.25)';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        // 2. Graticule lines
+        ctx.beginPath();
+        pathGenerator(graticule);
+        ctx.strokeStyle = isDark ? 'rgba(96,165,250,0.1)' : 'rgba(59,130,246,0.15)';
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+
+        // 3. Landmasses (Flawless D3 horizon clipping)
+        if (landGeo) {
+            ctx.beginPath();
+            pathGenerator(landGeo);
+            ctx.fillStyle = isDark ? 'rgba(74,222,128,0.22)' : 'rgba(34,197,94,0.20)';
+            ctx.fill();
+            ctx.strokeStyle = isDark ? 'rgba(74,222,128,0.40)' : 'rgba(22,163,74,0.35)';
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+        }
+
+        // 4. City pins
+        let closestCity = null;
+        let closestDist = Infinity;
+        const centerCoords = [-rotate[0], -rotate[1]];
+
+        for (const city of CITIES) {
+            const distRad = d3.geoDistance([city.lon, city.lat], centerCoords);
+            if (distRad > Math.PI / 2) continue; // Behind globe
+
+            const pt = projection([city.lon, city.lat]);
+            if (!pt) continue;
+
+            const zFactor = Math.cos(distRad);
+            const pinRadius = (4 + 2.5 * zFactor) * Math.sqrt(zoomLevel);
+
+            // Glow
+            ctx.beginPath();
+            const glow = ctx.createRadialGradient(pt[0], pt[1], 0, pt[0], pt[1], pinRadius * 3.5);
+            glow.addColorStop(0, city.color + '60');
+            glow.addColorStop(1, city.color + '00');
+            ctx.fillStyle = glow;
+            ctx.arc(pt[0], pt[1], pinRadius * 3.5, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Pin Dot
+            ctx.beginPath();
+            ctx.arc(pt[0], pt[1], pinRadius, 0, Math.PI * 2);
+            ctx.fillStyle = city.color;
+            ctx.fill();
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 1.4;
+            ctx.stroke();
+
+            // Hover check
+            if (mousePos) {
+                const dx = mousePos.x - pt[0];
+                const dy = mousePos.y - pt[1];
+                const d = Math.sqrt(dx * dx + dy * dy);
+                if (d < pinRadius * 3.5 && d < closestDist) {
+                    closestDist = d;
+                    closestCity = { ...city, screenX: pt[0], screenY: pt[1] };
+                }
+            }
+        }
+
+        hoveredCity = closestCity;
+
+        // 5. Atmosphere glow
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, currentRadius + 2, 0, Math.PI * 2);
+        const atmosphere = ctx.createRadialGradient(centerX, centerY, currentRadius * 0.9, centerX, centerY, currentRadius + 15);
+        atmosphere.addColorStop(0, 'rgba(99,102,241,0)');
+        atmosphere.addColorStop(0.5, isDark ? 'rgba(129,140,248,0.08)' : 'rgba(99,102,241,0.05)');
+        atmosphere.addColorStop(1, 'rgba(99,102,241,0)');
+        ctx.fillStyle = atmosphere;
+        ctx.fill();
+
+        ctx.restore();
+
+        // Tooltip
+        if (hoveredCity && !isDragging) {
+            tooltip.innerHTML = `<strong>${hoveredCity.name}</strong><br><span>${hoveredCity.country} · ${hoveredCity.year}</span>`;
+            tooltip.style.opacity = '1';
+            tooltip.style.left = hoveredCity.screenX + 'px';
+            tooltip.style.top = (hoveredCity.screenY - 45) + 'px';
+            canvas.style.cursor = 'pointer';
+        } else {
+            tooltip.style.opacity = '0';
+            canvas.style.cursor = isDragging ? 'grabbing' : 'grab';
+        }
+    }
+
+    // --- Mouse Wheel Zoom ---
+    canvas.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const factor = e.deltaY < 0 ? 1.12 : 0.89;
+        zoomLevel = Math.max(minZoom, Math.min(maxZoom, zoomLevel * factor));
+    }, { passive: false });
+
+    // --- Drag & Momentum Interaction ---
+    canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mousePos = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+
+        if (isDragging) {
+            const now = performance.now();
+            const dx = e.clientX - dragStartPos.x;
+            const dy = e.clientY - dragStartPos.y;
+
+            const dt = now - lastMoveTime;
+            if (dt > 0 && dt < 100 && lastMovePos) {
+                velocity = [
+                    (e.clientX - lastMovePos.x) / dt * 15,
+                    (e.clientY - lastMovePos.y) / dt * 15
+                ];
+            }
+            lastMoveTime = now;
+            lastMovePos = { x: e.clientX, y: e.clientY };
+
+            const sensitivity = 0.35 / zoomLevel;
+            rotate[0] = dragStartRotate[0] + dx * sensitivity;
+            rotate[1] = Math.max(-80, Math.min(80, dragStartRotate[1] - dy * sensitivity));
+        }
+    });
+
+    canvas.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        autoRotateSpeed = 0;
+        velocity = [0, 0];
+        dragStartPos = { x: e.clientX, y: e.clientY };
+        dragStartRotate = [...rotate];
+        lastMoveTime = performance.now();
+        lastMovePos = { x: e.clientX, y: e.clientY };
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (isDragging) isDragging = false;
+    });
+
+    canvas.addEventListener('mouseleave', () => {
+        mousePos = null;
+    });
+
+    // --- Touch Support & Pinch-to-Zoom ---
+    let initialPinchDist = null;
+    let initialPinchZoom = 1.0;
+
+    canvas.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            isDragging = false;
+            initialPinchDist = Math.hypot(
+                e.touches[0].clientX - e.touches[1].clientX,
+                e.touches[0].clientY - e.touches[1].clientY
+            );
+            initialPinchZoom = zoomLevel;
+            return;
+        }
+
+        e.preventDefault();
+        isDragging = true;
+        autoRotateSpeed = 0;
+        velocity = [0, 0];
+        const t = e.touches[0];
+        dragStartPos = { x: t.clientX, y: t.clientY };
+        dragStartRotate = [...rotate];
+        lastMoveTime = performance.now();
+        lastMovePos = { x: t.clientX, y: t.clientY };
+    }, { passive: false });
+
+    canvas.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2 && initialPinchDist) {
+            e.preventDefault();
+            const currentDist = Math.hypot(
+                e.touches[0].clientX - e.touches[1].clientX,
+                e.touches[0].clientY - e.touches[1].clientY
+            );
+            const scale = currentDist / initialPinchDist;
+            zoomLevel = Math.max(minZoom, Math.min(maxZoom, initialPinchZoom * scale));
+            return;
+        }
+
+        e.preventDefault();
+        if (!isDragging) return;
+        const t = e.touches[0];
+        const now = performance.now();
+        const dx = t.clientX - dragStartPos.x;
+        const dy = t.clientY - dragStartPos.y;
+
+        const dt = now - lastMoveTime;
+        if (dt > 0 && dt < 100 && lastMovePos) {
+            velocity = [
+                (t.clientX - lastMovePos.x) / dt * 15,
+                (t.clientY - lastMovePos.y) / dt * 15
+            ];
+        }
+        lastMoveTime = now;
+        lastMovePos = { x: t.clientX, y: t.clientY };
+
+        const sensitivity = 0.35 / zoomLevel;
+        rotate[0] = dragStartRotate[0] + dx * sensitivity;
+        rotate[1] = Math.max(-80, Math.min(80, dragStartRotate[1] - dy * sensitivity));
+    }, { passive: false });
+
+    canvas.addEventListener('touchend', (e) => {
+        if (e.touches.length < 2) initialPinchDist = null;
+        if (e.touches.length === 0) isDragging = false;
+    });
+
+    // Click on city → focus globe
+    canvas.addEventListener('click', () => {
+        if (hoveredCity) {
+            animateFocus([-hoveredCity.lon, -hoveredCity.lat], Math.max(1.3, zoomLevel));
+        }
+    });
+
+    // Country card or Legend click → focus globe
+    document.querySelectorAll('.travel-country-card, .legend-item').forEach(card => {
+        card.addEventListener('click', () => {
+            const country = card.dataset.country;
+            if (!country) return;
+            const countryCities = CITIES.filter(c => c.country.toLowerCase() === country);
+            if (countryCities.length > 0) {
+                const avgLat = countryCities.reduce((s, c) => s + c.lat, 0) / countryCities.length;
+                const avgLon = countryCities.reduce((s, c) => s + c.lon, 0) / countryCities.length;
+                animateFocus([-avgLon, -avgLat], country === 'japan' || country === 'india' ? 1.5 : 1.3);
+            }
+        });
+    });
+
+    function animateFocus(targetRotate, targetZoom = null) {
+        autoRotateSpeed = 0;
+        velocity = [0, 0];
+        const start = [...rotate];
+        const startZ = zoomLevel;
+        const endZ = targetZoom !== null ? Math.max(minZoom, Math.min(maxZoom, targetZoom)) : zoomLevel;
+        const duration = 800;
+        const startTime = performance.now();
+
+        let dLon = ((targetRotate[0] - start[0] + 540) % 360) - 180;
+        const endLon = start[0] + dLon;
+        const endLat = Math.max(-80, Math.min(80, targetRotate[1]));
+
+        function step(now) {
+            const t = Math.min(1, (now - startTime) / duration);
+            const ease = 1 - Math.pow(1 - t, 3);
+            rotate[0] = start[0] + (endLon - start[0]) * ease;
+            rotate[1] = start[1] + (endLat - start[1]) * ease;
+            zoomLevel = startZ + (endZ - startZ) * ease;
+            if (t < 1) requestAnimationFrame(step);
+            else setTimeout(() => { autoRotateSpeed = 0.15; }, 3000);
+        }
+        requestAnimationFrame(step);
+    }
+
+    function animateZoom(targetZoom) {
+        const startZ = zoomLevel;
+        const endZ = Math.max(minZoom, Math.min(maxZoom, targetZoom));
+        const duration = 300;
+        const startTime = performance.now();
+        function step(now) {
+            const t = Math.min(1, (now - startTime) / duration);
+            const ease = 1 - Math.pow(1 - t, 3);
+            zoomLevel = startZ + (endZ - startZ) * ease;
+            if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+
+    // Zoom Button Listeners
+    const btnIn = document.getElementById('zoom-in');
+    const btnOut = document.getElementById('zoom-out');
+    const btnReset = document.getElementById('zoom-reset');
+
+    if (btnIn) btnIn.addEventListener('click', () => animateZoom(zoomLevel * 1.35));
+    if (btnOut) btnOut.addEventListener('click', () => animateZoom(zoomLevel / 1.35));
+    if (btnReset) btnReset.addEventListener('click', () => {
+        animateFocus([-139.6, -35.6], 1.0);
+    });
+
+    // Animation Loop
+    function animate() {
+        if (!isDragging) {
+            if (Math.abs(velocity[0]) > 0.05 || Math.abs(velocity[1]) > 0.05) {
+                rotate[0] += velocity[0] * 0.05;
+                rotate[1] = Math.max(-80, Math.min(80, rotate[1] - velocity[1] * 0.05));
+                velocity[0] *= friction;
+                velocity[1] *= friction;
+
+                if (Math.abs(velocity[0]) <= 0.05 && Math.abs(velocity[1]) <= 0.05) {
+                    velocity = [0, 0];
+                    setTimeout(() => { autoRotateSpeed = 0.15; }, 1000);
+                }
+            } else {
+                rotate[0] += autoRotateSpeed;
+            }
+        }
+        draw();
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    animate();
+})();
+</script>
+
+<script>
+// Theme toggle
+(function() {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+    });
+})();
+</script>
+</body>
+</html>

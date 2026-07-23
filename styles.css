@@ -1187,3 +1187,261 @@ h3 {
         font-size: 12px;
     }
 }
+
+/* ============================================================
+   TRAVEL PAGE — 3D Globe & City Cards
+   ============================================================ */
+
+.travel-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.travel-container h2 {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.travel-container > p {
+    color: var(--color-text-muted);
+    font-size: 15px;
+    margin-bottom: 32px;
+}
+
+/* Globe wrapper */
+.globe-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto 40px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.globe-wrapper canvas {
+    border-radius: 50%;
+    display: block;
+    box-shadow: var(--shadow-lg),
+                0 0 60px rgba(99, 102, 241, 0.08),
+                inset 0 0 30px rgba(99, 102, 241, 0.03);
+    cursor: grab;
+}
+
+.globe-wrapper canvas:active {
+    cursor: grabbing;
+}
+
+/* Globe Zoom Controls */
+.globe-zoom-controls {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 5;
+}
+
+.globe-zoom-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: background var(--transition-fast),
+                transform var(--transition-fast),
+                border-color var(--transition-fast),
+                color var(--transition-fast);
+    user-select: none;
+}
+
+.globe-zoom-btn:hover {
+    background: var(--gradient-accent-soft);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: scale(1.08);
+}
+
+.globe-zoom-btn:active {
+    transform: scale(0.94);
+}
+
+.globe-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 8px 14px;
+    font-size: 13px;
+    line-height: 1.4;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 10;
+    color: var(--color-text);
+}
+
+.globe-tooltip strong {
+    font-weight: 600;
+    display: block;
+}
+
+.globe-tooltip span {
+    color: var(--color-text-muted);
+    font-size: 12px;
+}
+
+/* Globe Legend — Left Side of Globe */
+.globe-legend {
+    position: absolute;
+    top: 20px;
+    left: -50px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 5;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    user-select: none;
+}
+
+@media (max-width: 900px) {
+    .globe-legend {
+        left: 10px;
+        top: 10px;
+    }
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--color-text);
+    font-weight: 500;
+    cursor: pointer;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.legend-item:hover {
+    color: var(--color-accent);
+    transform: translateX(2px);
+}
+
+.legend-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 6px currentColor;
+}
+
+/* Country cards grid */
+.travel-cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.travel-country-card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    transition: transform var(--transition-fast),
+                box-shadow var(--transition-fast),
+                border-color var(--transition-fast);
+    cursor: pointer;
+}
+
+.travel-country-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+}
+
+.country-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.country-flag {
+    font-size: 26px;
+    line-height: 1;
+}
+
+.country-header h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.country-year {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    margin-left: 4px;
+}
+
+.city-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+}
+
+.city-list li {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    background: var(--gradient-accent-soft);
+    padding: 4px 12px;
+    border-radius: 20px;
+    transition: background var(--transition-fast);
+}
+
+.city-list li:hover {
+    background: var(--gradient-accent);
+    color: #fff;
+}
+
+/* Travel responsive */
+@media (max-width: 768px) {
+    .globe-wrapper {
+        max-width: 340px;
+    }
+    .travel-cities-grid {
+        grid-template-columns: 1fr;
+    }
+    .travel-container h2 {
+        font-size: 24px;
+    }
+}
