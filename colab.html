@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Goyal — Collaborations</title>
+    <title>Sahil Goyal — Experience &amp; Collaborators</title>
     <meta name="description"
         content="Research collaborations of Sahil Goyal at Google DeepMind, Adobe Research, and MIDAS Lab IIIT-Delhi.">
     <!-- OpenGraph / Social Meta Tags -->
-    <meta property="og:title" content="Sahil Goyal — Collaborations">
+    <meta property="og:title" content="Sahil Goyal — Experience &amp; Collaborators">
     <meta property="og:description" content="Research collaborations at Google DeepMind, Adobe Research, and MIDAS Lab.">
     <meta property="og:image" content="./img/sahil_goyal.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Sahil Goyal — Collaborations">
+    <meta name="twitter:title" content="Sahil Goyal — Experience &amp; Collaborators">
     <link rel="icon" type="image/png" href="./img/GDM.png">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=20260820">
     <script>
         // Apply saved theme immediately to prevent flash
         (function() {
@@ -29,16 +29,24 @@
 </head>
 <body>
 
-<nav class="sidenav">
+<nav class="sidenav" aria-label="Primary navigation">
+    <a class="nav-brand" href="./index.html" aria-label="Sahil Goyal — Home">
+        <span class="nav-identity"><strong>Sahil Goyal</strong><small>ML Researcher</small></span>
+    </a>
     <div class="navblock">
         <div class="navblock_text">
             <a href="./index.html">About</a>
-            <a href="./resume.html">Resume</a>
             <a href="./research.html">Research</a>
-            <a href="./news.html">News</a>
-            <a href="./blog.html">Blog</a>
-            <a href="./colab.html" class="active">Collaboration</a>
-            <a href="./travel.html">Travel</a>
+            <a href="./resume.html">CV</a>
+            <a href="./blog.html">Writing</a>
+            <details class="nav-more">
+                <summary class="active">More</summary>
+                <div class="nav-more-menu">
+                    <a href="./news.html">News</a>
+                    <a href="./colab.html" class="active">Experience</a>
+                    <a href="./travel.html">Travel</a>
+                </div>
+            </details>
         </div>
     </div>
     <div class="theme-toggle">
@@ -50,11 +58,11 @@
 
 <main class="main-content">
     <div class="collaboration-container">
-        <h2>Collaborations</h2>
+        <h2>Experience &amp; Collaborators</h2>
 
         <article class="collaboration-card">
             <h3><a href="https://deepmind.google/" target="_blank" rel="noopener noreferrer">Google DeepMind</a></h3>
-            <p class="role">Pre-Doctoral Researcher</p>
+            <p class="role">Pre-Doctoral Researcher / AI Resident · 2024–2026</p>
             <div class="people-list">
                 <h4>Advisors</h4>
                 <p>
@@ -65,7 +73,7 @@
             </div>
             <div class="people-list">
                 <h4>Teams</h4>
-                <p>Machine Learning & Optimization (MLO), Veo, Gemini (Pretraining and Visual Tokenization)</p>
+                <p>Machine Learning &amp; Optimization (MLO), Veo, Gemini (Pretraining and Visual Tokenization)</p>
             </div>
         </article>
 
@@ -100,7 +108,7 @@
             <div class="people-list">
                 <h4>Advisors</h4>
                 <p>
-                    <a href="https://scholar.google.com.sg/citations?user=WAChZv4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Dr. Rajiv Ratn Shah</a>
+                    <a href="https://scholar.google.com.sg/citations?user=WAChZv4AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Dr. Rajiv Ratn Shah</a>
                 </p>
             </div>
              <div class="people-list">
@@ -120,11 +128,18 @@
 (function() {
     const toggle = document.getElementById('theme-toggle');
     if (!toggle) return;
+    const syncToggle = () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        toggle.setAttribute('aria-pressed', String(isDark));
+        toggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    };
+    syncToggle();
     toggle.addEventListener('click', () => {
         const current = document.documentElement.getAttribute('data-theme');
         const next = current === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
+        syncToggle();
     });
 })();
 </script>

@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sahil Goyal — Research</title>
     <meta name="description"
-        content="Research publications by Sahil Goyal on Efficient ML, Generative Models, and Computer Vision at Google DeepMind.">
+        content="Research publications by Sahil Goyal on efficient ML, generative models, and computer vision.">
     <!-- OpenGraph / Social Meta Tags -->
     <meta property="og:title" content="Sahil Goyal — Research Publications">
-    <meta property="og:description" content="Research on Efficient ML, Generative Models, and Computer Vision at Google DeepMind.">
+    <meta property="og:description" content="Research on efficient ML, generative models, and computer vision.">
     <meta property="og:image" content="./img/sahil_goyal.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Sahil Goyal — Research Publications">
-    <meta name="twitter:description" content="Research on Efficient ML, Generative Models, and Computer Vision at Google DeepMind.">
+    <meta name="twitter:description" content="Research on efficient ML, generative models, and computer vision.">
     <link rel="icon" type="image/png" href="./img/GDM.png">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=20260820">
     <script>
         // Apply saved theme immediately to prevent flash
         (function() {
@@ -30,16 +30,24 @@
 </head>
 <body>
 
-<nav class="sidenav">
+<nav class="sidenav" aria-label="Primary navigation">
+    <a class="nav-brand" href="./index.html" aria-label="Sahil Goyal — Home">
+        <span class="nav-identity"><strong>Sahil Goyal</strong><small>ML Researcher</small></span>
+    </a>
     <div class="navblock">
         <div class="navblock_text">
             <a href="./index.html">About</a>
-            <a href="./resume.html">Resume</a>
             <a href="./research.html" class="active">Research</a>
-            <a href="./news.html">News</a>
-            <a href="./blog.html">Blog</a>
-            <a href="./colab.html">Collaboration</a>
-            <a href="./travel.html">Travel</a>
+            <a href="./resume.html">CV</a>
+            <a href="./blog.html">Writing</a>
+            <details class="nav-more">
+                <summary>More</summary>
+                <div class="nav-more-menu">
+                    <a href="./news.html">News</a>
+                    <a href="./colab.html">Experience</a>
+                    <a href="./travel.html">Travel</a>
+                </div>
+            </details>
         </div>
     </div>
     <div class="theme-toggle">
@@ -51,28 +59,23 @@
 
 <main class="main-content">
     <div class="research-container">
-        <h2>Research Activity</h2>
-        <p>My research focuses on developing efficient and adaptive foundational models, with a primary emphasis on Generative
-            Models.
-        </p>
+        <h2>Research</h2>
+        <p>I develop efficient and adaptive foundation models, with a focus on visual generation, decode-time scaling, and
+            multimodal systems.</p>
 
-
-
-        <h3>Publications</h3>
+        <h3>Selected publications</h3>
         <article class="publication-item">
             <img src="img/ELT.png" alt="ELT: Elastic Looped Transformers paper thumbnail" class="publication-image" loading="lazy" decoding="async">
             <div class="publication-details">
                 <h4>ELT: Elastic Looped Transformers for Visual Generation</h4>
-                <p>
-                    Sahil Goyal, Swayam Agrawal, Gautham Anil, Prateek Jain, Sujoy Paul, Aditya Kusupati <br>
-                    <em><b>ECCV</b> 2026 &amp; <b>CVPR (EDGE Workshop)</b> 2026</em>
-                </p>
+                <p class="publication-authors"><strong>Sahil Goyal</strong>, Swayam Agrawal, Gautham Anil, Prateek Jain, Sujoy Paul, Aditya Kusupati</p>
+                <p class="publication-summary">Elastic looped transformer architectures that adapt computation for efficient visual generation.</p>
                 <div class="publication-badges">
                     <span class="badge badge-venue">ECCV 2026</span>
                     <span class="badge badge-workshop">CVPR Workshop 2026</span>
                 </div>
                 <div class="publication-links">
-                    <a href="https://arxiv.org/abs/2604.09168" target="_blank" rel="noopener noreferrer">[Paper]</a>
+                    <a href="https://arxiv.org/abs/2604.09168" target="_blank" rel="noopener noreferrer">Paper ↗</a>
                 </div>
             </div>
         </article>
@@ -81,17 +84,15 @@
             <img src="img/magnets_thumbnail.png" alt="Masked Generative Nested Transformers paper thumbnail" class="publication-image" loading="lazy" decoding="async">
             <div class="publication-details">
                 <h4>Masked Generative Nested Transformers with Decode Time Scaling</h4>
-                <p>
-                    Sahil Goyal, Debapriya Tula, Prateek Jain, Sujoy Paul et al. <br> 
-                    <em><b>ICML</b> 2025 &amp; <b>ICLR (DeLTa Workshop)</b> 2025</em>
-                </p>
+                <p class="publication-authors"><strong>Sahil Goyal</strong>, Debapriya Tula, Prateek Jain, Sujoy Paul et al.</p>
+                <p class="publication-summary">Nested masked generative transformers designed to benefit from additional computation at decode time.</p>
                 <div class="publication-badges">
                     <span class="badge badge-venue">ICML 2025</span>
                     <span class="badge badge-workshop">ICLR Workshop 2025</span>
                 </div>
                 <div class="publication-links">
-                    <a href="https://openreview.net/pdf?id=h4lZMgGyAz" target="_blank" rel="noopener noreferrer">[Paper]</a> 
-                    <a href="https://drive.google.com/file/d/1DM__12QbcZmr3iaCU8WEgt9v-B2R1R4q/view?usp=sharing" target="_blank" rel="noopener noreferrer">[Poster]</a>
+                    <a href="https://openreview.net/pdf?id=h4lZMgGyAz" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                    <a href="https://drive.google.com/file/d/1DM__12QbcZmr3iaCU8WEgt9v-B2R1R4q/view?usp=sharing" target="_blank" rel="noopener noreferrer">Poster ↗</a>
                 </div>
             </div>
         </article>
@@ -100,17 +101,15 @@
             <img src="img/DesignOMeter_thumbnail.png" alt="Design-o-meter paper thumbnail" class="publication-image" loading="lazy" decoding="async">
             <div class="publication-details">
                 <h4>Design-o-meter: Towards Evaluating and Refining Graphic Designs</h4>
-                <p>
-                    Sahil Goyal, Abhinav Mahajan, KJ Joseph et al. <br> 
-                    <em><b>WACV</b> 2025</em>
-                </p>
+                <p class="publication-authors"><strong>Sahil Goyal</strong>, Abhinav Mahajan, KJ Joseph et al.</p>
+                <p class="publication-summary">A framework for evaluating and iteratively refining the aesthetic quality of graphic designs.</p>
                 <div class="publication-badges">
                     <span class="badge badge-venue">WACV 2025</span>
                 </div>
                 <div class="publication-links">
-                    <a href="https://arxiv.org/abs/2411.14959" target="_blank" rel="noopener noreferrer">[Paper]</a> 
-                    <a href="https://drive.google.com/file/d/1EM9M6n5d0AJbISEDXeM5OmzSR6yrujy7/view?usp=sharing" target="_blank" rel="noopener noreferrer">[Poster]</a>
-                    <a href="https://sahilg06.github.io/Design-o-meter/" target="_blank" rel="noopener noreferrer">[Project Page]</a>
+                    <a href="https://arxiv.org/abs/2411.14959" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                    <a href="https://drive.google.com/file/d/1EM9M6n5d0AJbISEDXeM5OmzSR6yrujy7/view?usp=sharing" target="_blank" rel="noopener noreferrer">Poster ↗</a>
+                    <a href="https://sahilg06.github.io/Design-o-meter/" target="_blank" rel="noopener noreferrer">Project ↗</a>
                 </div>
             </div>
         </article>
@@ -119,18 +118,16 @@
             <img src="img/emogen_thumbnail.png" alt="Emotionally Enhanced Talking Face Generation paper thumbnail" class="publication-image" loading="lazy" decoding="async">
             <div class="publication-details">
                 <h4>Emotionally Enhanced Talking Face Generation</h4>
-                <p>
-                    Sahil Goyal, Shagun Uppal, Sarthak Bhagat, et al. <br> 
-                    <em><b>ICCV (CVEU Workshop)</b> 2023 &amp; <b>ACM MM (McGE Workshop)</b> 2023</em>
-                </p>
+                <p class="publication-authors"><strong>Sahil Goyal</strong>, Shagun Uppal, Sarthak Bhagat, et al.</p>
+                <p class="publication-summary">Emotion-aware talking-face generation for more expressive and controllable video synthesis.</p>
                 <div class="publication-badges">
                     <span class="badge badge-venue">ICCV Workshop 2023</span>
                     <span class="badge badge-workshop">ACM MM Workshop 2023</span>
                 </div>
                 <div class="publication-links">
-                    <a href="https://arxiv.org/abs/2303.11548" target="_blank" rel="noopener noreferrer">[Paper]</a> 
-                    <a href="https://drive.google.com/file/d/1aZ7ODeFkopkV-qiqVWYCEH400paPtTQm/view?usp=sharing" target="_blank" rel="noopener noreferrer">[Poster]</a>
-                    <a href="https://github.com/sahilg06/EmoGen" target="_blank" rel="noopener noreferrer">[Code]</a> 
+                    <a href="https://arxiv.org/abs/2303.11548" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                    <a href="https://drive.google.com/file/d/1aZ7ODeFkopkV-qiqVWYCEH400paPtTQm/view?usp=sharing" target="_blank" rel="noopener noreferrer">Poster ↗</a>
+                    <a href="https://github.com/sahilg06/EmoGen" target="_blank" rel="noopener noreferrer">Code ↗</a>
                 </div>
             </div>
         </article>
@@ -139,24 +136,34 @@
             <img src="img/emogen_demo_thumbnail.png" alt="Emotional Talking Faces paper thumbnail" class="publication-image" loading="lazy" decoding="async">
             <div class="publication-details">
                 <h4>Emotional Talking Faces: Making Videos More Expressive and Realistic</h4>
-                <p>
-                    Sahil Goyal, Shagun Uppal, Sarthak Bhagat, et al. <br>
-                    <em><b>ACM MM Asia</b> 2022</em>
-                </p>
+                <p class="publication-authors"><strong>Sahil Goyal</strong>, Shagun Uppal, Sarthak Bhagat, et al.</p>
+                <p class="publication-summary">A demonstration of expressive emotional control for realistic talking-face videos.</p>
                 <div class="publication-badges">
                     <span class="badge badge-venue">ACM MM Asia 2022</span>
                     <span class="badge badge-award">🏆 Best Demo Paper</span>
                 </div>
                 <div class="publication-links">
-                    <a href="https://dl.acm.org/doi/abs/10.1145/3551626.3564976" target="_blank" rel="noopener noreferrer">[Paper]</a>
-                    <a href="https://youtu.be/bYPX0zp4MY4?si=y3rPea3oaJEru2Tl" target="_blank" rel="noopener noreferrer">[Demo]</a>
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3551626.3564976" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+                    <a href="https://youtu.be/bYPX0zp4MY4?si=y3rPea3oaJEru2Tl" target="_blank" rel="noopener noreferrer">Demo ↗</a>
                 </div>
             </div>
         </article>
-<h3>Reviewing Service</h3>
-<p>I have served as a reviewer (multiple times) at: <b>NeurIPS</b>, <b>ICML</b>, <b>ICLR</b>, <b>CVPR</b>, <b>ECCV</b>,
-    <b>ICCV</b>, <b>AAMAS</b>, <b>WACV</b>.
-</p>
+
+        <h3>Patent</h3>
+        <article class="publication-item patent-item">
+            <div class="publication-details">
+                <div class="publication-badges"><span class="badge badge-patent">US Patent · 2026</span></div>
+                <h4>Efficient Visual Generation</h4>
+                <p class="publication-summary">US patent application covering methods for more efficient visual generation.</p>
+                <div class="publication-links">
+                    <a href="https://patents.google.com/patent/US20260111717A1/en" target="_blank" rel="noopener noreferrer">View patent ↗</a>
+                </div>
+            </div>
+        </article>
+
+        <h3>Reviewing service</h3>
+        <p class="reviewer-note">Reviewer for <strong>NeurIPS</strong>, <strong>ICML</strong>, <strong>ICLR</strong>, <strong>CVPR</strong>,
+            <strong>ECCV</strong>, <strong>ICCV</strong>, <strong>AAMAS</strong>, and <strong>WACV</strong>.</p>
         
     </div>
 </main>
@@ -166,11 +173,18 @@
 (function() {
     const toggle = document.getElementById('theme-toggle');
     if (!toggle) return;
+    const syncToggle = () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        toggle.setAttribute('aria-pressed', String(isDark));
+        toggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    };
+    syncToggle();
     toggle.addEventListener('click', () => {
         const current = document.documentElement.getAttribute('data-theme');
         const next = current === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
+        syncToggle();
     });
 })();
 </script>

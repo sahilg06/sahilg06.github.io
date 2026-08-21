@@ -13,7 +13,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Sahil Goyal — Travel">
     <link rel="icon" type="image/png" href="./img/GDM.png">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=20260820">
     <script>
         (function() {
             const saved = localStorage.getItem('theme');
@@ -27,16 +27,24 @@
 </head>
 <body>
 
-<nav class="sidenav">
+<nav class="sidenav" aria-label="Primary navigation">
+    <a class="nav-brand" href="./index.html" aria-label="Sahil Goyal — Home">
+        <span class="nav-identity"><strong>Sahil Goyal</strong><small>ML Researcher</small></span>
+    </a>
     <div class="navblock">
         <div class="navblock_text">
             <a href="./index.html">About</a>
-            <a href="./resume.html">Resume</a>
             <a href="./research.html">Research</a>
-            <a href="./news.html">News</a>
-            <a href="./blog.html">Blog</a>
-            <a href="./colab.html">Collaboration</a>
-            <a href="./travel.html" class="active">Travel</a>
+            <a href="./resume.html">CV</a>
+            <a href="./blog.html">Writing</a>
+            <details class="nav-more">
+                <summary class="active">More</summary>
+                <div class="nav-more-menu">
+                    <a href="./news.html">News</a>
+                    <a href="./colab.html">Experience</a>
+                    <a href="./travel.html" class="active">Travel</a>
+                </div>
+            </details>
         </div>
     </div>
     <div class="theme-toggle">
@@ -566,11 +574,18 @@
 (function() {
     const toggle = document.getElementById('theme-toggle');
     if (!toggle) return;
+    const syncToggle = () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        toggle.setAttribute('aria-pressed', String(isDark));
+        toggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    };
+    syncToggle();
     toggle.addEventListener('click', () => {
         const current = document.documentElement.getAttribute('data-theme');
         const next = current === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
+        syncToggle();
     });
 })();
 </script>

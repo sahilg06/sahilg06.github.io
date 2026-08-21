@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Goyal — Resume</title>
-    <meta name="description" content="Resume of Sahil Goyal, Pre-Doctoral Researcher at Google DeepMind.">
+    <title>Sahil Goyal — Curriculum Vitae</title>
+    <meta name="description" content="Curriculum vitae of Sahil Goyal, ML Researcher working on efficient generative models and computer vision.">
     <!-- OpenGraph / Social Meta Tags -->
-    <meta property="og:title" content="Sahil Goyal — Resume">
-    <meta property="og:description" content="Pre-Doctoral Researcher at Google DeepMind working on Efficient ML and Generative Models.">
+    <meta property="og:title" content="Sahil Goyal — Curriculum Vitae">
+    <meta property="og:description" content="ML Researcher working on efficient generative models and computer vision.">
     <meta property="og:image" content="./img/sahil_goyal.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Sahil Goyal — Resume">
+    <meta name="twitter:title" content="Sahil Goyal — Curriculum Vitae">
     <link rel="icon" type="image/png" href="./img/GDM.png">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=20260820">
     <script>
         // Apply saved theme immediately to prevent flash
         (function() {
@@ -28,16 +28,24 @@
 </head>
 <body>
 
-<nav class="sidenav">
+<nav class="sidenav" aria-label="Primary navigation">
+    <a class="nav-brand" href="./index.html" aria-label="Sahil Goyal — Home">
+        <span class="nav-identity"><strong>Sahil Goyal</strong><small>ML Researcher</small></span>
+    </a>
     <div class="navblock">
         <div class="navblock_text">
             <a href="./index.html">About</a>
-            <a href="./resume.html" class="active">Resume</a>
             <a href="./research.html">Research</a>
-            <a href="./news.html">News</a>
-            <a href="./blog.html">Blog</a>
-            <a href="./colab.html">Collaboration</a>
-            <a href="./travel.html">Travel</a>
+            <a href="./resume.html" class="active">CV</a>
+            <a href="./blog.html">Writing</a>
+            <details class="nav-more">
+                <summary>More</summary>
+                <div class="nav-more-menu">
+                    <a href="./news.html">News</a>
+                    <a href="./colab.html">Experience</a>
+                    <a href="./travel.html">Travel</a>
+                </div>
+            </details>
         </div>
     </div>
     <div class="theme-toggle">
@@ -49,7 +57,7 @@
 
 <main class="main-content">
     <div class="resume-container">
-        <h2>Resume</h2>
+        <h2>Curriculum Vitae</h2>
         <a href="./docs/cv_sahil.pdf" download class="download-cv-btn" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             Download CV (PDF)
@@ -65,11 +73,18 @@
 (function() {
     const toggle = document.getElementById('theme-toggle');
     if (!toggle) return;
+    const syncToggle = () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        toggle.setAttribute('aria-pressed', String(isDark));
+        toggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    };
+    syncToggle();
     toggle.addEventListener('click', () => {
         const current = document.documentElement.getAttribute('data-theme');
         const next = current === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
+        syncToggle();
     });
 })();
 </script>

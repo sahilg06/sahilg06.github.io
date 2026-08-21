@@ -3,20 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Goyal — Researcher at Google DeepMind</title>
+    <title>Sahil Goyal — ML Researcher</title>
     <meta name="description"
-        content="Sahil Goyal is a Pre-Doctoral Researcher at Google DeepMind working on Efficient ML, Computer Vision, and Generative Models.">
+        content="Sahil Goyal is an ML Researcher working on efficient generative models, computer vision, and multimodal systems.">
     <!-- OpenGraph / Social Meta Tags -->
-    <meta property="og:title" content="Sahil Goyal — Researcher at Google DeepMind">
-    <meta property="og:description" content="Pre-Doctoral Researcher at Google DeepMind working on Efficient ML, Computer Vision, and Generative Models.">
-    <meta property="og:image" content="./img/sahil_goyal.png">
+    <meta property="og:title" content="Sahil Goyal — ML Researcher">
+    <meta property="og:description" content="ML Researcher working on efficient generative models, computer vision, and multimodal systems.">
+    <meta property="og:image" content="https://sahilg06.github.io/img/sahil_goyal.png">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sahilg06.github.io/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Sahil Goyal — Researcher at Google DeepMind">
-    <meta name="twitter:description" content="Making generative models smaller, faster and better at Google DeepMind.">
-    <meta name="twitter:image" content="./img/sahil_goyal.png">
+    <meta name="twitter:title" content="Sahil Goyal — ML Researcher">
+    <meta name="twitter:description" content="Researching efficient generative models, computer vision, and multimodal systems.">
+    <meta name="twitter:image" content="https://sahilg06.github.io/img/sahil_goyal.png">
+    <link rel="canonical" href="https://sahilg06.github.io/">
     <link rel="icon" type="image/png" href="./img/GDM.png">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=20260820">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sahil Goyal",
+        "url": "https://sahilg06.github.io/",
+        "image": "https://sahilg06.github.io/img/sahil_goyal.png",
+        "jobTitle": "ML Researcher",
+        "description": "ML researcher focused on efficient generative models, computer vision, and multimodal systems.",
+        "sameAs": [
+            "https://scholar.google.com/citations?user=q68nBDgAAAAJ&hl=en",
+            "https://github.com/sahilg06",
+            "https://www.linkedin.com/in/sahil-goyal-4222371b4/",
+            "https://x.com/sahilgo6801"
+        ]
+    }
+    </script>
     <script>
         // Apply saved theme immediately to prevent flash
         (function() {
@@ -38,6 +57,7 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
+            opacity: 0.46;
         }
 
         /* Make main content sit above the canvas */
@@ -50,11 +70,11 @@
         .canvas-interaction-layer {
             position: fixed;
             top: 0;
-            left: var(--sidebar-width);
-            width: calc(100% - var(--sidebar-width));
+            left: 0;
+            width: 100%;
             height: 100%;
             z-index: 0;
-            cursor: crosshair;
+            cursor: default;
         }
 
         /* Ensure about content elements are clickable above the canvas layer */
@@ -76,16 +96,17 @@
            GAME OVERLAY
            ============================================================ */
 
-        /* Game trigger — fixed bottom-left */
+        /* Game trigger — subtle footer easter egg */
         .game-trigger {
-            position: fixed;
-            bottom: 24px;
-            left: calc(var(--sidebar-width) + 20px);
+            position: relative;
             z-index: 50;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
         .game-trigger-btn {
-            width: 48px;
-            height: 48px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background: var(--gradient-accent);
             border: none;
@@ -93,9 +114,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(99,102,241,0.35);
+            box-shadow: 0 4px 16px rgba(99,102,241,0.22);
             transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-            animation: triggerFloat 3s ease-in-out infinite, fadeInUp 0.6s ease 0.5s both;
         }
         .game-trigger-btn svg {
             width: 22px;
@@ -113,16 +133,13 @@
 
         /* Label next to gamepad */
         .game-trigger-label {
-            position: absolute;
-            left: 58px;
-            bottom: 12px;
+            position: static;
             white-space: nowrap;
             font-family: inherit;
             font-size: 0.75em;
             font-weight: 600;
             color: var(--color-accent);
-            opacity: 0;
-            animation: labelSlideIn 0.5s ease 1.5s forwards;
+            opacity: 0.72;
             pointer-events: none;
             letter-spacing: 0.01em;
         }
@@ -131,15 +148,16 @@
             to { opacity: 0.8; transform: translateX(0); }
         }
         .game-trigger:hover .game-trigger-label {
-            opacity: 0 !important;
+            opacity: 1 !important;
             transition: opacity 0.2s ease;
         }
 
         /* Popover that appears on hover */
         .game-popover {
             position: absolute;
-            bottom: 52px;
-            left: 0;
+            bottom: 46px;
+            left: auto;
+            right: 0;
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(16px);
             border-radius: 16px;
@@ -157,7 +175,8 @@
             content: '';
             position: absolute;
             bottom: -16px;
-            left: 0;
+            left: auto;
+            right: 0;
             width: 60px;
             height: 16px;
         }
@@ -361,12 +380,7 @@
 
         @media (max-width: 768px) {
             .game-header { width: 95vw; }
-            .game-trigger {
-                left: auto;
-                right: 16px;
-                bottom: 16px;
-            }
-            .game-trigger-btn { width: 44px; height: 44px; }
+            .game-trigger-btn { width: 38px; height: 38px; }
             .game-popover {
                 left: auto;
                 right: 0;
@@ -377,16 +391,24 @@
 </head>
 <body>
 
-<nav class="sidenav">
+<nav class="sidenav" aria-label="Primary navigation">
+    <a class="nav-brand" href="./index.html" aria-label="Sahil Goyal — Home">
+        <span class="nav-identity"><strong>Sahil Goyal</strong><small>ML Researcher</small></span>
+    </a>
     <div class="navblock">
         <div class="navblock_text">
             <a href="./index.html" class="active">About</a>
-            <a href="./resume.html">Resume</a>
             <a href="./research.html">Research</a>
-            <a href="./news.html">News</a>
-            <a href="./blog.html">Blog</a>
-            <a href="./colab.html">Collaboration</a>
-            <a href="./travel.html">Travel</a>
+            <a href="./resume.html">CV</a>
+            <a href="./blog.html">Writing</a>
+            <details class="nav-more">
+                <summary>More</summary>
+                <div class="nav-more-menu">
+                    <a href="./news.html">News</a>
+                    <a href="./colab.html">Experience</a>
+                    <a href="./travel.html">Travel</a>
+                </div>
+            </details>
         </div>
     </div>
     <div class="theme-toggle">
@@ -402,58 +424,113 @@
 <!-- Invisible interaction layer for mouse/click events -->
 <div class="canvas-interaction-layer" id="interaction-layer"></div>
 
-<main class="main-content" style="display:flex;align-items:center;justify-content:center;">
-    <div class="about-container">
-        
-        <div class="about-photo-wrapper">
-            <img src="./img/sahil_goyal.png" alt="Sahil Goyal" class="about-photo">
-        </div>
+<main class="main-content home-main">
+    <div class="home-shell">
+        <section class="about-container" aria-labelledby="hero-title">
+            <div class="about-text">
+                <h1 id="hero-title">Efficient Generative Models</h1>
+                <p class="hero-role">ML Researcher · Generative Models &amp; Computer Vision</p>
+                <p class="tagline">Researching adaptive multimodal systems that use computation more intelligently.</p>
+                <p>
+                    I recently completed AI Residency at <strong class="model-name">Google DeepMind</strong>, where I worked on
+                    efficient generative models across <strong class="model-name">Veo</strong> and <strong class="model-name">Gemini</strong>.
+                </p>
+                <div class="email-info">
+                    <button class="email-copy-btn" data-email="sahilgoyal6801@gmail.com" title="Copy email" aria-label="Copy sahilgoyal6801@gmail.com">
+                        <span class="email-text">sahilgoyal6801 [at] gmail.com</span>
+                        <svg class="copy-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </button>
+                    <span class="email-sep" aria-hidden="true">·</span>
+                    <button class="email-copy-btn" data-email="sahil_g@ma.iitr.ac.in" title="Copy email" aria-label="Copy sahil_g@ma.iitr.ac.in">
+                        <span class="email-text">sahil_g [at] ma.iitr.ac.in</span>
+                        <svg class="copy-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </button>
+                </div>
+                <div class="about_links" aria-label="Social profiles">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/sahil-goyal-4222371b4/" title="LinkedIn" aria-label="LinkedIn">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/sahilg06" title="GitHub" aria-label="GitHub">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=q68nBDgAAAAJ&amp;hl=en" title="Google Scholar" aria-label="Google Scholar">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Google Scholar</title><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.35L12 18l7.162-5.15L24 9.5z"/></svg>
+                    </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://x.com/sahilgo6801" title="X" aria-label="X">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.931ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="about-photo-wrapper">
+                <img src="./img/sahil_goyal.png" alt="Sahil Goyal presenting research" class="about-photo">
+            </div>
+        </section>
 
-        <div class="about-text">
-            <h1>Sahil Goyal</h1>
-            <p class="tagline"><em>Making generative models smaller, faster and better</em></p>
-            <p>
-                I'm a Pre-Doctoral Researcher / AI Resident at Google DeepMind, where I work on making generative models
-                like <b>Veo</b> and <b>Gemini</b> efficient.
-            </p>
-            <div class="email-info">
-                <button class="email-copy-btn" data-email="sahilgoyal6801@gmail.com" title="Click to copy email" aria-label="Copy sahilgoyal6801@gmail.com">
-                    <span class="email-text">sahilgoyal6801 [at] gmail.com</span>
-                    <svg class="copy-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                </button>
-                <span class="email-sep">&middot;</span>
-                <button class="email-copy-btn" data-email="sahil_g@ma.iitr.ac.in" title="Click to copy email" aria-label="Copy sahil_g@ma.iitr.ac.in">
-                    <span class="email-text">sahil_g [at] ma.iitr.ac.in</span>
-                    <svg class="copy-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                </button>
+        <section class="credibility-grid" aria-label="Research highlights">
+            <div class="credibility-item"><strong>Google DeepMind</strong><span>AI Residency · 2024–2026</span></div>
+            <div class="credibility-item credibility-venues">
+                <strong>ICML · ECCV · WACV</strong>
+                <span>ICLR-W · CVPR-W · ICCV-W · ACM MM-W</span>
+                <span>ACM MM Asia (Best Demo Paper)</span>
             </div>
-            
-            <div class="about_links">
-                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/sahil-goyal-4222371b4/" title="LinkedIn">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+            <div class="credibility-item"><strong>2 US Patents</strong><span>Efficient visual generation</span></div>
+        </section>
+
+        <section class="home-section" aria-labelledby="selected-research-title">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">Selected research</span>
+                    <h2 id="selected-research-title">Recent work in efficient visual generation.</h2>
+                </div>
+                <a class="text-link" href="./research.html">All publications →</a>
+            </div>
+            <div class="selected-research-grid">
+                <a class="featured-paper" href="https://arxiv.org/abs/2604.09168" target="_blank" rel="noopener noreferrer">
+                    <img class="featured-paper-image" src="./img/ELT.png" alt="Elastic Looped Transformers overview" loading="lazy" decoding="async">
+                    <div class="featured-paper-content">
+                        <span class="featured-paper-meta">ECCV 2026 · CVPR EDGE</span>
+                        <h3>Elastic Looped Transformers for Visual Generation</h3>
+                        <p>Adaptive looped architectures that make visual generation more computationally elastic.</p>
+                        <span class="featured-paper-cta">Read paper ↗</span>
+                    </div>
                 </a>
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/sahilg06" title="GitHub">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                <a class="featured-paper" href="https://openreview.net/pdf?id=h4lZMgGyAz" target="_blank" rel="noopener noreferrer">
+                    <img class="featured-paper-image" src="./img/magnets_thumbnail.png" alt="Masked Generative Nested Transformers overview" loading="lazy" decoding="async">
+                    <div class="featured-paper-content">
+                        <span class="featured-paper-meta">ICML 2025 · ICLR DeLTa</span>
+                        <h3>Masked Generative Nested Transformers</h3>
+                        <p>Nested generative transformers designed to benefit from additional computation at decode time.</p>
+                        <span class="featured-paper-cta">Read paper ↗</span>
+                    </div>
                 </a>
-                <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=q68nBDgAAAAJ&hl=en" title="Google Scholar">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Google Scholar</title><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.35L12 18l7.162-5.15L24 9.5z"/></svg>
-                </a>
-                <a target="_blank" rel="noopener noreferrer" href="https://x.com/sahilgo6801" title="X (Twitter)">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.931ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                <a class="featured-paper" href="https://sahilg06.github.io/Design-o-meter/" target="_blank" rel="noopener noreferrer">
+                    <img class="featured-paper-image" src="./img/DesignOMeter_thumbnail.png" alt="Design-o-meter overview" loading="lazy" decoding="async">
+                    <div class="featured-paper-content">
+                        <span class="featured-paper-meta">WACV 2025</span>
+                        <h3>Design-o-meter</h3>
+                        <p>A framework for evaluating and iteratively refining the aesthetic quality of graphic designs.</p>
+                        <span class="featured-paper-cta">View project ↗</span>
+                    </div>
                 </a>
             </div>
-        </div>
+        </section>
+
+        <footer class="home-footer">
+            <span>© 2026 Sahil Goyal</span>
+            <span>Research · Generative AI · Computer Vision</span>
+        </footer>
     </div>
 </main>
 
-<!-- Game trigger — fixed bottom-left with hover popover -->
+<!-- Subtle interactive easter egg -->
+<div class="home-game-row">
 <div class="game-trigger" id="game-trigger">
-    <button class="game-trigger-btn" title="Play Neural Breakout!">
+    <button class="game-trigger-btn" title="Play Neural Breakout!" aria-label="Play Neural Breakout">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 6H3a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
     </button>
-    <span class="game-trigger-label">Have a little fun! ✨</span>
+    <span class="game-trigger-label">Neural Breakout</span>
     <div class="game-popover" id="game-popover">
-        <div class="game-popover-title">🎮 Pick an emoji & smash the rogue bots!</div>
+        <div class="game-popover-title">🎮 Pick an emoji &amp; smash the rogue bots!</div>
         <div class="game-popover-grid" id="game-popover-grid">
             <button class="game-popover-emoji" data-emoji="🚀">🚀</button>
             <button class="game-popover-emoji" data-emoji="🔥">🔥</button>
@@ -474,6 +551,7 @@
         </div>
     </div>
 </div>
+</div>
 
 
 
@@ -491,7 +569,7 @@
 
     // --- Configuration ---
     const CONFIG = {
-        particleCount: 80,
+        particleCount: 50,
         connectionDistance: 150,
         mouseInfluenceRadius: 200,
         mouseRepelStrength: 0.08,
@@ -512,6 +590,7 @@
         ],
     };
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let particles = [];
     let mouse = { x: -1000, y: -1000, active: false };
     let animationId;
@@ -722,7 +801,6 @@
 
     // --- Event listeners ---
     interactionLayer.addEventListener('mousemove', (e) => {
-        const sidebarWidth = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width')) || 220;
         mouse.x = e.clientX;
         mouse.y = e.clientY;
         mouse.active = true;
@@ -756,13 +834,18 @@
 
     // Reduce particles on mobile for performance
     if (window.innerWidth < 768) {
-        CONFIG.particleCount = 40;
+        CONFIG.particleCount = 28;
         CONFIG.connectionDistance = 100;
     }
 
     // --- Start ---
     init();
-    animate(0);
+    if (prefersReducedMotion) {
+        drawConnections();
+        particles.forEach(p => p.draw());
+    } else {
+        animate(0);
+    }
 
 
 })();
@@ -781,7 +864,7 @@
             &nbsp;·&nbsp;
             Level: <span id="game-level">1</span>
         </div>
-        <button class="game-close-btn" id="game-close">✕</button>
+        <button class="game-close-btn" id="game-close" aria-label="Close Neural Breakout">✕</button>
     </div>
     <canvas id="game-canvas" width="720" height="480"></canvas>
     <div class="game-instructions">
@@ -1487,11 +1570,18 @@
 (function() {
     const toggle = document.getElementById('theme-toggle');
     if (!toggle) return;
+    const syncToggle = () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        toggle.setAttribute('aria-pressed', String(isDark));
+        toggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+    };
+    syncToggle();
     toggle.addEventListener('click', () => {
         const current = document.documentElement.getAttribute('data-theme');
         const next = current === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
+        syncToggle();
     });
 })();
 
