@@ -714,3 +714,238 @@ p { margin-bottom: 16px; }
         animation: none !important;
     }
 }
+
+/* PhD application tracker */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.tracker-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.tracker-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.tracker-button:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.tracker-button-primary {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.tracker-button-primary:hover {
+    border-color: var(--color-accent-hover);
+    background: var(--color-accent-hover);
+    color: var(--color-bg);
+}
+
+.tracker-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 18px;
+    margin-bottom: 14px;
+}
+
+.tracker-toolbar[hidden] { display: none; }
+
+.tracker-search { flex: 1 1 300px; max-width: 440px; }
+
+.tracker-search input,
+.tracker-sort select {
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+.tracker-search input { width: 100%; padding: 8px 12px; }
+.tracker-search input:focus,
+.tracker-sort select:focus { border-color: var(--color-accent); outline: none; }
+
+.tracker-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text-muted);
+    font-size: 0.84rem;
+}
+
+.tracker-sort select { padding: 7px 8px; }
+
+.tracker-summary {
+    flex: 1 1 100%;
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.84rem;
+}
+
+.tracker-summary.is-archived {
+    padding: 9px 12px;
+    border-left: 3px solid var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 5%, var(--color-bg));
+    color: var(--color-text);
+}
+
+.tracker-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tracker-table th {
+    padding: 0 18px 9px 0;
+    color: var(--color-text-muted);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.tracker-table td {
+    padding: 17px 18px 17px 0;
+    border-top: 1px solid var(--color-border);
+    vertical-align: top;
+    font-size: 0.92rem;
+}
+
+.tracker-table th:first-child,
+.tracker-table td:first-child { width: 118px; }
+.tracker-table th:nth-child(2),
+.tracker-table td:nth-child(2) { width: 32%; }
+.tracker-table th:last-child,
+.tracker-table td:last-child { width: 132px; padding-right: 0; }
+
+.tracker-date { display: block; font-weight: 700; white-space: nowrap; }
+
+.tracker-countdown {
+    display: inline-block;
+    margin-top: 4px;
+    color: var(--color-text-muted);
+    font-size: 0.76rem;
+    white-space: nowrap;
+}
+
+.tracker-countdown.is-soon { color: var(--color-accent); font-weight: 700; }
+.tracker-inst { display: block; line-height: 1.35; }
+.tracker-program { display: block; margin-top: 3px; color: var(--color-text-muted); font-size: 0.86rem; }
+
+.tracker-faculty {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.tracker-faculty li { white-space: nowrap; }
+.tracker-faculty li:not(:last-child)::after {
+    content: "·";
+    margin: 0 8px;
+    color: var(--color-text-light);
+}
+
+.tracker-faculty a { color: var(--color-text); }
+.tracker-faculty a:hover { color: var(--color-accent); }
+
+.tracker-lor { color: var(--color-text); }
+.tracker-lor.is-muted { color: var(--color-text-light); font-style: italic; }
+.tracker-lor.is-flagged { color: var(--color-accent); }
+.tracker-lor.is-flagged::before { content: "⚠ "; }
+
+.tracker-table tr.is-passed td { color: var(--color-text-light); }
+.tracker-table tr.is-passed .tracker-date,
+.tracker-table tr.is-passed .tracker-inst,
+.tracker-table tr.is-passed .tracker-faculty a { color: var(--color-text-muted); }
+
+.tracker-empty td { padding: 28px 0; color: var(--color-text-muted); text-align: center; }
+
+.tracker-status {
+    margin: 12px 0 0;
+    color: var(--color-text-light);
+    font-size: 0.78rem;
+}
+
+.tracker-status.is-live::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: #2e9d5b;
+    vertical-align: 1px;
+}
+
+@media (max-width: 720px) {
+    .tracker-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .tracker-table, .tracker-table tbody { display: block; }
+
+    .tracker-table tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "program program"
+            "deadline letters"
+            "faculty faculty";
+        gap: 12px 16px;
+        padding: 18px 0;
+        border-top: 1px solid var(--color-border);
+    }
+
+    .tracker-table td,
+    .tracker-table td:first-child,
+    .tracker-table td:nth-child(2),
+    .tracker-table td:last-child { width: auto; padding: 0; border: 0; }
+
+    .tracker-table td:nth-child(1) { grid-area: deadline; }
+    .tracker-table td:nth-child(2) { grid-area: program; }
+    .tracker-table td:nth-child(3) { grid-area: faculty; }
+    .tracker-table td:nth-child(4) { grid-area: letters; }
+
+    .tracker-table td:not(:nth-child(2))::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 3px;
+        color: var(--color-text-muted);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .tracker-countdown { margin: 0 0 0 6px; }
+    .tracker-date { display: inline; }
+    .tracker-faculty li { white-space: normal; }
+    .tracker-empty { display: block !important; }
+    .tracker-empty td { display: block; }
+    .tracker-empty td::before { display: none !important; }
+}
