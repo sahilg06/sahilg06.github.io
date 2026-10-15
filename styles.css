@@ -960,3 +960,157 @@ p { margin-bottom: 16px; }
     .tracker-empty td { display: block; }
     .tracker-empty td::before { display: none !important; }
 }
+
+/* Reading log */
+.reading-container {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+.reading-container > p { max-width: 700px; color: var(--color-text-muted); }
+
+.reading-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 28px 0 8px;
+}
+
+.reading-toolbar[hidden] { display: none; }
+.reading-search { max-width: 440px; }
+
+.reading-search input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+.reading-search input:focus { border-color: var(--color-accent); outline: none; }
+
+.reading-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 18px;
+}
+
+.reading-types { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.reading-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 11px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+    cursor: pointer;
+}
+
+.reading-chip:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+.reading-chip[aria-pressed="true"] {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.reading-chip-count { font-size: 0.74rem; opacity: 0.75; }
+
+.reading-must-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-text-muted);
+    font-size: 0.84rem;
+    cursor: pointer;
+}
+
+.reading-must-toggle input { accent-color: var(--color-accent); }
+
+.reading-summary { margin: 0; color: var(--color-text-muted); font-size: 0.84rem; }
+
+.reading-clear {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-accent);
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.reading-clear:hover { text-decoration: underline; }
+
+.reading-month { margin-top: 34px; }
+
+.reading-month-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 4px;
+    font-size: 1.15rem;
+}
+
+.reading-month-count { color: var(--color-text-light); font-size: 0.8rem; font-weight: 400; }
+
+.reading-list { margin: 0; padding: 0; list-style: none; border-bottom: 1px solid var(--color-border); }
+
+.reading-entry {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 18px;
+    padding: 16px 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.reading-type {
+    padding-top: 3px;
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.reading-body { min-width: 0; }
+.reading-title-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.reading-title { color: var(--color-accent); font-size: 1.02rem; font-weight: 500; line-height: 1.4; }
+span.reading-title { color: var(--color-text); }
+
+.reading-must {
+    color: var(--color-accent);
+    font-size: 0.74rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.reading-venue { margin-top: 2px; color: var(--color-text-muted); font-size: 0.86rem; }
+.reading-note { margin: 6px 0 0; font-size: 0.92rem; line-height: 1.55; }
+.reading-tags { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 8px; }
+
+.reading-tag {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-text-light);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.reading-tag:hover,
+.reading-tag[aria-pressed="true"] { color: var(--color-accent); }
+
+.reading-empty { margin: 34px 0; color: var(--color-text-muted); }
+.reading-status { margin: 12px 0 0; color: var(--color-text-light); font-size: 0.78rem; }
+.reading-status:empty { display: none; }
+
+@media (max-width: 720px) {
+    .reading-entry { grid-template-columns: 1fr; gap: 4px; }
+    .reading-type { padding-top: 0; }
+}
