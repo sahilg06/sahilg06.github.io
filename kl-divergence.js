@@ -329,7 +329,7 @@
                 const isLeft = Math.abs(rev.mu - mu1) < Math.abs(rev.mu - mu2);
                 const lockedMode = isLeft ? `left mode (x = 0)` : `right mode (x = ${dmu.toFixed(1)})`;
                 const modeWeight = isLeft ? pi1 : (1 - pi1);
-                const tieNote = Math.abs(pi1 - 0.5) < 0.01 ? ' (with π₁ = 0.5, both modes are tied as global minima; the dotted curve shows the other local minimum)' : '';
+                const tieNote = Math.abs(pi1 - 0.5) < 0.01 ? ' (with π₁ = 0.5, both modes are tied as global minima)' : '';
                 regimeHtml = `<strong>Zero-forcing / mode-seeking regime (valley at x = ${mid.toFixed(2)} is ${(valleyRatio * 100).toFixed(1)}% of peak):</strong> The valley is near zero. Forward KL stretches across both modes (μ = ${fwd.mu.toFixed(2)}, σ = ${fwd.sigma.toFixed(2)}), while Reverse KL locks onto the ${lockedMode} (paying ≈ −log(${modeWeight.toFixed(2)}) = ${(-Math.log(modeWeight)).toFixed(2)} nats)${tieNote}.`;
             }
 
@@ -428,8 +428,8 @@
 
                 drawDensity(x => mixturePdf(x, mu1, mu2, sigma, pi1), palette.target, palette.targetFill, [], 2.2);
                 drawDensity(x => normalPdf(x, fwd.mu, fwd.sigma), palette.forward, palette.forwardFill, [6, 4], 2.2);
-                if (rev.alt && Math.abs(pi1 - 0.5) < 0.08 && dmu >= 4.65 * sigma) {
-                    // Show secondary local minimum of Reverse KL as a faint dotted curve
+                if (rev.alt && Math.abs(pi1 - 0.5) < 0.08 && dmu >= 4.65 * sigma && dmu < 5.60 * sigma) {
+                    // Show emerging mode-locked local minimum in the pre-jump window (matching Panel 3)
                     drawDensity(x => normalPdf(x, rev.alt.mu, rev.alt.sigma), palette.reverse, null, [2, 4], 1.2);
                 }
                 drawDensity(x => normalPdf(x, rev.mu, rev.sigma), palette.reverse, palette.reverseFill, [], 2.4);
