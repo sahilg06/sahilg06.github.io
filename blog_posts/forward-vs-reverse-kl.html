@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forward vs. Reverse KL Divergence: Geometry, Mechanics &amp; Generative Models | Sahil Goyal</title>
+    <meta name="description" content="An interactive deep dive into Forward (mass-covering) and Reverse (zero-forcing) KL divergence: why unimodal approximations stretch across empty valleys, when mode-seeking actually kicks in, and how this asymmetry shapes diffusion models, distillation, and RLHF.">
+    <meta property="og:title" content="Forward vs. Reverse KL Divergence: Geometry, Mechanics &amp; Generative Models">
+    <meta property="og:description" content="Interactive visual and mathematical guide to Forward vs. Reverse KL divergence, moment matching, the log 2 mode-splitting threshold, and modern generative modeling.">
+    <meta property="og:image" content="https://sahilg06.github.io/img/sahil_goyal.png">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sahilg06.github.io/blog_posts/forward-vs-reverse-kl.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Forward vs. Reverse KL Divergence: Geometry, Mechanics &amp; Generative Models">
+    <meta name="twitter:description" content="Interactive visual and mathematical guide to Forward vs. Reverse KL divergence and generative models.">
+    <meta name="twitter:image" content="https://sahilg06.github.io/img/sahil_goyal.png">
+    <link rel="canonical" href="https://sahilg06.github.io/blog_posts/forward-vs-reverse-kl.html">
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg?v=2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css?v=20261026-1">
+    <script src="../site.js?v=20260823-2"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}] });"></script>
+    <script defer src="../kl-divergence.js?v=20261027-1"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Forward vs. Reverse KL Divergence: Geometry, Mechanics & Generative Models",
+        "description": "An interactive deep dive into Forward (mass-covering) and Reverse (zero-forcing) KL divergence, moment matching, the mode-splitting threshold, and modern generative models.",
+        "datePublished": "2026-10-26",
+        "dateModified": "2026-10-26",
+        "author": {
+            "@type": "Person",
+            "name": "Sahil Goyal",
+            "url": "https://sahilg06.github.io/"
+        },
+        "mainEntityOfPage": "https://sahilg06.github.io/blog_posts/forward-vs-reverse-kl.html"
+    }
+    </script>
+</head>
+<body>
+
+<nav class="sidenav" aria-label="Primary navigation">
+    <div class="nav-socials" aria-label="Social profiles">
+        <a href="https://www.linkedin.com/in/sahil-goyal-4222371b4/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+        <a href="https://github.com/sahilg06" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=q68nBDgAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.35L12 18l7.162-5.15L24 9.5z"/></svg></a>
+        <a href="https://x.com/vibespersecond" target="_blank" rel="noopener noreferrer" title="Twitter / X" aria-label="Twitter / X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.931ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+    </div>
+    <div class="navblock">
+        <div class="navblock_text">
+            <a href="../index.html">About</a>
+            <a href="../research.html">Research</a>
+            <a href="../resume.html">CV</a>
+            <a href="../blog.html" class="active">Writing</a>
+            <a href="../reading.html">Reading</a>
+            <a href="../news.html">News</a>
+            <a href="../colab.html">Experience</a>
+            <a href="../travel.html">Travel</a>
+        </div>
+    </div>
+    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode"></button>
+</nav>
+
+<main class="main-content">
+    <article class="article-container kl-article">
+        <a class="article-back" href="../blog.html">← All writing</a>
+
+        <header class="article-header">
+            <span class="section-kicker">Probabilistic ML · Interactive Explainer</span>
+            <h1>Forward vs. Reverse KL Divergence</h1>
+            <p class="article-dek">Swapping the two arguments of Kullback–Leibler divergence turns a <em>mass-covering</em> objective into a <em>zero-forcing</em> one. Here is the exact geometry behind why unimodal approximations stretch across empty valleys, when mode-seeking actually kicks in, and how this asymmetry governs diffusion models, distillation, and RLHF.</p>
+            <div class="article-meta">
+                <span>Oct 2026</span>
+                <span aria-hidden="true">·</span>
+                <span>Interactive note</span>
+                <span aria-hidden="true">·</span>
+                <span>10 min read</span>
+            </div>
+        </header>
+
+        <div class="kl-prose">
+            <p>Suppose we have a complex target distribution \(p(x)\), such as a multimodal distribution of natural images, text trajectories, or a Bayesian posterior, and we want to approximate it using a simpler parameterized distribution \(q_\phi(x)\).</p>
+            <p>At any point \(x\), the log-ratio \(\log \frac{p(x)}{q_\phi(x)}\) measures how surprised one distribution is by the other, and the <strong>Kullback–Leibler (KL) divergence</strong> averages that mismatch across all \(x\) (measured in <strong>nats</strong> when using the natural logarithm \(\ln\)). Because KL divergence weights that average by whichever distribution is written first, it is <strong>asymmetric</strong> (\(\mathrm{D}_{\mathrm{KL}}(p \parallel q_\phi) \neq \mathrm{D}_{\mathrm{KL}}(q_\phi \parallel p)\)), forcing a fundamental choice:</p>
+        </div>
+
+        <!-- Breakout: Side-by-side comparison cards -->
+        <div class="kl-breakout">
+            <div class="kl-dual-cards">
+                <div class="kl-card kl-card-forward">
+                    <span class="kl-card-kicker">Forward / Inclusive KL</span>
+                    <h3>\(\displaystyle \min_\phi \; \mathrm{D}_{\mathrm{KL}}(p \parallel q_\phi)\)</h3>
+                    <div class="kl-card-eq">
+                        $$\mathrm{D}_{\mathrm{KL}}(p \parallel q_\phi) = \mathbb{E}_{x \sim p}\!\left[\log \frac{p(x)}{q_\phi(x)}\right]$$
+                    </div>
+                    <ul class="kl-card-points">
+                        <li><strong>Expectation under target \(p(x)\):</strong> Evaluated wherever data actually lives.</li>
+                        <li><strong>Infinite penalty if \(p(x) > 0\) and \(q_\phi(x) \to 0\):</strong> Forbids \(q_\phi\) from leaving any mode of \(p\) uncovered.</li>
+                        <li><strong>Behavior:</strong> <em>Mass-covering</em> (mean-seeking). Stretches \(q_\phi\) across all modes, even if that forces probability mass into empty valleys.</li>
+                        <li><strong>Where it appears:</strong> Maximum Likelihood Estimation (MLE), autoregressive pretraining, diffusion &amp; flow matching, Expectation Propagation.</li>
+                    </ul>
+                </div>
+
+                <div class="kl-card kl-card-reverse">
+                    <span class="kl-card-kicker">Reverse / Exclusive KL</span>
+                    <h3>\(\displaystyle \min_\phi \; \mathrm{D}_{\mathrm{KL}}(q_\phi \parallel p)\)</h3>
+                    <div class="kl-card-eq">
+                        $$\mathrm{D}_{\mathrm{KL}}(q_\phi \parallel p) = \mathbb{E}_{x \sim q_\phi}\!\left[\log \frac{q_\phi(x)}{p(x)}\right]$$
+                    </div>
+                    <ul class="kl-card-points">
+                        <li><strong>Expectation under model \(q_\phi(x)\):</strong> Evaluated wherever the model chooses to put mass.</li>
+                        <li><strong>Infinite penalty if \(q_\phi(x) > 0\) and \(p(x) \to 0\):</strong> Forces \(q_\phi(x) = 0\) wherever \(p(x) = 0\).</li>
+                        <li><strong>Behavior:</strong> <em>Zero-forcing</em> (and consequently <em>mode-seeking</em>). Concentrates onto a single high-density mode rather than bridging a zero-density valley.</li>
+                        <li><strong>Where it appears:</strong> Variational Inference (ELBO), Score Distillation Sampling (SDS / DMD), on-policy RLHF, policy gradients.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="kl-prose">
+            <h2 id="gaussian-experiment">1. The Bimodal Gaussian Experiment</h2>
+            <p>To see both objectives in action, let’s fit a <strong>single unimodal Gaussian</strong> \(q_\phi(x) = \mathcal{N}(x; \mu_q, \sigma_q^2)\) to a <strong>two-component Gaussian mixture</strong> \(p(x)\) with component weights \(\pi_1\) and \(\pi_2 = 1 - \pi_1\), means \(\mu_1 = 0\) and \(\mu_2 = \Delta\mu\), and component standard deviation \(\sigma\):</p>
+            $$p(x) = \pi_1\,\mathcal{N}(x; 0, \sigma^2) + \pi_2\,\mathcal{N}(x; \Delta\mu, \sigma^2), \qquad q_\phi(x) = \mathcal{N}(x; \mu_q, \sigma_q^2)$$
+            <p>Starting with balanced weights (\(\pi_1 = \pi_2 = \tfrac{1}{2}\)) and unit width (\(\sigma = 1\)), watch how the optimal Forward KL fit <span class="kl-inline-fwd">\(q_{\text{fwd}}^*(x)\)</span> and Reverse KL fit <span class="kl-inline-rev">\(q_{\text{rev}}^*(x)\)</span> evolve as \(\Delta\mu\) increases across four distinct regimes:</p>
+        </div>
+
+        <!-- Breakout: 4-Stage Visual Progression Strip -->
+        <figure class="kl-breakout kl-strip-figure" aria-label="Four-stage progression of Forward and Reverse KL">
+            <div class="kl-legend">
+                <span class="kl-legend-item"><span class="kl-swatch kl-swatch-target"></span>Target mixture \(p(x)\)</span>
+                <span class="kl-legend-item"><span class="kl-swatch kl-swatch-forward"></span>Forward KL \(\arg\min_q \mathrm{D}_{\mathrm{KL}}(p \parallel q)\)</span>
+                <span class="kl-legend-item"><span class="kl-swatch kl-swatch-reverse"></span>Reverse KL (global min)</span>
+                <span class="kl-legend-item"><span class="kl-swatch kl-swatch-reverse-alt"></span>Reverse KL (mode-locked local min)</span>
+            </div>
+            <div class="kl-strip-grid" id="kl-strip-grid">
+                <div class="kl-strip-panel">
+                    <div class="kl-strip-head">
+                        <strong>1 · \(\Delta\mu = 0\)</strong>
+                        <span>Unimodal target</span>
+                    </div>
+                    <canvas data-stage="0" aria-label="Delta mu = 0 plot"></canvas>
+                    <p>When the two components coincide, \(p(x)\) is a single Gaussian. Both Forward and Reverse KL recover \(q^*(x) = p(x)\) with zero divergence.</p>
+                </div>
+                <div class="kl-strip-panel">
+                    <div class="kl-strip-head">
+                        <strong>2 · \(\Delta\mu = 2.5\)</strong>
+                        <span>Two peaks, shallow valley</span>
+                    </div>
+                    <canvas data-stage="1" aria-label="Delta mu = 2.5 plot"></canvas>
+                    <p>\(p(x)\) now has two peaks, yet <strong>Reverse KL is still centered at \(\mu_q = 1.25\)</strong>! Because the valley isn't near zero, Reverse KL does not seek a single mode yet.</p>
+                </div>
+                <div class="kl-strip-panel">
+                    <div class="kl-strip-head">
+                        <strong>3 · \(\Delta\mu = 5.0\)</strong>
+                        <span>Coexisting minima (pre-jump)</span>
+                    </div>
+                    <canvas data-stage="2" aria-label="Delta mu = 5.0 plot"></canvas>
+                    <p>The centered solid red curve (\(0.48\text{ nats}\)) is still the global best, while the taller dotted red curve at \(x \approx 5\) (\(0.67\text{ nats}\)) is the emerging mode-locked local minimum.</p>
+                </div>
+                <div class="kl-strip-panel">
+                    <div class="kl-strip-head">
+                        <strong>4 · \(\Delta\mu = 8.5\)</strong>
+                        <span>Deep zero-density valley</span>
+                    </div>
+                    <canvas data-stage="3" aria-label="Delta mu = 8.5 plot"></canvas>
+                    <p>Past \(\Delta\mu \approx 5.60\sigma\), the mode-locked curve wins globally: Reverse KL snaps onto one mode (peaking \(2\times\) taller than \(p\) since it packs \(100\%\) mass into one peak).</p>
+                </div>
+            </div>
+        </figure>
+
+        <!-- Breakout: Interactive Playground -->
+        <section class="kl-breakout kl-playground" aria-labelledby="playground-title">
+            <div class="kl-playground-header">
+                <div>
+                    <span class="section-kicker">Interactive Sandbox</span>
+                    <h2 id="playground-title">Explore the Optimization Landscape</h2>
+                </div>
+                <div class="kl-view-toggle" role="group" aria-label="Plot mode">
+                    <button type="button" class="reading-chip" data-kl-view="density" aria-pressed="true">Probability Densities</button>
+                    <button type="button" class="reading-chip" data-kl-view="integrand" aria-pressed="false">Pointwise KL Integrand</button>
+                </div>
+            </div>
+
+            <div class="kl-presets" role="group" aria-label="Regime presets">
+                <span class="kl-presets-label">Presets:</span>
+                <button type="button" class="reading-chip" data-kl-preset="0,0.5,1" aria-pressed="false">Single Mode (\(\Delta\mu=0\))</button>
+                <button type="button" class="reading-chip" data-kl-preset="2.5,0.5,1" aria-pressed="false">Shallow Valley (\(\Delta\mu=2.5\))</button>
+                <button type="button" class="reading-chip" data-kl-preset="5.6,0.5,1" aria-pressed="false">Phase Transition (\(\Delta\mu=5.6\))</button>
+                <button type="button" class="reading-chip" data-kl-preset="8.0,0.5,1" aria-pressed="true">Well-Separated (\(\Delta\mu=8\))</button>
+                <button type="button" class="reading-chip" data-kl-preset="7.0,0.75,1" aria-pressed="false">Asymmetric (\(\pi_1=0.75\))</button>
+            </div>
+
+            <div class="kl-controls-grid">
+                <label class="kl-slider-control">
+                    <div class="kl-slider-label">
+                        <span>Mode separation \(\Delta\mu\)</span>
+                        <strong id="kl-val-dmu">8.0</strong>
+                    </div>
+                    <input type="range" id="kl-slider-dmu" min="0" max="11" step="0.1" value="8.0">
+                </label>
+
+                <label class="kl-slider-control">
+                    <div class="kl-slider-label">
+                        <span>Left mode weight \(\pi_1\)</span>
+                        <strong id="kl-val-pi">0.50</strong>
+                    </div>
+                    <input type="range" id="kl-slider-pi" min="0.10" max="0.90" step="0.05" value="0.50">
+                </label>
+
+                <label class="kl-slider-control">
+                    <div class="kl-slider-label">
+                        <span>Component std \(\sigma\)</span>
+                        <strong id="kl-val-sigma">1.00</strong>
+                    </div>
+                    <input type="range" id="kl-slider-sigma" min="0.50" max="1.80" step="0.05" value="1.00">
+                </label>
+            </div>
+
+            <div class="kl-canvas-wrap">
+                <canvas id="kl-playground-canvas" aria-label="Interactive Forward vs Reverse KL plot"></canvas>
+            </div>
+
+            <div class="kl-metrics-bar">
+                <div class="kl-metric-box kl-metric-forward">
+                    <span class="kl-metric-title">Forward KL \(\arg\min_q \mathrm{D}_{\mathrm{KL}}(p \parallel q)\)</span>
+                    <strong id="kl-metric-fwd-params">μ = 4.00, σ = 4.12</strong>
+                    <span class="kl-metric-sub">\(\mathrm{D}_{\mathrm{KL}}(p \parallel q^*) = \) <span id="kl-metric-fwd-kl">0.724 nats</span></span>
+                </div>
+                <div class="kl-metric-box kl-metric-reverse">
+                    <span class="kl-metric-title">Reverse KL \(\arg\min_q \mathrm{D}_{\mathrm{KL}}(q \parallel p)\)</span>
+                    <strong id="kl-metric-rev-params">μ = 8.00, σ = 1.00</strong>
+                    <span class="kl-metric-sub">\(\mathrm{D}_{\mathrm{KL}}(q^* \parallel p) = \) <span id="kl-metric-rev-kl">0.693 nats</span></span>
+                </div>
+            </div>
+
+            <p class="kl-regime-banner" id="kl-regime-banner" aria-live="polite"></p>
+        </section>
+
+        <div class="kl-prose">
+            <h2 id="why-forward-kl-covers-valley">2. Forward KL: Why Isn’t \(q(x) = 0\) in the Empty Valley?</h2>
+            <p>A natural question arises when looking at the well-separated plot (e.g., \(\Delta\mu = 8\) or \(8.5\)): <em>if \(p(x) \approx 0\) in the valley between the two modes, why does Forward KL place its highest probability density right in the middle of that empty valley at \(x = \Delta\mu / 2\)?</em></p>
+            <p>In fact, if \(q(x)\) had unlimited capacity (for example, if \(q\) were itself a two-component mixture), Forward KL would happily set \(q^*(x) = p(x)\), dropping to zero in the valley. The reason \(q_\phi(x)\) puts mass in the empty middle comes from <strong>two forces acting together</strong>:</p>
+
+            <h3>Force 1: The Infinite Penalty for Missing Any Mode</h3>
+            <p>Expand the Forward KL integral:</p>
+            $$\mathrm{D}_{\mathrm{KL}}(p \parallel q_\phi) = \int p(x) \log \frac{p(x)}{q_\phi(x)}\,dx = \underbrace{\int p(x)\log p(x)\,dx}_{-H(p)\text{ (constant w.r.t. }\phi\text{)}} - \int p(x)\log q_\phi(x)\,dx$$
+            <p>Look at how the integrand behaves in two different regions of \(x\):</p>
+            <ul>
+                <li><strong>Where \(p(x) > 0\) and \(q_\phi(x) \to 0\):</strong> Because \(\log q_\phi(x) \to -\infty\), the integrand blows up to \(+\infty\). If \(q_\phi\) tried to lock onto the left mode and ignore the right mode, data points from the right mode would trigger an <strong>infinite penalty</strong>. Thus, \(q_\phi\) is strictly forbidden from leaving any mode behind.</li>
+                <li><strong>Where \(p(x) = 0\) and \(q_\phi(x) > 0\):</strong> Because \(p(x)\) multiplies the logarithm, the integrand is \(0 \cdot \log(0 / q_\phi(x)) = 0\). <strong>Forward KL applies zero direct penalty when \(q_\phi\) places mass in empty space.</strong></li>
+            </ul>
+
+            <h3>Force 2: The Unimodal Shape Constraint (Collateral Damage)</h3>
+            <p>Because \(q_\phi(x) = \mathcal{N}(x; \mu_q, \sigma_q^2)\) is restricted to a <strong>single Gaussian bell curve</strong>, it is mathematically unimodal. When \(\Delta\mu = 8\), a single Gaussian cannot be positive at the left mode (\(x = 0\)), dip to zero in the middle valley (\(x = 4\)), and rise again at the right mode (\(x = 8\)).</p>
+            <p>Forced to keep \(q_\phi(0) > 0\) and \(q_\phi(\Delta\mu) > 0\) simultaneously, the only option available to a single bell curve is to center its mean at the midpoint (\(\mu_q = \Delta\mu / 2\)) and inflate its variance \(\sigma_q^2\) so its tails reach both modes. The probability mass sitting in the valley at \(x = \Delta\mu / 2\) is pure <strong>collateral damage</strong> of stretching a unimodal distribution across a bimodal target.</p>
+
+            <aside class="article-note">
+                <h2>Exact Closed Form: Forward KL = Moment Matching</h2>
+                <p>For any exponential family distribution \(q_\phi(x)\), minimizing Forward KL \(\mathrm{D}_{\mathrm{KL}}(p \parallel q_\phi)\) has a remarkable analytical solution: <strong>moment matching</strong>. Differentiating \(\mathbb{E}_p[-\log \mathcal{N}(x; \mu_q, \sigma_q^2)]\) with respect to \(\mu_q\) and \(\sigma_q^2\) and setting to zero gives:</p>
+                $$\mu_q^* = \mathbb{E}_{x \sim p}[x] = \pi_1 \mu_1 + \pi_2 \mu_2, \qquad \sigma_q^{2*} = \mathrm{Var}_{x \sim p}(x) = \sigma^2 + \pi_1\pi_2(\Delta\mu)^2$$
+                <p>Notice how \(\sigma_q^*\) grows linearly with mode separation \(\Delta\mu\): at \(\Delta\mu = 10\) with \(\pi_1 = 0.5\) and \(\sigma = 1\), the fitted standard deviation is \(\sqrt{1 + 0.25 \times 100} = \sqrt{26} \approx 5.10\).</p>
+            </aside>
+
+            <h2 id="reverse-kl-zero-forcing">3. Reverse KL: Zero-Forcing and the \(\log 2\) Mode-Splitting Threshold</h2>
+            <p>Now flip the arguments and minimize \(\mathrm{D}_{\mathrm{KL}}(q_\phi \parallel p)\):</p>
+            $$\mathrm{D}_{\mathrm{KL}}(q_\phi \parallel p) = \int q_\phi(x) \log \frac{q_\phi(x)}{p(x)}\,dx = \underbrace{-\mathbb{E}_{x \sim q_\phi}[\log p(x)]}_{\text{Inaccuracy (avoid low }p\text{)}} \underbrace{- H(q_\phi)}_{\text{Entropy bonus}}$$
+            <p>Here the expectation is taken under \(q_\phi(x)\). This creates a tug-of-war between two terms:</p>
+            <ol>
+                <li><strong>The Zero-Forcing Term (\(-\mathbb{E}_{q_\phi}[\log p(x)]\)):</strong> Wherever \(p(x) \approx 0\), \(-\log p(x) \to +\infty\). To prevent the expectation from blowing up, \(q_\phi(x)\) is forced to be zero everywhere \(p(x)\) is zero.</li>
+                <li><strong>The Entropy Bonus (\(-H(q_\phi) = -\frac{1}{2}\log(2\pi e \sigma_q^2)\)):</strong> Because Gaussian entropy \(H(q_\phi) = \frac{1}{2}\log(2\pi e \sigma_q^2)\) enters with a minus sign, increasing \(\sigma_q\) <em>lowers</em> the objective. This prevents \(q_\phi\) from collapsing into an infinitely narrow spike (Dirac delta) at the highest point of \(p(x)\), pushing \(q_\phi\) to fill the width of a mode.</li>
+            </ol>
+
+            <h3>Why Mode-Seeking Is Only a Corollary of Zero-Forcing</h3>
+            <p>As Tuan Anh Le observed, people often use <em>zero-forcing</em> and <em>mode-seeking</em> interchangeably, but <strong>mode-seeking is merely a byproduct of zero-forcing, and it does not always happen even when \(p(x)\) is bimodal!</strong></p>
+            <p>We can quantify this threshold exactly. Suppose \(p(x) = \frac{1}{2}\mathcal{N}(0, \sigma^2) + \frac{1}{2}\mathcal{N}(\Delta\mu, \sigma^2)\) has two well-separated modes, and \(q_\phi(x)\) locks onto one of them, say the right mode \(q_\phi(x) = \mathcal{N}(\Delta\mu, \sigma^2)\). On that mode, \(p(x) \approx \frac{1}{2}q_\phi(x)\), so the Reverse KL divergence approaches:</p>
+            $$\mathrm{D}_{\mathrm{KL}}(q_\phi \parallel p) \approx \int q_\phi(x) \log \frac{q_\phi(x)}{\frac{1}{2}q_\phi(x)}\,dx = \log 2 \approx 0.6931\text{ nats}$$
+            <p>(By symmetry, locking onto the left mode at \(x = 0\) costs the exact same \(\log 2\text{ nats}\); more generally, locking onto a well-separated mode with weight \(\pi_k\) costs \(-\log \pi_k\text{ nats}\).) This explains all three stages of the Reverse KL optimization landscape as the modes pull apart:</p>
+            <ul>
+                <li><strong>When \(2\sigma < \Delta\mu < 4.65\sigma\) (Panel 2):</strong> Even though \(p(x)\) already has two distinct peaks, the valley between them is shallow enough that only a single centered minimum exists at \(\mu_q = \Delta\mu / 2\).</li>
+                <li><strong>When \(4.65\sigma \le \Delta\mu < 5.60\sigma\) (Panel 3, the dotted curve):</strong> Two mode-locked local minima emerge near \(x = 0\) and \(x = \Delta\mu\) (shown by the <strong>dotted red curve</strong> at \(x \approx 4.89\) in Panel 3, costing \(\approx 0.67\text{ nats}\)), coexisting with the centered mass-bridging minimum (the <strong>solid red curve</strong>, costing \(0.48\text{ nats}\)). Because bridging the valley still costs less than the mode-locked fit, the centered curve remains the global optimum.</li>
+                <li><strong>When \(\Delta\mu > 5.60\sigma\) (Panel 4):</strong> At \(\Delta\mu \approx 5.60\sigma\), the centered bridging cost (\(\approx 0.684\text{ nats}\)) crosses the mode-locked cost (which approaches \(\log 2 \approx 0.693\text{ nats}\) as the modes separate). Past this crossover, the two mode-locked solutions (\(x = 0\) and \(x = \Delta\mu\)) tie as the global minima when \(\pi_1 = 0.5\), and a gradient-based optimizer snaps onto whichever peak it was initialized closer to.</li>
+            </ul>
+
+            <h3>Why Is the Mode-Seeking Curve Twice as Tall as \(p(x)\)?</h3>
+            <p>In Panel 4 (and already emerging in Panel 3, where the dotted local minimum reaches \(\approx 0.35\) while slightly widened to \(\sigma_q \approx 1.14\)), notice that once the modes are well separated and Reverse KL locks onto the right mode at \(x = \Delta\mu\), its peak (\(\approx 0.40\)) stands <strong>twice as tall</strong> as the peak of \(p(x)\) (\(\approx 0.20\)) right underneath it. Why doesn’t \(q_\phi^*(x)\) match the height of \(p(x)\)?</p>
+            <p>Because every valid probability density must integrate to \(1\) (\(\int q_\phi(x)\,dx = 1\)):</p>
+            <ul>
+                <li><strong>The target mixture \(p(x)\)</strong> splits its total probability mass (\(1.0\)) equally between <strong>two</strong> modes (\(50\%\) around \(x = 0\) and \(50\%\) around \(x = \Delta\mu\)). Thus each peak of \(p(x)\) has height \(\frac{0.5}{\sqrt{2\pi}\sigma} \approx 0.20\).</li>
+                <li><strong>The mode-seeking Gaussian \(q_\phi^*(x)\)</strong> abandons the left mode and concentrates <strong>\(100\%\) of its probability mass (\(1.0\))</strong> into that single right-hand bell curve of width \(\sigma_q \approx \sigma = 1\). Packing twice the probability mass into the same width forces its peak height to double to \(\frac{1.0}{\sqrt{2\pi}\sigma} \approx 0.40\), which is also where the unavoidable \(\log\frac{1.0}{0.5} = \log 2\) KL divergence comes from!</li>
+            </ul>
+
+            <h2 id="generative-models">4. How This Shapes Modern Generative Models &amp; LLMs</h2>
+            <p>The choice between Forward KL and Reverse KL is not just a textbook exercise on 1D Gaussians; it is one of the central design trade-offs in modern foundation models:</p>
+
+            <div class="kl-applications-table-wrap">
+                <table class="tracker-table kl-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Training Paradigm</th>
+                            <th scope="col">Effective Divergence</th>
+                            <th scope="col">Practical Consequence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Paradigm"><strong>Maximum Likelihood (MLE)</strong><span class="tracker-program">Autoregressive LLMs, Diffusion pretraining</span></td>
+                            <td data-label="Divergence"><strong>Forward KL</strong><br>\(\mathrm{D}_{\mathrm{KL}}(p_{\text{data}} \parallel q_\theta)\)</td>
+                            <td data-label="Consequence"><strong>High recall / diversity, risk of hedging:</strong> Because missing any training example incurs a huge \(-\log q_\theta(x)\) loss, the model covers every mode of the data distribution. If model capacity or sampling steps are too small, it averages over modes (producing blurry images or overly hedged text).</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Paradigm"><strong>Variational Inference (ELBO)</strong><span class="tracker-program">VAEs, Bayesian posteriors</span></td>
+                            <td data-label="Divergence"><strong>Reverse KL</strong><br>\(\mathrm{D}_{\mathrm{KL}}(q_\phi(z|x) \parallel p(z|x))\)</td>
+                            <td data-label="Consequence"><strong>Tractable without normalizing constant \(p(x)\):</strong> Since \(p(z|x) = p(x,z)/p(x)\), taking the log splits the intractable marginal \(p(x)\) into an additive \(+\log p(x)\) term that is constant w.r.t. \(\phi\). Approximate posteriors are well-known to <em>underestimate</em> posterior variance.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Paradigm"><strong>Score Distillation &amp; Few-Step Generators</strong><span class="tracker-program">SDS, DMD, step-distilled diffusion</span></td>
+                            <td data-label="Divergence"><strong>Reverse KL</strong><br>\(\mathrm{D}_{\mathrm{KL}}(q_\theta \parallel p_{\text{teacher}})\)</td>
+                            <td data-label="Consequence"><strong>Sharpness over diversity:</strong> When compressing a multi-step diffusion model into a 1 to 4 step generator, minimizing Reverse KL forces generated samples to stay strictly on the teacher’s high-density manifold, yielding crisp images at the cost of reduced sample diversity.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Paradigm"><strong>RLHF &amp; Policy Optimization</strong><span class="tracker-program">PPO / GRPO with KL penalty</span></td>
+                            <td data-label="Divergence"><strong>Reverse KL</strong><br>\(\mathrm{D}_{\mathrm{KL}}(\pi_\theta \parallel \pi_{\text{ref}})\)</td>
+                            <td data-label="Consequence"><strong>Mode-seeking alignment:</strong> Optimizing expected reward minus \(\beta\,\mathrm{D}_{\mathrm{KL}}(\pi_\theta \parallel \pi_{\text{ref}})\) corresponds to Reverse KL against the tilted reward distribution \(\pi_{\text{ref}}(y|x)\exp(r(x,y)/\beta)\), concentrating the LLM onto high-reward response modes while zero-forcing implausible tokens.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <aside class="article-note">
+                <h2>Rule of Thumb for Practitioners</h2>
+                <p>Ask yourself which mistake is worse for your application: <strong>hallucinating in empty space</strong> or <strong>dropping valid modes</strong>? If you need full coverage and diversity (pretraining a base model), use <strong>Forward KL (MLE)</strong>. If you need every single sample from a capacity-limited or few-step model to look sharp and realistic (distillation, post-training alignment, 3D generation), use <strong>Reverse KL</strong>.</p>
+            </aside>
+        </div>
+
+        <footer class="article-footer">
+            <p><strong>Acknowledgement:</strong> Built upon and expanded from <a href="https://www.tuananhle.co.uk/notes/reverse-forward-kl.html" target="_blank" rel="noopener noreferrer">Tuan Anh Le’s 2017 note</a> with interactive solvers, exact bifurcation thresholds, and generative modeling connections, co-developed with Gemini 4 Argon.</p>
+            <a href="../blog.html">← Back to Writing</a>
+        </footer>
+    </article>
+</main>
+
+</body>
+</html>
