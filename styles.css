@@ -1380,17 +1380,26 @@ span.reading-title { color: var(--color-text); }
 
 .kl-presets {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 6px;
     margin-bottom: 18px;
+    overflow-x: auto;
+}
+
+.kl-presets .reading-chip {
+    padding: 5px 10px;
+    font-size: 0.79rem;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .kl-presets-label {
-    margin-right: 4px;
+    margin-right: 2px;
     color: var(--color-text-muted);
-    font-size: 0.82rem;
+    font-size: 0.80rem;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .kl-controls-grid {
