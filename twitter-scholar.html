@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Goyal — X Scholar (@vibespersecond)</title>
+    <title>Sahil Goyal - X Scholar Citations</title>
     <meta name="description" content="Google Scholar-style citation profile and daily high-engagement post recommendation lab for Sahil Goyal (@vibespersecond).">
-    <meta property="og:title" content="Sahil Goyal — X Scholar (@vibespersecond)">
+    <meta property="og:title" content="Sahil Goyal - X Scholar Citations (@vibespersecond)">
     <meta property="og:description" content="Google Scholar-style citation analytics and daily ML/AI post recommendation engine for @vibespersecond.">
     <meta property="og:image" content="https://sahilg06.github.io/img/sahil_goyal.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sahilg06.github.io/twitter-scholar.html">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Sahil Goyal — X Scholar (@vibespersecond)">
+    <meta name="twitter:title" content="Sahil Goyal - X Scholar Citations (@vibespersecond)">
     <meta name="twitter:description" content="Citation metrics, top ML threads, and daily high-engagement post lab for @vibespersecond.">
     <link rel="canonical" href="https://sahilg06.github.io/twitter-scholar.html">
     <link rel="icon" type="image/svg+xml" href="./img/favicon.svg?v=2">
-    <link rel="stylesheet" href="./styles.css?v=20261028-4">
+    <link rel="stylesheet" href="./styles.css?v=20261028-5">
     <script src="./site.js?v=20260823-2"></script>
-    <script src="./twitter-scholar.js?v=20261028-4" defer></script>
+    <script src="./twitter-scholar.js?v=20261028-5" defer></script>
 </head>
 <body>
 
@@ -44,102 +44,117 @@
     <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode"></button>
 </nav>
 
-<main class="main-content">
-    <div class="xscholar-container">
+<main class="main-content gsc-page-wrapper">
+    <div class="xscholar-container gsc-skin">
 
-        <!-- Google Scholar Profile Header + Right Citation Sidebar -->
+        <!-- Authentic Google Scholar Top Header Bar (#gsc_hdr) -->
+        <div class="gsc-top-bar">
+            <div class="gsc-brand">
+                <svg class="gsc-brand-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.35L12 18l7.162-5.15L24 9.5z"/>
+                </svg>
+                <span class="gsc-brand-title"><b>X</b> Scholar</span>
+            </div>
+
+            <div class="gs-tabs" role="tablist" aria-label="X Scholar sections">
+                <button class="gs-tab active" role="tab" aria-selected="true" id="tab-profile" data-tab="profile">
+                    Posts (<span id="gs-indexed-count">154</span>)
+                </button>
+                <button class="gs-tab" role="tab" aria-selected="false" id="tab-postlab" data-tab="postlab">
+                    Daily Post Suggestions <span class="gs-tab-count" id="postlab-count-badge">5</span>
+                </button>
+                <button class="gs-tab" role="tab" aria-selected="false" id="tab-scorer" data-tab="scorer">
+                    Draft Scorer
+                </button>
+            </div>
+
+            <div class="gs-utility-links">
+                <button type="button" class="gs-text-btn" id="btn-open-sync">+ Add post / CSV</button>
+                <button type="button" class="gs-text-btn" id="btn-open-settings">AI key</button>
+            </div>
+        </div>
+
+        <!-- Collapsible Sync Drawer -->
+        <section class="xscholar-drawer" id="drawer-sync" hidden aria-label="Sync or Import Tweets">
+            <div class="xscholar-drawer-header">
+                <strong>Add an X Post URL or Import Analytics CSV</strong>
+                <button type="button" class="xscholar-drawer-close" id="btn-close-sync" aria-label="Close">✕</button>
+            </div>
+            <form class="xscholar-sync-row" id="form-add-tweet">
+                <input type="url" id="input-tweet-url" placeholder="https://x.com/vibespersecond/status/..." required>
+                <input type="number" id="input-tweet-views" placeholder="Views (opt)" min="0" class="input-short">
+                <input type="number" id="input-tweet-bookmarks" placeholder="Bookmarks (opt)" min="0" class="input-short">
+                <input type="number" id="input-tweet-likes" placeholder="Likes (opt)" min="0" class="input-short">
+                <button type="submit" class="gsc-btn-primary" id="btn-fetch-tweet">Add</button>
+            </form>
+            <p class="xscholar-status-msg" id="sync-url-status" aria-live="polite"></p>
+            <div class="xscholar-file-row">
+                <span>Or import X Analytics CSV / <code>tweets.js</code>:</span>
+                <input type="file" id="input-csv-file" accept=".csv,.json,.js">
+                <button type="button" class="gs-text-btn" id="btn-export-json">Export JSON</button>
+                <button type="button" class="gs-text-btn" id="btn-reset-local">Reset cache</button>
+            </div>
+            <p class="xscholar-status-msg" id="sync-csv-status" aria-live="polite"></p>
+        </section>
+
+        <!-- Collapsible AI Key Drawer -->
+        <section class="xscholar-drawer" id="drawer-settings" hidden aria-label="AI Key Configuration">
+            <div class="xscholar-drawer-header">
+                <strong>Optional API Key for Custom Voice Rewrites (saved in local browser only)</strong>
+                <button type="button" class="xscholar-drawer-close" id="btn-close-settings" aria-label="Close">✕</button>
+            </div>
+            <form class="xscholar-sync-row" id="form-ai-settings">
+                <select id="select-ai-provider">
+                    <option value="gemini">Gemini (gemini-2.5-flash)</option>
+                    <option value="openai">OpenAI (gpt-4o-mini)</option>
+                </select>
+                <input type="password" id="input-ai-key" placeholder="API Key (AIzaSy... or sk-...)" autocomplete="off">
+                <button type="submit" class="gsc-btn-primary">Save</button>
+                <button type="button" class="gs-text-btn" id="btn-clear-key">Clear</button>
+            </form>
+            <p class="xscholar-status-msg" id="settings-status" aria-live="polite"></p>
+        </section>
+
+        <!-- Authentic Google Scholar Two-Column Body (#gsc_b + #gsc_rsb) -->
         <div class="gs-layout">
-            <!-- Left Main Area -->
+            <!-- Left Main Column (#gsc_b) -->
             <div class="gs-main">
+                <!-- Google Scholar Author Profile Block (#gsc_prf_w) -->
                 <header class="gs-author-header">
                     <img src="./img/sahil_goyal.png" alt="Sahil Goyal" class="gs-avatar">
                     <div class="gs-author-info">
                         <div class="gs-name-row">
                             <h1 id="gs-author-name">Sahil Goyal</h1>
-                            <a href="https://x.com/vibespersecond" target="_blank" rel="noopener noreferrer" class="gs-handle-link" id="gs-author-handle">@vibespersecond ↗</a>
                         </div>
                         <p class="gs-affiliation" id="gs-author-affiliation">
                             ML Researcher, ex-Google DeepMind &amp; Adobe Research · IIT Roorkee
                         </p>
                         <p class="gs-verified" id="gs-author-verified">
-                            Verified homepage at <a href="https://sahilg06.github.io">sahilg06.github.io</a> · <span id="gs-followers-count">1,795</span> followers · <a href="https://scholar.google.com/citations?user=q68nBDgAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+                            Verified profile at <a href="https://x.com/vibespersecond" target="_blank" rel="noopener noreferrer" id="gs-author-handle">x.com/vibespersecond</a> - <a href="https://sahilg06.github.io">Homepage</a> - <span id="gs-followers-count">1,795</span> followers
                         </p>
-                        <div class="gs-interests" id="gs-interests-list" aria-label="Interests">
+                        <div class="gs-interests" id="gs-interests-list" aria-label="Areas of interest">
                             <!-- Topic links populated dynamically -->
                         </div>
                     </div>
+                    <div class="gs-follow-wrap">
+                        <a href="https://x.com/vibespersecond" target="_blank" rel="noopener noreferrer" class="gsc-follow-btn">FOLLOW</a>
+                    </div>
                 </header>
 
-                <!-- Minimal Underline Navigation Tabs -->
-                <div class="gs-nav-bar">
-                    <div class="gs-tabs" role="tablist" aria-label="X Scholar sections">
-                        <button class="gs-tab active" role="tab" aria-selected="true" id="tab-profile" data-tab="profile">
-                            Posts (<span id="gs-indexed-count">102</span>)
-                        </button>
-                        <button class="gs-tab" role="tab" aria-selected="false" id="tab-postlab" data-tab="postlab">
-                            Daily Post Suggestions <span class="gs-tab-count" id="postlab-count-badge">5</span>
-                        </button>
-                        <button class="gs-tab" role="tab" aria-selected="false" id="tab-scorer" data-tab="scorer">
-                            Draft Scorer
-                        </button>
-                    </div>
-                    <div class="gs-utility-links">
-                        <button type="button" class="gs-text-btn" id="btn-open-sync">+ Add post / CSV</button>
-                        <button type="button" class="gs-text-btn" id="btn-open-settings">AI key</button>
-                    </div>
-                </div>
-
-                <!-- Collapsible Sync Drawer -->
-                <section class="xscholar-drawer" id="drawer-sync" hidden aria-label="Sync or Import Tweets">
-                    <div class="xscholar-drawer-header">
-                        <strong>Add an X Post URL or Import Analytics CSV</strong>
-                        <button type="button" class="xscholar-drawer-close" id="btn-close-sync" aria-label="Close">✕</button>
-                    </div>
-                    <form class="xscholar-sync-row" id="form-add-tweet">
-                        <input type="url" id="input-tweet-url" placeholder="https://x.com/vibespersecond/status/..." required>
-                        <input type="number" id="input-tweet-views" placeholder="Views (opt)" min="0" class="input-short">
-                        <input type="number" id="input-tweet-bookmarks" placeholder="Bookmarks (opt)" min="0" class="input-short">
-                        <input type="number" id="input-tweet-likes" placeholder="Likes (opt)" min="0" class="input-short">
-                        <button type="submit" class="tracker-button tracker-button-primary" id="btn-fetch-tweet">Add</button>
-                    </form>
-                    <p class="xscholar-status-msg" id="sync-url-status" aria-live="polite"></p>
-                    <div class="xscholar-file-row">
-                        <span>Or import X Analytics CSV / <code>tweets.js</code>:</span>
-                        <input type="file" id="input-csv-file" accept=".csv,.json,.js">
-                        <button type="button" class="gs-text-btn" id="btn-export-json">Export JSON</button>
-                        <button type="button" class="gs-text-btn" id="btn-reset-local">Reset cache</button>
-                    </div>
-                    <p class="xscholar-status-msg" id="sync-csv-status" aria-live="polite"></p>
-                </section>
-
-                <!-- Collapsible AI Key Drawer -->
-                <section class="xscholar-drawer" id="drawer-settings" hidden aria-label="AI Key Configuration">
-                    <div class="xscholar-drawer-header">
-                        <strong>Optional API Key for Custom Voice Rewrites (saved in local browser only)</strong>
-                        <button type="button" class="xscholar-drawer-close" id="btn-close-settings" aria-label="Close">✕</button>
-                    </div>
-                    <form class="xscholar-sync-row" id="form-ai-settings">
-                        <select id="select-ai-provider">
-                            <option value="gemini">Gemini (gemini-2.5-flash)</option>
-                            <option value="openai">OpenAI (gpt-4o-mini)</option>
-                        </select>
-                        <input type="password" id="input-ai-key" placeholder="API Key (AIzaSy... or sk-...)" autocomplete="off">
-                        <button type="submit" class="tracker-button tracker-button-primary">Save</button>
-                        <button type="button" class="gs-text-btn" id="btn-clear-key">Clear</button>
-                    </form>
-                    <p class="xscholar-status-msg" id="settings-status" aria-live="polite"></p>
-                </section>
-
-                <!-- ==================== TAB 1: GOOGLE SCHOLAR POSTS TABLE ==================== -->
+                <!-- ==================== TAB 1: GOOGLE SCHOLAR ARTICLES/POSTS TABLE ==================== -->
                 <section id="panel-profile" role="tabpanel" aria-labelledby="tab-profile">
+                    <!-- Hidden legacy selects kept in sync with header clicks -->
                     <div class="gs-toolbar">
-                        <input type="search" id="gs-search-input" class="gs-search-input" placeholder="Search posts or topics (KL, MaGNeTS, PhD)…" autocomplete="off">
+                        <div class="gsc-search-box">
+                            <svg class="gsc-search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                            <input type="search" id="gs-search-input" class="gs-search-input" placeholder="Search Sahil Goyal's posts…" autocomplete="off">
+                        </div>
                         <select id="gs-sort-select" class="gs-select" aria-label="Sort posts">
                             <option value="citations">Sort by citations</option>
+                            <option value="date">Sort by year / date</option>
                             <option value="views">Sort by views</option>
                             <option value="likes">Sort by likes</option>
                             <option value="bookmarks">Sort by bookmarks</option>
-                            <option value="date">Sort by date</option>
                         </select>
                         <select id="gs-year-select" class="gs-select" aria-label="Filter by year">
                             <option value="all">All years</option>
@@ -156,14 +171,18 @@
                         <button type="button" class="gs-clear-filter" id="btn-clear-gs-filter">Clear filter ✕</button>
                     </div>
 
-                    <table class="gs-table" aria-label="Indexed X Posts">
+                    <table class="gs-table" id="gsc_a_t" aria-label="Indexed X Posts">
                         <thead>
-                            <tr>
-                                <th scope="col" class="gs-col-title">Title</th>
+                            <tr id="gsc_a_trh">
+                                <th scope="col" class="gs-col-title">TITLE</th>
                                 <th scope="col" class="gs-col-cited">
-                                    <span class="gs-tooltip-trigger" data-tooltip="Citation Score = 1×Likes + 2×Bookmarks + 3×Reposts + 2×Replies">Cited by</span>
+                                    <button type="button" class="gsc-th-sort active" id="th-sort-citations">
+                                        <span class="gs-tooltip-trigger" data-tooltip="Citation Score = 1×Likes + 2×Bookmarks + 3×Reposts + 2×Replies">CITED BY</span>
+                                    </button>
                                 </th>
-                                <th scope="col" class="gs-col-year">Year</th>
+                                <th scope="col" class="gs-col-year">
+                                    <button type="button" class="gsc-th-sort" id="th-sort-year">YEAR</button>
+                                </th>
                             </tr>
                         </thead>
                         <tbody id="gs-tbody">
@@ -175,7 +194,7 @@
 
                     <div class="gs-pagination" id="gs-pagination">
                         <span class="gs-page-summary" id="gs-page-summary"></span>
-                        <button type="button" class="tracker-button" id="btn-show-more-posts">Show more</button>
+                        <button type="button" class="gsc-show-more-btn" id="btn-show-more-posts">SHOW MORE</button>
                     </div>
                 </section>
 
@@ -187,21 +206,21 @@
                                 Daily post ideas ranked by your historical citation patterns — best windows: <strong>2:00–4:30 PM IST</strong> and <strong>8:30–10:30 PM IST</strong>.
                             </p>
                             <div class="postlab-signals-bar" id="postlab-signals-bar">
-                                <span class="signal-pill" id="signal-hf"><span class="signal-dot"></span> Hugging Face</span>
-                                <span class="signal-pill" id="signal-arxiv"><span class="signal-dot"></span> arXiv</span>
-                                <span class="signal-pill" id="signal-hn"><span class="signal-dot"></span> Tech Pulse</span>
+                                <span class="signal-pill" id="signal-hf"><span class="signal-dot"></span> Hugging Face Daily Papers</span>
+                                <span class="signal-pill" id="signal-arxiv"><span class="signal-dot"></span> arXiv cs.CV / cs.LG</span>
+                                <span class="signal-pill" id="signal-hn"><span class="signal-dot"></span> AI Tech Pulse</span>
                             </div>
                         </div>
-                        <button type="button" class="tracker-button" id="btn-refresh-signals">↻ Refresh suggestions</button>
+                        <button type="button" class="gsc-btn-secondary" id="btn-refresh-signals">↻ Refresh live feeds</button>
                     </div>
 
                     <div class="postlab-filter-row" id="postlab-archetype-filters" role="group" aria-label="Filter suggestions">
-                        <button type="button" class="reading-chip active" data-arch="all">All</button>
-                        <button type="button" class="reading-chip" data-arch="interactive">Interactive Note</button>
-                        <button type="button" class="reading-chip" data-arch="paper">Paper Spotlight</button>
-                        <button type="button" class="reading-chip" data-arch="resource">PhD / Career</button>
-                        <button type="button" class="reading-chip" data-arch="followup">Follow-up</button>
-                        <button type="button" class="reading-chip" data-arch="quotetweet">Quick Take</button>
+                        <button type="button" class="gsc-filter-pill active" data-arch="all">All (5)</button>
+                        <button type="button" class="gsc-filter-pill" data-arch="interactive">Interactive Note</button>
+                        <button type="button" class="gsc-filter-pill" data-arch="resource">PhD / Career</button>
+                        <button type="button" class="gsc-filter-pill" data-arch="paper">Live Paper</button>
+                        <button type="button" class="gsc-filter-pill" data-arch="followup">Follow-up</button>
+                        <button type="button" class="gsc-filter-pill" data-arch="quotetweet">Quick Take</button>
                     </div>
 
                     <div class="postlab-cards" id="postlab-cards"></div>
@@ -209,7 +228,7 @@
                     <div class="postlab-live-explorer">
                         <div class="postlab-explorer-head">
                             <h3>Live Papers &amp; Discussions Today</h3>
-                            <span>Click any item to draft a post in your voice</span>
+                            <span>Click any item to generate a draft post</span>
                         </div>
                         <div class="postlab-radar-list" id="postlab-radar-grid"></div>
                     </div>
@@ -218,7 +237,7 @@
                 <!-- ==================== TAB 3: DRAFT SCORER ==================== -->
                 <section id="panel-scorer" role="tabpanel" aria-labelledby="tab-scorer" hidden>
                     <p class="postlab-intro">
-                        Test a draft against your historical engagement patterns before posting.
+                        Predict citations, views, and bookmarks for a draft post before publishing.
                     </p>
 
                     <textarea id="scorer-draft-input" class="scorer-textarea" rows="6" placeholder="Write or paste your draft post…"></textarea>
@@ -256,14 +275,14 @@
                     </div>
 
                     <p class="scorer-matched-line">
-                        Closest pattern: <strong id="scorer-matched-arch-name"></strong>
+                        Closest historical pattern: <strong id="scorer-matched-arch-name"></strong>
                     </p>
 
                     <ul class="scorer-checklist" id="scorer-checklist"></ul>
 
                     <div class="scorer-action-row">
-                        <button type="button" class="tracker-button tracker-button-primary" id="btn-score-post-x">Post on X ↗</button>
-                        <button type="button" class="tracker-button" id="btn-score-optimize">Generate 3 hook variations</button>
+                        <button type="button" class="gsc-btn-primary" id="btn-score-post-x">Post on X ↗</button>
+                        <button type="button" class="gsc-btn-secondary" id="btn-score-optimize">Generate 3 hook variations</button>
                     </div>
 
                     <div class="scorer-rewrites-box" id="scorer-rewrites-box" hidden>
@@ -272,11 +291,13 @@
                 </section>
             </div>
 
-            <!-- Right Sidebar: Authentic Minimal Google Scholar Sidebar -->
-            <aside class="gs-sidebar" aria-label="Citation statistics">
+            <!-- Right Sidebar: Authentic Google Scholar Citation Box (#gsc_rsb) -->
+            <aside class="gs-sidebar" id="gsc_rsb" aria-label="Citation statistics">
                 <div class="gs-side-block">
-                    <h2 class="gs-side-heading">Cited by</h2>
-                    <table class="gs-stats-table" aria-label="Citation indices">
+                    <div class="gs-side-heading-row">
+                        <h2 class="gs-side-heading">Cited by</h2>
+                    </div>
+                    <table class="gs-stats-table" id="gsc_rsb_st" aria-label="Citation indices">
                         <thead>
                             <tr>
                                 <th></th>
@@ -295,17 +316,17 @@
                                 <td id="stat-hindex-all">—</td>
                                 <td id="stat-hindex-recent">—</td>
                             </tr>
-                            <tr class="gs-tooltip-row" data-tooltip="Number of posts with at least 100 weighted citations">
-                                <td><span class="gs-metric-label">i100-index</span></td>
-                                <td id="stat-i100-all">—</td>
-                                <td id="stat-i100-recent">—</td>
-                            </tr>
                             <tr class="gs-tooltip-row" data-tooltip="Number of posts with at least 10 weighted citations">
                                 <td><span class="gs-metric-label">i10-index</span></td>
                                 <td id="stat-i10-all">—</td>
                                 <td id="stat-i10-recent">—</td>
                             </tr>
-                            <tr class="gs-tooltip-row" data-tooltip="Total estimated post impressions across X">
+                            <tr class="gs-tooltip-row" data-tooltip="Number of posts with at least 100 weighted citations">
+                                <td><span class="gs-metric-label">i100-index</span></td>
+                                <td id="stat-i100-all">—</td>
+                                <td id="stat-i100-recent">—</td>
+                            </tr>
+                            <tr class="gs-tooltip-row" data-tooltip="Total post impressions across X">
                                 <td><span class="gs-metric-label">Views</span></td>
                                 <td id="stat-views-all">—</td>
                                 <td id="stat-views-recent">—</td>
@@ -318,8 +339,8 @@
 
                 <div class="gs-side-block">
                     <div class="gs-side-heading-row">
-                        <h2 class="gs-side-heading">Top Archetypes</h2>
-                        <button type="button" class="gs-text-btn" id="btn-jump-postlab">Post Lab →</button>
+                        <h2 class="gs-side-heading">Daily Post Ideas</h2>
+                        <button type="button" class="gs-text-btn" id="btn-jump-postlab">VIEW ALL</button>
                     </div>
                     <div class="gs-archetypes-list" id="gs-archetypes-list"></div>
                 </div>

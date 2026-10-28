@@ -345,17 +345,34 @@
 
         const archRoot = document.getElementById('gs-archetypes-list');
         archRoot.innerHTML = '';
-        archStats.slice(0, 4).forEach(a => {
-            const row = document.createElement('div');
-            row.className = 'gs-arch-simple';
-            row.innerHTML = `<span>${escapeHtml(a.name)}</span><strong>${a.avgCitations} avg</strong>`;
-            archRoot.appendChild(row);
+        const topRecs = buildDailyRecommendations().slice(0, 4);
+        topRecs.forEach(rec => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'gs-side-idea-btn';
+            btn.innerHTML = `
+                <span class="gs-side-idea-title">${escapeHtml(rec.title)}</span>
+                <span class="gs-side-idea-meta">${escapeHtml(rec.archetype)} · Est. ${escapeHtml(rec.predictedCitations)}</span>
+            `;
+            btn.addEventListener('click', () => {
+                switchTab('postlab');
+                const target = document.getElementById(rec.id);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+            archRoot.appendChild(btn);
         });
     }
 
     function renderPublicationsTable() {
         const tbody = document.getElementById('gs-tbody');
         const allTweets = store.tweets || [];
+
+        const thCit = document.getElementById('th-sort-citations');
+        const thYr = document.getElementById('th-sort-year');
+        if (thCit && thYr) {
+            thCit.classList.toggle('active', filterState.sort !== 'date');
+            thYr.classList.toggle('active', filterState.sort === 'date');
+        }
 
         const q = filterState.search.trim().toLowerCase();
         const filtered = allTweets.filter(t => {
@@ -407,15 +424,19 @@
             const m = t.metrics || {};
             const repliesTotal = (m.replies || 0) + (m.quotes || 0);
             const formulaBreakdown = `${t.citations || 0} = 1×Likes(${m.likes || 0}) + 2×Bookmarks(${m.bookmarks || 0}) + 3×Reposts(${m.reposts || 0}) + 2×Replies(${repliesTotal})`;
+            const cleanBody = (t.text || '').replace(/\s+/g, ' ').trim();
+            const showSnippet = cleanBody && cleanBody.toLowerCase() !== (t.title || '').toLowerCase();
 
             tr.innerHTML = `
                 <td class="gs-cell-title" data-label="Title">
                     <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="gs-post-title">${escapeHtml(t.title)}</a>
+                    ${showSnippet ? `<div class="gs-gray-line">${escapeHtml(cleanBody)}</div>` : ''}
                     <div class="gs-post-venue">
                         <span>${escapeHtml(t.category)}</span>
                         <span>·</span>
                         <span>${m.likes || 0} likes</span>
                         ${m.bookmarks ? `<span>· ${m.bookmarks} bookmarks</span>` : ''}
+                        ${m.reposts ? `<span>· ${m.reposts} reposts</span>` : ''}
                         <span>· ${fmtNum(m.views || 0)} views</span>
                         <span>·</span>
                         <button type="button" class="gs-inline-action" data-action="toggle-text">Read text</button>
@@ -637,14 +658,12 @@
         visible.forEach((rec, idx) => {
             const item = document.createElement('article');
             item.className = 'postlab-item';
+            item.id = rec.id;
             const num = String(idx + 1).padStart(2, '0');
 
             item.innerHTML = `
-                <div class="postlab-item-meta">
-                    <span class="postlab-kicker">${num} · ${escapeHtml(rec.archetype)}</span>
-                    <span class="postlab-est">Est. ${escapeHtml(rec.predictedCitations)}</span>
-                </div>
                 <h3 class="postlab-item-title">${escapeHtml(rec.title)}</h3>
+                <div class="postlab-green-line">${num} · ${escapeHtml(rec.archetype)} - Est. ${escapeHtml(rec.predictedCitations)} - x.com/vibespersecond</div>
                 <p class="postlab-item-why">${escapeHtml(rec.whyItWorks)}</p>
 
                 <div class="postlab-hooks-bar">
@@ -664,8 +683,8 @@
                 </div>
 
                 <div class="postlab-actions-row">
-                    <button type="button" class="tracker-button tracker-button-primary" data-action="post-x">Post on X ↗</button>
-                    <button type="button" class="tracker-button" data-action="copy-main">Copy text</button>
+                    <button type="button" class="gsc-btn-primary" data-action="post-x">Post on X ↗</button>
+                    <button type="button" class="gsc-btn-secondary" data-action="copy-main">Copy text</button>
                     <button type="button" class="gs-text-btn" data-action="copy-reply">Copy reply link</button>
                     <button type="button" class="gs-text-btn" data-action="ai-rewrite">✨ AI polish</button>
                     <button type="button" class="gs-text-btn" data-action="score-draft">Score draft →</button>
@@ -997,6 +1016,22 @@
             filterState.sort = e.target.value;
             renderPublicationsTable();
         });
+        const thSortCit = document.getElementById('th-sort-citations');
+        const thSortYr = document.getElementById('th-sort-year');
+        if (thSortCit) {
+            thSortCit.addEventListener('click', () => {
+                filterState.sort = 'citations';
+                document.getElementById('gs-sort-select').value = 'citations';
+                renderPublicationsTable();
+            });
+        }
+        if (thSortYr) {
+            thSortYr.addEventListener('click', () => {
+                filterState.sort = 'date';
+                document.getElementById('gs-sort-select').value = 'date';
+                renderPublicationsTable();
+            });
+        }
         document.getElementById('gs-year-select').addEventListener('change', e => {
             filterState.year = e.target.value;
             renderPublicationsTable();
@@ -1014,9 +1049,9 @@
         });
 
         document.getElementById('btn-refresh-signals').addEventListener('click', () => fetchLiveSignals(true));
-        document.querySelectorAll('#postlab-archetype-filters .reading-chip').forEach(chip => {
+        document.querySelectorAll('#postlab-archetype-filters .gsc-filter-pill, #postlab-archetype-filters .reading-chip').forEach(chip => {
             chip.addEventListener('click', () => {
-                document.querySelectorAll('#postlab-archetype-filters .reading-chip').forEach(c => c.classList.remove('active'));
+                document.querySelectorAll('#postlab-archetype-filters .gsc-filter-pill, #postlab-archetype-filters .reading-chip').forEach(c => c.classList.remove('active'));
                 chip.classList.add('active');
                 activePostLabArch = chip.dataset.arch;
                 renderPostLab();
