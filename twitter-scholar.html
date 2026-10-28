@@ -15,9 +15,9 @@
     <meta name="twitter:description" content="Citation metrics, top ML threads, and daily high-engagement post lab for @vibespersecond.">
     <link rel="canonical" href="https://sahilg06.github.io/twitter-scholar.html">
     <link rel="icon" type="image/svg+xml" href="./img/favicon.svg?v=2">
-    <link rel="stylesheet" href="./styles.css?v=20261028-2">
+    <link rel="stylesheet" href="./styles.css?v=20261028-3">
     <script src="./site.js?v=20260823-2"></script>
-    <script src="./twitter-scholar.js?v=20261028-2" defer></script>
+    <script src="./twitter-scholar.js?v=20261028-3" defer></script>
 </head>
 <body>
 
@@ -133,7 +133,7 @@
                 <!-- ==================== TAB 1: GOOGLE SCHOLAR POSTS TABLE ==================== -->
                 <section id="panel-profile" role="tabpanel" aria-labelledby="tab-profile">
                     <div class="gs-toolbar">
-                        <input type="search" id="gs-search-input" class="gs-search-input" placeholder="Search posts, topics (KL, MaGNeTS, PhD), or @coauthors…" autocomplete="off">
+                        <input type="search" id="gs-search-input" class="gs-search-input" placeholder="Search posts or topics (KL, MaGNeTS, PhD)…" autocomplete="off">
                         <select id="gs-sort-select" class="gs-select" aria-label="Sort posts">
                             <option value="citations">Sort by citations</option>
                             <option value="views">Sort by views</option>
@@ -160,7 +160,9 @@
                         <thead>
                             <tr>
                                 <th scope="col" class="gs-col-title">Title</th>
-                                <th scope="col" class="gs-col-cited">Cited by</th>
+                                <th scope="col" class="gs-col-cited">
+                                    <span class="gs-tooltip-trigger" data-tooltip="Citation Score = 1×Likes + 2×Bookmarks + 3×Reposts + 2×Replies">Cited by</span>
+                                </th>
                                 <th scope="col" class="gs-col-year">Year</th>
                             </tr>
                         </thead>
@@ -283,28 +285,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td title="Likes + 2×Bookmarks + 3×Reposts + 2×Replies">Citations</td>
+                            <tr class="gs-tooltip-row" data-tooltip="Sum of post citations. Formula: 1×Likes + 2×Bookmarks + 3×Reposts + 2×Replies">
+                                <td><span class="gs-metric-label">Citations</span></td>
                                 <td id="stat-citations-all">—</td>
                                 <td id="stat-citations-recent">—</td>
                             </tr>
-                            <tr>
-                                <td title="h posts with at least h citations">h-index</td>
+                            <tr class="gs-tooltip-row" data-tooltip="Largest number h such that h posts have at least h weighted citations each">
+                                <td><span class="gs-metric-label">h-index</span></td>
                                 <td id="stat-hindex-all">—</td>
                                 <td id="stat-hindex-recent">—</td>
                             </tr>
-                            <tr>
-                                <td title="Posts with ≥ 100 citations">i100-index</td>
+                            <tr class="gs-tooltip-row" data-tooltip="Number of posts with at least 100 weighted citations">
+                                <td><span class="gs-metric-label">i100-index</span></td>
                                 <td id="stat-i100-all">—</td>
                                 <td id="stat-i100-recent">—</td>
                             </tr>
-                            <tr>
-                                <td title="Posts with ≥ 10 citations">i10-index</td>
+                            <tr class="gs-tooltip-row" data-tooltip="Number of posts with at least 10 weighted citations">
+                                <td><span class="gs-metric-label">i10-index</span></td>
                                 <td id="stat-i10-all">—</td>
                                 <td id="stat-i10-recent">—</td>
                             </tr>
-                            <tr>
-                                <td>Views</td>
+                            <tr class="gs-tooltip-row" data-tooltip="Total estimated post impressions across X">
+                                <td><span class="gs-metric-label">Views</span></td>
                                 <td id="stat-views-all">—</td>
                                 <td id="stat-views-recent">—</td>
                             </tr>
@@ -320,11 +322,6 @@
                         <button type="button" class="gs-text-btn" id="btn-jump-postlab">Post Lab →</button>
                     </div>
                     <div class="gs-archetypes-list" id="gs-archetypes-list"></div>
-                </div>
-
-                <div class="gs-side-block">
-                    <h2 class="gs-side-heading">Co-authors</h2>
-                    <ul class="gs-coauthors-list" id="gs-coauthors-list"></ul>
                 </div>
             </aside>
         </div>

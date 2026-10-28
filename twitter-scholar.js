@@ -351,41 +351,6 @@
             row.innerHTML = `<span>${escapeHtml(a.name)}</span><strong>${a.avgCitations} avg</strong>`;
             archRoot.appendChild(row);
         });
-
-        // Co-authors list
-        const coMap = new Map();
-        allTweets.forEach(t => {
-            (t.coauthors || []).forEach(c => {
-                if (!coMap.has(c)) coMap.set(c, { count: 0, citations: 0 });
-                const entry = coMap.get(c);
-                entry.count += 1;
-                entry.citations += t.citations || 0;
-            });
-        });
-        const coList = Array.from(coMap.entries())
-            .map(([handle, s]) => ({ handle, ...s }))
-            .sort((a, b) => b.citations - a.citations)
-            .slice(0, 8);
-
-        const coRoot = document.getElementById('gs-coauthors-list');
-        coRoot.innerHTML = '';
-        coList.forEach(c => {
-            const li = document.createElement('li');
-            const isActive = filterState.coauthor === c.handle;
-            li.innerHTML = `
-                <button type="button" class="gs-coauthor-btn ${isActive ? 'active' : ''}">
-                    <span>${escapeHtml(c.handle)}</span>
-                    <span class="gs-coauthor-meta">${c.citations}</span>
-                </button>
-            `;
-            li.querySelector('button').addEventListener('click', () => {
-                filterState.coauthor = filterState.coauthor === c.handle ? '' : c.handle;
-                switchTab('profile');
-                renderScholarSidebar();
-                renderPublicationsTable();
-            });
-            coRoot.appendChild(li);
-        });
     }
 
     function renderPublicationsTable() {
@@ -395,12 +360,11 @@
         const q = filterState.search.trim().toLowerCase();
         const filtered = allTweets.filter(t => {
             if (filterState.category !== 'all' && t.category !== filterState.category) return false;
-            if (filterState.coauthor && !(t.coauthors || []).includes(filterState.coauthor)) return false;
             if (filterState.year === '2026' && Number(t.year) < 2026) return false;
             if (filterState.year === '2025' && Number(t.year) < 2025) return false;
             if (filterState.year === '2024' && Number(t.year) > 2024) return false;
             if (q) {
-                const hay = `${t.title} ${t.text} ${t.category} ${(t.coauthors || []).join(' ')} ${t.month}`.toLowerCase();
+                const hay = `${t.title} ${t.text} ${t.category} ${t.month}`.toLowerCase();
                 if (!hay.includes(q)) return false;
             }
             return true;
@@ -418,7 +382,6 @@
         const activeLabel = document.getElementById('gs-active-filter-label');
         const parts = [];
         if (filterState.category !== 'all') parts.push(filterState.category);
-        if (filterState.coauthor) parts.push(filterState.coauthor);
         if (filterState.year !== 'all') parts.push(`Year: ${filterState.year}`);
         if (q) parts.push(`"${filterState.search}"`);
         if (parts.length) {
@@ -440,14 +403,13 @@
         visible.forEach(t => {
             const tr = document.createElement('tr');
             tr.className = 'gs-row';
-            const coStr = (t.coauthors && t.coauthors.length) ? `, ${t.coauthors.join(', ')}` : '';
             const m = t.metrics || {};
+            const repliesTotal = (m.replies || 0) + (m.quotes || 0);
+            const formulaBreakdown = `${t.citations || 0} = 1×Likes(${m.likes || 0}) + 2×Bookmarks(${m.bookmarks || 0}) + 3×Reposts(${m.reposts || 0}) + 2×Replies(${repliesTotal})`;
 
-            // Google Scholar style: Title -> Authors -> Venue/Metrics line (with optional full post expand)
             tr.innerHTML = `
                 <td class="gs-cell-title" data-label="Title">
                     <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="gs-post-title">${escapeHtml(t.title)}</a>
-                    <div class="gs-post-authors">S Goyal${escapeHtml(coStr)}</div>
                     <div class="gs-post-venue">
                         <span>${escapeHtml(t.category)}</span>
                         <span>·</span>
@@ -462,7 +424,7 @@
                     <p class="gs-post-fulltext" hidden>${escapeHtml(t.text)}</p>
                 </td>
                 <td class="gs-cell-cited" data-label="Cited by">
-                    <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="gs-cited-num" title="Likes (${m.likes || 0}) + 2×Bookmarks (${m.bookmarks || 0}) + 3×Reposts (${m.reposts || 0}) + 2×Replies (${m.replies || 0})">${t.citations || 0}</a>
+                    <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="gs-cited-num gs-tooltip-trigger" data-tooltip="${escapeHtml(formulaBreakdown)}">${t.citations || 0}</a>
                 </td>
                 <td class="gs-cell-year" data-label="Year">
                     <span class="gs-year-text">${escapeHtml(String(t.year || ''))}</span>

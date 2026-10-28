@@ -2452,6 +2452,52 @@ span.reading-title { color: var(--color-text); }
     white-space: pre-line;
 }
 
+/* Instant Hover Formula Tooltips */
+.gs-tooltip-trigger,
+.gs-tooltip-row {
+    position: relative;
+    cursor: help;
+}
+
+.gs-metric-label,
+th .gs-tooltip-trigger {
+    border-bottom: 1px dotted color-mix(in srgb, var(--color-text-muted) 65%, transparent);
+}
+
+.gs-tooltip-trigger::after,
+.gs-tooltip-row::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 6px);
+    z-index: 300;
+    width: max-content;
+    max-width: 265px;
+    padding: 7px 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+    text-transform: none;
+    letter-spacing: normal;
+    white-space: normal;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.12s ease, visibility 0.12s ease;
+}
+
+.gs-tooltip-trigger:hover::after,
+.gs-tooltip-row:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
 @media (max-width: 820px) {
     .gs-layout {
         grid-template-columns: 1fr;
@@ -2461,3 +2507,4 @@ span.reading-title { color: var(--color-text); }
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
