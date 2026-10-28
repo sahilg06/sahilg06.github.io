@@ -2045,9 +2045,11 @@ span.reading-title { color: var(--color-text); }
     font-weight: 400;
     text-transform: uppercase;
     text-align: left;
+    white-space: nowrap;
 }
 
 .gsc-th-sort {
+    display: inline-block;
     padding: 0;
     border: 0;
     background: transparent;
@@ -2056,7 +2058,12 @@ span.reading-title { color: var(--color-text); }
     font-size: 12px;
     font-weight: 400;
     text-transform: uppercase;
+    white-space: nowrap;
     cursor: pointer;
+}
+
+.gsc-th-sort .gs-tooltip-trigger {
+    white-space: nowrap;
 }
 
 .gsc-th-sort:hover {
@@ -2070,7 +2077,8 @@ span.reading-title { color: var(--color-text); }
 
 .gs-col-cited,
 .gs-cell-cited {
-    width: 82px;
+    width: 96px;
+    white-space: nowrap;
     text-align: right !important;
     padding-left: 16px !important;
 }
@@ -2078,6 +2086,7 @@ span.reading-title { color: var(--color-text); }
 .gs-col-year,
 .gs-cell-year {
     width: 64px;
+    white-space: nowrap;
     text-align: right !important;
     padding-left: 16px !important;
 }
