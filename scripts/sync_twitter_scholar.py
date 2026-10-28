@@ -164,6 +164,79 @@ def sync():
     except Exception as exc:
         print(f"Warning: timeline syndication fetch encountered error: {exc}")
 
+    # Also scrape x.com/<handle>/with_replies for latest posts & Schema.org metrics
+    def parse_compact_num(s: str) -> int:
+        if not s:
+            return 0
+        s = str(s).strip().replace(",", "")
+        m_num = re.match(r"^([0-9.]+)([KMBkmb]?)$", s)
+        if not m_num:
+            return 0
+        val = float(m_num.group(1))
+        suf = m_num.group(2).upper()
+        if suf == "K":
+            val *= 1000
+        elif suf == "M":
+            val *= 1000000
+        return int(round(val))
+
+    def ingest_x_html(raw_html: str):
+        import html as html_mod
+        for m_art in re.finditer(rf'<article[^>]*itemID="https://x\.com/{HANDLE}/status/(\d+)"[^>]*>(.*?)</article>', raw_html, re.DOTALL):
+            tid, body = m_art.group(1), m_art.group(2)
+            date_m = re.search(r'<meta content="([^"]+)" itemProp="datePublished"', body) or re.search(r'<meta itemProp="datePublished" content="([^"]+)"', body)
+            text_m = re.search(r'<meta itemProp="text" content="([^"]*)"', body) or re.search(r'<meta content="([^"]*)" itemProp="text"', body)
+            comments_m = re.search(r'<meta itemProp="commentCount" content="(\d+)"', body)
+            likes_m = re.search(r'<meta content="Likes" itemProp="name"/>.*?<meta content="(\d+)" itemProp="userInteractionCount"', body, re.DOTALL)
+            rts_m = re.search(r'<meta content="Retweets" itemProp="name"/>.*?<meta content="(\d+)" itemProp="userInteractionCount"', body, re.DOTALL)
+            views_m = re.search(r'<meta content="Views" itemProp="name"/>.*?<meta content="(\d+)" itemProp="userInteractionCount"', body, re.DOTALL)
+            bm_m = re.search(r'icon-bookmark.*?<span[^>]*>([0-9.,KMB]+)</span>', body, re.DOTALL)
+            if not (date_m and text_m):
+                continue
+            raw_text = html_mod.unescape(text_m.group(1))
+            iso_date = date_m.group(1).replace(".000Z", "Z")
+            try:
+                dt = datetime.fromisoformat(iso_date.replace("Z", "+00:00"))
+                year, month_str = dt.year, dt.strftime("%b %Y")
+            except Exception:
+                year, month_str = datetime.now(timezone.utc).year, datetime.now(timezone.utc).strftime("%b %Y")
+            existing = tweets_by_id.get(tid, {})
+            prev_m = existing.get("metrics", {})
+            cat, arch = classify_tweet(raw_text, existing.get("is_quote", False))
+            merged_m = {
+                "likes": max(int(likes_m.group(1)) if likes_m else 0, int(prev_m.get("likes", 0))),
+                "reposts": max(int(rts_m.group(1)) if rts_m else 0, int(prev_m.get("reposts", 0))),
+                "replies": max(int(comments_m.group(1)) if comments_m else 0, int(prev_m.get("replies", 0))),
+                "quotes": int(prev_m.get("quotes", 0)),
+                "bookmarks": max(parse_compact_num(bm_m.group(1)) if bm_m else 0, int(prev_m.get("bookmarks", 0))),
+                "views": max(int(views_m.group(1)) if views_m else 0, int(prev_m.get("views", 0))),
+            }
+            tweets_by_id[tid] = {
+                "id": tid,
+                "title": existing.get("title") or make_title(raw_text),
+                "text": existing.get("text") or clean_text(raw_text),
+                "created_at": existing.get("created_at") or iso_date,
+                "year": existing.get("year") or year,
+                "month": existing.get("month") or month_str,
+                "url": f"https://x.com/{HANDLE}/status/{tid}",
+                "external_urls": existing.get("external_urls") or [],
+                "category": existing.get("category") or cat,
+                "archetype": existing.get("archetype") or arch,
+                "has_media": existing.get("has_media", False),
+                "media_url": existing.get("media_url", ""),
+                "is_quote": existing.get("is_quote", False),
+                "coauthors": existing.get("coauthors", []),
+                "pinned": existing.get("pinned", False),
+                "metrics": merged_m,
+                "citations": compute_citations(merged_m),
+            }
+
+    for page_url in [f"https://x.com/{HANDLE}", f"https://x.com/{HANDLE}/with_replies"]:
+        try:
+            ingest_x_html(fetch_url(page_url))
+        except Exception:
+            pass
+
     # Refresh top/recent tweets individually via cdn.syndication
     recent_ids = sorted(tweets_by_id.keys(), reverse=True)[:12]
     for tid in recent_ids:
