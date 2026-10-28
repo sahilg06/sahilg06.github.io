@@ -1822,6 +1822,10 @@ span.reading-title { color: var(--color-text); }
     font-size: 0.85rem;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 .gs-active-filter-bar {
     display: flex;
     align-items: center;
@@ -1831,6 +1835,10 @@ span.reading-title { color: var(--color-text); }
     border-left: 2px solid var(--color-accent);
     font-size: 0.84rem;
     color: var(--color-text-muted);
+}
+
+.gs-active-filter-bar[hidden] {
+    display: none;
 }
 
 .gs-clear-filter {

@@ -388,6 +388,7 @@
             activeBar.hidden = false;
             activeLabel.textContent = `${filtered.length} results for ${parts.join(' · ')}`;
         } else {
+            activeLabel.textContent = '';
             activeBar.hidden = true;
         }
 
