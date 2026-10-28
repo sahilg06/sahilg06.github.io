@@ -982,6 +982,146 @@
         urlInput.value = '';
     }
 
+    function classifyPostText(text) {
+        const tl = (text || '').toLowerCase();
+        if (/kl divergence|svd|unitary|geometric|rationals|batch norm|math|gaussian|entropy|jacobian/.test(tl)) {
+            return { category: 'Interactive Notes & Theory', archetype: 'Interactive Classic Rebuild' };
+        }
+        if (/phd|application|rf program|msr|faculty|admission|sop|mnc|department|fellowship/.test(tl)) {
+            return { category: 'Academic & PhD Resources', archetype: 'High-Utility Academic / Career Resource' };
+        }
+        if (/icml|iclr|wacv|eccv|cvpr|neurips|accepted|presenting|poster|citations|reviewer|rebuttal|googledeepmind/.test(tl)) {
+            return { category: 'Paper Releases & Conferences', archetype: 'Research Milestone & Conference Update' };
+        }
+        if (/magnets|moe|diffusion|token|u-vit|maskgit|kv caching|design-o-meter|veo|matformer|loop|decode|guidance|transformer/.test(tl)) {
+            return { category: 'Efficient ML & Generative Models', archetype: 'Technical Deep-Dive / Paper Thread' };
+        }
+        return { category: 'AI Commentary & Reflections', archetype: 'Personal Reflection & Researcher Life' };
+    }
+
+    function parseCsvLine(line) {
+        const res = [];
+        let cur = '', inQuotes = false;
+        for (let i = 0; i < line.length; i++) {
+            const ch = line[i];
+            if (ch === '"') {
+                if (inQuotes && line[i + 1] === '"') { cur += '"'; i++; }
+                else inQuotes = !inQuotes;
+            } else if (ch === ',' && !inQuotes) {
+                res.push(cur.trim());
+                cur = '';
+            } else {
+                cur += ch;
+            }
+        }
+        res.push(cur.trim());
+        return res;
+    }
+
+    async function handleImportFile(e) {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        const statusEl = document.getElementById('sync-csv-status');
+        statusEl.textContent = 'Importing posts…';
+        try {
+            const raw = await file.text();
+            let imported = 0;
+            if (file.name.endsWith('.csv')) {
+                const lines = raw.split(/\r?\n/).filter(l => l.trim());
+                if (lines.length > 1) {
+                    const headers = parseCsvLine(lines[0]).map(h => h.toLowerCase());
+                    const idxId = headers.findIndex(h => h.includes('id') || h.includes('permalink') || h.includes('link'));
+                    const idxText = headers.findIndex(h => h.includes('text') || h.includes('post'));
+                    const idxDate = headers.findIndex(h => h.includes('time') || h.includes('date'));
+                    const idxImp = headers.findIndex(h => h.includes('impression') || h.includes('view'));
+                    const idxLikes = headers.findIndex(h => h.includes('like'));
+                    const idxRt = headers.findIndex(h => h.includes('retweet') || h.includes('repost'));
+                    const idxReply = headers.findIndex(h => h.includes('repl'));
+                    const idxBm = headers.findIndex(h => h.includes('bookmark'));
+
+                    for (let r = 1; r < lines.length; r++) {
+                        const cols = parseCsvLine(lines[r]);
+                        const rawId = cols[idxId] || '';
+                        const m = rawId.match(/(\d{15,22})/);
+                        if (!m) continue;
+                        const tid = m[1];
+                        const text = (cols[idxText] || '').replace(/https:\/\/t\.co\/\w+/g, '').trim();
+                        if (!text || text.startsWith('RT @')) continue;
+                        const dt = cols[idxDate] ? new Date(cols[idxDate]) : new Date();
+                        const iso = isNaN(dt.getTime()) ? new Date().toISOString() : dt.toISOString();
+                        const yr = isNaN(dt.getTime()) ? 2026 : dt.getFullYear();
+                        const mo = isNaN(dt.getTime()) ? 'Oct 2026' : dt.toLocaleString('en-US', { month: 'short', year: 'numeric' });
+                        const metrics = {
+                            likes: Number(cols[idxLikes]) || 0,
+                            reposts: Number(cols[idxRt]) || 0,
+                            replies: Number(cols[idxReply]) || 0,
+                            quotes: 0,
+                            bookmarks: Number(cols[idxBm]) || 0,
+                            views: Number(cols[idxImp]) || 0
+                        };
+                        const { category, archetype } = classifyPostText(text);
+                        saveLocalTweet({
+                            id: tid,
+                            title: text.split('\n')[0].slice(0, 105),
+                            text,
+                            created_at: iso,
+                            year: yr,
+                            month: mo,
+                            url: `https://x.com/vibespersecond/status/${tid}`,
+                            category,
+                            archetype,
+                            metrics,
+                            citations: computeCitations(metrics)
+                        });
+                        imported++;
+                    }
+                }
+            } else {
+                const jsonStr = raw.replace(/^window\.YTD\.tweets\.part\d+\s*=\s*/, '').trim();
+                const parsed = JSON.parse(jsonStr);
+                const list = Array.isArray(parsed) ? parsed : (parsed.tweets || []);
+                list.forEach(item => {
+                    const t = item.tweet || item;
+                    const tid = String(t.id_str || t.id || '');
+                    const text = (t.full_text || t.text || '').replace(/https:\/\/t\.co\/\w+/g, '').trim();
+                    if (!tid || !text || text.startsWith('RT @')) return;
+                    const dt = t.created_at ? new Date(t.created_at) : new Date();
+                    const iso = isNaN(dt.getTime()) ? new Date().toISOString() : dt.toISOString();
+                    const yr = isNaN(dt.getTime()) ? 2026 : dt.getFullYear();
+                    const mo = isNaN(dt.getTime()) ? 'Oct 2026' : dt.toLocaleString('en-US', { month: 'short', year: 'numeric' });
+                    const m = t.metrics || {
+                        likes: Number(t.favorite_count ?? t.likes ?? 0),
+                        reposts: Number(t.retweet_count ?? t.reposts ?? 0),
+                        replies: Number(t.reply_count ?? t.replies ?? 0),
+                        quotes: Number(t.quote_count ?? 0),
+                        bookmarks: Number(t.bookmark_count ?? t.bookmarks ?? 0),
+                        views: Number(t.views_count ?? t.views ?? 0)
+                    };
+                    const { category, archetype } = classifyPostText(text);
+                    saveLocalTweet({
+                        id: tid,
+                        title: t.title || text.split('\n')[0].slice(0, 105),
+                        text,
+                        created_at: iso,
+                        year: yr,
+                        month: mo,
+                        url: `https://x.com/vibespersecond/status/${tid}`,
+                        category: t.category || category,
+                        archetype: t.archetype || archetype,
+                        metrics: m,
+                        citations: computeCitations(m)
+                    });
+                    imported++;
+                });
+            }
+            renderScholarSidebar();
+            renderPublicationsTable();
+            statusEl.textContent = `✓ Imported ${imported} posts! Click "Export JSON" to save permanently to data/twitter-scholar.json.`;
+        } catch (err) {
+            statusEl.textContent = `Could not parse file: ${err.message}`;
+        }
+    }
+
     function switchTab(tabId) {
         document.querySelectorAll('.gs-tab').forEach(t => {
             const active = t.dataset.tab === tabId;
@@ -1083,6 +1223,7 @@
         document.getElementById('btn-close-settings').addEventListener('click', () => { settingsDrawer.hidden = true; });
 
         document.getElementById('form-add-tweet').addEventListener('submit', handleAddTweetByUrl);
+        document.getElementById('input-csv-file').addEventListener('change', handleImportFile);
         document.getElementById('btn-export-json').addEventListener('click', () => {
             const blob = new Blob([JSON.stringify(store, null, 2)], { type: 'application/json' });
             const a = document.createElement('a');
