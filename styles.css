@@ -1573,3 +1573,1270 @@ span.reading-title { color: var(--color-text); }
         grid-template-columns: 1fr;
     }
 }
+
+/* ==================== X SCHOLAR (TWITTER SCHOLAR & DAILY POST LAB) ==================== */
+.xscholar-container {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+.xscholar-topbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.xscholar-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.xscholar-brand-icon {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-accent);
+    transform: translateY(3px);
+}
+
+.xscholar-brand-title {
+    font-size: 1.22rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.xscholar-brand-sub {
+    color: var(--color-text-muted);
+    font-size: 0.84rem;
+}
+
+.xscholar-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.xscholar-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 13px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text-muted);
+    font-size: 0.86rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.xscholar-tab:hover {
+    color: var(--color-text);
+    border-color: var(--color-text-muted);
+}
+
+.xscholar-tab.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+[data-theme="dark"] .xscholar-tab.active {
+    color: #151515;
+}
+
+.xscholar-tab-badge {
+    padding: 1px 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 3px;
+}
+
+[data-theme="dark"] .xscholar-tab.active .xscholar-tab-badge {
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.xscholar-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.xscholar-btn-primary,
+.xscholar-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.xscholar-btn-primary {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+.xscholar-btn-primary:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+[data-theme="dark"] .xscholar-btn-primary {
+    color: #151515;
+}
+
+.xscholar-btn-ghost {
+    background: transparent;
+    color: var(--color-text);
+}
+
+.xscholar-btn-ghost:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* Drawers */
+.xscholar-drawer {
+    margin-bottom: 24px;
+    padding: 18px 20px;
+    border: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-text) 2.5%, var(--color-bg));
+}
+
+.xscholar-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.xscholar-drawer-header h3 {
+    margin: 0 0 4px;
+    font-size: 1.05rem;
+}
+
+.xscholar-drawer-header p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.86rem;
+}
+
+.xscholar-drawer-close {
+    border: 0;
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.xscholar-sync-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.xscholar-sync-card {
+    padding: 14px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+}
+
+.xscholar-sync-card h4 {
+    margin: 0 0 4px;
+    font-size: 0.92rem;
+}
+
+.xscholar-sync-card p {
+    margin: 0 0 10px;
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+}
+
+.xscholar-input-row,
+.xscholar-file-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.xscholar-input-row input {
+    flex: 1 1 200px;
+    padding: 6px 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.84rem;
+}
+
+.xscholar-metrics-mini {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+}
+
+.xscholar-metrics-mini input {
+    width: 76px;
+    padding: 3px 6px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.78rem;
+}
+
+.xscholar-status-msg {
+    margin: 6px 0 0;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+}
+
+.xscholar-settings-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.xscholar-settings-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+}
+
+.xscholar-settings-key {
+    flex: 1 1 280px;
+}
+
+.xscholar-settings-form select,
+.xscholar-settings-form input {
+    padding: 6px 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.85rem;
+}
+
+.xscholar-settings-btns {
+    display: flex;
+    gap: 8px;
+}
+
+/* Google Scholar Two-Column Layout */
+.gs-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 275px;
+    gap: 32px;
+    align-items: start;
+}
+
+.gs-author-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding-bottom: 20px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.gs-avatar {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 18%;
+    border: 1px solid var(--color-border);
+    flex-shrink: 0;
+}
+
+.gs-name-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.gs-name-row h1 {
+    margin: 0;
+    font-size: 1.55rem;
+    line-height: 1.2;
+}
+
+.gs-handle-badge,
+.gs-scholar-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    border: 1px solid var(--color-border);
+    color: var(--color-accent);
+}
+
+.gs-affiliation {
+    margin: 0 0 3px;
+    color: var(--color-text);
+    font-size: 0.92rem;
+}
+
+.gs-verified {
+    margin: 0 0 10px;
+    color: var(--color-text-muted);
+    font-size: 0.84rem;
+}
+
+.gs-interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.gs-interest-tag {
+    padding: 2px 8px;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-accent);
+    font-size: 0.78rem;
+    cursor: pointer;
+}
+
+.gs-interest-tag:hover,
+.gs-interest-tag.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+[data-theme="dark"] .gs-interest-tag.active {
+    color: #151515;
+}
+
+/* Toolbar */
+.gs-toolbar {
+    margin-bottom: 14px;
+}
+
+.gs-search-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.gs-search-box {
+    flex: 1 1 240px;
+}
+
+.gs-search-box input {
+    width: 100%;
+    padding: 7px 11px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.86rem;
+}
+
+.gs-select {
+    padding: 7px 10px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.84rem;
+}
+
+.gs-category-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.gs-active-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-left: 3px solid var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-bg));
+    font-size: 0.82rem;
+}
+
+.gs-clear-filter {
+    border: 0;
+    background: transparent;
+    color: var(--color-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Google Scholar Table */
+.gs-table-wrap {
+    width: 100%;
+}
+
+.gs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.gs-table thead th {
+    padding: 8px 8px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+.gs-col-cited,
+.gs-cell-cited {
+    width: 82px;
+    text-align: right !important;
+}
+
+.gs-col-year,
+.gs-cell-year {
+    width: 84px;
+    text-align: right !important;
+}
+
+.gs-row td {
+    padding: 14px 8px;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+}
+
+.gs-post-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.gs-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.71rem;
+    font-weight: 500;
+}
+
+.gs-badge-pinned {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.gs-arch-label {
+    color: var(--color-text-light);
+    font-size: 0.73rem;
+}
+
+.gs-post-title {
+    display: inline-block;
+    margin-bottom: 3px;
+    color: var(--color-accent);
+    font-size: 0.98rem;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.gs-post-authors {
+    margin-bottom: 5px;
+    color: var(--color-text-muted);
+    font-size: 0.81rem;
+}
+
+.gs-post-snippet {
+    margin: 0 0 8px;
+    color: var(--color-text);
+    font-size: 0.85rem;
+    line-height: 1.48;
+    white-space: pre-line;
+}
+
+.gs-post-metrics-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-muted);
+    font-size: 0.76rem;
+    font-family: var(--font-mono);
+}
+
+.gs-template-btn {
+    margin-left: auto;
+    padding: 2px 7px;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-accent);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.gs-template-btn:hover {
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 8%, var(--color-bg));
+}
+
+.gs-cited-num {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.gs-cited-views {
+    display: block;
+    margin-top: 2px;
+    color: var(--color-text-light);
+    font-size: 0.72rem;
+}
+
+.gs-year-text {
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+    white-space: nowrap;
+}
+
+.gs-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+}
+
+.gs-page-summary {
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+}
+
+.gs-empty {
+    padding: 24px 8px;
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+}
+
+/* Google Scholar Right Sidebar */
+.gs-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.gs-card {
+    padding: 15px 16px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+}
+
+.gs-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.gs-card-header h2 {
+    margin: 0;
+    font-size: 0.96rem;
+    font-weight: 700;
+}
+
+.gs-formula-pill {
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    cursor: help;
+}
+
+.gs-stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    font-size: 0.82rem;
+}
+
+.gs-stats-table th {
+    padding: 4px 4px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    text-align: right;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.gs-stats-table td {
+    padding: 5px 4px;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 55%, transparent);
+}
+
+.gs-stats-table td:not(:first-child) {
+    text-align: right;
+    font-family: var(--font-mono);
+    font-weight: 600;
+}
+
+.gs-formula-note {
+    margin: 0 0 12px;
+    color: var(--color-text-muted);
+    font-size: 0.73rem;
+    line-height: 1.4;
+}
+
+.gs-chart-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+}
+
+.gs-bars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    height: 105px;
+    align-items: end;
+}
+
+.gs-bar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.gs-bar-val {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3px;
+}
+
+.gs-bar-track {
+    flex: 1;
+    width: 24px;
+    display: flex;
+    align-items: flex-end;
+    background: color-mix(in srgb, var(--color-text) 5%, transparent);
+}
+
+.gs-bar-fill {
+    width: 100%;
+    background: var(--color-accent);
+    transition: opacity 0.15s;
+}
+
+.gs-bar-col:hover .gs-bar-fill {
+    opacity: 0.8;
+}
+
+.gs-bar-label {
+    margin-top: 4px;
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+}
+
+.gs-card-sub {
+    margin: 0 0 8px;
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+}
+
+.gs-link-btn {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--color-accent);
+    font-size: 0.78rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.gs-archetypes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.gs-arch-item {
+    padding-bottom: 7px;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 55%, transparent);
+}
+
+.gs-arch-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.gs-arch-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    font-size: 0.8rem;
+}
+
+.gs-arch-score {
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.gs-arch-meta {
+    color: var(--color-text-muted);
+    font-size: 0.73rem;
+}
+
+.gs-coauthors-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.gs-coauthor-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 6px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--color-text);
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.gs-coauthor-btn:hover,
+.gs-coauthor-btn.active {
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-bg));
+}
+
+.gs-coauthor-handle {
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.gs-coauthor-meta {
+    color: var(--color-text-muted);
+    font-size: 0.73rem;
+}
+
+/* ==================== TAB 2: DAILY POST LAB ==================== */
+.postlab-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 295px;
+    gap: 24px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-text) 2%, var(--color-bg));
+}
+
+.postlab-hero h2 {
+    margin: 0 0 8px;
+    font-size: 1.45rem;
+}
+
+.postlab-hero p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.postlab-hero-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.postlab-window-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--color-accent);
+    background: var(--color-bg);
+    font-size: 0.8rem;
+}
+
+.postlab-window-label {
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.postlab-signals-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.signal-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 1px solid var(--color-border);
+    font-size: 0.76rem;
+    color: var(--color-text-muted);
+}
+
+.signal-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-text-light);
+}
+
+.signal-pill.signal-ready .signal-dot {
+    background: #16a34a;
+}
+
+.postlab-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.postlab-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.postlab-card {
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+}
+
+.postlab-card-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.postlab-card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.postlab-rank-badge {
+    padding: 2px 8px;
+    background: var(--color-accent);
+    color: #ffffff;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+[data-theme="dark"] .postlab-rank-badge {
+    color: #151515;
+}
+
+.postlab-arch-badge {
+    padding: 2px 8px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.74rem;
+}
+
+.postlab-pred-pills {
+    display: flex;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+}
+
+.postlab-pred-cit {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.postlab-pred-views {
+    color: var(--color-text-muted);
+}
+
+.postlab-card-title {
+    margin: 4px 0 8px;
+    font-size: 1.15rem;
+}
+
+.postlab-why {
+    margin: 0 0 8px;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+}
+
+.postlab-source-row {
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.postlab-hook-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.postlab-hook-label {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.postlab-composer-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.postlab-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 0.76rem;
+    color: var(--color-text-muted);
+}
+
+.postlab-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-text) 1.5%, var(--color-bg));
+    color: var(--color-text);
+    font-size: 0.86rem;
+    line-height: 1.48;
+    resize: vertical;
+}
+
+.postlab-visual-tip {
+    margin-bottom: 14px;
+    padding: 8px 12px;
+    border-left: 3px solid var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 5%, var(--color-bg));
+    font-size: 0.82rem;
+}
+
+.postlab-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.postlab-live-explorer {
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border);
+}
+
+.postlab-explorer-sub {
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+}
+
+.postlab-radar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.postlab-radar-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+}
+
+.postlab-radar-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.74rem;
+    color: var(--color-text-muted);
+}
+
+.postlab-radar-item h4 {
+    margin: 0 0 6px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+}
+
+.postlab-radar-item p {
+    margin: 0 0 10px;
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+}
+
+/* ==================== TAB 3: DRAFT SCORER ==================== */
+.scorer-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.scorer-textarea-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.scorer-textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.scorer-options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+}
+
+.scorer-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+    cursor: pointer;
+}
+
+.scorer-check input {
+    accent-color: var(--color-accent);
+}
+
+.scorer-action-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.scorer-char-count {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.scorer-rewrites-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.scorer-rewrite-card {
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-text) 2%, var(--color-bg));
+}
+
+.scorer-rewrite-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 0.82rem;
+}
+
+.scorer-rewrite-card p {
+    margin: 0;
+    font-size: 0.84rem;
+    white-space: pre-line;
+}
+
+.scorer-score-card {
+    padding: 18px 20px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+}
+
+.scorer-score-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.scorer-score-label {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.scorer-score-number {
+    font-family: var(--font-mono);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1.1;
+}
+
+.scorer-score-number span {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+.scorer-tier-badge {
+    padding: 3px 8px;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.scorer-predictions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.scorer-pred-item {
+    padding: 8px 10px;
+    border: 1px solid var(--color-border);
+}
+
+.scorer-pred-item span {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.74rem;
+}
+
+.scorer-pred-item strong {
+    font-family: var(--font-mono);
+    font-size: 0.94rem;
+}
+
+.scorer-matched-arch {
+    margin-bottom: 14px;
+    padding: 8px 10px;
+    border-left: 3px solid var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 5%, var(--color-bg));
+    font-size: 0.8rem;
+}
+
+.scorer-matched-arch span {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+}
+
+.scorer-checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.scorer-checklist li {
+    display: flex;
+    gap: 8px;
+    font-size: 0.8rem;
+}
+
+.scorer-checklist li p {
+    margin: 2px 0 0;
+    color: var(--color-text-muted);
+    font-size: 0.76rem;
+}
+
+.check-icon {
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.check-pass .check-icon {
+    color: #16a34a;
+}
+
+.check-warn .check-icon {
+    color: var(--color-accent);
+}
+
+@media (max-width: 860px) {
+    .gs-layout,
+    .postlab-hero,
+    .postlab-composer-grid,
+    .scorer-layout,
+    .xscholar-sync-grid {
+        grid-template-columns: 1fr;
+    }
+    .postlab-radar-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

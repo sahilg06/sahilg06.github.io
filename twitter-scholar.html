@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Goyal — X Scholar (@vibespersecond)</title>
+    <meta name="description" content="Google Scholar-style citation profile and daily high-engagement post recommendation lab for Sahil Goyal (@vibespersecond).">
+    <meta property="og:title" content="Sahil Goyal — X Scholar (@vibespersecond)">
+    <meta property="og:description" content="Google Scholar-style citation analytics and daily ML/AI post recommendation engine for @vibespersecond.">
+    <meta property="og:image" content="https://sahilg06.github.io/img/sahil_goyal.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sahilg06.github.io/twitter-scholar.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sahil Goyal — X Scholar (@vibespersecond)">
+    <meta name="twitter:description" content="Citation metrics, top ML threads, and daily high-engagement post lab for @vibespersecond.">
+    <link rel="canonical" href="https://sahilg06.github.io/twitter-scholar.html">
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg?v=2">
+    <link rel="stylesheet" href="./styles.css?v=20261028-1">
+    <script src="./site.js?v=20260823-2"></script>
+    <script src="./twitter-scholar.js?v=20261028-1" defer></script>
+</head>
+<body>
+
+<nav class="sidenav" aria-label="Primary navigation">
+    <div class="nav-socials" aria-label="Social profiles">
+        <a href="https://www.linkedin.com/in/sahil-goyal-4222371b4/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+        <a href="https://github.com/sahilg06" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=q68nBDgAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.35L12 18l7.162-5.15L24 9.5z"/></svg></a>
+        <a href="https://x.com/vibespersecond" target="_blank" rel="noopener noreferrer" title="Twitter / X" aria-label="Twitter / X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.931ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+    </div>
+    <div class="navblock">
+        <div class="navblock_text">
+            <a href="./index.html">About</a>
+            <a href="./research.html">Research</a>
+            <a href="./resume.html">CV</a>
+            <a href="./blog.html">Writing</a>
+            <a href="./reading.html">Reading</a>
+            <a href="./twitter-scholar.html" class="active">X Scholar</a>
+            <a href="./news.html">News</a>
+            <a href="./colab.html">Experience</a>
+            <a href="./travel.html">Travel</a>
+        </div>
+    </div>
+    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode"></button>
+</nav>
+
+<main class="main-content">
+    <div class="xscholar-container">
+        <!-- Top Scholar Sub-Header & Mode Switcher -->
+        <div class="xscholar-topbar">
+            <div class="xscholar-brand">
+                <span class="xscholar-brand-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.35L12 18l7.162-5.15L24 9.5z"/></svg>
+                </span>
+                <span class="xscholar-brand-title">X Scholar</span>
+                <span class="xscholar-brand-sub">Citation Index &amp; Daily Engagement Lab</span>
+            </div>
+
+            <div class="xscholar-tabs" role="tablist" aria-label="X Scholar Views">
+                <button class="xscholar-tab active" role="tab" aria-selected="true" aria-controls="panel-profile" id="tab-profile" data-tab="profile">
+                    Scholar Profile
+                </button>
+                <button class="xscholar-tab" role="tab" aria-selected="false" aria-controls="panel-postlab" id="tab-postlab" data-tab="postlab">
+                    Daily Post Lab <span class="xscholar-tab-badge" id="postlab-count-badge">5 Today</span>
+                </button>
+                <button class="xscholar-tab" role="tab" aria-selected="false" aria-controls="panel-scorer" id="tab-scorer" data-tab="scorer">
+                    Draft Scorer
+                </button>
+            </div>
+
+            <div class="xscholar-actions">
+                <button type="button" class="xscholar-btn-ghost" id="btn-open-sync" title="Add Tweet URL or Import X Analytics CSV">
+                    + Sync / Import
+                </button>
+                <button type="button" class="xscholar-btn-ghost" id="btn-open-settings" title="Configure optional Gemini/OpenAI key for custom rewrites">
+                    ⚙ AI Key
+                </button>
+            </div>
+        </div>
+
+        <!-- Sync / Import Collapsible Drawer -->
+        <section class="xscholar-drawer" id="drawer-sync" hidden aria-label="Sync or Import Tweets">
+            <div class="xscholar-drawer-header">
+                <div>
+                    <h3>Sync @vibespersecond Posts &amp; Analytics</h3>
+                    <p>Public timeline posts are synced daily via GitHub Actions. You can also add a recent X post URL immediately or import your X Analytics CSV / archive locally.</p>
+                </div>
+                <button type="button" class="xscholar-drawer-close" id="btn-close-sync" aria-label="Close drawer">✕</button>
+            </div>
+            <div class="xscholar-sync-grid">
+                <form class="xscholar-sync-card" id="form-add-tweet">
+                    <h4>1. Quick-Add or Refresh an X Post by URL</h4>
+                    <p>Paste any status link from <code>@vibespersecond</code> (fetches live via X syndication API) with optional Views / Bookmarks override.</p>
+                    <div class="xscholar-input-row">
+                        <input type="url" id="input-tweet-url" placeholder="https://x.com/vibespersecond/status/2114998925736476778" required>
+                        <button type="submit" class="xscholar-btn-primary" id="btn-fetch-tweet">Fetch &amp; Index</button>
+                    </div>
+                    <div class="xscholar-metrics-mini">
+                        <label>Views (opt) <input type="number" id="input-tweet-views" placeholder="e.g. 1480" min="0"></label>
+                        <label>Bookmarks (opt) <input type="number" id="input-tweet-bookmarks" placeholder="e.g. 25" min="0"></label>
+                        <label>Likes (opt) <input type="number" id="input-tweet-likes" placeholder="Auto" min="0"></label>
+                    </div>
+                    <p class="xscholar-status-msg" id="sync-url-status" aria-live="polite"></p>
+                </form>
+
+                <div class="xscholar-sync-card">
+                    <h4>2. Bulk Import X Analytics CSV or Archive</h4>
+                    <p>Drop your exported <code>tweet_activity_metrics.csv</code> from X Analytics or <code>tweets.js</code> from your X Archive to update exact impressions &amp; bookmarks.</p>
+                    <div class="xscholar-file-row">
+                        <input type="file" id="input-csv-file" accept=".csv,.json,.js">
+                        <button type="button" class="xscholar-btn-ghost" id="btn-export-json">Download JSON</button>
+                        <button type="button" class="xscholar-btn-ghost" id="btn-reset-local" title="Clear local browser additions">Reset Local Cache</button>
+                    </div>
+                    <p class="xscholar-status-msg" id="sync-csv-status" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Settings Collapsible Drawer -->
+        <section class="xscholar-drawer" id="drawer-settings" hidden aria-label="AI Key Configuration">
+            <div class="xscholar-drawer-header">
+                <div>
+                    <h3>Optional LLM API Key (Stored Only in Your Browser)</h3>
+                    <p>The Daily Post Lab works out-of-the-box with zero API keys using live arXiv/HuggingFace/HN feeds and your historical archetype engine. Add a Gemini or OpenAI key if you want bespoke one-click LLM rewrites in your voice.</p>
+                </div>
+                <button type="button" class="xscholar-drawer-close" id="btn-close-settings" aria-label="Close settings">✕</button>
+            </div>
+            <form class="xscholar-settings-form" id="form-ai-settings">
+                <label>
+                    <span>Provider</span>
+                    <select id="select-ai-provider">
+                        <option value="gemini">Google Gemini (gemini-2.5-flash)</option>
+                        <option value="openai">OpenAI (gpt-4o-mini)</option>
+                    </select>
+                </label>
+                <label class="xscholar-settings-key">
+                    <span>API Key (saved in <code>localStorage</code>, never sent to GitHub)</span>
+                    <input type="password" id="input-ai-key" placeholder="AIzaSy... or sk-..." autocomplete="off">
+                </label>
+                <div class="xscholar-settings-btns">
+                    <button type="submit" class="xscholar-btn-primary">Save Key</button>
+                    <button type="button" class="xscholar-btn-ghost" id="btn-clear-key">Clear</button>
+                </div>
+            </form>
+            <p class="xscholar-status-msg" id="settings-status" aria-live="polite"></p>
+        </section>
+
+        <!-- ==================== TAB 1: GOOGLE SCHOLAR PROFILE VIEW ==================== -->
+        <section id="panel-profile" role="tabpanel" aria-labelledby="tab-profile">
+            <div class="gs-layout">
+                <!-- Left Column: Author Header + Publications Table -->
+                <div class="gs-main">
+                    <header class="gs-author-header">
+                        <img src="./img/sahil_goyal.png" alt="Sahil Goyal" class="gs-avatar">
+                        <div class="gs-author-info">
+                            <div class="gs-name-row">
+                                <h1 id="gs-author-name">Sahil Goyal</h1>
+                                <a href="https://x.com/vibespersecond" target="_blank" rel="noopener noreferrer" class="gs-handle-badge" id="gs-author-handle">@vibespersecond ↗</a>
+                                <a href="https://scholar.google.com/citations?user=q68nBDgAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="gs-scholar-link" title="View Academic Google Scholar">Academic Scholar ↗</a>
+                            </div>
+                            <p class="gs-affiliation" id="gs-author-affiliation">
+                                ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee
+                            </p>
+                            <p class="gs-verified" id="gs-author-verified">
+                                Verified homepage at <a href="https://sahilg06.github.io">sahilg06.github.io</a> · <span id="gs-followers-count">1,795</span> Followers · <span id="gs-indexed-count">102</span> Indexed Posts
+                            </p>
+                            <div class="gs-interests" id="gs-interests-list" aria-label="Content areas">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- Filter & Search Bar -->
+                    <div class="gs-toolbar">
+                        <div class="gs-search-row">
+                            <label class="gs-search-box">
+                                <span class="visually-hidden">Search posts</span>
+                                <input type="search" id="gs-search-input" placeholder="Search posts by title, concept (e.g. KL, MaGNeTS, PhD), or @coauthor…" autocomplete="off">
+                            </label>
+                            <select id="gs-sort-select" class="gs-select" aria-label="Sort posts">
+                                <option value="citations">Sort by Citations (Impact)</option>
+                                <option value="views">Sort by Est. Views</option>
+                                <option value="likes">Sort by Likes</option>
+                                <option value="bookmarks">Sort by Bookmarks</option>
+                                <option value="date">Sort by Date (Newest)</option>
+                            </select>
+                            <select id="gs-year-select" class="gs-select" aria-label="Filter by year">
+                                <option value="all">All years</option>
+                                <option value="2026">Since 2026</option>
+                                <option value="2025">Since 2025</option>
+                                <option value="2024">2024 &amp; earlier</option>
+                            </select>
+                        </div>
+                        <div class="gs-category-chips" id="gs-category-chips" role="group" aria-label="Filter by topic category">
+                            <!-- Populated dynamically -->
+                        </div>
+                        <div class="gs-active-filter-bar" id="gs-active-filter-bar" hidden>
+                            <span id="gs-active-filter-label"></span>
+                            <button type="button" class="gs-clear-filter" id="btn-clear-gs-filter">Clear filter ✕</button>
+                        </div>
+                    </div>
+
+                    <!-- Google Scholar Publications Table -->
+                    <div class="gs-table-wrap">
+                        <table class="gs-table" aria-label="Indexed X Posts">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="gs-col-title">Title / Post</th>
+                                    <th scope="col" class="gs-col-cited">Cited by</th>
+                                    <th scope="col" class="gs-col-year">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gs-tbody">
+                                <tr>
+                                    <td colspan="3" class="gs-empty">Loading @vibespersecond citation index…</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="gs-pagination" id="gs-pagination">
+                        <span class="gs-page-summary" id="gs-page-summary"></span>
+                        <button type="button" class="xscholar-btn-ghost" id="btn-show-more-posts">Show more posts</button>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar: Cited By Metrics, Histogram, Archetype DNA, Co-authors -->
+                <aside class="gs-sidebar" aria-label="Citation statistics and network">
+                    <div class="gs-card">
+                        <div class="gs-card-header">
+                            <h2>Cited by</h2>
+                            <span class="gs-formula-pill" title="Weighted Citation = Likes + 2×Bookmarks + 3×Reposts + 2×Replies">Impact Formula ⓘ</span>
+                        </div>
+                        <table class="gs-stats-table" aria-label="Citation indices">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>All</th>
+                                    <th>Since 2026</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Citations (Impact)</td>
+                                    <td id="stat-citations-all">—</td>
+                                    <td id="stat-citations-recent">—</td>
+                                </tr>
+                                <tr>
+                                    <td title="h posts with at least h weighted citations">t-index (h-index)</td>
+                                    <td id="stat-hindex-all">—</td>
+                                    <td id="stat-hindex-recent">—</td>
+                                </tr>
+                                <tr>
+                                    <td title="Posts with at least 100 weighted citations">i100-index</td>
+                                    <td id="stat-i100-all">—</td>
+                                    <td id="stat-i100-recent">—</td>
+                                </tr>
+                                <tr>
+                                    <td title="Posts with at least 10 weighted citations">i10-index</td>
+                                    <td id="stat-i10-all">—</td>
+                                    <td id="stat-i10-recent">—</td>
+                                </tr>
+                                <tr>
+                                    <td>Est. Views</td>
+                                    <td id="stat-views-all">—</td>
+                                    <td id="stat-views-recent">—</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="gs-formula-note">
+                            <strong>Citation weight:</strong> <code>1×Like + 2×Bookmark + 3×Repost + 2×Reply</code>
+                        </p>
+
+                        <!-- Citations Over Time Bar Chart -->
+                        <div class="gs-chart-section">
+                            <div class="gs-chart-header">
+                                <span>Impact trajectory</span>
+                                <span class="gs-chart-hint">Click bar to filter</span>
+                            </div>
+                            <div class="gs-bars" id="gs-impact-bars" role="img" aria-label="Citations per period chart">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Empirical Archetype Multipliers Card -->
+                    <div class="gs-card">
+                        <div class="gs-card-header">
+                            <h2>Winning Archetypes</h2>
+                            <button type="button" class="gs-link-btn" id="btn-jump-postlab">Open Lab →</button>
+                        </div>
+                        <p class="gs-card-sub">Empirical performance by post format across your timeline:</p>
+                        <div class="gs-archetypes-list" id="gs-archetypes-list">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Co-authors / Network Sidebar -->
+                    <div class="gs-card">
+                        <div class="gs-card-header">
+                            <h2>Co-authors &amp; Network</h2>
+                        </div>
+                        <ul class="gs-coauthors-list" id="gs-coauthors-list">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ==================== TAB 2: DAILY POST LAB (RECOMMENDER) ==================== -->
+        <section id="panel-postlab" role="tabpanel" aria-labelledby="tab-postlab" hidden>
+            <!-- Top Empirical Strategy Summary -->
+            <div class="postlab-hero">
+                <div class="postlab-hero-text">
+                    <span class="section-kicker">Daily Engagement Engine · Personalized to @vibespersecond</span>
+                    <h2>Today’s High-Engagement Post Lineup</h2>
+                    <p>
+                        Synthesized from your top-performing citation patterns — <strong>High-Utility Academic Trackers</strong> (1,178 citations), <strong>Research Milestones + Visuals</strong> (690 citations), <strong>Decode-Time / MoE Deep-Dives</strong> (278 citations), and <strong>Interactive "Back to Basics" ML Notes</strong> like your Oct 27 Forward vs. Reverse KL post (4.0% bookmark rate) — combined with live daily research &amp; tech signals.
+                    </p>
+                </div>
+                <div class="postlab-hero-controls">
+                    <div class="postlab-window-box">
+                        <span class="postlab-window-label">Optimal Posting Windows (from your top decile)</span>
+                        <strong>2:00 PM – 4:30 PM IST (08:30–11:00 UTC)</strong>
+                        <span>Secondary window: 8:30 PM – 10:30 PM IST (US West wake-up)</span>
+                    </div>
+                    <div class="postlab-refresh-row">
+                        <button type="button" class="xscholar-btn-primary" id="btn-refresh-signals">↻ Fetch Live Signals &amp; Shuffle</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Signal Sources Status Bar -->
+            <div class="postlab-signals-bar" id="postlab-signals-bar" aria-live="polite">
+                <span class="signal-pill" id="signal-hf"><span class="signal-dot"></span> Hugging Face Daily Papers</span>
+                <span class="signal-pill" id="signal-arxiv"><span class="signal-dot"></span> arXiv (cs.CV / cs.LG)</span>
+                <span class="signal-pill" id="signal-hn"><span class="signal-dot"></span> AI &amp; Tech Pulse</span>
+                <span class="signal-pill signal-ready"><span class="signal-dot"></span> Classic ML Vault &amp; sahilg06.github.io</span>
+            </div>
+
+            <!-- Filter by Archetype -->
+            <div class="postlab-filter-row" id="postlab-archetype-filters" role="group" aria-label="Filter daily recommendations by archetype">
+                <button type="button" class="reading-chip active" data-arch="all">All 5 Daily Picks</button>
+                <button type="button" class="reading-chip" data-arch="interactive">Interactive ML Note ("Back to Basics")</button>
+                <button type="button" class="reading-chip" data-arch="paper">Live Paper Spotlight</button>
+                <button type="button" class="reading-chip" data-arch="resource">PhD / Research Resource</button>
+                <button type="button" class="reading-chip" data-arch="quotetweet">Timely AI / Tech Take</button>
+                <button type="button" class="reading-chip" data-arch="followup">Portfolio Follow-Up</button>
+            </div>
+
+            <!-- Daily Recommendation Cards -->
+            <div class="postlab-cards" id="postlab-cards">
+                <!-- Populated dynamically -->
+            </div>
+
+            <!-- Live Feed Explorer: Turn any live paper or tech story into a post -->
+            <section class="postlab-live-explorer" aria-labelledby="live-explorer-title">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">Live Signal Radar</span>
+                        <h3 id="live-explorer-title">Trending ML Papers &amp; Tech Discussions Right Now</h3>
+                    </div>
+                    <span class="postlab-explorer-sub">Click "Draft Post in My Voice →" on any item to synthesize a custom hook &amp; thread</span>
+                </div>
+                <div class="postlab-radar-grid" id="postlab-radar-grid">
+                    <!-- Populated dynamically from live HF / arXiv / HN feeds -->
+                </div>
+            </section>
+        </section>
+
+        <!-- ==================== TAB 3: DRAFT SCORER & SIMULATOR ==================== -->
+        <section id="panel-scorer" role="tabpanel" aria-labelledby="tab-scorer" hidden>
+            <div class="scorer-layout">
+                <div class="scorer-editor-col">
+                    <span class="section-kicker">Pre-Flight Engagement Simulator</span>
+                    <h2>Test &amp; Optimize Your Draft Before Posting</h2>
+                    <p>Paste a rough tweet idea below. The simulator evaluates it against the empirical regression weights of your 102 posts on <code>@vibespersecond</code>.</p>
+
+                    <label class="scorer-textarea-label" for="scorer-draft-input">Your Tweet / Thread Opener</label>
+                    <textarea id="scorer-draft-input" class="scorer-textarea" rows="6" placeholder="e.g. Went a little back to basics today.&#10;&#10;Whenever I needed intuition on Flow Matching vs. Score-Based Diffusion, I always went back to Lipman et al.'s 2022 note.&#10;&#10;Built an interactive sandbox showing why straight-line OT paths allow 4-step sampling without distillation:"></textarea>
+
+                    <div class="scorer-options-grid">
+                        <label class="scorer-check">
+                            <input type="checkbox" id="scorer-opt-media" checked>
+                            <span>Attaching custom visual / interactive demo screenshot (+2.4× impact)</span>
+                        </label>
+                        <label class="scorer-check">
+                            <input type="checkbox" id="scorer-opt-replylink" checked>
+                            <span>Placing external link in Reply #2 instead of main post (+2.1× reach)</span>
+                        </label>
+                        <label class="scorer-check">
+                            <input type="checkbox" id="scorer-opt-resource">
+                            <span>Includes copyable template / sheet / interactive sandbox (+3.2× bookmarks)</span>
+                        </label>
+                        <label class="scorer-check">
+                            <input type="checkbox" id="scorer-opt-primewindow" checked>
+                            <span>Posting in prime window (2:00–4:30 PM IST or 8:30–10:30 PM IST)</span>
+                        </label>
+                    </div>
+
+                    <div class="scorer-action-row">
+                        <button type="button" class="xscholar-btn-primary" id="btn-score-optimize">✨ Generate 3 High-Engagement Hook Rewrites</button>
+                        <button type="button" class="xscholar-btn-ghost" id="btn-score-post-x">Post Draft on X ↗</button>
+                        <span class="scorer-char-count" id="scorer-char-count">0 / 280 chars</span>
+                    </div>
+
+                    <div class="scorer-rewrites-box" id="scorer-rewrites-box" hidden>
+                        <h3>Suggested High-Engagement Variations</h3>
+                        <div id="scorer-rewrites-list" class="scorer-rewrites-list"></div>
+                    </div>
+                </div>
+
+                <aside class="scorer-results-col" aria-live="polite">
+                    <div class="scorer-score-card">
+                        <div class="scorer-score-top">
+                            <div>
+                                <span class="scorer-score-label">Predicted Scholar Impact</span>
+                                <div class="scorer-score-number" id="scorer-total-score">84<span>/100</span></div>
+                            </div>
+                            <span class="scorer-tier-badge" id="scorer-tier-badge">Top 10% Archetype</span>
+                        </div>
+
+                        <div class="scorer-predictions-grid">
+                            <div class="scorer-pred-item">
+                                <span>Est. Citations</span>
+                                <strong id="scorer-pred-citations">140 – 260</strong>
+                            </div>
+                            <div class="scorer-pred-item">
+                                <span>Est. Views</span>
+                                <strong id="scorer-pred-views">3.2K – 8.5K</strong>
+                            </div>
+                            <div class="scorer-pred-item">
+                                <span>Est. Likes</span>
+                                <strong id="scorer-pred-likes">55 – 110</strong>
+                            </div>
+                            <div class="scorer-pred-item">
+                                <span>Est. Bookmarks</span>
+                                <strong id="scorer-pred-bookmarks">25 – 60</strong>
+                            </div>
+                        </div>
+
+                        <div class="scorer-matched-arch">
+                            <span>Closest Historical Pattern:</span>
+                            <strong id="scorer-matched-arch-name">Interactive Classic Rebuild (like Oct 27 KL Post)</strong>
+                        </div>
+
+                        <h4>6-Axis Diagnostic Breakdown</h4>
+                        <ul class="scorer-checklist" id="scorer-checklist">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <footer class="site-footer">© 2026 Sahil Goyal · X Scholar (<a href="https://x.com/vibespersecond" target="_blank" rel="noopener noreferrer">@vibespersecond</a>)</footer>
+    </div>
+</main>
+
+</body>
+</html>
