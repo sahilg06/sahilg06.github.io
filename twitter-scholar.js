@@ -440,8 +440,6 @@
                         <span>· ${fmtNum(m.views || 0)} views</span>
                         <span>·</span>
                         <button type="button" class="gs-inline-action" data-action="toggle-text">Read text</button>
-                        <span>·</span>
-                        <button type="button" class="gs-inline-action" data-action="template">Use as template</button>
                     </div>
                     <p class="gs-post-fulltext" hidden>${escapeHtml(t.text)}</p>
                 </td>
@@ -459,15 +457,6 @@
                 const isHidden = fullTextP.hidden;
                 fullTextP.hidden = !isHidden;
                 toggleBtn.textContent = isHidden ? 'Hide text' : 'Read text';
-            });
-
-            tr.querySelector('[data-action="template"]').addEventListener('click', () => {
-                switchTab('scorer');
-                const input = document.getElementById('scorer-draft-input');
-                input.value = t.text;
-                document.getElementById('scorer-opt-media').checked = !!t.has_media;
-                evaluateDraft();
-                input.focus();
             });
 
             tbody.appendChild(tr);
