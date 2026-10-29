@@ -231,7 +231,7 @@ def sync():
                 "citations": compute_citations(merged_m),
             }
 
-    for page_url in [f"https://x.com/{HANDLE}", f"https://x.com/{HANDLE}/with_replies"]:
+    for page_url in [f"https://x.com/{HANDLE}", f"https://x.com/{HANDLE}/with_replies", f"https://x.com/{HANDLE}/highlights"]:
         for ua in [
             HEADERS["User-Agent"],
             "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
