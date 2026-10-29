@@ -232,10 +232,21 @@ def sync():
             }
 
     for page_url in [f"https://x.com/{HANDLE}", f"https://x.com/{HANDLE}/with_replies"]:
-        try:
-            ingest_x_html(fetch_url(page_url))
-        except Exception:
-            pass
+        for ua in [
+            HEADERS["User-Agent"],
+            "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+            "Mozilla/5.0 (compatible; Discordbot/2.0; +https://discordapp.com)",
+        ]:
+            try:
+                req = urllib.request.Request(page_url, headers={"User-Agent": ua, "Accept": "text/html"})
+                with urllib.request.urlopen(req, timeout=15) as resp:
+                    page_html = resp.read().decode("utf-8", errors="replace")
+                ingest_x_html(page_html)
+                m_fol = re.search(r"followers:(\d+)", page_html)
+                if m_fol and "profile" in store:
+                    store["profile"]["followers"] = max(int(m_fol.group(1)), int(store["profile"].get("followers", 0)))
+            except Exception:
+                pass
 
     # Refresh top/recent tweets individually via cdn.syndication
     recent_ids = sorted(tweets_by_id.keys(), reverse=True)[:12]

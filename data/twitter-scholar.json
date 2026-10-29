@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 1795,
+    "followers": 1801,
     "following": 607,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-10-28T11:39:27Z",
+  "last_synced": "2026-10-29T08:23:22Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -74,7 +74,7 @@
         "replies": 8,
         "quotes": 1,
         "bookmarks": 687,
-        "views": 35177
+        "views": 35251
       },
       "citations": 1932
     },
@@ -249,9 +249,35 @@
         "replies": 4,
         "quotes": 1,
         "bookmarks": 25,
-        "views": 1790
+        "views": 2184
       },
       "citations": 167
+    },
+    {
+      "id": "2109563488473698475",
+      "title": "Spent the last few years on pretraining, vision, and efficient ML. Now pivoting into that c-word:…",
+      "text": "Spent the last few years on pretraining, vision, and efficient ML. Now pivoting into that c-word: continual learning. Wish my agents luck remembering what they learn. Send over your fav read papers and resources!",
+      "created_at": "2026-10-12T08:35:04Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2109563488473698475",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 78,
+        "reposts": 3,
+        "replies": 5,
+        "quotes": 0,
+        "bookmarks": 13,
+        "views": 4394
+      },
+      "citations": 123
     },
     {
       "id": "2111713521079902570",
@@ -275,7 +301,7 @@
         "replies": 4,
         "quotes": 0,
         "bookmarks": 13,
-        "views": 7908
+        "views": 7912
       },
       "citations": 86
     },
@@ -325,10 +351,10 @@
         "reposts": 3,
         "replies": 4,
         "quotes": 0,
-        "bookmarks": 2,
-        "views": 1163
+        "bookmarks": 8,
+        "views": 1168
       },
-      "citations": 61
+      "citations": 73
     },
     {
       "id": "1945592455274856757",
@@ -354,6 +380,84 @@
         "views": 1278
       },
       "citations": 53
+    },
+    {
+      "id": "2107480811704652168",
+      "title": "half century it is. yayy!",
+      "text": "half century it is. yayy!",
+      "created_at": "2026-10-06T14:39:15Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2107480811704652168",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 34,
+        "reposts": 0,
+        "replies": 4,
+        "quotes": 0,
+        "bookmarks": 4,
+        "views": 1274
+      },
+      "citations": 50
+    },
+    {
+      "id": "2109559487468347678",
+      "title": "The happiest people are either building obsessively or completely content with the ordinary. Pain lives in…",
+      "text": "The happiest people are either building obsessively or completely content with the ordinary. Pain lives in the middle ground.",
+      "created_at": "2026-10-12T08:19:10Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2109559487468347678",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 30,
+        "reposts": 2,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 6,
+        "views": 1145
+      },
+      "citations": 48
+    },
+    {
+      "id": "2107752191935254610",
+      "title": "Whatever is happening to math, hope it happens to healthcare too.",
+      "text": "Whatever is happening to math, hope it happens to healthcare too.",
+      "created_at": "2026-10-07T08:37:37Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2107752191935254610",
+      "external_urls": [],
+      "category": "Interactive Notes & Theory",
+      "archetype": "Interactive Classic Rebuild",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 30,
+        "reposts": 2,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 6,
+        "views": 968
+      },
+      "citations": 48
     },
     {
       "id": "1946784145272901950",
@@ -382,6 +486,32 @@
       "citations": 46
     },
     {
+      "id": "2114634405520326738",
+      "title": "do you remember pytorch forums? legend",
+      "text": "do you remember pytorch forums? legend",
+      "created_at": "2026-10-26T08:25:04Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2114634405520326738",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 24,
+        "reposts": 2,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 5,
+        "views": 986
+      },
+      "citations": 42
+    },
+    {
       "id": "1962407745841402192",
       "title": "So, I applied for this RF program at MSR last year. That application generally needs recommendation from…",
       "text": "So, I applied for this RF program at MSR last year. That application generally needs recommendation from your college's CS department HOD.  But he straightaway told me \"no\" and didn't even look at my profile because I wasn't a CS student.",
@@ -405,6 +535,58 @@
         "views": 1020
       },
       "citations": 42
+    },
+    {
+      "id": "2111391758244622442",
+      "title": "Felt like I have been just surviving the life instead of living past few months due to health and other…",
+      "text": "Felt like I have been just surviving the life instead of living past few months due to health and other personal issues. Need to change that. \nReminder to live the life, not survive!",
+      "created_at": "2026-10-17T09:39:57Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2111391758244622442",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 31,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 4,
+        "views": 1087
+      },
+      "citations": 41
+    },
+    {
+      "id": "2111723784340398429",
+      "title": "Not sure if people are aware of /grill-me skill. I have started using it recently. Its very helpful for…",
+      "text": "Not sure if people are aware of /grill-me skill. I have started using it recently. Its very helpful for loose ends in your idea.",
+      "created_at": "2026-10-18T07:39:18Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2111723784340398429",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 26,
+        "reposts": 0,
+        "replies": 3,
+        "quotes": 0,
+        "bookmarks": 3,
+        "views": 1233
+      },
+      "citations": 38
     },
     {
       "id": "1918365837683265630",
@@ -452,13 +634,14 @@
       "coauthors": [
         "@paraschopra"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 17,
         "reposts": 1,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 5,
-        "views": 519
+        "views": 574
       },
       "citations": 32
     },
@@ -484,7 +667,7 @@
         "replies": 3,
         "quotes": 0,
         "bookmarks": 2,
-        "views": 1378
+        "views": 1384
       },
       "citations": 30
     },
@@ -517,6 +700,110 @@
       "citations": 30
     },
     {
+      "id": "2114615054855553114",
+      "title": "Every method in diffusion is a temporal evolution of probability distributions.",
+      "text": "Every method in diffusion is a temporal evolution of probability distributions.",
+      "created_at": "2026-10-26T07:08:11Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2114615054855553114",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 15,
+        "reposts": 1,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 3,
+        "views": 855
+      },
+      "citations": 28
+    },
+    {
+      "id": "2111399887309070773",
+      "title": "Don't even look at any other model for creative writing with that human touch. Just use Gemini Argon.",
+      "text": "Don't even look at any other model for creative writing with that human touch. Just use Gemini Argon.",
+      "created_at": "2026-10-17T10:12:15Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2111399887309070773",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 16,
+        "reposts": 1,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 3,
+        "views": 748
+      },
+      "citations": 25
+    },
+    {
+      "id": "2111032343431647374",
+      "title": "Gemini Argon is goat for end-to-end complex tasks.",
+      "text": "Gemini Argon is goat for end-to-end complex tasks.\nGood news: All it took was one prompt and 2 hrs. \nBad news: 100% of my weekly Argon quota completely wiped out in just 1 prompt.",
+      "created_at": "2026-10-16T09:51:46Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2111032343431647374",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 19,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 2,
+        "views": 1047
+      },
+      "citations": 25
+    },
+    {
+      "id": "2110258202277458245",
+      "title": "Its not a good feeling",
+      "text": "Its not a good feeling",
+      "created_at": "2026-10-14T06:35:36Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2110258202277458245",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 19,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 2,
+        "views": 1067
+      },
+      "citations": 25
+    },
+    {
       "id": "1962429674992419070",
       "title": "Research papers in my chrome window.",
       "text": "Research papers in my chrome window.",
@@ -540,6 +827,32 @@
         "views": 504
       },
       "citations": 24
+    },
+    {
+      "id": "2111391054301962436",
+      "title": "Gemini Argon's quota is restored.",
+      "text": "Gemini Argon's quota is restored.",
+      "created_at": "2026-10-17T09:37:09Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2111391054301962436",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 17,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 2,
+        "views": 733
+      },
+      "citations": 23
     },
     {
       "id": "1904144182001992163",
@@ -567,6 +880,32 @@
       "citations": 23
     },
     {
+      "id": "2114985725183881626",
+      "title": "60k Voluntary Exit Offers from Microsoft?",
+      "text": "60k voluntary exit offers from Microsoft?",
+      "created_at": "2026-10-27T07:41:06Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2114985725183881626",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Timely Quote-Tweet / Industry Take",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 13,
+        "reposts": 1,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 2,
+        "views": 639
+      },
+      "citations": 22
+    },
+    {
       "id": "1919004275868332218",
       "title": "Two very similar and interesting concurrent works",
       "text": "Two very similar and interesting concurrent works \nVision: Vision Transformers need Registers\nLanguage: Efficient Streaming Language Models with Attention Sinks",
@@ -590,32 +929,6 @@
         "views": 572
       },
       "citations": 22
-    },
-    {
-      "id": "2114615054855553114",
-      "title": "Every method in diffusion is a temporal evolution of probability distributions.",
-      "text": "Every method in diffusion is a temporal evolution of probability distributions.",
-      "created_at": "2026-10-26T07:08:11Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2114615054855553114",
-      "external_urls": [],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 15,
-        "reposts": 0,
-        "replies": 2,
-        "quotes": 0,
-        "bookmarks": 1,
-        "views": 850
-      },
-      "citations": 21
     },
     {
       "id": "1944890474718019613",
@@ -668,31 +981,6 @@
       "citations": 20
     },
     {
-      "id": "2114985725183881626",
-      "title": "60k Voluntary Exit Offers from Microsoft?",
-      "text": "60k voluntary exit offers from Microsoft?",
-      "created_at": "2026-10-27T07:41:06Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2114985725183881626",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Timely Quote-Tweet / Industry Take",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "metrics": {
-        "likes": 13,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 2,
-        "views": 604
-      },
-      "citations": 19
-    },
-    {
       "id": "1924494903469621469",
       "title": "Isn't this paper \"One-D-Piece: Image Tokenizer Meets Quality-Controllable Compression\" ()",
       "text": "Isn't this paper \"One-D-Piece: Image Tokenizer Meets Quality-Controllable Compression\" () \njust Nested Dropout () \nor Matryoshka Representation Learning () \nalong token sequence length?",
@@ -722,6 +1010,110 @@
       "citations": 19
     },
     {
+      "id": "2109593482549702702",
+      "title": "And suddenly it's winter in North India. Comfy blanket and fan at 2 it is.",
+      "text": "And suddenly it's winter in North India. Comfy blanket and fan at 2 it is.",
+      "created_at": "2026-10-12T10:34:15Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2109593482549702702",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 12,
+        "reposts": 0,
+        "replies": 3,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 1040
+      },
+      "citations": 18
+    },
+    {
+      "id": "2107542905976197546",
+      "title": "found my books around and put them together. I have a mini mini library too :)",
+      "text": "found my books around and put them together. I have a mini mini library too :)",
+      "created_at": "2026-10-06T18:45:59Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2107542905976197546",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 14,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 963
+      },
+      "citations": 18
+    },
+    {
+      "id": "2114626763225752031",
+      "title": "Youtube music >> spotify",
+      "text": "Youtube music >> spotify",
+      "created_at": "2026-10-26T07:54:42Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2114626763225752031",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 10,
+        "reposts": 0,
+        "replies": 3,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 794
+      },
+      "citations": 16
+    },
+    {
+      "id": "2112131642022355164",
+      "title": "Today I was introduced to Goobie and Doobie. Thanks youtube's algo.",
+      "text": "Today I was introduced to Goobie and Doobie. Thanks youtube's algo.",
+      "created_at": "2026-10-19T10:39:59Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2112131642022355164",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 14,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 609
+      },
+      "citations": 16
+    },
+    {
       "id": "1941144098381160844",
       "title": "Booked flights✈️ — BLR-&gt;Vancouver-&gt;Calgary-&gt;Toronto-&gt;BLR",
       "text": "Booked flights✈️ \nBLR-&gt;Vancouver-&gt;Calgary-&gt;Toronto-&gt;BLR\nHit me up with places!",
@@ -745,6 +1137,32 @@
         "views": 370
       },
       "citations": 16
+    },
+    {
+      "id": "2111510881775530155",
+      "title": "Every now and then, Walter White appears on my X timeline asking for support lol",
+      "text": "Every now and then, Walter White appears on my X timeline asking for support lol",
+      "created_at": "2026-10-17T17:33:18Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2111510881775530155",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 13,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 723
+      },
+      "citations": 15
     },
     {
       "id": "1922339760388874485",
@@ -797,6 +1215,32 @@
         "views": 308
       },
       "citations": 15
+    },
+    {
+      "id": "2110274249168711798",
+      "title": "You might not have heard about internal model names from frontier labs. Sometimes they are so weird and funny.",
+      "text": "You might not have heard about internal model names from frontier labs. Sometimes they are so weird and funny.",
+      "created_at": "2026-10-14T07:39:22Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2110274249168711798",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 12,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 871
+      },
+      "citations": 14
     },
     {
       "id": "1961470719243464986",
@@ -878,6 +1322,32 @@
       "citations": 14
     },
     {
+      "id": "2115421200021381328",
+      "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "created_at": "2026-10-28T12:31:31Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115421200021381328",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 13,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 503
+      },
+      "citations": 13
+    },
+    {
       "id": "2111394821520957755",
       "title": "@miniapeur credit: Argon",
       "text": "@miniapeur credit: Argon",
@@ -900,6 +1370,32 @@
         "quotes": 0,
         "bookmarks": 0,
         "views": 197
+      },
+      "citations": 13
+    },
+    {
+      "id": "2108123679884476654",
+      "title": "There is no coming back from using LLMs to quickly go through a research paper.",
+      "text": "There is no coming back from using LLMs to quickly go through a research paper.",
+      "created_at": "2026-10-08T09:13:46Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2108123679884476654",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 11,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 1109
       },
       "citations": 13
     },
@@ -927,6 +1423,32 @@
         "views": 342
       },
       "citations": 13
+    },
+    {
+      "id": "2108085108825891234",
+      "title": "what is this pickup line",
+      "text": "what is this pickup line",
+      "created_at": "2026-10-08T06:40:30Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2108085108825891234",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 6,
+        "reposts": 0,
+        "replies": 3,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 732
+      },
+      "citations": 12
     },
     {
       "id": "1962086656712036588",
@@ -977,6 +1499,32 @@
         "views": 286
       },
       "citations": 11
+    },
+    {
+      "id": "2114630663022501987",
+      "title": "I think pretraining is still more than just tweaking data recipes. Transformers haven't saturated yet (at…",
+      "text": "I think pretraining is still more than just tweaking data recipes. Transformers haven't saturated yet (at scale), especially the training algorithms and even the architecture.",
+      "created_at": "2026-10-26T08:10:12Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2114630663022501987",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 7,
+        "reposts": 1,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 596
+      },
+      "citations": 10
     },
     {
       "id": "2109605721340055849",
@@ -1237,6 +1785,58 @@
         "views": 723
       },
       "citations": 9
+    },
+    {
+      "id": "2111755769238691892",
+      "title": "I never had a credit card. So was applying for idfc first wow card. The most difficult thing to do was…",
+      "text": "I never had a credit card. So was applying for idfc first wow card. The most difficult thing to do was scrolling for selecting birth date on mac. Having issues in simplest features like scrolling should be a crime now.",
+      "created_at": "2026-10-18T09:46:24Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2111755769238691892",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 729
+      },
+      "citations": 8
+    },
+    {
+      "id": "2107725821318512872",
+      "title": "what did you do, google photos wardrobe (left)?",
+      "text": "what did you do, google photos wardrobe (left)?\nreel vs real lol. need nano banana 2.1 here.",
+      "created_at": "2026-10-07T06:52:50Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2107725821318512872",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 6,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 948
+      },
+      "citations": 8
     },
     {
       "id": "1956988176586928411",
@@ -1733,6 +2333,32 @@
       "citations": 7
     },
     {
+      "id": "2111876331772531133",
+      "title": "The \"noisy fart\" physics",
+      "text": "The \"noisy fart\" physics",
+      "created_at": "2026-10-18T17:45:28Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2111876331772531133",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 661
+      },
+      "citations": 6
+    },
+    {
       "id": "2110289482511777841",
       "title": "whatever happens, max verstappen - idk, it was just rhyming",
       "text": "whatever happens, max verstappen - idk, it was just rhyming",
@@ -1754,7 +2380,33 @@
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 554
+        "views": 558
+      },
+      "citations": 6
+    },
+    {
+      "id": "2110271125720883513",
+      "title": "@nvidia to acquire @reflection_ai ?! 👀",
+      "text": "@nvidia to acquire @reflection_ai ?! 👀",
+      "created_at": "2026-10-14T07:26:57Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2110271125720883513",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 6,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 518
       },
       "citations": 6
     },
@@ -2040,6 +2692,32 @@
       "citations": 6
     },
     {
+      "id": "2115403138350084471",
+      "title": "@shlomifruchter But deciding which experiment yields the highest signal is itself a kind of theoretical…",
+      "text": "@shlomifruchter But deciding which experiment yields the highest signal is itself a kind of theoretical problem?",
+      "created_at": "2026-10-28T11:19:45Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115403138350084471",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 3,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 157
+      },
+      "citations": 5
+    },
+    {
       "id": "2114983398892826823",
       "title": "@kevindave__ best way to sharpen the rusty AI mind",
       "text": "@kevindave__ best way to sharpen the rusty AI mind",
@@ -2061,7 +2739,7 @@
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 107
+        "views": 110
       },
       "citations": 5
     },
@@ -2114,6 +2792,32 @@
         "quotes": 0,
         "bookmarks": 0,
         "views": 318
+      },
+      "citations": 5
+    },
+    {
+      "id": "2108938818464444687",
+      "title": "Not calling it AGI till AI music hits like KR$NA and Seedhe Maut.",
+      "text": "Not calling it AGI till AI music hits like KR$NA and Seedhe Maut.",
+      "created_at": "2026-10-10T15:12:51Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2108938818464444687",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 5,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 697
       },
       "citations": 5
     },
@@ -2172,6 +2876,32 @@
       "citations": 5
     },
     {
+      "id": "2114632486231966186",
+      "title": "Getting dumped by automated email sequence is crazy.",
+      "text": "Getting dumped by automated email sequence is crazy.",
+      "created_at": "2026-10-26T08:17:27Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2114632486231966186",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 508
+      },
+      "citations": 4
+    },
+    {
       "id": "2114619876384133217",
       "title": "@kevindave__",
       "text": "@kevindave__",
@@ -2194,6 +2924,32 @@
         "quotes": 0,
         "bookmarks": 0,
         "views": 70
+      },
+      "citations": 4
+    },
+    {
+      "id": "2114283111735554350",
+      "title": "Guys all you need is a visit to Uniqlo store. Rare moment where tall inseam struggles didn't exist.",
+      "text": "Guys all you need is a visit to Uniqlo store. Rare moment where tall inseam struggles didn't exist.",
+      "created_at": "2026-10-25T09:09:09Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2114283111735554350",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 739
       },
       "citations": 4
     },
@@ -2380,6 +3136,32 @@
       "citations": 4
     },
     {
+      "id": "2115349144521117892",
+      "title": "Okay got it.",
+      "text": "Okay got it.",
+      "created_at": "2026-10-28T07:45:11Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115349144521117892",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 3,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 298
+      },
+      "citations": 3
+    },
+    {
       "id": "2115029105204986303",
       "title": "@kevindave__ why not?",
       "text": "@kevindave__ why not?",
@@ -2401,7 +3183,7 @@
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 39
+        "views": 47
       },
       "citations": 3
     },
@@ -2427,7 +3209,7 @@
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 95
+        "views": 101
       },
       "citations": 3
     },
@@ -2453,7 +3235,7 @@
         "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 233
+        "views": 258
       },
       "citations": 3
     },
@@ -2479,7 +3261,7 @@
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 207
+        "views": 211
       },
       "citations": 3
     },
@@ -2531,7 +3313,7 @@
         "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 582
+        "views": 583
       },
       "citations": 3
     },
@@ -2688,6 +3470,32 @@
         "quotes": 0,
         "bookmarks": 0,
         "views": 117
+      },
+      "citations": 3
+    },
+    {
+      "id": "2107514739115147543",
+      "title": "Very interesting! why no Gemini model?",
+      "text": "Very interesting! why no Gemini model?",
+      "created_at": "2026-10-06T16:54:04Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2107514739115147543",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 3,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 571
       },
       "citations": 3
     },
@@ -3052,7 +3860,7 @@
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 10
+        "views": 13
       },
       "citations": 2
     },
@@ -3078,7 +3886,7 @@
         "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 420
+        "views": 438
       },
       "citations": 2
     },
@@ -3545,6 +4353,84 @@
       "citations": 2
     },
     {
+      "id": "2115709395082592457",
+      "title": "@kevindave__ Argon is awesome in Antigravity. I prefer it over Astra in codex. Haven't use opus 5.5 much…",
+      "text": "@kevindave__ Argon is awesome in Antigravity. I prefer it over Astra in codex. Haven't use opus 5.5 much though. But now Carbon is here :)",
+      "created_at": "2026-10-29T07:36:42Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115709395082592457",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 11
+      },
+      "citations": 1
+    },
+    {
+      "id": "2115424263662719439",
+      "title": "@__acbraingenome Thanks Anusha :)",
+      "text": "@__acbraingenome Thanks Anusha :)",
+      "created_at": "2026-10-28T12:43:41Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115424263662719439",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 88
+      },
+      "citations": 1
+    },
+    {
+      "id": "2115410826781987255",
+      "title": "@shlomifruchter yeah agreed, running experiments (at small scale maybe) to decide which final experiments…",
+      "text": "@shlomifruchter yeah agreed, running experiments (at small scale maybe) to decide which final experiments to run. but at some point some mathematical model/intuition breaks that loop.",
+      "created_at": "2026-10-28T11:50:18Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115410826781987255",
+      "external_urls": [],
+      "category": "Interactive Notes & Theory",
+      "archetype": "Interactive Classic Rebuild",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 36
+      },
+      "citations": 1
+    },
+    {
       "id": "2114280130415862162",
       "title": "@loveAIwang yes!",
       "text": "@loveAIwang yes!",
@@ -3837,13 +4723,13 @@
       "citations": 1
     },
     {
-      "id": "2115403138350084471",
-      "title": "@shlomifruchter But deciding which experiment yields the highest signal is itself a kind of theoretical…",
-      "text": "@shlomifruchter But deciding which experiment yields the highest signal is itself a kind of theoretical problem?",
-      "created_at": "2026-10-28T11:19:45Z",
+      "id": "2115423189954347256",
+      "title": "@vitamaybe its ucha😭",
+      "text": "@vitamaybe its ucha😭",
+      "created_at": "2026-10-28T12:39:25Z",
       "year": 2026,
       "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115403138350084471",
+      "url": "https://x.com/vibespersecond/status/2115423189954347256",
       "external_urls": [],
       "category": "AI Commentary & Reflections",
       "archetype": "Personal Reflection & Researcher Life",
@@ -3858,7 +4744,7 @@
         "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 10
+        "views": 5
       },
       "citations": 0
     },
@@ -3884,7 +4770,7 @@
         "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 111
+        "views": 113
       },
       "citations": 0
     },
