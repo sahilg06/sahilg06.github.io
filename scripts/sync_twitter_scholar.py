@@ -182,8 +182,24 @@ def sync():
 
     def ingest_x_html(raw_html: str):
         import html as html_mod
+        # Detect self-reply chains inside <li> elements and schema-comment references
+        for li in re.findall(r"<li[^>]*>.*?</li>", raw_html, re.DOTALL):
+            li_posts = re.findall(r'itemID="https://x\.com/([^"/]+)/status/(\d+)"', li)
+            if len(li_posts) >= 2 and all(h.lower() == HANDLE for h, _ in li_posts):
+                root_tid = li_posts[0][1]
+                for _, child_tid in li_posts[1:]:
+                    if child_tid != root_tid:
+                        parent_of[child_tid] = root_tid
+        for m_ref in re.finditer(rf'<article[^>]*itemID="https://x\.com/{HANDLE}/status/(\d+)"[^>]*itemRef="([^"]+)"', raw_html):
+            p_tid, refs = m_ref.group(1), m_ref.group(2)
+            for c_tid in re.findall(r"schema-comment-(\d+)", refs):
+                if c_tid != p_tid:
+                    parent_of[c_tid] = p_tid
+
         for m_art in re.finditer(rf'<article[^>]*itemID="https://x\.com/{HANDLE}/status/(\d+)"[^>]*>(.*?)</article>', raw_html, re.DOTALL):
             tid, body = m_art.group(1), m_art.group(2)
+            if tid in already_merged_children:
+                continue
             date_m = re.search(r'<meta content="([^"]+)" itemProp="datePublished"', body) or re.search(r'<meta itemProp="datePublished" content="([^"]+)"', body)
             text_m = re.search(r'<meta itemProp="text" content="([^"]*)"', body) or re.search(r'<meta content="([^"]*)" itemProp="text"', body)
             comments_m = re.search(r'<meta itemProp="commentCount" content="(\d+)"', body)
@@ -227,9 +243,18 @@ def sync():
                 "is_quote": existing.get("is_quote", False),
                 "coauthors": existing.get("coauthors", []),
                 "pinned": existing.get("pinned", False),
+                "thread_ids": existing.get("thread_ids", []),
+                "thread_count": existing.get("thread_count", 1),
                 "metrics": merged_m,
                 "citations": compute_citations(merged_m),
             }
+
+    parent_of = {}
+    already_merged_children = set()
+    for t in tweets_by_id.values():
+        for cid in t.get("thread_ids", []):
+            already_merged_children.add(cid)
+            parent_of[cid] = t["id"]
 
     for page_url in [f"https://x.com/{HANDLE}", f"https://x.com/{HANDLE}/with_replies", f"https://x.com/{HANDLE}/highlights"]:
         for ua in [
@@ -247,6 +272,34 @@ def sync():
                     store["profile"]["followers"] = max(int(m_fol.group(1)), int(store["profile"].get("followers", 0)))
             except Exception:
                 pass
+
+    # Merge any newly discovered self-reply children into their root thread tweet
+    def resolve_root(cid: str) -> str:
+        cur = cid
+        seen = set()
+        while cur in parent_of and cur not in seen:
+            seen.add(cur)
+            cur = parent_of[cur]
+        return cur
+
+    for cid in list(parent_of.keys()):
+        root_id = resolve_root(cid)
+        if root_id == cid or root_id not in tweets_by_id:
+            continue
+        root = tweets_by_id[root_id]
+        t_ids = set(root.get("thread_ids", []))
+        child = tweets_by_id.pop(cid, None)
+        if child and cid not in t_ids:
+            rm = root["metrics"]
+            cm = child.get("metrics", {})
+            for k in ["likes", "reposts", "replies", "quotes", "bookmarks", "views"]:
+                rm[k] = int(rm.get(k, 0)) + int(cm.get(k, 0))
+            if child.get("text") and child["text"] not in root["text"]:
+                root["text"] = root["text"].rstrip() + "\n\n" + child["text"].strip()
+            t_ids.add(cid)
+            root["thread_ids"] = sorted(t_ids)
+            root["thread_count"] = 1 + len(t_ids)
+            root["citations"] = compute_citations(rm)
 
     # Refresh top/recent tweets individually via cdn.syndication
     recent_ids = sorted(tweets_by_id.keys(), reverse=True)[:12]

@@ -52,7 +52,7 @@
     {
       "id": "2109603729850929478",
       "title": "PhD Application Tracker for Efficient ML & Computer Vision (Programs, Deadlines & Faculty Shortlist)",
-      "text": "Applying for a PhD in ML/CV this cycle?\n\nSharing my application tracker from last cycle programs, faculty I shortlisted. I mostly applied in Efficient ML and vision. Please reverify deadlines for current cycle.",
+      "text": "Applying for a PhD in ML/CV this cycle?\n\nSharing my application tracker from last cycle programs, faculty I shortlisted. I mostly applied in Efficient ML and vision. Please reverify deadlines for current cycle.\n\nFor context, got interviews with faculties from NYU, UT Austin, EPFL, MILA, and ELLIS\n\nAlso shared my SOP sometime back, sharing it again here",
       "created_at": "2026-10-12T11:14:58Z",
       "year": 2026,
       "month": "Oct 2026",
@@ -69,19 +69,24 @@
       "coauthors": [],
       "pinned": true,
       "metrics": {
-        "likes": 450,
+        "likes": 467,
         "reposts": 30,
         "replies": 8,
         "quotes": 1,
         "bookmarks": 687,
-        "views": 35262
+        "views": 39183
       },
-      "citations": 1932
+      "citations": 1949,
+      "thread_ids": [
+        "2109605337028583653",
+        "2109605721340055849"
+      ],
+      "thread_count": 3
     },
     {
       "id": "2044060697697628323",
       "title": "ELT: Elastic Looped Transformers for Visual Generation (@GoogleDeepMind)",
-      "text": "🧵[1/7] Excited to share our new research from @GoogleDeepMind \n\nELT: Elastic Looped Transformers for Visual Generation\n\nIntroducing a highly parameter-efficient class of visual generative models\n1. High Throughput\n2. Elastic/Any-Time Inference",
+      "text": "🧵[1/7] Excited to share our new research from @GoogleDeepMind \n\nELT: Elastic Looped Transformers for Visual Generation\n\nIntroducing a highly parameter-efficient class of visual generative models\n1. High Throughput\n2. Elastic/Any-Time Inference\n\n🧵[2/7] Deep generative models usually stack unique layers = massive parameter bloat.\n\nInstead, what if we reuse layers?\n\nBy looping them, ELT slashes parameters but maintain high generation quality!\n\n🧵[3/7] Training loops can be unstable. Our fix? Intra-Loop Self Distillation (ILSD).\n\nWe jointly optimize the max-loop output (teacher) and intermediate loops (student) in one step.\n\nThis forces consistency and stabilizes the entire deep recurrent structure.\n\n🧵[4/7] The best part? \"Any-Time\" Inference. ⚡\n\nILSD gives us a family of elastic models from a single training run.\n\nYou can dynamically dial your compute/loops up or down at inference time to balance speed vs. quality.\n\n🧵[5/7] ELT delivers faster training convergence (up to 2.0x speedup)\n\n🧵[6/7] Results: Under iso-inference-compute, ELT gets a 4x param reduction while hitting:\n\nFID of 2.0 (ImageNet 256)\nFVD of 72.8 (UCF-101)\n\nCheck out the full paper for all the details! 👇\n🔗\n\n🧵[7/7] Huge thanks to my amazing co-authors and collaborators for their insights and contributions! 👏\n@Swayam_421 @adityakusupati @paul_sujoy_ @gautham_ga_ @jainprateek_",
       "created_at": "2026-04-14T14:30:21Z",
       "year": 2026,
       "month": "Apr 2026",
@@ -95,19 +100,28 @@
       "coauthors": [],
       "pinned": false,
       "metrics": {
-        "likes": 473,
-        "reposts": 56,
-        "replies": 11,
-        "quotes": 9,
+        "likes": 644,
+        "reposts": 66,
+        "replies": 17,
+        "quotes": 10,
         "bookmarks": 389,
-        "views": 98918
+        "views": 115230
       },
-      "citations": 1459
+      "citations": 1674,
+      "thread_ids": [
+        "2044060717507359178",
+        "2044060735266066474",
+        "2044060761643986984",
+        "2044060777200648238",
+        "2044060781059420337",
+        "2044060784423252218"
+      ],
+      "thread_count": 7
     },
     {
       "id": "1917985915458474258",
       "title": "My First Work at Google DeepMind Accepted to ICML 2025! (MaGNeTS: Masked Generative Nested Transformers)",
-      "text": "My first work @GoogleDeepMind accepted to ICML!",
+      "text": "My first work @GoogleDeepMind accepted to ICML!\n\n@GoogleDeepMind Congrats to all my co-authors @DebapriyaTula , @paul_sujoy_ , @gaganjain1582, @jainprateek_ , @doktorshenoy",
       "created_at": "2025-05-01T16:54:11Z",
       "year": 2025,
       "month": "May 2025",
@@ -122,14 +136,18 @@
         "@GoogleDeepMind"
       ],
       "metrics": {
-        "likes": 554,
+        "likes": 561,
         "reposts": 12,
         "replies": 12,
         "quotes": 3,
-        "bookmarks": 48,
-        "views": 48600
+        "bookmarks": 49,
+        "views": 48796
       },
-      "citations": 716
+      "citations": 725,
+      "thread_ids": [
+        "1917991779347120558"
+      ],
+      "thread_count": 2
     },
     {
       "id": "2105209665521139835",
@@ -186,7 +204,7 @@
     {
       "id": "1888616302777974970",
       "title": "MaGNeTS: Generating High-Quality Images/Videos 3× Faster Without Extra Parameters via Decode-Time Scaling & KV Caching",
-      "text": "Can we generate high-quality images/videos 3× faster without extra parameters? 🤯\n\nOur latest work “MaGNeTS” rethinks compute efficiency in generative models using decode time model scaling &amp; KV caching!",
+      "text": "Can we generate high-quality images/videos 3× faster without extra parameters? 🤯\n\nOur latest work “MaGNeTS” rethinks compute efficiency in generative models using decode time model scaling &amp; KV caching!\n\nParallel Decoding of discrete tokens (MaskGIT) reduces compute of autoregressive methods significantly, but it still includes several redundant computations.\n\nNot all sampling steps need the same model capacity.\nKV-caching can boost parallel decoding too, when refreshed smartly!\n\nUnmaksed token density visualization across sampling steps reveals structured unmasking.\n💡 Smarter decoding = Faster generation!\n\n🔍 How tokens evolve during generation!\n\nEarly steps: Background region of ImageNet\nLater steps: Middle of the image\n\nLess compute, same quality!\n\nApplying guidance only in the final few sampling steps is sufficient⚡\nFewer guided steps → Efficient inference ✅\n\nMore insights? Dive deep into the paper\n\nHuge thanks to my amazing co-authors and collaborators for their insights and contributions! 👏\n@paul_sujoy_ @DebapriyaTula @gaganjain1582 @jainprateek_ @doktorshenoy\nand thanks for the support @ManishGuptaMG1",
       "created_at": "2025-02-09T15:49:50Z",
       "year": 2025,
       "month": "Feb 2025",
@@ -206,14 +224,24 @@
       ],
       "pinned": false,
       "metrics": {
-        "likes": 82,
+        "likes": 114,
         "reposts": 14,
-        "replies": 3,
+        "replies": 9,
         "quotes": 7,
-        "bookmarks": 64,
-        "views": 16046
+        "bookmarks": 71,
+        "views": 19345
       },
-      "citations": 272
+      "citations": 330,
+      "thread_ids": [
+        "1888617630648390111",
+        "1888618524576272464",
+        "1888620378139873402",
+        "1888621041481560189",
+        "1888621449268658489",
+        "1888623098435358803",
+        "1888625405176742185"
+      ],
+      "thread_count": 8
     },
     {
       "id": "1945185100947448088",
@@ -304,7 +332,7 @@
     {
       "id": "2114998925736476778",
       "title": "Forward vs. Reverse KL Divergence: Interactive Rebuild & Modern Applications (MLE, Diffusion Distillation SDS/DMD, RLHF)",
-      "text": "Went a little back to basics today.\n\nWhenever I needed quick clarity on Forward vs. Reverse KL divergence, I always went back to Tuan Anh Le’s classic 2017 note.\n\nThought of rebuilding it into something even clearer, interactive, and grounded in modern applications. How this trade-off separates MLE pretraining from Diffusion Distillation (SDS/DMD) and RLHF?\n\nInteractive blog + live sandbox: sahilg06.github.io/blog_posts/forward-vs-reverse-kl.html",
+      "text": "Went a little back to basics today.\n\nWhenever I needed quick clarity on Forward vs. Reverse KL divergence, I always went back to Tuan Anh Le’s classic 2017 note.\n\nThought of rebuilding it into something even clearer, interactive, and grounded in modern applications. How this trade-off separates MLE pretraining from Diffusion Distillation (SDS/DMD) and RLHF?\n\nInteractive blog + live sandbox: sahilg06.github.io/blog_posts/forward-vs-reverse-kl.html\n\nInteractive blog: \nOriginal note that inspired it:",
       "created_at": "2026-10-27T08:33:33Z",
       "year": 2026,
       "month": "Oct 2026",
@@ -322,14 +350,18 @@
       ],
       "pinned": false,
       "metrics": {
-        "likes": 62,
+        "likes": 65,
         "reposts": 15,
         "replies": 4,
         "quotes": 1,
         "bookmarks": 25,
-        "views": 2184
+        "views": 2442
       },
-      "citations": 167
+      "citations": 170,
+      "thread_ids": [
+        "2114999156075016323"
+      ],
+      "thread_count": 2
     },
     {
       "id": "2109563488473698475",
@@ -433,32 +465,6 @@
         "views": 1168
       },
       "citations": 73
-    },
-    {
-      "id": "2044060781059420337",
-      "title": "🧵[6/7] Results: Under iso-inference-compute, ELT gets a 4x param reduction while hitting:",
-      "text": "🧵[6/7] Results: Under iso-inference-compute, ELT gets a 4x param reduction while hitting:\n\nFID of 2.0 (ImageNet 256)\nFVD of 72.8 (UCF-101)\n\nCheck out the full paper for all the details! 👇\n🔗",
-      "created_at": "2026-04-14T14:30:41Z",
-      "year": 2026,
-      "month": "Apr 2026",
-      "url": "https://x.com/vibespersecond/status/2044060781059420337",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 34,
-        "reposts": 5,
-        "replies": 2,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 2478
-      },
-      "citations": 53
     },
     {
       "id": "1945592455274856757",
@@ -588,32 +594,6 @@
         "views": 8098
       },
       "citations": 46
-    },
-    {
-      "id": "2044060717507359178",
-      "title": "🧵[2/7] Deep generative models usually stack unique layers = massive parameter bloat.",
-      "text": "🧵[2/7] Deep generative models usually stack unique layers = massive parameter bloat.\n\nInstead, what if we reuse layers?\n\nBy looping them, ELT slashes parameters but maintain high generation quality!",
-      "created_at": "2026-04-14T14:30:26Z",
-      "year": 2026,
-      "month": "Apr 2026",
-      "url": "https://x.com/vibespersecond/status/2044060717507359178",
-      "external_urls": [],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HF32YMnaQAEPyE4.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 37,
-        "reposts": 1,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 3566
-      },
-      "citations": 42
     },
     {
       "id": "1962407745841402192",
@@ -746,58 +726,6 @@
       "citations": 38
     },
     {
-      "id": "2044060735266066474",
-      "title": "🧵[3/7] Training loops can be unstable. Our fix? Intra-Loop Self Distillation (ILSD).",
-      "text": "🧵[3/7] Training loops can be unstable. Our fix? Intra-Loop Self Distillation (ILSD).\n\nWe jointly optimize the max-loop output (teacher) and intermediate loops (student) in one step.\n\nThis forces consistency and stabilizes the entire deep recurrent structure.",
-      "created_at": "2026-04-14T14:30:30Z",
-      "year": 2026,
-      "month": "Apr 2026",
-      "url": "https://x.com/vibespersecond/status/2044060735266066474",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HF32ZYwasAgKmyw.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 30,
-        "reposts": 1,
-        "replies": 1,
-        "quotes": 1,
-        "bookmarks": 0,
-        "views": 3208
-      },
-      "citations": 37
-    },
-    {
-      "id": "2044060761643986984",
-      "title": "🧵[4/7] The best part? \"Any-Time\" Inference. ⚡",
-      "text": "🧵[4/7] The best part? \"Any-Time\" Inference. ⚡\n\nILSD gives us a family of elastic models from a single training run.\n\nYou can dynamically dial your compute/loops up or down at inference time to balance speed vs. quality.",
-      "created_at": "2026-04-14T14:30:37Z",
-      "year": 2026,
-      "month": "Apr 2026",
-      "url": "https://x.com/vibespersecond/status/2044060761643986984",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HF32aZtbwAAmeES.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 29,
-        "reposts": 2,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 2763
-      },
-      "citations": 37
-    },
-    {
       "id": "2115032096066711753",
       "title": "On Seeking Human Connection in the Era of Superhuman AI",
       "text": "There should be no shame in seeking human connection. that's what's gonna matter.",
@@ -908,30 +836,37 @@
       "citations": 28
     },
     {
-      "id": "2044060777200648238",
-      "title": "🧵[5/7] ELT delivers faster training convergence (up to 2.0x speedup)",
-      "text": "🧵[5/7] ELT delivers faster training convergence (up to 2.0x speedup)",
-      "created_at": "2026-04-14T14:30:40Z",
-      "year": 2026,
-      "month": "Apr 2026",
-      "url": "https://x.com/vibespersecond/status/2044060777200648238",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HF32b92aMAAzf1X.jpg",
+      "id": "1922339760388874485",
+      "title": "Can we use different-sized models in different stages of diffusion inference for efficient generation?",
+      "text": "Can we use different-sized models in different stages of diffusion inference for efficient generation?\nSome initial inference-time experiments on UVIT () in the thread👀\n\nModels used:   pre-trained checkpoints of UViT on ImageNet64×64, U-ViT-L/4  and U-ViT-M/4\nSampling steps: 50\n(All exp on single A100 GPU)\n\nNow what is the optimal model schedule?\nInitial  denoising steps play a crucial role in shaping the final output of the reverse diffusion process, so utilizing the L model for the early stages and transition to the M model for the later denoising steps.\n\nFor similar experiments, checkout our recent ICML paper, MaGNeTS: Masked Generative Nested Transformers with Decode Time Scaling ()",
+      "created_at": "2025-05-13T17:14:48Z",
+      "year": 2025,
+      "month": "May 2025",
+      "url": "https://x.com/vibespersecond/status/1922339760388874485",
+      "external_urls": [
+        "https://github.com/baofff/U-ViT"
+      ],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": false,
+      "media_url": "",
       "is_quote": false,
       "coauthors": [],
-      "pinned": false,
       "metrics": {
-        "likes": 22,
+        "likes": 11,
         "reposts": 1,
-        "replies": 1,
+        "replies": 4,
         "quotes": 0,
-        "bookmarks": 0,
-        "views": 2361
+        "bookmarks": 2,
+        "views": 978
       },
-      "citations": 27
+      "citations": 26,
+      "thread_ids": [
+        "1922340814316851235",
+        "1922341441377870067",
+        "1922343158051946812"
+      ],
+      "thread_count": 4
     },
     {
       "id": "2110258202277458245",
@@ -1037,6 +972,35 @@
       "citations": 24
     },
     {
+      "id": "1919004275868332218",
+      "title": "Two very similar and interesting concurrent works",
+      "text": "Two very similar and interesting concurrent works \nVision: Vision Transformers need Registers\nLanguage: Efficient Streaming Language Models with Attention Sinks\n\nAs they were published in ICLR 2024, their open review forums are public. checkout for some useful insights",
+      "created_at": "2025-05-04T12:20:47Z",
+      "year": 2025,
+      "month": "May 2025",
+      "url": "https://x.com/vibespersecond/status/1919004275868332218",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "metrics": {
+        "likes": 15,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 2,
+        "views": 752
+      },
+      "citations": 23,
+      "thread_ids": [
+        "1919005643878379593"
+      ],
+      "thread_count": 2
+    },
+    {
       "id": "2111391054301962436",
       "title": "Gemini Argon's quota is restored.",
       "text": "Gemini Argon's quota is restored.",
@@ -1114,31 +1078,6 @@
       "citations": 22
     },
     {
-      "id": "1919004275868332218",
-      "title": "Two very similar and interesting concurrent works",
-      "text": "Two very similar and interesting concurrent works \nVision: Vision Transformers need Registers\nLanguage: Efficient Streaming Language Models with Attention Sinks",
-      "created_at": "2025-05-04T12:20:47Z",
-      "year": 2025,
-      "month": "May 2025",
-      "url": "https://x.com/vibespersecond/status/1919004275868332218",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "metrics": {
-        "likes": 14,
-        "reposts": 0,
-        "replies": 2,
-        "quotes": 0,
-        "bookmarks": 2,
-        "views": 572
-      },
-      "citations": 22
-    },
-    {
       "id": "1944890474718019613",
       "title": "creativity #ICML2025",
       "text": "creativity #ICML2025",
@@ -1187,32 +1126,6 @@
         "views": 482
       },
       "citations": 20
-    },
-    {
-      "id": "2044060784423252218",
-      "title": "🧵[7/7] Huge thanks to my amazing co-authors and collaborators for their insights and contributions! 👏",
-      "text": "🧵[7/7] Huge thanks to my amazing co-authors and collaborators for their insights and contributions! 👏\n@Swayam_421 @adityakusupati @paul_sujoy_ @gautham_ga_ @jainprateek_",
-      "created_at": "2026-04-14T14:30:42Z",
-      "year": 2026,
-      "month": "Apr 2026",
-      "url": "https://x.com/vibespersecond/status/2044060784423252218",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 19,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 1936
-      },
-      "citations": 19
     },
     {
       "id": "1924494903469621469",
@@ -1395,33 +1308,6 @@
         "quotes": 0,
         "bookmarks": 0,
         "views": 723
-      },
-      "citations": 15
-    },
-    {
-      "id": "1922339760388874485",
-      "title": "Can we use different-sized models in different stages of diffusion inference for efficient generation?",
-      "text": "Can we use different-sized models in different stages of diffusion inference for efficient generation?\nSome initial inference-time experiments on UVIT () in the thread👀",
-      "created_at": "2025-05-13T17:14:48Z",
-      "year": 2025,
-      "month": "May 2025",
-      "url": "https://x.com/vibespersecond/status/1922339760388874485",
-      "external_urls": [
-        "https://github.com/baofff/U-ViT"
-      ],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "metrics": {
-        "likes": 6,
-        "reposts": 1,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 2,
-        "views": 438
       },
       "citations": 15
     },
@@ -1735,32 +1621,6 @@
       "citations": 11
     },
     {
-      "id": "2109605721340055849",
-      "title": "Also shared my SOP sometime back, sharing it again here",
-      "text": "Also shared my SOP sometime back, sharing it again here",
-      "created_at": "2026-10-12T11:22:53Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2109605721340055849",
-      "external_urls": [],
-      "category": "Academic & PhD Resources",
-      "archetype": "High-Utility Academic / Career Resource",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 10,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 1672
-      },
-      "citations": 10
-    },
-    {
       "id": "2114630663022501987",
       "title": "I think pretraining is still more than just tweaking data recipes. Transformers haven't saturated yet (at…",
       "text": "I think pretraining is still more than just tweaking data recipes. Transformers haven't saturated yet (at scale), especially the training algorithms and even the architecture.",
@@ -1810,58 +1670,6 @@
         "views": 258
       },
       "citations": 10
-    },
-    {
-      "id": "1888617630648390111",
-      "title": "Parallel Decoding of discrete tokens (MaskGIT) reduces compute of autoregressive methods significantly,…",
-      "text": "Parallel Decoding of discrete tokens (MaskGIT) reduces compute of autoregressive methods significantly, but it still includes several redundant computations.\n\nNot all sampling steps need the same model capacity.\nKV-caching can boost parallel decoding too, when refreshed smartly!",
-      "created_at": "2025-02-09T15:55:06Z",
-      "year": 2025,
-      "month": "Feb 2025",
-      "url": "https://x.com/vibespersecond/status/1888617630648390111",
-      "external_urls": [],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 5,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 1,
-        "views": 723
-      },
-      "citations": 9
-    },
-    {
-      "id": "1888618524576272464",
-      "title": "Unmaksed token density visualization across sampling steps reveals structured unmasking.",
-      "text": "Unmaksed token density visualization across sampling steps reveals structured unmasking.\n💡 Smarter decoding = Faster generation!",
-      "created_at": "2025-02-09T15:58:39Z",
-      "year": 2025,
-      "month": "Feb 2025",
-      "url": "https://x.com/vibespersecond/status/1888618524576272464",
-      "external_urls": [],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/GjW4MW7XMAAZ65o.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 5,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 1,
-        "views": 517
-      },
-      "citations": 9
     },
     {
       "id": "1924024651048747333",
@@ -1989,38 +1797,6 @@
       "citations": 9
     },
     {
-      "id": "1917991779347120558",
-      "title": "@GoogleDeepMind Congrats to all my co-authors @DebapriyaTula , @paul_sujoy_ , @gaganjain1582,…",
-      "text": "@GoogleDeepMind Congrats to all my co-authors @DebapriyaTula , @paul_sujoy_ , @gaganjain1582, @jainprateek_ , @doktorshenoy",
-      "created_at": "2025-05-01T17:17:29Z",
-      "year": 2025,
-      "month": "May 2025",
-      "url": "https://x.com/vibespersecond/status/1917991779347120558",
-      "external_urls": [],
-      "category": "Paper Releases & Conferences",
-      "archetype": "Research Milestone & Conference Update",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [
-        "@GoogleDeepMind",
-        "@DebapriyaTula",
-        "@paul_sujoy_",
-        "@gaganjain1582",
-        "@jainprateek_",
-        "@doktorshenoy"
-      ],
-      "metrics": {
-        "likes": 7,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 1,
-        "views": 196
-      },
-      "citations": 9
-    },
-    {
       "id": "2107725821318512872",
       "title": "what did you do, google photos wardrobe (left)?",
       "text": "what did you do, google photos wardrobe (left)?\nreel vs real lol. need nano banana 2.1 here.",
@@ -2069,145 +1845,6 @@
         "quotes": 0,
         "bookmarks": 0,
         "views": 729
-      },
-      "citations": 8
-    },
-    {
-      "id": "1888623098435358803",
-      "title": "More insights? Dive deep into the paper",
-      "text": "More insights? Dive deep into the paper",
-      "created_at": "2025-02-09T16:16:50Z",
-      "year": 2025,
-      "month": "Feb 2025",
-      "url": "https://x.com/vibespersecond/status/1888623098435358803",
-      "external_urls": [
-        "https://arxiv.org/abs/2502.00382"
-      ],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/GjW8oswWcAIT9Mn.png",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 4,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 1,
-        "views": 473
-      },
-      "citations": 8
-    },
-    {
-      "id": "1888625405176742185",
-      "title": "Huge thanks to my amazing co-authors and collaborators for their insights and contributions! 👏",
-      "text": "Huge thanks to my amazing co-authors and collaborators for their insights and contributions! 👏\n@paul_sujoy_ @DebapriyaTula @gaganjain1582 @jainprateek_ @doktorshenoy\nand thanks for the support @ManishGuptaMG1",
-      "created_at": "2025-02-09T16:26:00Z",
-      "year": 2025,
-      "month": "Feb 2025",
-      "url": "https://x.com/vibespersecond/status/1888625405176742185",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [
-        "@paul_sujoy_",
-        "@DebapriyaTula",
-        "@gaganjain1582",
-        "@jainprateek_",
-        "@doktorshenoy",
-        "@ManishGuptaMG1"
-      ],
-      "pinned": false,
-      "metrics": {
-        "likes": 6,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 1,
-        "views": 457
-      },
-      "citations": 8
-    },
-    {
-      "id": "1888620378139873402",
-      "title": "🔍 How tokens evolve during generation!",
-      "text": "🔍 How tokens evolve during generation!\n\nEarly steps: Background region of ImageNet\nLater steps: Middle of the image",
-      "created_at": "2025-02-09T16:06:01Z",
-      "year": 2025,
-      "month": "Feb 2025",
-      "url": "https://x.com/vibespersecond/status/1888620378139873402",
-      "external_urls": [],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/GjW6B0PWsAA1ZXI.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 4,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 1,
-        "views": 414
-      },
-      "citations": 8
-    },
-    {
-      "id": "1888621041481560189",
-      "title": "Less compute, same quality!",
-      "text": "Less compute, same quality!",
-      "created_at": "2025-02-09T16:08:39Z",
-      "year": 2025,
-      "month": "Feb 2025",
-      "url": "https://x.com/vibespersecond/status/1888621041481560189",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/GjW6llqWoAAP0qm.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 4,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 1,
-        "views": 363
-      },
-      "citations": 8
-    },
-    {
-      "id": "1888621449268658489",
-      "title": "Applying guidance only in the final few sampling steps is sufficient⚡",
-      "text": "Applying guidance only in the final few sampling steps is sufficient⚡\nFewer guided steps → Efficient inference ✅",
-      "created_at": "2025-02-09T16:10:17Z",
-      "year": 2025,
-      "month": "Feb 2025",
-      "url": "https://x.com/vibespersecond/status/1888621449268658489",
-      "external_urls": [],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/GjW7BZMWMAARy70.png",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 4,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 1,
-        "views": 352
       },
       "citations": 8
     },
@@ -2312,32 +1949,6 @@
         "views": 180
       },
       "citations": 8
-    },
-    {
-      "id": "2109605337028583653",
-      "title": "For context, got interviews with faculties from NYU, UT Austin, EPFL, MILA, and ELLIS",
-      "text": "For context, got interviews with faculties from NYU, UT Austin, EPFL, MILA, and ELLIS",
-      "created_at": "2026-10-12T11:21:21Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2109605337028583653",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 7,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 2249
-      },
-      "citations": 7
     },
     {
       "id": "1958557124277019031",
@@ -3189,58 +2800,6 @@
       "citations": 4
     },
     {
-      "id": "1922343158051946812",
-      "title": "For similar experiments, checkout our recent ICML paper, MaGNeTS: Masked Generative Nested Transformers…",
-      "text": "For similar experiments, checkout our recent ICML paper, MaGNeTS: Masked Generative Nested Transformers with Decode Time Scaling ()",
-      "created_at": "2025-05-13T17:28:18Z",
-      "year": 2025,
-      "month": "May 2025",
-      "url": "https://x.com/vibespersecond/status/1922343158051946812",
-      "external_urls": [
-        "https://arxiv.org/pdf/2502.00382"
-      ],
-      "category": "Paper Releases & Conferences",
-      "archetype": "Research Milestone & Conference Update",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "metrics": {
-        "likes": 2,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 180
-      },
-      "citations": 4
-    },
-    {
-      "id": "1922340814316851235",
-      "title": "Models used:   pre-trained checkpoints of UViT on ImageNet64×64, U-ViT-L/4  and U-ViT-M/4",
-      "text": "Models used:   pre-trained checkpoints of UViT on ImageNet64×64, U-ViT-L/4  and U-ViT-M/4\nSampling steps: 50\n(All exp on single A100 GPU)",
-      "created_at": "2025-05-13T17:19:00Z",
-      "year": 2025,
-      "month": "May 2025",
-      "url": "https://x.com/vibespersecond/status/1922340814316851235",
-      "external_urls": [],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "metrics": {
-        "likes": 2,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 180
-      },
-      "citations": 4
-    },
-    {
       "id": "1919429159497171195",
       "title": "In theory, KL divergence in VAEs encourages the latent space to follow a Gaussian distribution, right? But…",
       "text": "In theory, KL divergence in VAEs encourages the latent space to follow a Gaussian distribution, right? But does it actually work that way in practice?",
@@ -3470,32 +3029,6 @@
         "quotes": 0,
         "bookmarks": 0,
         "views": 298
-      },
-      "citations": 3
-    },
-    {
-      "id": "2114999156075016323",
-      "title": "Interactive blog: — Original note that inspired it:",
-      "text": "Interactive blog: \nOriginal note that inspired it:",
-      "created_at": "2026-10-27T08:34:28Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2114999156075016323",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 3,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 258
       },
       "citations": 3
     },
@@ -3797,31 +3330,6 @@
       "external_urls": [],
       "category": "AI Commentary & Reflections",
       "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "metrics": {
-        "likes": 1,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 180
-      },
-      "citations": 3
-    },
-    {
-      "id": "1922341441377870067",
-      "title": "Now what is the optimal model schedule?",
-      "text": "Now what is the optimal model schedule?\nInitial  denoising steps play a crucial role in shaping the final output of the reverse diffusion process, so utilizing the L model for the early stages and transition to the M model for the later denoising steps.",
-      "created_at": "2025-05-13T17:21:29Z",
-      "year": 2025,
-      "month": "May 2025",
-      "url": "https://x.com/vibespersecond/status/1922341441377870067",
-      "external_urls": [],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
       "has_media": false,
       "media_url": "",
       "is_quote": false,
@@ -4684,34 +4192,6 @@
       "coauthors": [
         "@miniapeur"
       ],
-      "metrics": {
-        "likes": 1,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 180
-      },
-      "citations": 1
-    },
-    {
-      "id": "1919005643878379593",
-      "title": "As they were published in ICLR 2024, their open review forums are public. checkout for some useful insights",
-      "text": "As they were published in ICLR 2024, their open review forums are public. checkout for some useful insights",
-      "created_at": "2025-05-04T12:26:13Z",
-      "year": 2025,
-      "month": "May 2025",
-      "url": "https://x.com/vibespersecond/status/1919005643878379593",
-      "external_urls": [
-        "https://openreview.net/forum?id=2dnO3LLiJ1",
-        "https://openreview.net/forum?id=NG7sS51zVF"
-      ],
-      "category": "Paper Releases & Conferences",
-      "archetype": "Research Milestone & Conference Update",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
       "metrics": {
         "likes": 1,
         "reposts": 0,

@@ -433,6 +433,7 @@
                     ${showSnippet ? `<div class="gs-gray-line">${escapeHtml(cleanBody)}</div>` : ''}
                     <div class="gs-post-venue">
                         <span>${escapeHtml(t.category)}</span>
+                        ${t.thread_count > 1 ? `<span>· ${t.thread_count}-post thread</span>` : ''}
                         <span>·</span>
                         <span>${m.likes || 0} likes</span>
                         ${m.bookmarks ? `<span>· ${m.bookmarks} bookmarks</span>` : ''}
