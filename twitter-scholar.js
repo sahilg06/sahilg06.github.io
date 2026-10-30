@@ -61,6 +61,54 @@
                 "Went back to the math of weight-tied / looped transformers today.\n\nUnrolling a shared transformer block across T iterations isn't just parameter compression — it's an iterative refinement operator in latent space:"
             ],
             replyLink: "Paper (ECCV 2026): Elastic Looped Transformers for Visual Generation — https://arxiv.org/abs/2604.09168"
+        },
+        {
+            id: 'classic-reparam-trick',
+            title: 'The Reparameterization Trick: Why VAEs Can Backprop Through Randomness',
+            inspiration: "Kingma & Welling (2013) Auto-Encoding Variational Bayes",
+            modernTie: 'Latent diffusion autoencoders, SD-VAE, and video tokenizers',
+            hooks: [
+                "Went a little back to basics today.\n\nz = μ + σ·ε looks like a one-line trick, but it's the reason every latent diffusion model (SD, Flux, video tokenizers) can be trained end-to-end.\n\nInteractive note on why sampling becomes differentiable once you move the noise outside:",
+                "Why can't you backprop through z ~ N(μ, σ²) directly, but you can through z = μ + σε?\n\nThe answer is about where the randomness lives in the computational graph. Visual breakdown + gradient variance comparison vs. REINFORCE:",
+                "Every latent diffusion model sits on top of a VAE trained with a 2013 trick.\n\nRebuilt the reparameterization trick as an interactive note: drag σ, watch gradient variance of score-function vs. pathwise estimators:"
+            ],
+            replyLink: "Interactive notes: https://sahilg06.github.io/blog.html"
+        },
+        {
+            id: 'classic-attention-temperature',
+            title: 'Why Attention Divides by √d: Softmax Saturation & Logit Variance',
+            inspiration: "Vaswani et al. (2017) Attention Is All You Need",
+            modernTie: 'QK-norm, attention sinks, and long-context ViTs/DiTs',
+            hooks: [
+                "Went a little back to basics today.\n\nThe 1/√d in scaled dot-product attention isn't a magic constant — it keeps logit variance at 1 so softmax doesn't saturate into one-hot.\n\nInteractive note: drag d from 16 → 4096 and watch attention entropy collapse without it:",
+                "Why do large DiTs/ViTs add QK-norm on top of the 1/√d scaling?\n\nBecause √d only controls variance at init. During training, logit growth still drives softmax saturation and loss spikes. Visual intuition:",
+                "Quick quiz: if q, k have unit-variance entries, what's the variance of q·k in d dims?\n\nIt's d. That single fact explains the √d in attention, attention sinks, and why QK-norm stabilizes large vision transformers:"
+            ],
+            replyLink: "Interactive notes: https://sahilg06.github.io/blog.html"
+        },
+        {
+            id: 'classic-ema-teacher',
+            title: 'EMA Weights & Self-Distillation: Why the Average Model Generates Better',
+            inspiration: "Polyak averaging & Mean Teacher (Tarvainen & Valpola, 2017)",
+            modernTie: 'EMA in diffusion training, DINO, and intra-loop self-distillation (ELT)',
+            hooks: [
+                "Why does every diffusion codebase sample from EMA weights instead of the trained weights?\n\nPolyak averaging smooths SGD noise in parameter space — it's effectively a free ensemble along the trajectory.\n\nVisual note on what EMA decay 0.999 vs 0.9999 actually does:",
+                "Went back to the basics of self-distillation today.\n\nFrom Mean Teacher → DINO → the intra-loop self-distillation we used in Elastic Looped Transformers, the core idea is the same: a slowly-moving target is a better teacher than the label.",
+                "EMA decay is one of the most under-discussed hyperparameters in generative modeling.\n\nToo low: noisy samples. Too high: the EMA model lags behind and underfits. Interactive sandbox on the bias-variance trade-off:"
+            ],
+            replyLink: "Related: ELT (intra-loop self-distillation) — https://x.com/vibespersecond/status/2044060697697628323"
+        },
+        {
+            id: 'classic-jensen-elbo',
+            title: 'Jensen\'s Inequality & the ELBO: The One Line Behind VAEs and Diffusion Losses',
+            inspiration: "Jensen's inequality & variational inference (Jordan et al., 1999)",
+            modernTie: 'DDPM variational bound, simplified ε-prediction loss, and VDM',
+            hooks: [
+                "Went a little back to basics today.\n\nThe DDPM loss, the VAE loss, and most variational objectives come from the same line: log E[x] ≥ E[log x].\n\nInteractive note on where the gap goes and why it's exactly a KL divergence:",
+                "Why is the diffusion training loss called a 'variational bound'?\n\nBecause Jensen's inequality turns an intractable log-likelihood into a sum of per-timestep KLs. Visual breakdown of how that becomes simple MSE on ε:",
+                "Follow-up to my Forward vs. Reverse KL note:\n\nThe gap between log p(x) and the ELBO is exactly KL(q(z|x) || p(z|x)). Drag the encoder variance and watch the bound tighten:"
+            ],
+            replyLink: "Forward vs. Reverse KL interactive note: https://sahilg06.github.io/blog_posts/forward-vs-reverse-kl.html"
         }
     ];
 
@@ -88,6 +136,39 @@
             ],
             replyLink: "Google DeepMind India Pre-Doctoral Researcher FAQ: https://docs.google.com/document/d/1xYFN5K_436zMUY5o4CYNeqAdUlZ1la-ZWUdjD0f0p3Y/edit?usp=sharing",
             visualTip: 'Include a clean timeline graphic comparing PhD deadlines vs. AI Residency windows.'
+        },
+        {
+            id: 'res-research-interviews',
+            title: 'Research Engineer / Scientist Interviews at AI Labs & Startups: What Actually Gets Asked',
+            metricsRef: 'Builds on your Proximal interview-experience post (649 citations, 29K views)',
+            hooks: [
+                "My Proximal interview post got way more DMs than expected, so here's the general version.\n\nAfter interviewing at frontier labs and AI startups, research interviews mostly test 4 things: ML fundamentals, research taste, coding under ambiguity, and how you talk about your own papers.\n\nBreakdown:",
+                "The most underrated part of ML research interviews: the 'walk me through your paper' round.\n\nThey aren't checking if you remember the numbers. They're checking whether you know why it worked and what you'd do differently. How I prep for it:",
+                "Prepping for Research Engineer / Research Scientist interviews?\n\nA list of what got asked across my interviews (ML theory, PyTorch debugging, paper deep-dives, system design for training) and how I prepared for each:"
+            ],
+            replyLink: "My Proximal interview experience: https://x.com/vibespersecond/status/2105209665521139835"
+        },
+        {
+            id: 'res-cold-emails',
+            title: 'Cold-Emailing PhD Advisors & Meeting Them at Conferences: What Worked for Me',
+            metricsRef: 'Matches your PhD SOP (3.6K citations) & Application Tracker (1.9K citations) audience',
+            hooks: [
+                "I cold-emailed very few professors last cycle and met most of them in person at NeurIPS/ICML instead.\n\nIt worked better than I expected. Here's what I'd tell anyone applying for an ML/CV PhD this cycle:",
+                "Should you email potential PhD advisors before applying?\n\nShort answer: only if you have something specific to say about their recent work. Here's the 4-line email template I used (and when I skipped emailing entirely):",
+                "A conference is the best PhD-advisor-matching event nobody tells you about.\n\nHow I used ICML/NeurIPS poster sessions to talk to faculty before applying (and got interviews from NYU, UT Austin, EPFL, MILA, ELLIS):"
+            ],
+            replyLink: "PhD Application Tracker: https://sahilg06.github.io/blog_posts/phd-application-tracker.html"
+        },
+        {
+            id: 'res-first-paper',
+            title: 'Getting Your First Top-Venue Paper as an Undergrad / Non-CS Major',
+            metricsRef: 'Echoes your "first work @GoogleDeepMind accepted to ICML" post (725 citations)',
+            hooks: [
+                "I came from Applied Math, not CS, and my first top-venue paper came out of Google DeepMind's residency.\n\nIf you're an undergrad trying to get your first ICML/NeurIPS/CVPR paper, here's what actually mattered (and what didn't):",
+                "Your first research paper doesn't need a new architecture.\n\nMost good first papers are a careful empirical question + clean ablations. How I'd pick a first project if I were starting again:",
+                "Things I wish I knew before my first ICML submission:\n\n1. Reviewers read the figures before the text\n2. Ablations > SOTA tables\n3. Rebuttal is where papers get accepted\n\nThread:"
+            ],
+            replyLink: "MaGNeTS (ICML '25): https://arxiv.org/pdf/2502.00382"
         }
     ];
 
@@ -131,7 +212,7 @@
         hfPapers: [],
         arxivPapers: [],
         techPulse: [],
-        shuffleSeed: 0
+        shuffleSeed: Math.floor((Date.now() + 5.5 * 3600 * 1000) / 86400000)
     };
     let activePostLabArch = 'all';
     let customRadarDrafts = [];
@@ -564,11 +645,33 @@
         return liveSignals.techPulse[liveSignals.shuffleSeed % Math.min(liveSignals.techPulse.length, 6)];
     }
 
+    function buildTopPostFollowups() {
+        const top = [...(store.tweets || [])]
+            .filter(t => (t.citations || 0) >= 60 && t.title)
+            .sort((a, b) => (b.citations || 0) - (a.citations || 0))
+            .slice(0, 10);
+        return top.map(t => {
+            const shortTitle = t.title.length > 80 ? t.title.slice(0, 77) + '…' : t.title;
+            return {
+                id: 'followup-top-' + t.id,
+                title: `Follow-up to: ${shortTitle}`,
+                metricsRef: `Your post "${shortTitle}" earned ${(t.citations || 0).toLocaleString()} citations and ${fmtNum(t.metrics?.views || 0)} views (${t.month || t.year}). Follow-ups to proven posts reuse warm audience interest.`,
+                hooks: [
+                    `A while back I posted about "${shortTitle}" and it got way more response than I expected.\n\nA lot of you asked follow-up questions in replies and DMs, so here are the 3 things I'd add now:`,
+                    `Update on "${shortTitle}":\n\nWhat changed since I posted it, what I got wrong, and what I'd do differently today:`,
+                    `The most common question I got after "${shortTitle}" was "how do I actually start?"\n\nHere's the step-by-step version:`
+                ],
+                replyLink: `Original post: ${t.url}`
+            };
+        });
+    }
+
     function buildDailyRecommendations() {
         const seed = liveSignals.shuffleSeed;
         const classicNote = CLASSIC_ML_VAULT[seed % CLASSIC_ML_VAULT.length];
         const resourcePlay = ACADEMIC_RESOURCE_PLAYBOOKS[seed % ACADEMIC_RESOURCE_PLAYBOOKS.length];
-        const portfolioPlay = PORTFOLIO_FOLLOWUPS[seed % PORTFOLIO_FOLLOWUPS.length];
+        const portfolioPool = [...PORTFOLIO_FOLLOWUPS, ...buildTopPostFollowups()];
+        const portfolioPlay = portfolioPool[seed % portfolioPool.length];
         const livePaper = pickRankedPaper();
         const techStory = pickTechPulse();
 

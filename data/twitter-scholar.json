@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 1813,
+    "followers": 1859,
     "following": 607,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-10-29T12:58:27Z",
+  "last_synced": "2026-10-30T08:28:54Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -390,6 +390,37 @@
       "citations": 123
     },
     {
+      "id": "2115724072344801467",
+      "title": "Turning shitposting into peer-reviewed research",
+      "text": "Turning shitposting into peer-reviewed research\nX scholar\n\nThanks @wenhaocha1 for the idea!\nThanks Gemini Argon for collaboration :)\n\nLink:",
+      "created_at": "2026-10-29T08:35:01Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115724072344801467",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HVyPWO2a4AAanGL.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [
+        "2115724075230539915",
+        "2115724077361156467"
+      ],
+      "thread_count": 3,
+      "metrics": {
+        "likes": 87,
+        "reposts": 0,
+        "replies": 14,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 3390
+      },
+      "citations": 115
+    },
+    {
       "id": "2111713521079902570",
       "title": "Something needs to change about publishing in conferences. I had a small project about evals in vision…",
       "text": "Something needs to change about publishing in conferences. I had a small project about evals in vision domain. Gave that project folder to Gemini Argon and asked to generate a conference paper. It iterated and iterated. Again with just single (slightly detailed) prompt, it gave a good paper with dangerously good figures and all. Idk how publishing makes sense anymore.",
@@ -439,6 +470,34 @@
         "views": 1922
       },
       "citations": 83
+    },
+    {
+      "id": "2115828506122653774",
+      "title": "Two \"road less traveled\" decisions that shaped my career more than anything else:",
+      "text": "Two \"road less traveled\" decisions that shaped my career more than anything else:\n\n1. In 2024, I had an on-campus SWE offer from Google in hand. It seemed a safe choice and a good role. but I knew I wanted to do ML research, which wouldn't really happen in a standard software",
+      "created_at": "2026-10-29T15:30:00Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115828506122653774",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HVywzdZacAEAlqt.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 61,
+        "reposts": 0,
+        "replies": 6,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 2130
+      },
+      "citations": 73
     },
     {
       "id": "2113917600656945294",
@@ -2721,6 +2780,36 @@
       "citations": 5
     },
     {
+      "id": "2115727551574470712",
+      "title": "@wenhaocha1 Thanks Wenhao :)",
+      "text": "@wenhaocha1 Thanks Wenhao :)\n\n@wenhaocha1 Though instead of manually uploading X's data archive, Argon preferred X's Syndication API, which just showed my top posts, not all the posts.",
+      "created_at": "2026-10-29T08:48:51Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115727551574470712",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [
+        "2115727986469335205"
+      ],
+      "thread_count": 2,
+      "metrics": {
+        "likes": 2,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 300
+      },
+      "citations": 4
+    },
+    {
       "id": "2114632486231966186",
       "title": "Getting dumped by automated email sequence is crazy.",
       "text": "Getting dumped by automated email sequence is crazy.",
@@ -2927,6 +3016,34 @@
         "views": 180
       },
       "citations": 4
+    },
+    {
+      "id": "2116082757315268950",
+      "title": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium…",
+      "text": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium thinking, it doesn't survive a single prompt.",
+      "created_at": "2026-10-30T08:20:18Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2116082757315268950",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 150
+      },
+      "citations": 3
     },
     {
       "id": "2115349144521117892",
@@ -4121,6 +4238,90 @@
       "citations": 2
     },
     {
+      "id": "2115816421058040169",
+      "title": "@DebanjanaNag08 Exactly",
+      "text": "@DebanjanaNag08 Exactly",
+      "created_at": "2026-10-29T14:41:59Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115816421058040169",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 150
+      },
+      "citations": 1
+    },
+    {
+      "id": "2115816271279542548",
+      "title": "@tiabirdwatch Already did :)",
+      "text": "@tiabirdwatch Already did :)",
+      "created_at": "2026-10-29T14:41:23Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115816271279542548",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 150
+      },
+      "citations": 1
+    },
+    {
+      "id": "2115750894784659662",
+      "title": "@__acbraingenome Thanks Anusha :)",
+      "text": "@__acbraingenome Thanks Anusha :)",
+      "created_at": "2026-10-29T10:21:36Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115750894784659662",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 150
+      },
+      "citations": 1
+    },
+    {
       "id": "2115424263662719439",
       "title": "@__acbraingenome Thanks Anusha :)",
       "text": "@__acbraingenome Thanks Anusha :)",
@@ -4435,6 +4636,34 @@
         "views": 180
       },
       "citations": 1
+    },
+    {
+      "id": "2115750713259422104",
+      "title": "@gaganjain1582 lol",
+      "text": "@gaganjain1582 lol",
+      "created_at": "2026-10-29T10:20:53Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115750713259422104",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 150
+      },
+      "citations": 0
     },
     {
       "id": "2115423189954347256",

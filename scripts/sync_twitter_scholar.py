@@ -256,63 +256,100 @@ def sync():
             already_merged_children.add(cid)
             parent_of[cid] = t["id"]
 
+    discovered_status_ids = set()
     for page_url in [f"https://x.com/{HANDLE}", f"https://x.com/{HANDLE}/with_replies", f"https://x.com/{HANDLE}/highlights"]:
         for ua in [
             HEADERS["User-Agent"],
-            "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
-            "Mozilla/5.0 (compatible; Discordbot/2.0; +https://discordapp.com)",
+            "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.google.com/bot.html)",
         ]:
             try:
                 req = urllib.request.Request(page_url, headers={"User-Agent": ua, "Accept": "text/html"})
                 with urllib.request.urlopen(req, timeout=15) as resp:
                     page_html = resp.read().decode("utf-8", errors="replace")
                 ingest_x_html(page_html)
+                for sid in re.findall(rf"{HANDLE}/status/(\d+)", page_html) + re.findall(r'"rest_id":"(\d+)"', page_html):
+                    discovered_status_ids.add(sid)
                 m_fol = re.search(r"followers:(\d+)", page_html)
                 if m_fol and "profile" in store:
                     store["profile"]["followers"] = max(int(m_fol.group(1)), int(store["profile"].get("followers", 0)))
             except Exception:
                 pass
 
-    # Merge any newly discovered self-reply children into their root thread tweet
-    def resolve_root(cid: str) -> str:
-        cur = cid
-        seen = set()
-        while cur in parent_of and cur not in seen:
-            seen.add(cur)
-            cur = parent_of[cur]
-        return cur
-
-    for cid in list(parent_of.keys()):
-        root_id = resolve_root(cid)
-        if root_id == cid or root_id not in tweets_by_id:
+    # Fetch and ingest tweet-result for discovered IDs and recent tweets
+    fetch_queue = sorted(discovered_status_ids.union(sorted(tweets_by_id.keys(), reverse=True)[:25]), reverse=True)
+    for tid in fetch_queue:
+        if tid in already_merged_children:
             continue
-        root = tweets_by_id[root_id]
-        t_ids = set(root.get("thread_ids", []))
-        child = tweets_by_id.pop(cid, None)
-        if child and cid not in t_ids:
-            rm = root["metrics"]
-            cm = child.get("metrics", {})
-            for k in ["likes", "reposts", "replies", "quotes", "bookmarks", "views"]:
-                rm[k] = int(rm.get(k, 0)) + int(cm.get(k, 0))
-            if child.get("text") and child["text"] not in root["text"]:
-                root["text"] = root["text"].rstrip() + "\n\n" + child["text"].strip()
-            t_ids.add(cid)
-            root["thread_ids"] = sorted(t_ids)
-            root["thread_count"] = 1 + len(t_ids)
-            root["citations"] = compute_citations(rm)
-
-    # Refresh top/recent tweets individually via cdn.syndication
-    recent_ids = sorted(tweets_by_id.keys(), reverse=True)[:12]
-    for tid in recent_ids:
         try:
             raw_json = fetch_url(TWEET_URL_TPL.format(tid=tid))
             tdata = json.loads(raw_json)
-            if tdata.get("id_str") == tid:
-                entry = tweets_by_id[tid]
-                m = entry["metrics"]
-                m["likes"] = max(m.get("likes", 0), int(tdata.get("favorite_count") or 0))
-                m["replies"] = max(m.get("replies", 0), int(tdata.get("conversation_count") or 0))
-                entry["citations"] = compute_citations(m)
+            if tdata.get("id_str") != tid:
+                continue
+            
+            raw_text = tdata.get("text", "")
+            created_raw = tdata.get("created_at", "")
+            try:
+                dt = datetime.strptime(created_raw, "%Y-%m-%dT%H:%M:%S.%fZ")
+            except Exception:
+                try:
+                    dt = datetime.strptime(created_raw, "%a %b %d %H:%M:%S +0000 %Y")
+                except Exception:
+                    dt = datetime.now(timezone.utc)
+            iso_date = dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+            year, month_str = dt.year, dt.strftime("%b %Y")
+
+            likes = int(tdata.get("favorite_count") or 0)
+            replies = int(tdata.get("conversation_count") or 0)
+
+            # Thread/parent detection
+            p_user = tdata.get("parent", {}).get("user", {}).get("screen_name")
+            p_id = tdata.get("parent", {}).get("id_str") or tdata.get("in_reply_to_status_id_str")
+            if p_id and (p_user is None or p_user.lower() == HANDLE):
+                parent_of[tid] = p_id
+
+            existing = tweets_by_id.get(tid, {})
+            prev_m = existing.get("metrics", {})
+            reposts = prev_m.get("reposts", 0)
+            quotes = prev_m.get("quotes", 0)
+            bookmarks = prev_m.get("bookmarks", 0)
+            views = prev_m.get("views", max(likes * 30 + replies * 50, 150))
+
+            cat, arch = classify_tweet(raw_text)
+            has_media = bool(tdata.get("mediaDetails") or tdata.get("photos"))
+            media_url = existing.get("media_url", "")
+            if not media_url and tdata.get("mediaDetails"):
+                media_url = tdata["mediaDetails"][0].get("media_url_https", "")
+
+            merged_m = {
+                "likes": max(likes, prev_m.get("likes", 0)),
+                "reposts": reposts,
+                "replies": max(replies, prev_m.get("replies", 0)),
+                "quotes": quotes,
+                "bookmarks": bookmarks,
+                "views": views,
+            }
+
+            tweets_by_id[tid] = {
+                "id": tid,
+                "title": existing.get("title") or make_title(raw_text),
+                "text": existing.get("text") or clean_text(raw_text),
+                "created_at": existing.get("created_at") or iso_date,
+                "year": existing.get("year") or year,
+                "month": existing.get("month") or month_str,
+                "url": f"https://x.com/{HANDLE}/status/{tid}",
+                "external_urls": existing.get("external_urls") or [],
+                "category": existing.get("category") or cat,
+                "archetype": existing.get("archetype") or arch,
+                "has_media": has_media or existing.get("has_media", False),
+                "media_url": media_url,
+                "is_quote": existing.get("is_quote", False),
+                "coauthors": existing.get("coauthors", []),
+                "pinned": existing.get("pinned", False),
+                "thread_ids": existing.get("thread_ids", []),
+                "thread_count": existing.get("thread_count", 1),
+                "metrics": merged_m,
+                "citations": compute_citations(merged_m),
+            }
         except Exception:
             pass
 
