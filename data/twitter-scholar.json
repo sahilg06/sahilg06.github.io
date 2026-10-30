@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-10-30T08:28:54Z",
+  "last_synced": "2026-10-30T12:52:59Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -349,6 +349,10 @@
         "@tuananhle"
       ],
       "pinned": false,
+      "thread_ids": [
+        "2114999156075016323"
+      ],
+      "thread_count": 2,
       "metrics": {
         "likes": 65,
         "reposts": 15,
@@ -357,11 +361,7 @@
         "bookmarks": 25,
         "views": 2442
       },
-      "citations": 170,
-      "thread_ids": [
-        "2114999156075016323"
-      ],
-      "thread_count": 2
+      "citations": 170
     },
     {
       "id": "2109563488473698475",
@@ -421,6 +421,34 @@
       "citations": 115
     },
     {
+      "id": "2115828506122653774",
+      "title": "Two \"road less traveled\" decisions that shaped my career more than anything else:",
+      "text": "Two \"road less traveled\" decisions that shaped my career more than anything else:\n\n1. In 2024, I had an on-campus SWE offer from Google in hand. It seemed a safe choice and a good role. but I knew I wanted to do ML research, which wouldn't really happen in a standard software",
+      "created_at": "2026-10-29T15:30:00Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115828506122653774",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HVywzdZacAEAlqt.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 83,
+        "reposts": 0,
+        "replies": 6,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 2130
+      },
+      "citations": 95
+    },
+    {
       "id": "2111713521079902570",
       "title": "Something needs to change about publishing in conferences. I had a small project about evals in vision…",
       "text": "Something needs to change about publishing in conferences. I had a small project about evals in vision domain. Gave that project folder to Gemini Argon and asked to generate a conference paper. It iterated and iterated. Again with just single (slightly detailed) prompt, it gave a good paper with dangerously good figures and all. Idk how publishing makes sense anymore.",
@@ -470,34 +498,6 @@
         "views": 1922
       },
       "citations": 83
-    },
-    {
-      "id": "2115828506122653774",
-      "title": "Two \"road less traveled\" decisions that shaped my career more than anything else:",
-      "text": "Two \"road less traveled\" decisions that shaped my career more than anything else:\n\n1. In 2024, I had an on-campus SWE offer from Google in hand. It seemed a safe choice and a good role. but I knew I wanted to do ML research, which wouldn't really happen in a standard software",
-      "created_at": "2026-10-29T15:30:00Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115828506122653774",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HVywzdZacAEAlqt.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 61,
-        "reposts": 0,
-        "replies": 6,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 2130
-      },
-      "citations": 73
     },
     {
       "id": "2113917600656945294",
@@ -665,20 +665,22 @@
       "external_urls": [],
       "category": "AI Commentary & Reflections",
       "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HViwqfYaMAAfU3m.jpg",
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
-        "likes": 24,
+        "likes": 25,
         "reposts": 2,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 5,
         "views": 986
       },
-      "citations": 42
+      "citations": 43
     },
     {
       "id": "1962407745841402192",
@@ -804,6 +806,8 @@
         "@paraschopra"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 17,
         "reposts": 1,
@@ -1126,6 +1130,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 13,
         "reposts": 1,
@@ -1268,6 +1274,34 @@
       "citations": 18
     },
     {
+      "id": "2116082757315268950",
+      "title": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium…",
+      "text": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium thinking, it doesn't survive a single prompt.",
+      "created_at": "2026-10-30T08:20:18Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2116082757315268950",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 11,
+        "reposts": 0,
+        "replies": 3,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 150
+      },
+      "citations": 17
+    },
+    {
       "id": "2114626763225752031",
       "title": "Youtube music >> spotify",
       "text": "Youtube music >> spotify",
@@ -1343,6 +1377,34 @@
         "views": 370
       },
       "citations": 16
+    },
+    {
+      "id": "2115421200021381328",
+      "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "created_at": "2026-10-28T12:31:31Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115421200021381328",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HVt605yagAArO8N.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 15,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 503
+      },
+      "citations": 15
     },
     {
       "id": "2111510881775530155",
@@ -1499,32 +1561,6 @@
         "views": 370
       },
       "citations": 14
-    },
-    {
-      "id": "2115421200021381328",
-      "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
-      "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
-      "created_at": "2026-10-28T12:31:31Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115421200021381328",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 13,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 503
-      },
-      "citations": 13
     },
     {
       "id": "2111394821520957755",
@@ -2611,6 +2647,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -2637,6 +2675,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -2820,11 +2860,13 @@
       "external_urls": [],
       "category": "AI Commentary & Reflections",
       "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HViumzoagAAFSWg.jpg",
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -3018,34 +3060,6 @@
       "citations": 4
     },
     {
-      "id": "2116082757315268950",
-      "title": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium…",
-      "text": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium thinking, it doesn't survive a single prompt.",
-      "created_at": "2026-10-30T08:20:18Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2116082757315268950",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 1,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 150
-      },
-      "citations": 3
-    },
-    {
       "id": "2115349144521117892",
       "title": "Okay got it.",
       "text": "Okay got it.",
@@ -3056,11 +3070,13 @@
       "external_urls": [],
       "category": "AI Commentary & Reflections",
       "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HVs6qVGbcAAMp38.jpg",
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -3087,6 +3103,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -3113,6 +3131,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -3139,6 +3159,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -3713,6 +3735,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -3739,6 +3763,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 0,
         "reposts": 0,
@@ -4337,6 +4363,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4363,6 +4391,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4681,6 +4711,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 0,
         "reposts": 0,
