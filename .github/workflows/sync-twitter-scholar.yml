@@ -2,8 +2,9 @@ name: Sync Twitter Scholar (@vibespersecond)
 
 on:
   schedule:
-    # Runs daily at 06:15 UTC (11:45 AM IST)
-    - cron: '15 6 * * *'
+    # Runs every 3 hours at minute :27 (e.g. 05:27 UTC / 10:57 AM IST, 08:27 UTC / 1:57 PM IST, etc.)
+    # Using an uncommon minute avoids GitHub Actions shared queue congestion
+    - cron: '27 */3 * * *'
   workflow_dispatch:
 
 permissions:

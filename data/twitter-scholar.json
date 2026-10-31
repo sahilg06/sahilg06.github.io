@@ -4,8 +4,8 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 1859,
-    "following": 607,
+    "followers": 1879,
+    "following": 612,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
     "x_url": "https://x.com/vibespersecond",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-10-30T12:52:59Z",
+  "last_synced": "2026-10-31T06:25:45Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -68,6 +68,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": true,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 467,
         "reposts": 30,
@@ -76,12 +78,7 @@
         "bookmarks": 687,
         "views": 39183
       },
-      "citations": 1949,
-      "thread_ids": [
-        "2109605337028583653",
-        "2109605721340055849"
-      ],
-      "thread_count": 3
+      "citations": 1949
     },
     {
       "id": "2044060697697628323",
@@ -135,19 +132,16 @@
       "coauthors": [
         "@GoogleDeepMind"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 561,
         "reposts": 12,
         "replies": 12,
         "quotes": 3,
-        "bookmarks": 49,
+        "bookmarks": 92,
         "views": 48796
       },
-      "citations": 725,
-      "thread_ids": [
-        "1917991779347120558"
-      ],
-      "thread_count": 2
+      "citations": 811
     },
     {
       "id": "2105209665521139835",
@@ -231,17 +225,7 @@
         "bookmarks": 71,
         "views": 19345
       },
-      "citations": 330,
-      "thread_ids": [
-        "1888617630648390111",
-        "1888618524576272464",
-        "1888620378139873402",
-        "1888621041481560189",
-        "1888621449268658489",
-        "1888623098435358803",
-        "1888625405176742185"
-      ],
-      "thread_count": 8
+      "citations": 330
     },
     {
       "id": "1945185100947448088",
@@ -258,15 +242,16 @@
       "media_url": "https://pbs.twimg.com/media/Gv6vUfGXQAAh1yp.jpg",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
-        "likes": 180,
+        "likes": 181,
         "reposts": 2,
         "replies": 3,
         "quotes": 0,
         "bookmarks": 28,
-        "views": 5670
+        "views": 5698
       },
-      "citations": 248
+      "citations": 249
     },
     {
       "id": "2086456634545754291",
@@ -319,6 +304,7 @@
         "@gaganjain1582",
         "@DebapriyaTula"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 84,
         "reposts": 11,
@@ -411,14 +397,14 @@
       ],
       "thread_count": 3,
       "metrics": {
-        "likes": 87,
+        "likes": 88,
         "reposts": 0,
         "replies": 14,
         "quotes": 0,
         "bookmarks": 0,
         "views": 3390
       },
-      "citations": 115
+      "citations": 116
     },
     {
       "id": "2115828506122653774",
@@ -439,14 +425,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 83,
+        "likes": 95,
         "reposts": 0,
         "replies": 6,
         "quotes": 0,
         "bookmarks": 0,
         "views": 2130
       },
-      "citations": 95
+      "citations": 107
     },
     {
       "id": "2111713521079902570",
@@ -489,6 +475,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 59,
         "reposts": 0,
@@ -540,6 +527,7 @@
       "media_url": "https://pbs.twimg.com/media/GwAhtEUbkAM_pzb.jpg",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 36,
         "reposts": 1,
@@ -697,6 +685,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 30,
         "reposts": 0,
@@ -776,6 +765,7 @@
       "coauthors": [
         "@gaganjain1582"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 28,
         "reposts": 0,
@@ -862,6 +852,7 @@
       "media_url": "https://pbs.twimg.com/media/GdZxwTAXIAAUVmz.jpg",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 9,
         "reposts": 3,
@@ -915,6 +906,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 11,
         "reposts": 1,
@@ -923,13 +915,7 @@
         "bookmarks": 2,
         "views": 978
       },
-      "citations": 26,
-      "thread_ids": [
-        "1922340814316851235",
-        "1922341441377870067",
-        "1922343158051946812"
-      ],
-      "thread_count": 4
+      "citations": 26
     },
     {
       "id": "2111399887309070773",
@@ -1024,6 +1010,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 18,
         "reposts": 0,
@@ -1033,6 +1020,34 @@
         "views": 504
       },
       "citations": 24
+    },
+    {
+      "id": "2116226971973927033",
+      "title": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not…",
+      "text": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not preparing for Roadies lol.",
+      "created_at": "2026-10-30T17:53:22Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2116226971973927033",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/amplify_video_thumb/2116226877472083968/img/bU7HLtk1TbR2f2sW.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 21,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 680
+      },
+      "citations": 23
     },
     {
       "id": "2111391054301962436",
@@ -1075,6 +1090,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 15,
         "reposts": 0,
@@ -1083,11 +1099,7 @@
         "bookmarks": 2,
         "views": 752
       },
-      "citations": 23,
-      "thread_ids": [
-        "1919005643878379593"
-      ],
-      "thread_count": 2
+      "citations": 23
     },
     {
       "id": "1904144182001992163",
@@ -1104,6 +1116,7 @@
       "media_url": "https://pbs.twimg.com/media/Gmzfy85aMAAm5vO.jpg",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 17,
         "reposts": 0,
@@ -1157,6 +1170,7 @@
       "media_url": "https://pbs.twimg.com/media/Gv2jPuKa4AUgfHS.jpg",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 13,
         "reposts": 0,
@@ -1166,6 +1180,62 @@
         "views": 544
       },
       "citations": 21
+    },
+    {
+      "id": "2116119121175974312",
+      "title": "People in tech need to realize that even if the handcuffs are golden, they're still handcuffs.",
+      "text": "People in tech need to realize that even if the handcuffs are golden, they're still handcuffs.",
+      "created_at": "2026-10-30T10:44:48Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2116119121175974312",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 16,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 580
+      },
+      "citations": 20
+    },
+    {
+      "id": "2116082757315268950",
+      "title": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium…",
+      "text": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium thinking, it doesn't survive a single prompt.",
+      "created_at": "2026-10-30T08:20:18Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2116082757315268950",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 14,
+        "reposts": 0,
+        "replies": 3,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 150
+      },
+      "citations": 20
     },
     {
       "id": "1946440035198537969",
@@ -1182,6 +1252,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 14,
         "reposts": 0,
@@ -1211,6 +1282,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 8,
         "reposts": 1,
@@ -1274,32 +1346,32 @@
       "citations": 18
     },
     {
-      "id": "2116082757315268950",
-      "title": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium…",
-      "text": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium thinking, it doesn't survive a single prompt.",
-      "created_at": "2026-10-30T08:20:18Z",
+      "id": "2115421200021381328",
+      "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "created_at": "2026-10-28T12:31:31Z",
       "year": 2026,
       "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2116082757315268950",
+      "url": "https://x.com/vibespersecond/status/2115421200021381328",
       "external_urls": [],
       "category": "AI Commentary & Reflections",
       "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HVt605yagAArO8N.jpg",
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 11,
+        "likes": 16,
         "reposts": 0,
-        "replies": 3,
+        "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 150
+        "views": 503
       },
-      "citations": 17
+      "citations": 16
     },
     {
       "id": "2114626763225752031",
@@ -1368,6 +1440,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 10,
         "reposts": 0,
@@ -1377,34 +1450,6 @@
         "views": 370
       },
       "citations": 16
-    },
-    {
-      "id": "2115421200021381328",
-      "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
-      "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
-      "created_at": "2026-10-28T12:31:31Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115421200021381328",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HVt605yagAArO8N.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 15,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 503
-      },
-      "citations": 15
     },
     {
       "id": "2111510881775530155",
@@ -1447,6 +1492,7 @@
       "media_url": "https://pbs.twimg.com/media/GpI26inW8AA2llR.png",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 11,
         "reposts": 0,
@@ -1500,6 +1546,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 5,
         "reposts": 1,
@@ -1525,6 +1572,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 10,
         "reposts": 0,
@@ -1552,6 +1600,7 @@
       "coauthors": [
         "@GoogleIndia"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 10,
         "reposts": 0,
@@ -1629,6 +1678,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 9,
         "reposts": 0,
@@ -1680,6 +1730,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 9,
         "reposts": 0,
@@ -1705,6 +1756,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 7,
         "reposts": 0,
@@ -1756,6 +1808,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 6,
         "reposts": 0,
@@ -1781,6 +1834,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 7,
         "reposts": 0,
@@ -1806,6 +1860,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 7,
         "reposts": 0,
@@ -1831,6 +1886,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 7,
         "reposts": 0,
@@ -1856,6 +1912,7 @@
       "media_url": "https://pbs.twimg.com/media/GslWw2CXsAARy4e.jpg",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 7,
         "reposts": 0,
@@ -1881,6 +1938,92 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 5,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 1,
+        "views": 230
+      },
+      "citations": 9
+    },
+    {
+      "id": "1917991779347120558",
+      "title": "@GoogleDeepMind Congrats to all my co-authors @DebapriyaTula , @paul_sujoy_ , @gaganjain1582,…",
+      "text": "@GoogleDeepMind Congrats to all my co-authors @DebapriyaTula , @paul_sujoy_ , @gaganjain1582, @jainprateek_ , @doktorshenoy",
+      "created_at": "2025-05-01T17:17:29Z",
+      "year": 2025,
+      "month": "May 2025",
+      "url": "https://x.com/vibespersecond/status/1917991779347120558",
+      "external_urls": [],
+      "category": "Paper Releases & Conferences",
+      "archetype": "Research Milestone & Conference Update",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [
+        "@GoogleDeepMind",
+        "@DebapriyaTula",
+        "@paul_sujoy_",
+        "@gaganjain1582",
+        "@jainprateek_",
+        "@doktorshenoy"
+      ],
+      "pinned": false,
+      "metrics": {
+        "likes": 7,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 1,
+        "views": 196
+      },
+      "citations": 9
+    },
+    {
+      "id": "1888618524576272464",
+      "title": "Unmaksed token density visualization across sampling steps reveals structured unmasking.",
+      "text": "Unmaksed token density visualization across sampling steps reveals structured unmasking.\n💡 Smarter decoding = Faster generation!",
+      "created_at": "2025-02-09T15:58:39Z",
+      "year": 2025,
+      "month": "Feb 2025",
+      "url": "https://x.com/vibespersecond/status/1888618524576272464",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/GjW4MW7XMAAZ65o.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 5,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 1,
+        "views": 230
+      },
+      "citations": 9
+    },
+    {
+      "id": "1888617630648390111",
+      "title": "Parallel Decoding of discrete tokens (MaskGIT) reduces compute of autoregressive methods significantly,…",
+      "text": "Parallel Decoding of discrete tokens (MaskGIT) reduces compute of autoregressive methods significantly, but it still includes several redundant computations.\n\nNot all sampling steps need the same model capacity.\nKV-caching can boost parallel decoding too, when refreshed smartly!",
+      "created_at": "2025-02-09T15:55:06Z",
+      "year": 2025,
+      "month": "Feb 2025",
+      "url": "https://x.com/vibespersecond/status/1888617630648390111",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -1958,6 +2101,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 6,
         "reposts": 0,
@@ -1983,6 +2127,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 6,
         "reposts": 0,
@@ -2010,6 +2155,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 6,
         "reposts": 0,
@@ -2035,6 +2181,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 6,
         "reposts": 0,
@@ -2042,6 +2189,145 @@
         "quotes": 0,
         "bookmarks": 1,
         "views": 180
+      },
+      "citations": 8
+    },
+    {
+      "id": "1888625405176742185",
+      "title": "Huge thanks to my amazing co-authors and collaborators for their insights and contributions! 👏",
+      "text": "Huge thanks to my amazing co-authors and collaborators for their insights and contributions! 👏\n@paul_sujoy_ @DebapriyaTula @gaganjain1582 @jainprateek_ @doktorshenoy\nand thanks for the support @ManishGuptaMG1",
+      "created_at": "2025-02-09T16:26:00Z",
+      "year": 2025,
+      "month": "Feb 2025",
+      "url": "https://x.com/vibespersecond/status/1888625405176742185",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [
+        "@paul_sujoy_",
+        "@DebapriyaTula",
+        "@gaganjain1582",
+        "@jainprateek_",
+        "@doktorshenoy",
+        "@ManishGuptaMG1"
+      ],
+      "pinned": false,
+      "metrics": {
+        "likes": 6,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 1,
+        "views": 180
+      },
+      "citations": 8
+    },
+    {
+      "id": "1888623098435358803",
+      "title": "More insights? Dive deep into the paper",
+      "text": "More insights? Dive deep into the paper",
+      "created_at": "2025-02-09T16:16:50Z",
+      "year": 2025,
+      "month": "Feb 2025",
+      "url": "https://x.com/vibespersecond/status/1888623098435358803",
+      "external_urls": [
+        "https://arxiv.org/abs/2502.00382"
+      ],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/GjW8oswWcAIT9Mn.png",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 1,
+        "views": 202
+      },
+      "citations": 8
+    },
+    {
+      "id": "1888621449268658489",
+      "title": "Applying guidance only in the final few sampling steps is sufficient⚡",
+      "text": "Applying guidance only in the final few sampling steps is sufficient⚡\nFewer guided steps → Efficient inference ✅",
+      "created_at": "2025-02-09T16:10:17Z",
+      "year": 2025,
+      "month": "Feb 2025",
+      "url": "https://x.com/vibespersecond/status/1888621449268658489",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/GjW7BZMWMAARy70.png",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 1,
+        "views": 202
+      },
+      "citations": 8
+    },
+    {
+      "id": "1888621041481560189",
+      "title": "Less compute, same quality!",
+      "text": "Less compute, same quality!",
+      "created_at": "2025-02-09T16:08:39Z",
+      "year": 2025,
+      "month": "Feb 2025",
+      "url": "https://x.com/vibespersecond/status/1888621041481560189",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/GjW6llqWoAAP0qm.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 1,
+        "views": 202
+      },
+      "citations": 8
+    },
+    {
+      "id": "1888620378139873402",
+      "title": "🔍 How tokens evolve during generation!",
+      "text": "🔍 How tokens evolve during generation!\n\nEarly steps: Background region of ImageNet\nLater steps: Middle of the image",
+      "created_at": "2025-02-09T16:06:01Z",
+      "year": 2025,
+      "month": "Feb 2025",
+      "url": "https://x.com/vibespersecond/status/1888620378139873402",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/GjW6B0PWsAA1ZXI.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 1,
+        "views": 202
       },
       "citations": 8
     },
@@ -2062,6 +2348,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2087,6 +2374,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2112,6 +2400,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2137,6 +2426,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2162,6 +2452,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2187,6 +2478,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2212,6 +2504,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2237,6 +2530,7 @@
       "media_url": "https://pbs.twimg.com/media/GrfyCciboAQm-Q9.jpg",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2262,6 +2556,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2365,6 +2660,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2390,6 +2686,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2415,6 +2712,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2444,6 +2742,7 @@
       "coauthors": [
         "@goodfellow_ian"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2469,6 +2768,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2496,6 +2796,7 @@
       "coauthors": [
         "@google"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2521,6 +2822,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2546,6 +2848,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2571,6 +2874,7 @@
       "media_url": "https://pbs.twimg.com/media/GsXJUg_bgAE8gzS.png",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -2596,6 +2900,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2621,6 +2926,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2784,6 +3090,7 @@
       "coauthors": [
         "@lcastricato"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -2809,6 +3116,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -2972,6 +3280,61 @@
       "coauthors": [
         "@TheCorruptFile"
       ],
+      "pinned": false,
+      "metrics": {
+        "likes": 2,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 180
+      },
+      "citations": 4
+    },
+    {
+      "id": "1922343158051946812",
+      "title": "For similar experiments, checkout our recent ICML paper, MaGNeTS: Masked Generative Nested Transformers…",
+      "text": "For similar experiments, checkout our recent ICML paper, MaGNeTS: Masked Generative Nested Transformers with Decode Time Scaling ()",
+      "created_at": "2025-05-13T17:28:18Z",
+      "year": 2025,
+      "month": "May 2025",
+      "url": "https://x.com/vibespersecond/status/1922343158051946812",
+      "external_urls": [
+        "https://arxiv.org/pdf/2502.00382"
+      ],
+      "category": "Paper Releases & Conferences",
+      "archetype": "Research Milestone & Conference Update",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 2,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 180
+      },
+      "citations": 4
+    },
+    {
+      "id": "1922340814316851235",
+      "title": "Models used:   pre-trained checkpoints of UViT on ImageNet64×64, U-ViT-L/4  and U-ViT-M/4",
+      "text": "Models used:   pre-trained checkpoints of UViT on ImageNet64×64, U-ViT-L/4  and U-ViT-M/4\nSampling steps: 50\n(All exp on single A100 GPU)",
+      "created_at": "2025-05-13T17:19:00Z",
+      "year": 2025,
+      "month": "May 2025",
+      "url": "https://x.com/vibespersecond/status/1922340814316851235",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -2997,6 +3360,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -3022,6 +3386,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -3049,6 +3414,7 @@
       "coauthors": [
         "@ashu_1069"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -3420,6 +3786,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -3447,6 +3814,7 @@
       "coauthors": [
         "@TheCorruptFile"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -3474,6 +3842,7 @@
       "coauthors": [
         "@TheCorruptFile"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -3499,6 +3868,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -3526,6 +3896,7 @@
       "coauthors": [
         "@TheCorruptFile"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -3553,6 +3924,7 @@
       "coauthors": [
         "@TheCorruptFile"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -3578,6 +3950,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -3603,6 +3976,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -3630,6 +4004,7 @@
       "coauthors": [
         "@sedielem"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -3655,6 +4030,33 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 180
+      },
+      "citations": 3
+    },
+    {
+      "id": "1922341441377870067",
+      "title": "Now what is the optimal model schedule?",
+      "text": "Now what is the optimal model schedule?\nInitial  denoising steps play a crucial role in shaping the final output of the reverse diffusion process, so utilizing the L model for the early stages and transition to the M model for the later denoising steps.",
+      "created_at": "2025-05-13T17:21:29Z",
+      "year": 2025,
+      "month": "May 2025",
+      "url": "https://x.com/vibespersecond/status/1922341441377870067",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -3682,6 +4084,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -3709,6 +4112,7 @@
       "coauthors": [
         "@nickinack1"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4076,6 +4480,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4101,6 +4506,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4128,6 +4534,7 @@
       "coauthors": [
         "@Jaspritbumrah93"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4153,6 +4560,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4178,6 +4586,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4203,6 +4612,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4228,6 +4638,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4253,6 +4664,7 @@
       "media_url": "",
       "is_quote": false,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4576,6 +4988,7 @@
       "coauthors": [
         "@anm5704"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4603,6 +5016,7 @@
       "coauthors": [
         "@zhaisf"
       ],
+      "pinned": false,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4630,6 +5044,7 @@
       "media_url": "",
       "is_quote": true,
       "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4657,6 +5072,36 @@
       "coauthors": [
         "@miniapeur"
       ],
+      "pinned": false,
+      "metrics": {
+        "likes": 1,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 180
+      },
+      "citations": 1
+    },
+    {
+      "id": "1919005643878379593",
+      "title": "As they were published in ICLR 2024, their open review forums are public. checkout for some useful insights",
+      "text": "As they were published in ICLR 2024, their open review forums are public. checkout for some useful insights",
+      "created_at": "2025-05-04T12:26:13Z",
+      "year": 2025,
+      "month": "May 2025",
+      "url": "https://x.com/vibespersecond/status/1919005643878379593",
+      "external_urls": [
+        "https://openreview.net/forum?id=2dnO3LLiJ1",
+        "https://openreview.net/forum?id=NG7sS51zVF"
+      ],
+      "category": "Paper Releases & Conferences",
+      "archetype": "Research Milestone & Conference Update",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
       "metrics": {
         "likes": 1,
         "reposts": 0,
