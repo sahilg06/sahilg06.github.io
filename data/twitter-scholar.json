@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-10-31T06:25:45Z",
+  "last_synced": "2026-10-31T15:26:40Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -397,14 +397,14 @@
       ],
       "thread_count": 3,
       "metrics": {
-        "likes": 88,
+        "likes": 89,
         "reposts": 0,
         "replies": 14,
         "quotes": 0,
         "bookmarks": 0,
         "views": 3390
       },
-      "citations": 116
+      "citations": 117
     },
     {
       "id": "2115828506122653774",
@@ -425,14 +425,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 95,
+        "likes": 98,
         "reposts": 0,
         "replies": 6,
         "quotes": 0,
         "bookmarks": 0,
         "views": 2130
       },
-      "citations": 107
+      "citations": 110
     },
     {
       "id": "2111713521079902570",
@@ -890,6 +890,34 @@
       "citations": 28
     },
     {
+      "id": "2116226971973927033",
+      "title": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not…",
+      "text": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not preparing for Roadies lol.",
+      "created_at": "2026-10-30T17:53:22Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2116226971973927033",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/amplify_video_thumb/2116226877472083968/img/bU7HLtk1TbR2f2sW.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 25,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 680
+      },
+      "citations": 27
+    },
+    {
       "id": "1922339760388874485",
       "title": "Can we use different-sized models in different stages of diffusion inference for efficient generation?",
       "text": "Can we use different-sized models in different stages of diffusion inference for efficient generation?\nSome initial inference-time experiments on UVIT () in the thread👀\n\nModels used:   pre-trained checkpoints of UViT on ImageNet64×64, U-ViT-L/4  and U-ViT-M/4\nSampling steps: 50\n(All exp on single A100 GPU)\n\nNow what is the optimal model schedule?\nInitial  denoising steps play a crucial role in shaping the final output of the reverse diffusion process, so utilizing the L model for the early stages and transition to the M model for the later denoising steps.\n\nFor similar experiments, checkout our recent ICML paper, MaGNeTS: Masked Generative Nested Transformers with Decode Time Scaling ()",
@@ -1022,34 +1050,6 @@
       "citations": 24
     },
     {
-      "id": "2116226971973927033",
-      "title": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not…",
-      "text": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not preparing for Roadies lol.",
-      "created_at": "2026-10-30T17:53:22Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2116226971973927033",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/amplify_video_thumb/2116226877472083968/img/bU7HLtk1TbR2f2sW.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 21,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 680
-      },
-      "citations": 23
-    },
-    {
       "id": "2111391054301962436",
       "title": "Gemini Argon's quota is restored.",
       "text": "Gemini Argon's quota is restored.",
@@ -1156,6 +1156,34 @@
       "citations": 22
     },
     {
+      "id": "2116119121175974312",
+      "title": "People in tech need to realize that even if the handcuffs are golden, they're still handcuffs.",
+      "text": "People in tech need to realize that even if the handcuffs are golden, they're still handcuffs.",
+      "created_at": "2026-10-30T10:44:48Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2116119121175974312",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 17,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 580
+      },
+      "citations": 21
+    },
+    {
       "id": "1944890474718019613",
       "title": "creativity #ICML2025",
       "text": "creativity #ICML2025",
@@ -1180,34 +1208,6 @@
         "views": 544
       },
       "citations": 21
-    },
-    {
-      "id": "2116119121175974312",
-      "title": "People in tech need to realize that even if the handcuffs are golden, they're still handcuffs.",
-      "text": "People in tech need to realize that even if the handcuffs are golden, they're still handcuffs.",
-      "created_at": "2026-10-30T10:44:48Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2116119121175974312",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 16,
-        "reposts": 0,
-        "replies": 2,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 580
-      },
-      "citations": 20
     },
     {
       "id": "2116082757315268950",
