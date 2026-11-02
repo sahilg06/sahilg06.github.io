@@ -4,8 +4,8 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 1879,
-    "following": 612,
+    "followers": 1881,
+    "following": 614,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
     "x_url": "https://x.com/vibespersecond",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-01T22:14:42Z",
+  "last_synced": "2026-11-02T06:34:30Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -350,6 +350,34 @@
       "citations": 170
     },
     {
+      "id": "2115828506122653774",
+      "title": "Two \"road less traveled\" decisions that shaped my career more than anything else:",
+      "text": "Two \"road less traveled\" decisions that shaped my career more than anything else:\n\n1. In 2024, I had an on-campus SWE offer from Google in hand. It seemed a safe choice and a good role. but I knew I wanted to do ML research, which wouldn't really happen in a standard software",
+      "created_at": "2026-10-29T15:30:00Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115828506122653774",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HVywzdZacAEAlqt.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 99,
+        "reposts": 3,
+        "replies": 6,
+        "quotes": 1,
+        "bookmarks": 17,
+        "views": 3852
+      },
+      "citations": 156
+    },
+    {
       "id": "2109563488473698475",
       "title": "Spent the last few years on pretraining, vision, and efficient ML. Now pivoting into that c-word:…",
       "text": "Spent the last few years on pretraining, vision, and efficient ML. Now pivoting into that c-word: continual learning. Wish my agents luck remembering what they learn. Send over your fav read papers and resources!",
@@ -405,34 +433,6 @@
         "views": 3390
       },
       "citations": 118
-    },
-    {
-      "id": "2115828506122653774",
-      "title": "Two \"road less traveled\" decisions that shaped my career more than anything else:",
-      "text": "Two \"road less traveled\" decisions that shaped my career more than anything else:\n\n1. In 2024, I had an on-campus SWE offer from Google in hand. It seemed a safe choice and a good role. but I knew I wanted to do ML research, which wouldn't really happen in a standard software",
-      "created_at": "2026-10-29T15:30:00Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115828506122653774",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HVywzdZacAEAlqt.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 99,
-        "reposts": 0,
-        "replies": 6,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 2130
-      },
-      "citations": 111
     },
     {
       "id": "2111713521079902570",
