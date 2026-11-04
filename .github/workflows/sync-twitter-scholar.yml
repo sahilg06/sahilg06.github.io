@@ -10,9 +10,16 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: sync-twitter-scholar
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   sync-tweets:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,5 +41,9 @@ jobs:
             echo "No new tweet updates."
           else
             git commit -m "chore(scholar): auto-sync @vibespersecond tweets and citation metrics"
-            git push
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push origin main && break
+              echo "Push attempt $i failed, retrying in 5s..."
+              sleep 5
+            done
           fi

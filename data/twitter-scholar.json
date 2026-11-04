@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-04T01:32:46Z",
+  "last_synced": "2026-11-04T14:23:29Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -68,17 +68,20 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": true,
-      "thread_ids": [],
-      "thread_count": 1,
+      "thread_ids": [
+        "2109605337028583653",
+        "2109605721340055849"
+      ],
+      "thread_count": 3,
       "metrics": {
-        "likes": 467,
+        "likes": 474,
         "reposts": 30,
         "replies": 8,
         "quotes": 1,
         "bookmarks": 687,
-        "views": 39183
+        "views": 41467
       },
-      "citations": 1949
+      "citations": 1956
     },
     {
       "id": "2044060697697628323",
@@ -373,35 +376,9 @@
         "replies": 6,
         "quotes": 1,
         "bookmarks": 17,
-        "views": 3852
+        "views": 7004
       },
       "citations": 156
-    },
-    {
-      "id": "2109563488473698475",
-      "title": "Spent the last few years on pretraining, vision, and efficient ML. Now pivoting into that c-word:…",
-      "text": "Spent the last few years on pretraining, vision, and efficient ML. Now pivoting into that c-word: continual learning. Wish my agents luck remembering what they learn. Send over your fav read papers and resources!",
-      "created_at": "2026-10-12T08:35:04Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2109563488473698475",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 78,
-        "reposts": 3,
-        "replies": 5,
-        "quotes": 0,
-        "bookmarks": 13,
-        "views": 4394
-      },
-      "citations": 123
     },
     {
       "id": "2115724072344801467",
@@ -426,13 +403,41 @@
       "thread_count": 3,
       "metrics": {
         "likes": 90,
-        "reposts": 0,
+        "reposts": 4,
         "replies": 14,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 3390
+        "views": 26218
       },
-      "citations": 118
+      "citations": 130
+    },
+    {
+      "id": "2109563488473698475",
+      "title": "Spent the last few years on pretraining, vision, and efficient ML. Now pivoting into that c-word:…",
+      "text": "Spent the last few years on pretraining, vision, and efficient ML. Now pivoting into that c-word: continual learning. Wish my agents luck remembering what they learn. Send over your fav read papers and resources!",
+      "created_at": "2026-10-12T08:35:04Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2109563488473698475",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 78,
+        "reposts": 3,
+        "replies": 5,
+        "quotes": 0,
+        "bookmarks": 13,
+        "views": 4418
+      },
+      "citations": 123
     },
     {
       "id": "2111713521079902570",
@@ -450,13 +455,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 52,
         "reposts": 0,
         "replies": 4,
         "quotes": 0,
         "bookmarks": 13,
-        "views": 7912
+        "views": 7947
       },
       "citations": 86
     },
@@ -502,13 +509,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 40,
         "reposts": 3,
         "replies": 4,
         "quotes": 0,
         "bookmarks": 8,
-        "views": 1168
+        "views": 1206
       },
       "citations": 73
     },
@@ -580,13 +589,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 30,
         "reposts": 2,
         "replies": 0,
         "quotes": 0,
         "bookmarks": 6,
-        "views": 1145
+        "views": 1157
       },
       "citations": 48
     },
@@ -666,7 +677,7 @@
         "replies": 1,
         "quotes": 0,
         "bookmarks": 5,
-        "views": 986
+        "views": 1046
       },
       "citations": 43
     },
@@ -712,13 +723,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 31,
         "reposts": 0,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 4,
-        "views": 1087
+        "views": 1106
       },
       "citations": 41
     },
@@ -738,13 +751,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 26,
         "reposts": 0,
         "replies": 3,
         "quotes": 0,
         "bookmarks": 3,
-        "views": 1233
+        "views": 1258
       },
       "citations": 38
     },
@@ -804,9 +819,37 @@
         "replies": 1,
         "quotes": 0,
         "bookmarks": 5,
-        "views": 574
+        "views": 685
       },
       "citations": 32
+    },
+    {
+      "id": "2116226971973927033",
+      "title": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not…",
+      "text": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not preparing for Roadies lol.",
+      "created_at": "2026-10-30T17:53:22Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2116226971973927033",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/amplify_video_thumb/2116226877472083968/img/bU7HLtk1TbR2f2sW.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 25,
+        "reposts": 1,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 1044
+      },
+      "citations": 30
     },
     {
       "id": "2114255873589813379",
@@ -824,13 +867,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 20,
         "reposts": 0,
         "replies": 3,
         "quotes": 0,
         "bookmarks": 2,
-        "views": 1384
+        "views": 1421
       },
       "citations": 30
     },
@@ -879,43 +924,17 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 15,
         "reposts": 1,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 3,
-        "views": 855
+        "views": 895
       },
       "citations": 28
-    },
-    {
-      "id": "2116226971973927033",
-      "title": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not…",
-      "text": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not preparing for Roadies lol.",
-      "created_at": "2026-10-30T17:53:22Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2116226971973927033",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/amplify_video_thumb/2116226877472083968/img/bU7HLtk1TbR2f2sW.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 25,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 680
-      },
-      "citations": 27
     },
     {
       "id": "1922339760388874485",
@@ -961,13 +980,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 16,
         "reposts": 1,
         "replies": 0,
         "quotes": 0,
         "bookmarks": 3,
-        "views": 748
+        "views": 773
       },
       "citations": 25
     },
@@ -987,13 +1008,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 19,
         "reposts": 0,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 2,
-        "views": 1047
+        "views": 1066
       },
       "citations": 25
     },
@@ -1013,13 +1036,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 19,
         "reposts": 0,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 2,
-        "views": 1067
+        "views": 1080
       },
       "citations": 25
     },
@@ -1065,13 +1090,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 17,
         "reposts": 0,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 2,
-        "views": 733
+        "views": 752
       },
       "citations": 23
     },
@@ -1151,7 +1178,7 @@
         "replies": 1,
         "quotes": 0,
         "bookmarks": 2,
-        "views": 639
+        "views": 700
       },
       "citations": 22
     },
@@ -1179,7 +1206,7 @@
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 580
+        "views": 944
       },
       "citations": 21
     },
@@ -1212,7 +1239,7 @@
     {
       "id": "2116082757315268950",
       "title": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium…",
-      "text": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium thinking, it doesn't survive a single prompt.",
+      "text": "Opus 5.5 quota in Antigravity on the Google AI Pro plan is basically a formality lol. Even on medium thinking, it doesn't survive a single prompt.\n\nwe're back to 3.8 Flash after exhausting Argon and Opus.",
       "created_at": "2026-10-30T08:20:18Z",
       "year": 2026,
       "month": "Oct 2026",
@@ -1225,15 +1252,17 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
+      "thread_ids": [
+        "2116083800656744699"
+      ],
+      "thread_count": 2,
       "metrics": {
         "likes": 14,
         "reposts": 0,
         "replies": 3,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 150
+        "views": 1316
       },
       "citations": 20
     },
@@ -1262,6 +1291,34 @@
         "views": 482
       },
       "citations": 20
+    },
+    {
+      "id": "2115421200021381328",
+      "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "created_at": "2026-10-28T12:31:31Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115421200021381328",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HVt605yagAArO8N.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 16,
+        "reposts": 1,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 799
+      },
+      "citations": 19
     },
     {
       "id": "1924494903469621469",
@@ -1309,13 +1366,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 12,
         "reposts": 0,
         "replies": 3,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 1040
+        "views": 1052
       },
       "citations": 18
     },
@@ -1346,34 +1405,6 @@
       "citations": 18
     },
     {
-      "id": "2115421200021381328",
-      "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
-      "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
-      "created_at": "2026-10-28T12:31:31Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115421200021381328",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HVt605yagAArO8N.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 16,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 503
-      },
-      "citations": 16
-    },
-    {
       "id": "2114626763225752031",
       "title": "Youtube music >> spotify",
       "text": "Youtube music >> spotify",
@@ -1389,13 +1420,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 10,
         "reposts": 0,
         "replies": 3,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 794
+        "views": 847
       },
       "citations": 16
     },
@@ -1415,13 +1448,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 14,
         "reposts": 0,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 609
+        "views": 640
       },
       "citations": 16
     },
@@ -1467,13 +1502,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 13,
         "reposts": 0,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 723
+        "views": 746
       },
       "citations": 15
     },
@@ -1527,7 +1564,7 @@
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 410
+        "views": 617
       },
       "citations": 14
     },
@@ -1547,13 +1584,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 12,
         "reposts": 0,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 871
+        "views": 891
       },
       "citations": 14
     },
@@ -1811,13 +1850,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 7,
         "reposts": 1,
         "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 596
+        "views": 650
       },
       "citations": 10
     },
@@ -1846,6 +1887,36 @@
         "views": 258
       },
       "citations": 10
+    },
+    {
+      "id": "2116818375158755690",
+      "title": "I was little skeptical if it'll refresh the feed daily through some X's sync api as I completely vibe…",
+      "text": "I was little skeptical if it'll refresh the feed daily through some X's sync api as I completely vibe coded it. It seems it does. It has my latest tweet there. \n\nMoreover based on trending topics and my previous tweets, it also shows daily post suggestions.\n\nshould I add founding team @XScholar on my profile 😂?@wenhaocha1",
+      "created_at": "2026-11-01T09:03:23Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2116818375158755690",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HWByzsBbgAAMAwn.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [
+        "2116819415601991815"
+      ],
+      "thread_count": 2,
+      "metrics": {
+        "likes": 5,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 733
+      },
+      "citations": 9
     },
     {
       "id": "1949421632566809080",
@@ -2078,13 +2149,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 729
+        "views": 754
       },
       "citations": 8
     },
@@ -2619,35 +2692,7 @@
         "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 180
-      },
-      "citations": 6
-    },
-    {
-      "id": "2116818375158755690",
-      "title": "I was little skeptical if it'll refresh the feed daily through some X's sync api as I completely vibe…",
-      "text": "I was little skeptical if it'll refresh the feed daily through some X's sync api as I completely vibe coded it. It seems it does. It has my latest tweet there. \n\nMoreover based on trending topics and my previous tweets, it also shows daily post suggestions.",
-      "created_at": "2026-11-01T09:03:23Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2116818375158755690",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HWByzsBbgAAMAwn.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 4,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 170
+        "views": 903
       },
       "citations": 6
     },
@@ -2667,13 +2712,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 661
+        "views": 689
       },
       "citations": 6
     },
@@ -2693,13 +2740,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 558
+        "views": 577
       },
       "citations": 6
     },
@@ -2719,13 +2768,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 6,
         "reposts": 0,
         "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 518
+        "views": 531
       },
       "citations": 6
     },
@@ -3265,7 +3316,7 @@
         "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 508
+        "views": 564
       },
       "citations": 4
     },
@@ -3311,13 +3362,15 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
         "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 739
+        "views": 775
       },
       "citations": 4
     },
@@ -3533,7 +3586,7 @@
         "replies": 0,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 298
+        "views": 452
       },
       "citations": 3
     },

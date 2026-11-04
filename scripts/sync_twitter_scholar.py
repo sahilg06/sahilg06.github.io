@@ -74,7 +74,19 @@ def sync():
     else:
         store = {"profile": {}, "tweets": []}
 
+    prev_snapshot = json.dumps(
+        {"profile": store.get("profile", {}), "tweets": store.get("tweets", [])},
+        sort_keys=True,
+        ensure_ascii=False,
+    )
+
     tweets_by_id = {t["id"]: t for t in store.get("tweets", []) if t.get("id")}
+    parent_of = {}
+    already_merged_children = set()
+    for t in tweets_by_id.values():
+        for cid in t.get("thread_ids", []):
+            already_merged_children.add(cid)
+            parent_of[cid] = t["id"]
 
     try:
         html = fetch_url(TIMELINE_URL)
@@ -86,7 +98,7 @@ def sync():
             for e in entries:
                 t = e.get("content", {}).get("tweet", {})
                 tid = t.get("id_str")
-                if not tid:
+                if not tid or tid in already_merged_children:
                     continue
                 if not user_info and t.get("user"):
                     user_info = t["user"]
@@ -154,13 +166,15 @@ def sync():
                     "is_quote": is_quote or existing.get("is_quote", False),
                     "coauthors": coauthors[:6],
                     "pinned": existing.get("pinned", False),
+                    "thread_ids": existing.get("thread_ids", []),
+                    "thread_count": existing.get("thread_count", 1),
                     "metrics": merged_metrics,
                     "citations": compute_citations(merged_metrics),
                 }
 
             if user_info and "profile" in store:
-                store["profile"]["followers"] = int(user_info.get("followers_count") or store["profile"].get("followers", 1795))
-                store["profile"]["following"] = int(user_info.get("friends_count") or store["profile"].get("following", 607))
+                store["profile"]["followers"] = max(int(user_info.get("followers_count") or 0), int(store["profile"].get("followers", 1795)))
+                store["profile"]["following"] = max(int(user_info.get("friends_count") or 0), int(store["profile"].get("following", 607)))
     except Exception as exc:
         print(f"Warning: timeline syndication fetch encountered error: {exc}")
 
@@ -182,7 +196,6 @@ def sync():
 
     def ingest_x_html(raw_html: str):
         import html as html_mod
-        # Detect self-reply chains inside <li> elements and schema-comment references
         for li in re.findall(r"<li[^>]*>.*?</li>", raw_html, re.DOTALL):
             li_posts = re.findall(r'itemID="https://x\.com/([^"/]+)/status/(\d+)"', li)
             if len(li_posts) >= 2 and all(h.lower() == HANDLE for h, _ in li_posts):
@@ -249,13 +262,6 @@ def sync():
                 "citations": compute_citations(merged_m),
             }
 
-    parent_of = {}
-    already_merged_children = set()
-    for t in tweets_by_id.values():
-        for cid in t.get("thread_ids", []):
-            already_merged_children.add(cid)
-            parent_of[cid] = t["id"]
-
     discovered_status_ids = set()
     for page_url in [f"https://x.com/{HANDLE}", f"https://x.com/{HANDLE}/with_replies", f"https://x.com/{HANDLE}/highlights"]:
         for ua in [
@@ -267,7 +273,7 @@ def sync():
                 with urllib.request.urlopen(req, timeout=15) as resp:
                     page_html = resp.read().decode("utf-8", errors="replace")
                 ingest_x_html(page_html)
-                for sid in re.findall(rf"{HANDLE}/status/(\d+)", page_html) + re.findall(r'"rest_id":"(\d+)"', page_html):
+                for sid in re.findall(rf"{HANDLE}/status/(\d{{15,22}})", page_html) + re.findall(r'"rest_id":"(\d{15,22})"', page_html):
                     discovered_status_ids.add(sid)
                 m_fol = re.search(r"followers:(\d+)", page_html)
                 if m_fol and "profile" in store:
@@ -285,7 +291,10 @@ def sync():
             tdata = json.loads(raw_json)
             if tdata.get("id_str") != tid:
                 continue
-            
+            t_screen = (tdata.get("user") or {}).get("screen_name", "")
+            if t_screen and t_screen.lower() != HANDLE:
+                continue
+
             raw_text = tdata.get("text", "")
             created_raw = tdata.get("created_at", "")
             try:
@@ -301,9 +310,8 @@ def sync():
             likes = int(tdata.get("favorite_count") or 0)
             replies = int(tdata.get("conversation_count") or 0)
 
-            # Thread/parent detection
-            p_user = tdata.get("parent", {}).get("user", {}).get("screen_name")
-            p_id = tdata.get("parent", {}).get("id_str") or tdata.get("in_reply_to_status_id_str")
+            p_user = (tdata.get("parent") or {}).get("user", {}).get("screen_name")
+            p_id = (tdata.get("parent") or {}).get("id_str") or tdata.get("in_reply_to_status_id_str")
             if p_id and (p_user is None or p_user.lower() == HANDLE):
                 parent_of[tid] = p_id
 
@@ -353,14 +361,50 @@ def sync():
         except Exception:
             pass
 
+    # Merge any newly discovered self-reply children into their root thread tweet
+    def resolve_root(cid: str) -> str:
+        cur = cid
+        seen = set()
+        while cur in parent_of and cur not in seen:
+            seen.add(cur)
+            cur = parent_of[cur]
+        return cur
+
+    for cid in list(parent_of.keys()):
+        root_id = resolve_root(cid)
+        if root_id == cid or root_id not in tweets_by_id:
+            continue
+        root = tweets_by_id[root_id]
+        t_ids = set(root.get("thread_ids", []))
+        child = tweets_by_id.pop(cid, None)
+        if child and cid not in t_ids:
+            rm = root["metrics"]
+            cm = child.get("metrics", {})
+            for k in ["likes", "reposts", "replies", "quotes", "bookmarks", "views"]:
+                rm[k] = int(rm.get(k, 0)) + int(cm.get(k, 0))
+            if child.get("text") and child["text"] not in root["text"]:
+                root["text"] = root["text"].rstrip() + "\n\n" + child["text"].strip()
+            t_ids.add(cid)
+            root["thread_ids"] = sorted(t_ids)
+            root["thread_count"] = 1 + len(t_ids)
+            root["citations"] = compute_citations(rm)
+
     all_tweets = list(tweets_by_id.values())
     for t in all_tweets:
         t["citations"] = compute_citations(t.get("metrics", {}))
     all_tweets.sort(key=lambda x: (x.get("citations", 0), x.get("created_at", "")), reverse=True)
 
-    store["last_synced"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     store["tweets"] = all_tweets
+    new_snapshot = json.dumps(
+        {"profile": store.get("profile", {}), "tweets": store.get("tweets", [])},
+        sort_keys=True,
+        ensure_ascii=False,
+    )
+    if new_snapshot == prev_snapshot:
+        print(f"No changes in {len(all_tweets)} tweets; skipping file write.")
+        return
 
+    store["last_synced"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(store, f, indent=2, ensure_ascii=False)
