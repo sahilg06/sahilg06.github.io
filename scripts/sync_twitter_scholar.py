@@ -141,9 +141,10 @@ def sync():
 
                 urls = [u.get("expanded_url") for u in t.get("entities", {}).get("urls", []) if u.get("expanded_url")]
 
+                is_thread = existing.get("thread_count", 1) > 1 or bool(existing.get("thread_ids"))
                 merged_metrics = {
-                    "likes": max(likes, prev_metrics.get("likes", 0)),
-                    "reposts": max(reposts, prev_metrics.get("reposts", 0)),
+                    "likes": max(likes, prev_metrics.get("likes", 0)) if is_thread else likes,
+                    "reposts": max(reposts, prev_metrics.get("reposts", 0)) if is_thread else reposts,
                     "replies": max(replies, prev_metrics.get("replies", 0)),
                     "quotes": max(quotes, prev_metrics.get("quotes", 0)),
                     "bookmarks": bookmarks,
@@ -197,10 +198,10 @@ def sync():
     def ingest_x_html(raw_html: str):
         import html as html_mod
         for li in re.findall(r"<li[^>]*>.*?</li>", raw_html, re.DOTALL):
-            li_posts = re.findall(r'itemID="https://x\.com/([^"/]+)/status/(\d+)"', li)
-            if len(li_posts) >= 2 and all(h.lower() == HANDLE for h, _ in li_posts):
-                root_tid = li_posts[0][1]
-                for _, child_tid in li_posts[1:]:
+            li_articles = re.findall(r'<article[^>]*itemID="https://x\.com/([^"/]+)/status/(\d+)"', li)
+            if len(li_articles) >= 2 and all(h.lower() == HANDLE for h, _ in li_articles):
+                root_tid = li_articles[0][1]
+                for _, child_tid in li_articles[1:]:
                     if child_tid != root_tid:
                         parent_of[child_tid] = root_tid
         for m_ref in re.finditer(rf'<article[^>]*itemID="https://x\.com/{HANDLE}/status/(\d+)"[^>]*itemRef="([^"]+)"', raw_html):
@@ -231,10 +232,13 @@ def sync():
                 year, month_str = datetime.now(timezone.utc).year, datetime.now(timezone.utc).strftime("%b %Y")
             existing = tweets_by_id.get(tid, {})
             prev_m = existing.get("metrics", {})
+            is_thread = existing.get("thread_count", 1) > 1 or bool(existing.get("thread_ids"))
             cat, arch = classify_tweet(raw_text, existing.get("is_quote", False))
+            live_likes = int(likes_m.group(1)) if likes_m else int(prev_m.get("likes", 0))
+            live_rts = int(rts_m.group(1)) if rts_m else int(prev_m.get("reposts", 0))
             merged_m = {
-                "likes": max(int(likes_m.group(1)) if likes_m else 0, int(prev_m.get("likes", 0))),
-                "reposts": max(int(rts_m.group(1)) if rts_m else 0, int(prev_m.get("reposts", 0))),
+                "likes": max(live_likes, int(prev_m.get("likes", 0))) if is_thread else live_likes,
+                "reposts": max(live_rts, int(prev_m.get("reposts", 0))) if is_thread else live_rts,
                 "replies": max(int(comments_m.group(1)) if comments_m else 0, int(prev_m.get("replies", 0))),
                 "quotes": int(prev_m.get("quotes", 0)),
                 "bookmarks": max(parse_compact_num(bm_m.group(1)) if bm_m else 0, int(prev_m.get("bookmarks", 0))),
@@ -265,8 +269,11 @@ def sync():
     discovered_status_ids = set()
     for page_url in [f"https://x.com/{HANDLE}", f"https://x.com/{HANDLE}/with_replies", f"https://x.com/{HANDLE}/highlights"]:
         for ua in [
+            "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)",
+            "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+            "Twitterbot/1.0",
+            "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)",
             HEADERS["User-Agent"],
-            "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.google.com/bot.html)",
         ]:
             try:
                 req = urllib.request.Request(page_url, headers={"User-Agent": ua, "Accept": "text/html"})
@@ -282,7 +289,7 @@ def sync():
                 pass
 
     # Fetch and ingest tweet-result for discovered IDs and recent tweets
-    fetch_queue = sorted(discovered_status_ids.union(sorted(tweets_by_id.keys(), reverse=True)[:25]), reverse=True)
+    fetch_queue = sorted(discovered_status_ids.union(sorted(tweets_by_id.keys(), reverse=True)[:35]), reverse=True)
     for tid in fetch_queue:
         if tid in already_merged_children:
             continue
@@ -310,13 +317,14 @@ def sync():
             likes = int(tdata.get("favorite_count") or 0)
             replies = int(tdata.get("conversation_count") or 0)
 
-            p_user = (tdata.get("parent") or {}).get("user", {}).get("screen_name")
+            p_user = (tdata.get("parent") or {}).get("user", {}).get("screen_name") or tdata.get("in_reply_to_screen_name")
             p_id = (tdata.get("parent") or {}).get("id_str") or tdata.get("in_reply_to_status_id_str")
-            if p_id and (p_user is None or p_user.lower() == HANDLE):
+            if p_id and p_user and p_user.lower() == HANDLE:
                 parent_of[tid] = p_id
 
             existing = tweets_by_id.get(tid, {})
             prev_m = existing.get("metrics", {})
+            is_thread = existing.get("thread_count", 1) > 1 or bool(existing.get("thread_ids"))
             reposts = prev_m.get("reposts", 0)
             quotes = prev_m.get("quotes", 0)
             bookmarks = prev_m.get("bookmarks", 0)
@@ -329,7 +337,7 @@ def sync():
                 media_url = tdata["mediaDetails"][0].get("media_url_https", "")
 
             merged_m = {
-                "likes": max(likes, prev_m.get("likes", 0)),
+                "likes": max(likes, prev_m.get("likes", 0)) if is_thread else likes,
                 "reposts": reposts,
                 "replies": max(replies, prev_m.get("replies", 0)),
                 "quotes": quotes,

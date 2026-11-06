@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-06T19:36:39Z",
+  "last_synced": "2026-11-07T07:53:00Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -343,14 +343,14 @@
       ],
       "thread_count": 2,
       "metrics": {
-        "likes": 65,
+        "likes": 62,
         "reposts": 15,
         "replies": 4,
         "quotes": 1,
         "bookmarks": 25,
         "views": 2442
       },
-      "citations": 170
+      "citations": 167
     },
     {
       "id": "2115828506122653774",
@@ -376,7 +376,7 @@
         "replies": 6,
         "quotes": 1,
         "bookmarks": 17,
-        "views": 7004
+        "views": 2116
       },
       "citations": 159
     },
@@ -792,36 +792,32 @@
       "citations": 38
     },
     {
-      "id": "2115032096066711753",
-      "title": "On Seeking Human Connection in the Era of Superhuman AI",
-      "text": "There should be no shame in seeking human connection. that's what's gonna matter.",
-      "created_at": "2026-10-27T10:45:21Z",
+      "id": "2118633461389099170",
+      "title": "First Patent Award from Google (2025)",
+      "text": "See what I found. First patent award from Google. Its from 2025. My parents think I did some groundbreaking invention. tbh I am not going to correct them lol.",
+      "created_at": "2026-11-06T09:15:54Z",
       "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115032096066711753",
-      "external_urls": [
-        "https://x.com/paraschopra/status/2115024337820651597"
-      ],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Timely Quote-Tweet / Industry Take",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": true,
-      "coauthors": [
-        "@paraschopra"
-      ],
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2118633461389099170",
+      "external_urls": [],
+      "category": "Paper Releases & Conferences",
+      "archetype": "Research Milestone & Conference Update",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HWblFsSbUAAn_tY.jpg",
+      "is_quote": false,
+      "coauthors": [],
       "pinned": false,
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 17,
+        "likes": 34,
         "reposts": 1,
-        "replies": 1,
+        "replies": 0,
         "quotes": 0,
-        "bookmarks": 5,
-        "views": 685
+        "bookmarks": 0,
+        "views": 584
       },
-      "citations": 32
+      "citations": 37
     },
     {
       "id": "2116226971973927033",
@@ -1155,30 +1151,34 @@
       "citations": 23
     },
     {
-      "id": "2114985725183881626",
-      "title": "60k Voluntary Exit Offers from Microsoft?",
-      "text": "60k voluntary exit offers from Microsoft?",
-      "created_at": "2026-10-27T07:41:06Z",
+      "id": "2115032096066711753",
+      "title": "On Seeking Human Connection in the Era of Superhuman AI",
+      "text": "There should be no shame in seeking human connection. that's what's gonna matter.",
+      "created_at": "2026-10-27T10:45:21Z",
       "year": 2026,
       "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2114985725183881626",
-      "external_urls": [],
+      "url": "https://x.com/vibespersecond/status/2115032096066711753",
+      "external_urls": [
+        "https://x.com/paraschopra/status/2115024337820651597"
+      ],
       "category": "AI Commentary & Reflections",
       "archetype": "Timely Quote-Tweet / Industry Take",
       "has_media": false,
       "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
+      "is_quote": true,
+      "coauthors": [
+        "@paraschopra"
+      ],
       "pinned": false,
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 13,
+        "likes": 7,
         "reposts": 1,
         "replies": 1,
         "quotes": 0,
-        "bookmarks": 2,
-        "views": 700
+        "bookmarks": 5,
+        "views": 685
       },
       "citations": 22
     },
@@ -1293,34 +1293,6 @@
       "citations": 20
     },
     {
-      "id": "2115421200021381328",
-      "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
-      "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
-      "created_at": "2026-10-28T12:31:31Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115421200021381328",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HVt605yagAArO8N.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 16,
-        "reposts": 1,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 799
-      },
-      "citations": 19
-    },
-    {
       "id": "1924494903469621469",
       "title": "Isn't this paper \"One-D-Piece: Image Tokenizer Meets Quality-Controllable Compression\" ()",
       "text": "Isn't this paper \"One-D-Piece: Image Tokenizer Meets Quality-Controllable Compression\" () \njust Nested Dropout () \nor Matryoshka Representation Learning () \nalong token sequence length?",
@@ -1349,6 +1321,62 @@
         "views": 584
       },
       "citations": 19
+    },
+    {
+      "id": "2118676908363911510",
+      "title": "Messages like this",
+      "text": "Messages like this",
+      "created_at": "2026-11-06T12:08:32Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2118676908363911510",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HWcM6QMbUAAWK-m.png",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 16,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 1,
+        "views": 309
+      },
+      "citations": 18
+    },
+    {
+      "id": "2115421200021381328",
+      "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "created_at": "2026-10-28T12:31:31Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115421200021381328",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HVt605yagAArO8N.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 15,
+        "reposts": 1,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 799
+      },
+      "citations": 18
     },
     {
       "id": "2109593482549702702",
@@ -1757,6 +1785,34 @@
       "citations": 13
     },
     {
+      "id": "2114985725183881626",
+      "title": "60k Voluntary Exit Offers from Microsoft?",
+      "text": "60k voluntary exit offers from Microsoft?",
+      "created_at": "2026-10-27T07:41:06Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2114985725183881626",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Timely Quote-Tweet / Industry Take",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 3,
+        "reposts": 1,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 2,
+        "views": 700
+      },
+      "citations": 12
+    },
+    {
       "id": "2108085108825891234",
       "title": "what is this pickup line",
       "text": "what is this pickup line",
@@ -1835,34 +1891,6 @@
       "citations": 11
     },
     {
-      "id": "2114630663022501987",
-      "title": "I think pretraining is still more than just tweaking data recipes. Transformers haven't saturated yet (at…",
-      "text": "I think pretraining is still more than just tweaking data recipes. Transformers haven't saturated yet (at scale), especially the training algorithms and even the architecture.",
-      "created_at": "2026-10-26T08:10:12Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2114630663022501987",
-      "external_urls": [],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 7,
-        "reposts": 1,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 650
-      },
-      "citations": 10
-    },
-    {
       "id": "1960417357144449330",
       "title": "Tried image editing, its god!",
       "text": "Tried image editing, its god!",
@@ -1915,6 +1943,34 @@
         "quotes": 0,
         "bookmarks": 0,
         "views": 733
+      },
+      "citations": 9
+    },
+    {
+      "id": "2114630663022501987",
+      "title": "I think pretraining is still more than just tweaking data recipes. Transformers haven't saturated yet (at…",
+      "text": "I think pretraining is still more than just tweaking data recipes. Transformers haven't saturated yet (at scale), especially the training algorithms and even the architecture.",
+      "created_at": "2026-10-26T08:10:12Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2114630663022501987",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 6,
+        "reposts": 1,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 650
       },
       "citations": 9
     },
