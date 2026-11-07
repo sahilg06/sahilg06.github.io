@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Components of Agent Memory: How “Dreaming” Helps AI Agents Learn | Sahil Goyal</title>
+    <meta name="description" content="A 4-minute programmable video explainer and architectural breakdown of Anthropic's research on agent memory: the 4-layer hierarchy, judging salience in Pokémon Red, offline Dreaming, Knowledge Wikis, and the Borges Map Trap.">
+    <meta property="og:title" content="The Components of Agent Memory: How “Dreaming” Helps AI Agents Learn">
+    <meta property="og:description" content="4-minute visual explainer and engineering guide to Anthropic's agent memory architecture: Transcripts, Memory Notes, Knowledge Wikis, Injected Context, and Offline Dreaming.">
+    <meta property="og:image" content="https://sahilg06.github.io/img/sahil_goyal.png">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sahilg06.github.io/blog_posts/components-of-agent-memory.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Components of Agent Memory: How “Dreaming” Helps AI Agents Learn">
+    <meta name="twitter:description" content="4-minute video explainer and engineering breakdown of Anthropic's research on agent memory and offline dreaming.">
+    <meta name="twitter:image" content="https://sahilg06.github.io/img/sahil_goyal.png">
+    <link rel="canonical" href="https://sahilg06.github.io/blog_posts/components-of-agent-memory.html">
+    <link rel="icon" type="image/svg+xml" href="../img/favicon.svg?v=2">
+    <link rel="stylesheet" href="../styles.css?v=20261027-2">
+    <script src="../site.js?v=20260823-2"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The Components of Agent Memory: How “Dreaming” Helps AI Agents Organize Knowledge & Fix Mistakes",
+        "description": "A 4-minute video explainer and architectural breakdown of Anthropic's research on agent memory, salience judgment, knowledge wikis, and offline dreaming.",
+        "datePublished": "2026-11-07",
+        "dateModified": "2026-11-07",
+        "author": {
+            "@type": "Person",
+            "name": "Sahil Goyal",
+            "url": "https://sahilg06.github.io/"
+        },
+        "mainEntityOfPage": "https://sahilg06.github.io/blog_posts/components-of-agent-memory.html"
+    }
+    </script>
+    <style>
+        .am-video-shell {
+            margin: 28px 0 36px;
+            border: 1px solid var(--color-border);
+            border-radius: 14px;
+            background: var(--color-card-bg);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+        .am-video-player {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #141413;
+        }
+        .am-chapters-bar {
+            padding: 14px 18px;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+        .am-chapters-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--color-text-muted);
+            margin-right: 4px;
+        }
+        .am-chapter-btn {
+            cursor: pointer;
+            font-size: 13px;
+            padding: 5px 11px;
+            border-radius: 999px;
+            border: 1px solid var(--color-border);
+            background: transparent;
+            color: var(--color-text);
+            transition: all 0.15s ease;
+        }
+        .am-chapter-btn:hover,
+        .am-chapter-btn.is-active {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            background: rgba(141, 27, 42, 0.07);
+            font-weight: 500;
+        }
+        .am-stack-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 22px 0 28px;
+        }
+        .am-layer-card {
+            border: 1px solid var(--color-border);
+            border-left-width: 5px;
+            border-radius: 10px;
+            padding: 15px 18px;
+            background: var(--color-card-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .am-layer-card h4 {
+            margin: 3px 0 4px;
+            font-size: 17px;
+        }
+        .am-layer-card p {
+            margin: 0;
+            font-size: 14.5px;
+            color: var(--color-text-muted);
+        }
+        .am-layer-kicker {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .am-layer-pill {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--color-border);
+            white-space: nowrap;
+        }
+        @media (max-width: 640px) {
+            .am-layer-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="sidenav" aria-label="Primary navigation">
+    <div class="nav-socials" aria-label="Social profiles">
+        <a href="https://www.linkedin.com/in/sahil-goyal-4222371b4/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+        <a href="https://github.com/sahilg06" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=q68nBDgAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.35L12 18l7.162-5.15L24 9.5z"/></svg></a>
+        <a href="https://x.com/vibespersecond" target="_blank" rel="noopener noreferrer" title="Twitter / X" aria-label="Twitter / X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.931ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+    </div>
+    <div class="navblock">
+        <div class="navblock_text">
+            <a href="../index.html">About</a>
+            <a href="../research.html">Research</a>
+            <a href="../resume.html">CV</a>
+            <a href="../blog.html" class="active">Writing</a>
+            <a href="../reading.html">Reading</a>
+            <a href="../twitter-scholar.html">X Scholar</a>
+            <a href="../news.html">News</a>
+            <a href="../colab.html">Experience</a>
+            <a href="../travel.html">Travel</a>
+        </div>
+    </div>
+    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode"></button>
+</nav>
+
+<main class="main-content">
+    <article class="article-container kl-article">
+        <a class="article-back" href="../blog.html">← All writing</a>
+
+        <header class="article-header">
+            <span class="section-kicker">AI Agents · Context Engineering · Video Explainer</span>
+            <h1>The Components of Agent Memory</h1>
+            <p class="article-dek">Søren Kierkegaard wrote that life can only be understood <em>backward</em>, but it must be lived <em>forward</em>. AI agents face the exact same bind: they have to decide what is worth remembering in the moment, before they know what comes next. Here is a 4-minute visual explainer and engineering breakdown of <a href="https://www.anthropic.com/research/components-of-agent-memory" target="_blank" rel="noopener noreferrer">Anthropic’s research on agent memory</a> and offline <strong>“Dreaming.”</strong></p>
+            <div class="article-meta">
+                <span>Nov 2026</span>
+                <span aria-hidden="true">·</span>
+                <span>4 min video + visual note</span>
+                <span aria-hidden="true">·</span>
+                <span>Built with Remotion</span>
+            </div>
+        </header>
+
+        <!-- Embedded 1080p Video Player + Interactive Chapters -->
+        <section class="am-video-shell" aria-label="Video Explainer Player">
+            <video id="am-video" class="am-video-player" controls preload="metadata" playsinline>
+                <source src="../video/agent-memory-explained.mp4#t=2.5" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <div class="am-chapters-bar" role="group" aria-label="Video chapters">
+                <span class="am-chapters-label">Chapters:</span>
+                <button type="button" class="am-chapter-btn is-active" data-seek="0">0:00 Intro</button>
+                <button type="button" class="am-chapter-btn" data-seek="5">0:05 I · 4-Layer Hierarchy</button>
+                <button type="button" class="am-chapter-btn" data-seek="47">0:47 II · Salience &amp; Pokémon</button>
+                <button type="button" class="am-chapter-btn" data-seek="95">1:35 III · Mt. Moon Fix</button>
+                <button type="button" class="am-chapter-btn" data-seek="128">2:08 IV · Wikis &amp; Borges Trap</button>
+                <button type="button" class="am-chapter-btn" data-seek="184">3:04 V · 200-Line Index</button>
+                <button type="button" class="am-chapter-btn" data-seek="212">3:32 VI · Playbook</button>
+            </div>
+        </section>
+
+        <div class="kl-prose">
+            <h2 id="division-of-labor">1. The Biological Division of Labor &amp; The 4-Layer Stack</h2>
+            <p>By <strong>agent memory</strong>, Anthropic refers specifically to knowledge an agent gains from experience and retains <em>between sessions</em> as readable context—excluding weight updates, single-conversation in-context learning, and context compaction summaries.</p>
+            <p>Just as the human brain splits memory formation between fast online capture in the <strong>hippocampus</strong> and offline consolidation during sleep replay in the <strong>neocortex</strong>, effective agent memory relies on a division of labor between active sessions and background sleep-time compute (<strong>“Dreaming”</strong>):</p>
+        </div>
+
+        <div class="kl-breakout">
+            <div class="kl-dual-cards">
+                <div class="kl-card kl-card-forward">
+                    <span class="kl-card-kicker">Online / In-Session (Hippocampus)</span>
+                    <h3>Fast Capture &amp; Salience Predictions</h3>
+                    <ul class="kl-card-points">
+                        <li><strong>Immediate availability:</strong> Writes salient rules, observations, and current goals to a persistent memory folder during the active task.</li>
+                        <li><strong>Memory as a prediction:</strong> Every note written in-session is a bet that a future session will need that verified fact or rule without re-deriving it.</li>
+                        <li><strong>Trade-off:</strong> Writing detailed notes in the moment pulls attention and tokens away from the primary task, and early hypotheses can be wrong.</li>
+                    </ul>
+                </div>
+
+                <div class="kl-card kl-card-reverse">
+                    <span class="kl-card-kicker">Offline / Sleep-Time Compute (Neocortex)</span>
+                    <h3>“Dreaming” Consolidation</h3>
+                    <ul class="kl-card-points">
+                        <li><strong>Ground-truth auditing:</strong> Replays raw session transcripts offline to verify in-session notes and fix hallucinated or drifted claims.</li>
+                        <li><strong>Knowledge representations:</strong> Synthesizes scattered notes and files into linked <strong>Knowledge Wikis</strong> and repairs broken cross-references.</li>
+                        <li><strong>Hierarchy maintenance:</strong> Promotes recurring rules into the top-level injected index while pushing verbose details down into linked files.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="kl-prose">
+            <p>Across sessions, agent memory is organized into a <strong>four-layer hierarchy</strong> from raw ground truth at the bottom to preemptively injected context at the top:</p>
+
+            <div class="am-stack-grid">
+                <div class="am-layer-card" style="border-left-color: #d97757;">
+                    <div>
+                        <span class="am-layer-kicker" style="color: #d97757;">Layer 4 · Top of Hierarchy</span>
+                        <h4>Injected Context (<code>MEMORY.md</code> Header)</h4>
+                        <p>Preemptively loaded into every new session so the agent knows what exists without searching. Capped at 200 lines / 25 KB in Claude Code.</p>
+                    </div>
+                    <span class="am-layer-pill">Always Loaded</span>
+                </div>
+
+                <div class="am-layer-card" style="border-left-color: #4e56a6;">
+                    <div>
+                        <span class="am-layer-kicker" style="color: #4e56a6;">Layer 3 · Structured Synthesis</span>
+                        <h4>Memory Representations (Knowledge Wikis)</h4>
+                        <p>Interconnected topic pages built and maintained across sessions via Dreaming, giving the agent a navigable concept map.</p>
+                    </div>
+                    <span class="am-layer-pill">Navigated on Demand</span>
+                </div>
+
+                <div class="am-layer-card" style="border-left-color: #3b7a57;">
+                    <div>
+                        <span class="am-layer-kicker" style="color: #3b7a57;">Layer 2 · Salient Capture</span>
+                        <h4>Memory Notes</h4>
+                        <p>Verified rules, trap warnings, and goal dashboards (e.g., <code>global.md</code>) written by the agent during active sessions.</p>
+                    </div>
+                    <span class="am-layer-pill">Read / Write Store</span>
+                </div>
+
+                <div class="am-layer-card" style="border-left-color: #6b6860;">
+                    <div>
+                        <span class="am-layer-kicker" style="color: #6b6860;">Layer 1 · Immutable Foundation</span>
+                        <h4>Session Transcripts</h4>
+                        <p>Complete, searchable raw event logs of every turn, action, and tool output—used as ground truth during offline Dreaming.</p>
+                    </div>
+                    <span class="am-layer-pill">Ground-Truth Log</span>
+                </div>
+            </div>
+
+            <h2 id="salience-and-predictions">2. Memory as Prediction &amp; Judging Salience</h2>
+            <p>On <strong>Continual Learning Bench (CL-Bench) 1.0</strong>, Claude answers a sequence of database questions where each question starts in a fresh session and only a persistent memory directory carries over. While older models like Sonnet 4.6 wrote scattered files of untested guesses (rising only from <code>0.330</code> to <code>0.364</code>), <strong>Claude Opus 5</strong> (<code>0.564 → 0.828</code>) and <strong>Opus 5.5</strong> (<code>0.655 → 0.838</code>) closed the full learning loop: recording failures, testing hypotheses, and saving validated rules with explicit trap warnings.</p>
+
+            <h3>The <em>Pokémon Red</em> Salience Test (10,000 Steps)</h3>
+            <p>To test how models judge <em>what</em> is worth saving over long horizons, Anthropic compared the memory directories of <strong>Claude Sonnet 3.7</strong> and <strong>Claude Fable 5</strong> at step 10,000 of <em>Pokémon Red</em>:</p>
+            <ul>
+                <li><strong>Claude Sonnet 3.7 (Indiscriminate Hoarding — 413 Files, 225 Folders, 977,930 Chars → 1 Badge):</strong> Assumed everything might matter, creating separate files for every battle, item, and NPC. Because game state changes every turn, its detailed records went continuously out of date. At step 10,000, it spent 17 consecutive steps reorganizing a fourth “master” folder while taking zero actions in the game.</li>
+                <li><strong>Claude Fable 5 (Lean Dashboard — 10 Files, 2 Folders, 43,406 Chars → 4 Badges):</strong> Stored only non-obvious knowledge that could not be read off the screen. A top-level <code>global.md</code> file acted as a goal dashboard, while <code>locations/</code> and <code>gameplay/</code> held tested heuristics (such as varying button-press wait timing after three Poké Balls in a row failed on a Magikarp). Opus 5.5 used this same lean pattern to beat the entire game.</li>
+            </ul>
+
+            <aside class="article-note">
+                <h2>Builder Takeaway: Don’t Handcuff Frontier Models with Narrow Rules</h2>
+                <p>When Anthropic gave frontier models a rigid rule to <em>“record only failures”</em> on CL-Bench, <strong>Opus 5 lost <code>0.234</code> of its memory gain</strong> (and Opus 4.7 lost <code>0.150</code>). Strong models judge salience best when you simply tell them <em>what</em> the memory folder is for. Conversely, older models still benefit from explicit loop steering: prompting Sonnet 4.6 to read its memory first and test its theories nearly doubled its score from <code>0.364</code> to <code>0.641</code> (something Sonnet 5 does automatically 9 out of 10 times).</p>
+            </aside>
+
+            <h2 id="dreaming-error-correction">3. Dreaming I: Auditing Notes Against Ground-Truth Transcripts</h2>
+            <p>Because in-session notes are written before the agent sees how events play out, a single wrong note can poison future sessions. In <em>Pokémon Red</em>, Claude used the PokéCenter outside <strong>Mt. Moon</strong> as a landmark, but mistakenly wrote in its notes that the PokéCenter was on the <strong>east</strong> exit rather than the <strong>west</strong> entrance.</p>
+            <p>Walking out of the building, Claude announced <em>“Mt Moon is behind me,”</em> updated its note to <code>Mt Moon DONE</code>, and stepped straight off a one-way trap ledge that dropped it back onto the route it came from. Trusting its corrupted note, Claude jumped the one-way ledge <strong>three times</strong>, gave up (<em>“I’m going to stop rather than keep looping”</em>), and retreated all the way back to Pewter City.</p>
+            <p>When Anthropic ran an offline <strong>Dreaming</strong> pass on that memory directory, Claude checked its note against the raw session transcript, caught the east/west reversal, and rewrote the note. With the corrected memory, Claude walked straight back into Mt. Moon and reached <strong>Cerulean City at action 1,935</strong>.</p>
+
+            <h2 id="dreaming-wikis">4. Dreaming II: Knowledge Wikis, The Borges Map Trap &amp; Parallel Collisions</h2>
+            <p>Beyond fixing mistakes, Dreaming can synthesize raw files and notes into interconnected <strong>Knowledge Wikis</strong>:</p>
+            <ul>
+                <li><strong>Scaling across 420M tokens (350,000 internal Stainless files):</strong> Scaling sequential Opus 5 Dreaming from 2 sessions to 128 sessions expanded the wiki from <code>103 pages / 766 links</code> to <code>222 pages / 12,893 links</code>. Answering from the wiki alone rose from <code>13%</code> to <code>48%</code>, while combining <strong>Wiki + Search reached <code>61%</code></strong> (beating search alone at <code>53%</code> and saving <strong>~20,000 tokens per question</strong>).</li>
+                <li><strong>When Wikis beat search (Harvey LAB legal benchmark):</strong> On merger questions requiring <strong>multi-document synthesis and arithmetic</strong>, consulting the wiki jumped accuracy from <code>73%</code> to <code>87%</code>. When answers lived in a single document, direct text search was already sufficient.</li>
+                <li><strong>Pitfall 1 — The Borges Map Trap:</strong> On one task, a <code>115 KB</code> (10-document) corpus bloated into a <code>203 KB</code> (68-page) wiki—<strong><code>1.77×</code> larger than the raw files</strong>, with unlinked orphan pages and zero abstraction, like Jorge Luis Borges’s map as large as the empire it represented.</li>
+                <li><strong>Pitfall 2 — Multi-Agent Write Collisions:</strong> When four parallel agents wrote contract summaries into a single shared <code>provisions.md</code> table, they overwrote one another’s saves, retaining only <strong>41 of 57 graded facts (<code>72%</code>)</strong>. After reflecting on its failure, Claude rewrote the wiki instructions so each contract got its own dedicated page with verbatim quotes—preserving <strong>57 of 57 facts (<code>100%</code>)</strong>. A second Dreaming pass then repaired <strong>9 broken links</strong> (repointing <code>escrow-agreement</code> to <code>buyer-form-escrow-agreement</code>) and built an index page.</li>
+            </ul>
+
+            <h2 id="playbook-summary">5. Summary: The Agent Memory Builder’s Playbook</h2>
+            <div class="kl-applications-table-wrap">
+                <table class="tracker-table kl-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Architectural Component</th>
+                            <th scope="col">Key Failure Mode</th>
+                            <th scope="col">Engineering Best Practice</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Component"><strong>In-Session Notes</strong><span class="tracker-program">Layer 2 · Fast Capture</span></td>
+                            <td data-label="Failure Mode">Hoarding rapidly expiring screen state (Sonnet 3.7’s 413 files) or over-constraining frontier models with rigid rules (<code>−0.234</code> drop).</td>
+                            <td data-label="Best Practice">Maintain a compact <code>global.md</code> goal dashboard + tested heuristics. Tell frontier models <em>what</em> memory is for and let them judge salience.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Component"><strong>Offline Dreaming Audit</strong><span class="tracker-program">Layer 1 → Layer 2</span></td>
+                            <td data-label="Failure Mode">In-session predictions that are wrong from the start (Mt. Moon east/west reversal) or drift as the environment changes.</td>
+                            <td data-label="Best Practice">Schedule background Dreaming passes to validate frequently accessed or volatile notes against ground-truth session transcripts.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Component"><strong>Knowledge Wikis</strong><span class="tracker-program">Layer 3 · Representations</span></td>
+                            <td data-label="Failure Mode">Borges bloat (wiki growing <code>1.77×</code> larger than source docs), parallel agent overwrite collisions, and dead cross-links.</td>
+                            <td data-label="Best Practice">Pair Wikis with raw search for multi-document synthesis; assign 1 file per parallel agent; run a second Dreaming pass to repair links.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Component"><strong>Injected Context</strong><span class="tracker-program">Layer 4 · Preemptive Index</span></td>
+                            <td data-label="Failure Mode">Bloated instruction files that burn tokens on every turn and reduce overall instruction adherence.</td>
+                            <td data-label="Best Practice">Cap injected <code>MEMORY.md</code> at <strong>200 lines / 25 KB</strong> as a lightweight routing index, pushing detailed notes down into linked Wiki files.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer class="article-footer">
+            <p><strong>Reference:</strong> Based on <a href="https://www.anthropic.com/research/components-of-agent-memory" target="_blank" rel="noopener noreferrer"><em>The components of agent memory</em></a> by Lance Martin and the Anthropic Engineering team (Nov 2026). Programmable video built with Remotion.</p>
+            <a href="../blog.html">← Back to Writing</a>
+        </footer>
+    </article>
+</main>
+
+<script>
+(function () {
+    const video = document.getElementById('am-video');
+    const buttons = Array.from(document.querySelectorAll('.am-chapter-btn'));
+    if (!video || !buttons.length) return;
+
+    buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const sec = Number(btn.getAttribute('data-seek') || 0);
+            video.currentTime = sec;
+            video.play();
+        });
+    });
+
+    video.addEventListener('timeupdate', () => {
+        const t = video.currentTime;
+        let activeIdx = 0;
+        buttons.forEach((btn, idx) => {
+            const sec = Number(btn.getAttribute('data-seek') || 0);
+            if (t >= sec) activeIdx = idx;
+        });
+        buttons.forEach((btn, idx) => {
+            btn.classList.toggle('is-active', idx === activeIdx);
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
