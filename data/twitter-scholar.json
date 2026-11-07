@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 1883,
+    "followers": 1885,
     "following": 614,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-07T07:53:00Z",
+  "last_synced": "2026-11-07T10:32:08Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -371,14 +371,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 102,
+        "likes": 104,
         "reposts": 3,
         "replies": 6,
         "quotes": 1,
         "bookmarks": 17,
         "views": 2116
       },
-      "citations": 159
+      "citations": 161
     },
     {
       "id": "2115724072344801467",
@@ -546,6 +546,34 @@
         "views": 1278
       },
       "citations": 53
+    },
+    {
+      "id": "2118633461389099170",
+      "title": "First Patent Award from Google (2025)",
+      "text": "See what I found. First patent award from Google. Its from 2025. My parents think I did some groundbreaking invention. tbh I am not going to correct them lol.",
+      "created_at": "2026-11-06T09:15:54Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2118633461389099170",
+      "external_urls": [],
+      "category": "Paper Releases & Conferences",
+      "archetype": "Research Milestone & Conference Update",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HWblFsSbUAAn_tY.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 45,
+        "reposts": 1,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 584
+      },
+      "citations": 50
     },
     {
       "id": "2107480811704652168",
@@ -790,34 +818,6 @@
         "views": 874
       },
       "citations": 38
-    },
-    {
-      "id": "2118633461389099170",
-      "title": "First Patent Award from Google (2025)",
-      "text": "See what I found. First patent award from Google. Its from 2025. My parents think I did some groundbreaking invention. tbh I am not going to correct them lol.",
-      "created_at": "2026-11-06T09:15:54Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2118633461389099170",
-      "external_urls": [],
-      "category": "Paper Releases & Conferences",
-      "archetype": "Research Milestone & Conference Update",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HWblFsSbUAAn_tY.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 34,
-        "reposts": 1,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 584
-      },
-      "citations": 37
     },
     {
       "id": "2116226971973927033",
@@ -1151,6 +1151,34 @@
       "citations": 23
     },
     {
+      "id": "2118676908363911510",
+      "title": "Messages like this",
+      "text": "Messages like this",
+      "created_at": "2026-11-06T12:08:32Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2118676908363911510",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HWcM6QMbUAAWK-m.png",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 20,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 1,
+        "views": 309
+      },
+      "citations": 22
+    },
+    {
       "id": "2115032096066711753",
       "title": "On Seeking Human Connection in the Era of Superhuman AI",
       "text": "There should be no shame in seeking human connection. that's what's gonna matter.",
@@ -1321,34 +1349,6 @@
         "views": 584
       },
       "citations": 19
-    },
-    {
-      "id": "2118676908363911510",
-      "title": "Messages like this",
-      "text": "Messages like this",
-      "created_at": "2026-11-06T12:08:32Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2118676908363911510",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HWcM6QMbUAAWK-m.png",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 16,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 1,
-        "views": 309
-      },
-      "citations": 18
     },
     {
       "id": "2115421200021381328",
@@ -4388,6 +4388,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4897,34 +4899,6 @@
       "citations": 1
     },
     {
-      "id": "2115816271279542548",
-      "title": "@tiabirdwatch Already did :)",
-      "text": "@tiabirdwatch Already did :)",
-      "created_at": "2026-10-29T14:41:23Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115816271279542548",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 1,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 150
-      },
-      "citations": 1
-    },
-    {
       "id": "2115750894784659662",
       "title": "@__acbraingenome Thanks Anusha :)",
       "text": "@__acbraingenome Thanks Anusha :)",
@@ -5304,6 +5278,34 @@
         "views": 180
       },
       "citations": 1
+    },
+    {
+      "id": "2115816271279542548",
+      "title": "@tiabirdwatch Already did :)",
+      "text": "@tiabirdwatch Already did :)",
+      "created_at": "2026-10-29T14:41:23Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115816271279542548",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 150
+      },
+      "citations": 0
     },
     {
       "id": "2115750713259422104",
