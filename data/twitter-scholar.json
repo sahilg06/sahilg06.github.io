@@ -4,8 +4,8 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 1897,
-    "following": 614,
+    "followers": 1904,
+    "following": 623,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
     "x_url": "https://x.com/vibespersecond",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-09T01:04:46Z",
+  "last_synced": "2026-11-09T11:55:23Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -136,15 +136,17 @@
         "@GoogleDeepMind"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
-        "likes": 561,
+        "likes": 555,
         "reposts": 12,
         "replies": 12,
         "quotes": 3,
         "bookmarks": 92,
         "views": 48796
       },
-      "citations": 811
+      "citations": 805
     },
     {
       "id": "2105209665521139835",
@@ -220,15 +222,17 @@
         "@DebapriyaTula"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
-        "likes": 114,
+        "likes": 83,
         "reposts": 14,
         "replies": 9,
         "quotes": 7,
         "bookmarks": 71,
         "views": 19345
       },
-      "citations": 330
+      "citations": 299
     },
     {
       "id": "1945185100947448088",
@@ -246,6 +250,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 181,
         "reposts": 2,
@@ -308,6 +314,8 @@
         "@DebapriyaTula"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 84,
         "reposts": 11,
@@ -375,10 +383,10 @@
         "reposts": 3,
         "replies": 6,
         "quotes": 1,
-        "bookmarks": 17,
-        "views": 2116
+        "bookmarks": 18,
+        "views": 3992
       },
-      "citations": 161
+      "citations": 163
     },
     {
       "id": "2115724072344801467",
@@ -483,6 +491,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 59,
         "reposts": 0,
@@ -537,6 +547,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 36,
         "reposts": 1,
@@ -566,14 +578,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 46,
+        "likes": 47,
         "reposts": 1,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
         "views": 584
       },
-      "citations": 51
+      "citations": 52
     },
     {
       "id": "2107480811704652168",
@@ -671,6 +683,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 32,
         "reposts": 0,
@@ -725,15 +739,17 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
-        "likes": 30,
+        "likes": 31,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 4,
-        "views": 1020
+        "views": 1048
       },
-      "citations": 42
+      "citations": 43
     },
     {
       "id": "2111391758244622442",
@@ -809,6 +825,8 @@
         "@gaganjain1582"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 28,
         "reposts": 0,
@@ -894,6 +912,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 9,
         "reposts": 3,
@@ -931,34 +951,6 @@
         "views": 895
       },
       "citations": 28
-    },
-    {
-      "id": "1922339760388874485",
-      "title": "Can we use different-sized models in different stages of diffusion inference for efficient generation?",
-      "text": "Can we use different-sized models in different stages of diffusion inference for efficient generation?\nSome initial inference-time experiments on UVIT () in the thread👀\n\nModels used:   pre-trained checkpoints of UViT on ImageNet64×64, U-ViT-L/4  and U-ViT-M/4\nSampling steps: 50\n(All exp on single A100 GPU)\n\nNow what is the optimal model schedule?\nInitial  denoising steps play a crucial role in shaping the final output of the reverse diffusion process, so utilizing the L model for the early stages and transition to the M model for the later denoising steps.\n\nFor similar experiments, checkout our recent ICML paper, MaGNeTS: Masked Generative Nested Transformers with Decode Time Scaling ()",
-      "created_at": "2025-05-13T17:14:48Z",
-      "year": 2025,
-      "month": "May 2025",
-      "url": "https://x.com/vibespersecond/status/1922339760388874485",
-      "external_urls": [
-        "https://github.com/baofff/U-ViT"
-      ],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 11,
-        "reposts": 1,
-        "replies": 4,
-        "quotes": 0,
-        "bookmarks": 2,
-        "views": 978
-      },
-      "citations": 26
     },
     {
       "id": "2111399887309070773",
@@ -1060,6 +1052,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 18,
         "reposts": 0,
@@ -1099,32 +1093,6 @@
       "citations": 23
     },
     {
-      "id": "1919004275868332218",
-      "title": "Two very similar and interesting concurrent works",
-      "text": "Two very similar and interesting concurrent works \nVision: Vision Transformers need Registers\nLanguage: Efficient Streaming Language Models with Attention Sinks\n\nAs they were published in ICLR 2024, their open review forums are public. checkout for some useful insights",
-      "created_at": "2025-05-04T12:20:47Z",
-      "year": 2025,
-      "month": "May 2025",
-      "url": "https://x.com/vibespersecond/status/1919004275868332218",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "metrics": {
-        "likes": 15,
-        "reposts": 0,
-        "replies": 2,
-        "quotes": 0,
-        "bookmarks": 2,
-        "views": 752
-      },
-      "citations": 23
-    },
-    {
       "id": "1904144182001992163",
       "title": "ICML  reviews are almost here. Manifesting that Reviewer 2 suddenly discovers empathy😄",
       "text": "ICML  reviews are almost here. Manifesting that Reviewer 2 suddenly discovers empathy😄",
@@ -1140,6 +1108,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 17,
         "reposts": 0,
@@ -1211,6 +1181,34 @@
       "citations": 22
     },
     {
+      "id": "1919004275868332218",
+      "title": "Two very similar and interesting concurrent works",
+      "text": "Two very similar and interesting concurrent works \nVision: Vision Transformers need Registers\nLanguage: Efficient Streaming Language Models with Attention Sinks\n\nAs they were published in ICLR 2024, their open review forums are public. checkout for some useful insights",
+      "created_at": "2025-05-04T12:20:47Z",
+      "year": 2025,
+      "month": "May 2025",
+      "url": "https://x.com/vibespersecond/status/1919004275868332218",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 14,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 2,
+        "views": 752
+      },
+      "citations": 22
+    },
+    {
       "id": "2116119121175974312",
       "title": "People in tech need to realize that even if the handcuffs are golden, they're still handcuffs.",
       "text": "People in tech need to realize that even if the handcuffs are golden, they're still handcuffs.",
@@ -1254,6 +1252,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 13,
         "reposts": 0,
@@ -1261,6 +1261,36 @@
         "quotes": 0,
         "bookmarks": 2,
         "views": 544
+      },
+      "citations": 21
+    },
+    {
+      "id": "1922339760388874485",
+      "title": "Can we use different-sized models in different stages of diffusion inference for efficient generation?",
+      "text": "Can we use different-sized models in different stages of diffusion inference for efficient generation?\nSome initial inference-time experiments on UVIT () in the thread👀\n\nModels used:   pre-trained checkpoints of UViT on ImageNet64×64, U-ViT-L/4  and U-ViT-M/4\nSampling steps: 50\n(All exp on single A100 GPU)\n\nNow what is the optimal model schedule?\nInitial  denoising steps play a crucial role in shaping the final output of the reverse diffusion process, so utilizing the L model for the early stages and transition to the M model for the later denoising steps.\n\nFor similar experiments, checkout our recent ICML paper, MaGNeTS: Masked Generative Nested Transformers with Decode Time Scaling ()",
+      "created_at": "2025-05-13T17:14:48Z",
+      "year": 2025,
+      "month": "May 2025",
+      "url": "https://x.com/vibespersecond/status/1922339760388874485",
+      "external_urls": [
+        "https://github.com/baofff/U-ViT"
+      ],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 6,
+        "reposts": 1,
+        "replies": 4,
+        "quotes": 0,
+        "bookmarks": 2,
+        "views": 978
       },
       "citations": 21
     },
@@ -1310,6 +1340,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 14,
         "reposts": 0,
@@ -1340,6 +1372,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 8,
         "reposts": 1,
@@ -1504,6 +1538,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 10,
         "reposts": 0,
@@ -1558,6 +1594,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 11,
         "reposts": 0,
@@ -1642,6 +1680,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 1,
@@ -1668,6 +1708,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 10,
         "reposts": 0,
@@ -1696,6 +1738,8 @@
         "@GoogleIndia"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 10,
         "reposts": 0,
@@ -1774,6 +1818,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 9,
         "reposts": 0,
@@ -1854,6 +1900,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 9,
         "reposts": 0,
@@ -1880,6 +1928,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 7,
         "reposts": 0,
@@ -1906,6 +1956,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 6,
         "reposts": 0,
@@ -1990,6 +2042,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 7,
         "reposts": 0,
@@ -2016,6 +2070,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 7,
         "reposts": 0,
@@ -2042,6 +2098,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 7,
         "reposts": 0,
@@ -2068,6 +2126,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 7,
         "reposts": 0,
@@ -2094,6 +2154,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2127,6 +2189,8 @@
         "@doktorshenoy"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 7,
         "reposts": 0,
@@ -2153,6 +2217,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2179,6 +2245,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2259,6 +2327,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 6,
         "reposts": 0,
@@ -2285,6 +2355,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 6,
         "reposts": 0,
@@ -2313,6 +2385,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 6,
         "reposts": 0,
@@ -2339,6 +2413,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 6,
         "reposts": 0,
@@ -2372,6 +2448,8 @@
         "@ManishGuptaMG1"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 6,
         "reposts": 0,
@@ -2400,6 +2478,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2426,6 +2506,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2452,6 +2534,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2478,6 +2562,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2487,6 +2573,34 @@
         "views": 202
       },
       "citations": 8
+    },
+    {
+      "id": "2117327990979969360",
+      "title": "Reviewer 2:  Proposed method lacks theoretical novelty and mathematical rigor.",
+      "text": "Reviewer 2:  Proposed method lacks theoretical novelty and mathematical rigor. \n\nCamera-ready revision:",
+      "created_at": "2026-11-02T18:48:25Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2117327990979969360",
+      "external_urls": [],
+      "category": "Interactive Notes & Theory",
+      "archetype": "Interactive Classic Rebuild",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 7,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 903
+      },
+      "citations": 7
     },
     {
       "id": "1958557124277019031",
@@ -2506,6 +2620,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2532,6 +2648,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2558,6 +2676,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2584,6 +2704,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2610,6 +2732,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2636,6 +2760,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2662,6 +2788,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2688,6 +2816,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2714,6 +2844,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 5,
         "reposts": 0,
@@ -2723,34 +2855,6 @@
         "views": 180
       },
       "citations": 7
-    },
-    {
-      "id": "2117327990979969360",
-      "title": "Reviewer 2:  Proposed method lacks theoretical novelty and mathematical rigor.",
-      "text": "Reviewer 2:  Proposed method lacks theoretical novelty and mathematical rigor. \n\nCamera-ready revision:",
-      "created_at": "2026-11-02T18:48:25Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2117327990979969360",
-      "external_urls": [],
-      "category": "Interactive Notes & Theory",
-      "archetype": "Interactive Classic Rebuild",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 6,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 903
-      },
-      "citations": 6
     },
     {
       "id": "2111876331772531133",
@@ -2852,6 +2956,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2878,6 +2984,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2904,6 +3012,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2934,6 +3044,8 @@
         "@goodfellow_ian"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2960,6 +3072,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -2988,6 +3102,8 @@
         "@google"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -3014,6 +3130,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -3040,6 +3158,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -3066,6 +3186,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -3092,6 +3214,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -3118,6 +3242,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 4,
         "reposts": 0,
@@ -3282,6 +3408,8 @@
         "@lcastricato"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -3308,6 +3436,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -3474,6 +3604,8 @@
         "@TheCorruptFile"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -3502,6 +3634,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -3528,6 +3662,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -3554,6 +3690,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -3580,6 +3718,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -3608,6 +3748,8 @@
         "@ashu_1069"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -3980,6 +4122,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -4008,6 +4152,8 @@
         "@TheCorruptFile"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4036,6 +4182,8 @@
         "@TheCorruptFile"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4062,6 +4210,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -4090,6 +4240,8 @@
         "@TheCorruptFile"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4118,6 +4270,8 @@
         "@TheCorruptFile"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4144,6 +4298,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -4170,6 +4326,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -4198,6 +4356,8 @@
         "@sedielem"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -4224,6 +4384,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4250,6 +4412,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4278,6 +4442,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 3,
         "reposts": 0,
@@ -4306,6 +4472,8 @@
         "@nickinack1"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -4676,6 +4844,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4702,6 +4872,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4730,6 +4902,8 @@
         "@Jaspritbumrah93"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4756,6 +4930,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4782,6 +4958,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4808,6 +4986,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4834,6 +5014,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -4860,6 +5042,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 2,
         "reposts": 0,
@@ -5156,6 +5340,8 @@
         "@anm5704"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -5184,6 +5370,8 @@
         "@zhaisf"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -5212,6 +5400,8 @@
       "is_quote": true,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -5240,6 +5430,8 @@
         "@miniapeur"
       ],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
@@ -5269,6 +5461,8 @@
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
       "metrics": {
         "likes": 1,
         "reposts": 0,
