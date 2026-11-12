@@ -5,7 +5,7 @@
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
     "followers": 1907,
-    "following": 623,
+    "following": 624,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
     "x_url": "https://x.com/vibespersecond",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-11T06:53:04Z",
+  "last_synced": "2026-11-12T11:37:26Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -139,14 +139,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 555,
+        "likes": 553,
         "reposts": 12,
         "replies": 12,
         "quotes": 3,
         "bookmarks": 92,
         "views": 48796
       },
-      "citations": 805
+      "citations": 803
     },
     {
       "id": "2105209665521139835",
