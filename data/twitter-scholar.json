@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-12T11:37:26Z",
+  "last_synced": "2026-11-13T11:21:18Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -387,6 +387,34 @@
         "views": 3992
       },
       "citations": 163
+    },
+    {
+      "id": "2119334845268832330",
+      "title": "When I prepared for ML coding questions for interviews few months back. I used  for quickly practising…",
+      "text": "When I prepared for ML coding questions for interviews few months back. I used  for quickly practising implementing different parts of transformer architecture in PyTorch. \nWhoever owned TensorGym, Thank you.",
+      "created_at": "2026-11-08T07:42:57Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2119334845268832330",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HWljUX6bQAAj09e.png",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 120,
+        "reposts": 0,
+        "replies": 5,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 3850
+      },
+      "citations": 130
     },
     {
       "id": "2115724072344801467",
@@ -1751,6 +1779,34 @@
       "citations": 14
     },
     {
+      "id": "2119709586542538788",
+      "title": "What a cold does to your brain is crazy.",
+      "text": "What a cold does to your brain is crazy.",
+      "created_at": "2026-11-09T08:32:02Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2119709586542538788",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 9,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 370
+      },
+      "citations": 13
+    },
+    {
       "id": "2111394821520957755",
       "title": "@miniapeur credit: Argon",
       "text": "@miniapeur credit: Argon",
@@ -1939,6 +1995,34 @@
         "views": 286
       },
       "citations": 11
+    },
+    {
+      "id": "2119070347102478661",
+      "title": "Video explanation of Anthropic's blog: The components of agent memory. Made using Gemini Argon in Antigravity.",
+      "text": "Video explanation of Anthropic's blog: The components of agent memory. Made using Gemini Argon in Antigravity.",
+      "created_at": "2026-11-07T14:11:55Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2119070347102478661",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/amplify_video_thumb/2119070167728795648/img/r0Mju7xYQyKxnZz7.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 8,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 290
+      },
+      "citations": 10
     },
     {
       "id": "1960417357144449330",
@@ -2575,6 +2659,34 @@
       "citations": 8
     },
     {
+      "id": "2119330870226251892",
+      "title": "Prompt1 (Gemini Argon Medium): /grill-me can you turn this blog into a concise and clear video explanation…",
+      "text": "Prompt1 (Gemini Argon Medium): /grill-me can you turn this blog into a concise and clear video explanation or tutorial \n\n\nPrompt2 (Gemini Argon High): make the video better in terms of audio, video and animations etc\n\nIt just took 2 abstract prompts to make",
+      "created_at": "2026-11-08T07:27:09Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2119330870226251892",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 7,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 210
+      },
+      "citations": 7
+    },
+    {
       "id": "2117327990979969360",
       "title": "Reviewer 2:  Proposed method lacks theoretical novelty and mathematical rigor.",
       "text": "Reviewer 2:  Proposed method lacks theoretical novelty and mathematical rigor. \n\nCamera-ready revision:",
@@ -2855,6 +2967,34 @@
         "views": 180
       },
       "citations": 7
+    },
+    {
+      "id": "2119714254421098836",
+      "title": "/btw to ask a side question in antigravity in the same conversation. useful.",
+      "text": "/btw to ask a side question in antigravity in the same conversation. useful.",
+      "created_at": "2026-11-09T08:50:35Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2119714254421098836",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 6,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 180
+      },
+      "citations": 6
     },
     {
       "id": "2111876331772531133",
