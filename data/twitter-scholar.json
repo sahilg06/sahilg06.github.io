@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 1907,
+    "followers": 1915,
     "following": 624,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-13T11:21:18Z",
+  "last_synced": "2026-11-13T19:55:38Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -379,14 +379,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 104,
+        "likes": 106,
         "reposts": 3,
         "replies": 6,
         "quotes": 1,
         "bookmarks": 18,
         "views": 3992
       },
-      "citations": 163
+      "citations": 165
     },
     {
       "id": "2119334845268832330",
@@ -407,14 +407,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 120,
+        "likes": 121,
         "reposts": 0,
         "replies": 5,
         "quotes": 0,
         "bookmarks": 0,
         "views": 3850
       },
-      "citations": 130
+      "citations": 131
     },
     {
       "id": "2115724072344801467",
@@ -1635,6 +1635,34 @@
       "citations": 15
     },
     {
+      "id": "2119709586542538788",
+      "title": "What a cold does to your brain is crazy.",
+      "text": "What a cold does to your brain is crazy.",
+      "created_at": "2026-11-09T08:32:02Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2119709586542538788",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 10,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 370
+      },
+      "citations": 14
+    },
+    {
       "id": "2117335856415723988",
       "title": "Seems a path to RSI",
       "text": "Seems a path to RSI",
@@ -1777,34 +1805,6 @@
         "views": 370
       },
       "citations": 14
-    },
-    {
-      "id": "2119709586542538788",
-      "title": "What a cold does to your brain is crazy.",
-      "text": "What a cold does to your brain is crazy.",
-      "created_at": "2026-11-09T08:32:02Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2119709586542538788",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 9,
-        "reposts": 0,
-        "replies": 2,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 370
-      },
-      "citations": 13
     },
     {
       "id": "2111394821520957755",
