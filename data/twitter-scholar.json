@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 1918,
+    "followers": 1920,
     "following": 624,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-14T01:32:57Z",
+  "last_synced": "2026-11-14T10:44:47Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -389,6 +389,34 @@
       "citations": 166
     },
     {
+      "id": "2121272042427388122",
+      "title": "omg London is so alive and walkable",
+      "text": "omg London is so alive and walkable",
+      "created_at": "2026-11-13T16:00:40Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2121272042427388122",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HXBFjU8akAAvLPc.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 153,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 1800
+      },
+      "citations": 155
+    },
+    {
       "id": "2119334845268832330",
       "title": "When I prepared for ML coding questions for interviews few months back. I used  for quickly practising…",
       "text": "When I prepared for ML coding questions for interviews few months back. I used  for quickly practising implementing different parts of transformer architecture in PyTorch. \nWhoever owned TensorGym, Thank you.",
@@ -494,14 +522,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 77,
+        "likes": 87,
         "reposts": 0,
         "replies": 7,
         "quotes": 0,
         "bookmarks": 0,
         "views": 2660
       },
-      "citations": 91
+      "citations": 101
     },
     {
       "id": "2111713521079902570",
@@ -586,34 +614,6 @@
         "views": 1206
       },
       "citations": 73
-    },
-    {
-      "id": "2121272042427388122",
-      "title": "omg London is so alive and walkable",
-      "text": "omg London is so alive and walkable",
-      "created_at": "2026-11-13T16:00:40Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2121272042427388122",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HXBFjU8akAAvLPc.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 60,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 1800
-      },
-      "citations": 60
     },
     {
       "id": "1945592455274856757",
