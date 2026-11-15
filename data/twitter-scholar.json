@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-15T16:29:40Z",
+  "last_synced": "2026-11-15T23:02:29Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -219,14 +219,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 325,
+        "likes": 326,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1800
       },
-      "citations": 329
+      "citations": 330
     },
     {
       "id": "1888616302777974970",
@@ -522,14 +522,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 90,
+        "likes": 92,
         "reposts": 0,
         "replies": 8,
         "quotes": 0,
         "bookmarks": 0,
         "views": 2660
       },
-      "citations": 106
+      "citations": 108
     },
     {
       "id": "2111713521079902570",
@@ -3985,6 +3985,34 @@
       "citations": 4
     },
     {
+      "id": "2121972756472607200",
+      "title": "Sun fought back ig",
+      "text": "Sun fought back ig",
+      "created_at": "2026-11-15T14:25:04Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2121972756472607200",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 3,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 150
+      },
+      "citations": 3
+    },
+    {
       "id": "2115349144521117892",
       "title": "Okay got it.",
       "text": "Okay got it.",
@@ -4707,34 +4735,6 @@
         "views": 180
       },
       "citations": 3
-    },
-    {
-      "id": "2121972756472607200",
-      "title": "Sun fought back ig",
-      "text": "Sun fought back ig",
-      "created_at": "2026-11-15T14:25:04Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2121972756472607200",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 2,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 150
-      },
-      "citations": 2
     },
     {
       "id": "2115709395082592457",
