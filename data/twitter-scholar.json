@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-16T06:59:04Z",
+  "last_synced": "2026-11-16T19:44:43Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -219,14 +219,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 327,
+        "likes": 326,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1800
       },
-      "citations": 331
+      "citations": 330
     },
     {
       "id": "1888616302777974970",
@@ -922,6 +922,34 @@
       "citations": 38
     },
     {
+      "id": "2122029856926187687",
+      "title": "First day in London was good (even with a runny nose)",
+      "text": "First day in London was good (even with a runny nose)",
+      "created_at": "2026-11-15T18:11:57Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2122029856926187687",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HXL2WJAW8AAoAye.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 31,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 790
+      },
+      "citations": 35
+    },
+    {
       "id": "2116226971973927033",
       "title": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not…",
       "text": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not preparing for Roadies lol.",
@@ -1035,34 +1063,6 @@
         "views": 895
       },
       "citations": 28
-    },
-    {
-      "id": "2122029856926187687",
-      "title": "First day in London was good (even with a runny nose)",
-      "text": "First day in London was good (even with a runny nose)",
-      "created_at": "2026-11-15T18:11:57Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2122029856926187687",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HXL2WJAW8AAoAye.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 23,
-        "reposts": 0,
-        "replies": 2,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 790
-      },
-      "citations": 27
     },
     {
       "id": "2111399887309070773",
