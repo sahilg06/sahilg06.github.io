@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 1924,
+    "followers": 1926,
     "following": 624,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-15T23:02:29Z",
+  "last_synced": "2026-11-16T06:59:04Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -219,14 +219,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 326,
+        "likes": 327,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1800
       },
-      "citations": 330
+      "citations": 331
     },
     {
       "id": "1888616302777974970",
@@ -1037,6 +1037,34 @@
       "citations": 28
     },
     {
+      "id": "2122029856926187687",
+      "title": "First day in London was good (even with a runny nose)",
+      "text": "First day in London was good (even with a runny nose)",
+      "created_at": "2026-11-15T18:11:57Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2122029856926187687",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HXL2WJAW8AAoAye.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 23,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 790
+      },
+      "citations": 27
+    },
+    {
       "id": "2111399887309070773",
       "title": "Don't even look at any other model for creative writing with that human touch. Just use Gemini Argon.",
       "text": "Don't even look at any other model for creative writing with that human touch. Just use Gemini Argon.",
@@ -1691,6 +1719,34 @@
       "citations": 15
     },
     {
+      "id": "2121960377944592533",
+      "title": "My first meal in london was from some place called \"chaiwala\" lol",
+      "text": "My first meal in london was from some place called \"chaiwala\" lol",
+      "created_at": "2026-11-15T13:35:52Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2121960377944592533",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 12,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 380
+      },
+      "citations": 14
+    },
+    {
       "id": "2119709586542538788",
       "title": "What a cold does to your brain is crazy.",
       "text": "What a cold does to your brain is crazy.",
@@ -1861,34 +1917,6 @@
         "views": 370
       },
       "citations": 14
-    },
-    {
-      "id": "2121960377944592533",
-      "title": "My first meal in london was from some place called \"chaiwala\" lol",
-      "text": "My first meal in london was from some place called \"chaiwala\" lol",
-      "created_at": "2026-11-15T13:35:52Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2121960377944592533",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 11,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 380
-      },
-      "citations": 13
     },
     {
       "id": "2111394821520957755",
