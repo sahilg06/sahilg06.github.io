@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-17T16:20:00Z",
+  "last_synced": "2026-11-18T01:06:24Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -219,14 +219,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 326,
+        "likes": 327,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1800
       },
-      "citations": 330
+      "citations": 331
     },
     {
       "id": "1888616302777974970",
