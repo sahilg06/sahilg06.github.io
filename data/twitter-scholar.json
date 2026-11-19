@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-18T20:47:34Z",
+  "last_synced": "2026-11-19T02:42:16Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -950,34 +950,6 @@
       "citations": 35
     },
     {
-      "id": "2116226971973927033",
-      "title": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not…",
-      "text": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not preparing for Roadies lol.",
-      "created_at": "2026-10-30T17:53:22Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2116226971973927033",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/amplify_video_thumb/2116226877472083968/img/bU7HLtk1TbR2f2sW.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 25,
-        "reposts": 1,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 1044
-      },
-      "citations": 30
-    },
-    {
       "id": "2114255873589813379",
       "title": "My linkedin presence is basically just replying this couple of times a week.",
       "text": "My linkedin presence is basically just replying this couple of times a week.\n\n\"Hi, thanks a lot for reaching out. I am not looking for new opportunities as of now. But would love to stay in touch.\"\n\nInternally, I just want to say \"please don't hate me.\"",
@@ -1035,6 +1007,34 @@
         "views": 882
       },
       "citations": 30
+    },
+    {
+      "id": "2116226971973927033",
+      "title": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not…",
+      "text": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not preparing for Roadies lol.",
+      "created_at": "2026-10-30T17:53:22Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2116226971973927033",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/amplify_video_thumb/2116226877472083968/img/bU7HLtk1TbR2f2sW.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 24,
+        "reposts": 1,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 1044
+      },
+      "citations": 29
     },
     {
       "id": "2114615054855553114",
