@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-21T02:39:20Z",
+  "last_synced": "2026-11-21T11:31:51Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -219,14 +219,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 327,
+        "likes": 326,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1800
       },
-      "citations": 331
+      "citations": 330
     },
     {
       "id": "1888616302777974970",
@@ -1663,6 +1663,34 @@
       "citations": 16
     },
     {
+      "id": "2123755662224007583",
+      "title": "I think I need to work on my memory before agent's memory.",
+      "text": "I think I need to work on my memory before agent's memory.",
+      "created_at": "2026-11-20T12:29:42Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2123755662224007583",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 15,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 450
+      },
+      "citations": 15
+    },
+    {
       "id": "2111510881775530155",
       "title": "Every now and then, Walter White appears on my X timeline asking for support lol",
       "text": "Every now and then, Walter White appears on my X timeline asking for support lol",
@@ -1717,34 +1745,6 @@
         "views": 308
       },
       "citations": 15
-    },
-    {
-      "id": "2123755662224007583",
-      "title": "I think I need to work on my memory before agent's memory.",
-      "text": "I think I need to work on my memory before agent's memory.",
-      "created_at": "2026-11-20T12:29:42Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2123755662224007583",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 14,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 450
-      },
-      "citations": 14
     },
     {
       "id": "2121960377944592533",
