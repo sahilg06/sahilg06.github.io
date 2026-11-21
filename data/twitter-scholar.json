@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 1926,
+    "followers": 2077,
     "following": 626,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-21T11:31:51Z",
+  "last_synced": "2026-11-21T19:36:40Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -219,14 +219,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 326,
+        "likes": 327,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1800
       },
-      "citations": 330
+      "citations": 331
     },
     {
       "id": "1888616302777974970",
@@ -319,6 +319,34 @@
       "citations": 220
     },
     {
+      "id": "2115828506122653774",
+      "title": "Two \"road less traveled\" decisions that shaped my career more than anything else:",
+      "text": "Two \"road less traveled\" decisions that shaped my career more than anything else:\n\n1. In 2024, I had an on-campus SWE offer from Google in hand. It seemed a safe choice and a good role. but I knew I wanted to do ML research, which wouldn't really happen in a standard software",
+      "created_at": "2026-10-29T15:30:00Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115828506122653774",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HVywzdZacAEAlqt.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 114,
+        "reposts": 3,
+        "replies": 6,
+        "quotes": 1,
+        "bookmarks": 19,
+        "views": 4104
+      },
+      "citations": 175
+    },
+    {
       "id": "1943952405315695087",
       "title": "Presenting MaGNeTS at ICML 2025: Nested Transformers & Decode-Time Scaling for Visual Generation",
       "text": "Hi, we'll be presenting  MaGNeTS ()  on 15th July at #ICML2025 \n📍East Exhibition Hall A-B #3209\n🕦 11 AM - 1:30PM\n\nExcited to discuss about nested transformers and decode time scaling for visual generation!",
@@ -353,34 +381,6 @@
         "views": 4422
       },
       "citations": 175
-    },
-    {
-      "id": "2115828506122653774",
-      "title": "Two \"road less traveled\" decisions that shaped my career more than anything else:",
-      "text": "Two \"road less traveled\" decisions that shaped my career more than anything else:\n\n1. In 2024, I had an on-campus SWE offer from Google in hand. It seemed a safe choice and a good role. but I knew I wanted to do ML research, which wouldn't really happen in a standard software",
-      "created_at": "2026-10-29T15:30:00Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115828506122653774",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HVywzdZacAEAlqt.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 108,
-        "reposts": 3,
-        "replies": 6,
-        "quotes": 1,
-        "bookmarks": 19,
-        "views": 4104
-      },
-      "citations": 169
     },
     {
       "id": "2114998925736476778",
@@ -435,14 +435,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 121,
+        "likes": 123,
         "reposts": 0,
         "replies": 5,
         "quotes": 0,
         "bookmarks": 0,
         "views": 3850
       },
-      "citations": 131
+      "citations": 133
     },
     {
       "id": "2115724072344801467",
@@ -522,14 +522,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 92,
+        "likes": 93,
         "reposts": 0,
         "replies": 8,
         "quotes": 0,
         "bookmarks": 0,
         "views": 2660
       },
-      "citations": 108
+      "citations": 109
     },
     {
       "id": "2111713521079902570",
@@ -940,14 +940,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 31,
+        "likes": 32,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 790
       },
-      "citations": 35
+      "citations": 36
     },
     {
       "id": "2114255873589813379",
@@ -1579,6 +1579,34 @@
       "citations": 18
     },
     {
+      "id": "2123755662224007583",
+      "title": "I think I need to work on my memory before agent's memory.",
+      "text": "I think I need to work on my memory before agent's memory.",
+      "created_at": "2026-11-20T12:29:42Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2123755662224007583",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 17,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 450
+      },
+      "citations": 17
+    },
+    {
       "id": "2114626763225752031",
       "title": "Youtube music >> spotify",
       "text": "Youtube music >> spotify",
@@ -1663,13 +1691,13 @@
       "citations": 16
     },
     {
-      "id": "2123755662224007583",
-      "title": "I think I need to work on my memory before agent's memory.",
-      "text": "I think I need to work on my memory before agent's memory.",
-      "created_at": "2026-11-20T12:29:42Z",
+      "id": "2121960377944592533",
+      "title": "My first meal in london was from some place called \"chaiwala\" lol",
+      "text": "My first meal in london was from some place called \"chaiwala\" lol",
+      "created_at": "2026-11-15T13:35:52Z",
       "year": 2026,
       "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2123755662224007583",
+      "url": "https://x.com/vibespersecond/status/2121960377944592533",
       "external_urls": [],
       "category": "AI Commentary & Reflections",
       "archetype": "Personal Reflection & Researcher Life",
@@ -1681,12 +1709,12 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 15,
+        "likes": 13,
         "reposts": 0,
-        "replies": 0,
+        "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 450
+        "views": 380
       },
       "citations": 15
     },
@@ -1745,34 +1773,6 @@
         "views": 308
       },
       "citations": 15
-    },
-    {
-      "id": "2121960377944592533",
-      "title": "My first meal in london was from some place called \"chaiwala\" lol",
-      "text": "My first meal in london was from some place called \"chaiwala\" lol",
-      "created_at": "2026-11-15T13:35:52Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2121960377944592533",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 12,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 380
-      },
-      "citations": 14
     },
     {
       "id": "2119709586542538788",
@@ -2482,6 +2482,34 @@
       "citations": 9
     },
     {
+      "id": "2119330870226251892",
+      "title": "Prompt1 (Gemini Argon Medium): /grill-me can you turn this blog into a concise and clear video explanation…",
+      "text": "Prompt1 (Gemini Argon Medium): /grill-me can you turn this blog into a concise and clear video explanation or tutorial \n\n\nPrompt2 (Gemini Argon High): make the video better in terms of audio, video and animations etc\n\nIt just took 2 abstract prompts to make",
+      "created_at": "2026-11-08T07:27:09Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2119330870226251892",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 8,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 210
+      },
+      "citations": 8
+    },
+    {
       "id": "2111755769238691892",
       "title": "I never had a credit card. So was applying for idfc first wow card. The most difficult thing to do was…",
       "text": "I never had a credit card. So was applying for idfc first wow card. The most difficult thing to do was scrolling for selecting birth date on mac. Having issues in simplest features like scrolling should be a crime now.",
@@ -2797,34 +2825,6 @@
         "views": 202
       },
       "citations": 8
-    },
-    {
-      "id": "2119330870226251892",
-      "title": "Prompt1 (Gemini Argon Medium): /grill-me can you turn this blog into a concise and clear video explanation…",
-      "text": "Prompt1 (Gemini Argon Medium): /grill-me can you turn this blog into a concise and clear video explanation or tutorial \n\n\nPrompt2 (Gemini Argon High): make the video better in terms of audio, video and animations etc\n\nIt just took 2 abstract prompts to make",
-      "created_at": "2026-11-08T07:27:09Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2119330870226251892",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 7,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 210
-      },
-      "citations": 7
     },
     {
       "id": "2117327990979969360",
@@ -3729,6 +3729,34 @@
       "citations": 5
     },
     {
+      "id": "2121972756472607200",
+      "title": "Sun fought back ig",
+      "text": "Sun fought back ig",
+      "created_at": "2026-11-15T14:25:04Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2121972756472607200",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 4,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 150
+      },
+      "citations": 4
+    },
+    {
       "id": "2115727551574470712",
       "title": "@wenhaocha1 Thanks Wenhao :)",
       "text": "@wenhaocha1 Thanks Wenhao :)\n\n@wenhaocha1 Though instead of manually uploading X's data archive, Argon preferred X's Syndication API, which just showed my top posts, not all the posts.",
@@ -4039,34 +4067,6 @@
         "views": 180
       },
       "citations": 4
-    },
-    {
-      "id": "2121972756472607200",
-      "title": "Sun fought back ig",
-      "text": "Sun fought back ig",
-      "created_at": "2026-11-15T14:25:04Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2121972756472607200",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 3,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 150
-      },
-      "citations": 3
     },
     {
       "id": "2115349144521117892",
@@ -5391,34 +5391,6 @@
       "citations": 1
     },
     {
-      "id": "2115816271279542548",
-      "title": "@tiabirdwatch Already did :)",
-      "text": "@tiabirdwatch Already did :)",
-      "created_at": "2026-10-29T14:41:23Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115816271279542548",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 1,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 150
-      },
-      "citations": 1
-    },
-    {
       "id": "2115750894784659662",
       "title": "@__acbraingenome Thanks Anusha :)",
       "text": "@__acbraingenome Thanks Anusha :)",
@@ -5808,6 +5780,34 @@
         "views": 180
       },
       "citations": 1
+    },
+    {
+      "id": "2115816271279542548",
+      "title": "@tiabirdwatch Already did :)",
+      "text": "@tiabirdwatch Already did :)",
+      "created_at": "2026-10-29T14:41:23Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115816271279542548",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 0,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 150
+      },
+      "citations": 0
     },
     {
       "id": "2115750713259422104",
