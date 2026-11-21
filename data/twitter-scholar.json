@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-20T20:37:40Z",
+  "last_synced": "2026-11-21T02:39:20Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -616,34 +616,6 @@
       "citations": 73
     },
     {
-      "id": "2118633461389099170",
-      "title": "First Patent Award from Google (2025)",
-      "text": "See what I found. First patent award from Google. Its from 2025. My parents think I did some groundbreaking invention. tbh I am not going to correct them lol.",
-      "created_at": "2026-11-06T09:15:54Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2118633461389099170",
-      "external_urls": [],
-      "category": "Paper Releases & Conferences",
-      "archetype": "Research Milestone & Conference Update",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HWblFsSbUAAn_tY.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 48,
-        "reposts": 1,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 584
-      },
-      "citations": 53
-    },
-    {
       "id": "1945592455274856757",
       "title": "What do you see? I see swag-spree! — #ICML2025",
       "text": "What do you see? I see swag-spree!\n#ICML2025",
@@ -670,6 +642,34 @@
         "views": 1278
       },
       "citations": 53
+    },
+    {
+      "id": "2118633461389099170",
+      "title": "First Patent Award from Google (2025)",
+      "text": "See what I found. First patent award from Google. Its from 2025. My parents think I did some groundbreaking invention. tbh I am not going to correct them lol.",
+      "created_at": "2026-11-06T09:15:54Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2118633461389099170",
+      "external_urls": [],
+      "category": "Paper Releases & Conferences",
+      "archetype": "Research Milestone & Conference Update",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HWblFsSbUAAn_tY.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 47,
+        "reposts": 1,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 584
+      },
+      "citations": 52
     },
     {
       "id": "2107480811704652168",
@@ -1465,34 +1465,6 @@
       "citations": 20
     },
     {
-      "id": "2115421200021381328",
-      "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
-      "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
-      "created_at": "2026-10-28T12:31:31Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2115421200021381328",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HVt605yagAArO8N.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 16,
-        "reposts": 1,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 799
-      },
-      "citations": 19
-    },
-    {
       "id": "1924494903469621469",
       "title": "Isn't this paper \"One-D-Piece: Image Tokenizer Meets Quality-Controllable Compression\" ()",
       "text": "Isn't this paper \"One-D-Piece: Image Tokenizer Meets Quality-Controllable Compression\" () \njust Nested Dropout () \nor Matryoshka Representation Learning () \nalong token sequence length?",
@@ -1523,6 +1495,34 @@
         "views": 584
       },
       "citations": 19
+    },
+    {
+      "id": "2115421200021381328",
+      "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
+      "created_at": "2026-10-28T12:31:31Z",
+      "year": 2026,
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2115421200021381328",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HVt605yagAArO8N.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 15,
+        "reposts": 1,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 799
+      },
+      "citations": 18
     },
     {
       "id": "2109593482549702702",
@@ -1663,34 +1663,6 @@
       "citations": 16
     },
     {
-      "id": "2123755662224007583",
-      "title": "I think I need to work on my memory before agent's memory.",
-      "text": "I think I need to work on my memory before agent's memory.",
-      "created_at": "2026-11-20T12:29:42Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2123755662224007583",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 15,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 450
-      },
-      "citations": 15
-    },
-    {
       "id": "2111510881775530155",
       "title": "Every now and then, Walter White appears on my X timeline asking for support lol",
       "text": "Every now and then, Walter White appears on my X timeline asking for support lol",
@@ -1745,6 +1717,34 @@
         "views": 308
       },
       "citations": 15
+    },
+    {
+      "id": "2123755662224007583",
+      "title": "I think I need to work on my memory before agent's memory.",
+      "text": "I think I need to work on my memory before agent's memory.",
+      "created_at": "2026-11-20T12:29:42Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2123755662224007583",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 14,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 450
+      },
+      "citations": 14
     },
     {
       "id": "2121960377944592533",
