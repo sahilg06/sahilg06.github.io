@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 2225,
+    "followers": 2342,
     "following": 626,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-22T01:28:23Z",
+  "last_synced": "2026-11-22T11:46:10Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -149,6 +149,34 @@
       "citations": 804
     },
     {
+      "id": "2124173420279558589",
+      "title": "I am back at @GoogleDeepMind as Research Engineer. Couldn't stay away for long. Feels good to be in London…",
+      "text": "I am back at @GoogleDeepMind as Research Engineer. Couldn't stay away for long. Feels good to be in London and diving back into research with Neon :)",
+      "created_at": "2026-11-21T16:09:43Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2124173420279558589",
+      "external_urls": [],
+      "category": "Paper Releases & Conferences",
+      "archetype": "Research Milestone & Conference Update",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 702,
+        "reposts": 0,
+        "replies": 46,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 17410
+      },
+      "citations": 794
+    },
+    {
       "id": "2105209665521139835",
       "title": "Wanted to share my interview experience with Proximal (recently in June-July)",
       "text": "Wanted to share my interview experience with Proximal (recently in June-July)\n\nRound 1:  RL coding round (LLMs not allowed): My background is mostly in pretraining, vision and efficiency. This round slightly caught me off guard. Relied on core logic and whatever RL basics I knew. Thought I performed average and failed, but moved forward, likely thanks to my prev experience and background.\n\nRound 2: Take Home Assignment (Paid) - Building a benchmark for web design replication. Needed to complete it in 2-3 days. \n\nNow a bit annoying part comes...\nSo now had to present the assignment to an interviewer. It felt very disengaged. I think interviewer was just busy doing his own work during the call. After that call, I followed up several times, but there was hardly any response from their side. Yeah after several weeks, got the \"not proceeding\" message. Communication could definitely improve here.\n\nNow, need to give credit, where its due. They had a good set of interviews, instead of generic LeetCode/DSA etc.\nI learnt something while preparing or doing assignment.",
@@ -173,34 +201,6 @@
         "views": 29079
       },
       "citations": 649
-    },
-    {
-      "id": "2124173420279558589",
-      "title": "I am back at @GoogleDeepMind as Research Engineer. Couldn't stay away for long. Feels good to be in London…",
-      "text": "I am back at @GoogleDeepMind as Research Engineer. Couldn't stay away for long. Feels good to be in London and diving back into research with Neon :)",
-      "created_at": "2026-11-21T16:09:43Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2124173420279558589",
-      "external_urls": [],
-      "category": "Paper Releases & Conferences",
-      "archetype": "Research Milestone & Conference Update",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 517,
-        "reposts": 0,
-        "replies": 38,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 17410
-      },
-      "citations": 593
     },
     {
       "id": "2089017016401457581",
@@ -365,14 +365,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 116,
+        "likes": 115,
         "reposts": 3,
         "replies": 6,
         "quotes": 1,
         "bookmarks": 19,
         "views": 4104
       },
-      "citations": 177
+      "citations": 176
     },
     {
       "id": "1943952405315695087",
@@ -463,14 +463,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 123,
+        "likes": 124,
         "reposts": 0,
         "replies": 5,
         "quotes": 0,
         "bookmarks": 0,
         "views": 3850
       },
-      "citations": 133
+      "citations": 134
     },
     {
       "id": "2115724072344801467",
@@ -892,6 +892,34 @@
       "citations": 41
     },
     {
+      "id": "2122029856926187687",
+      "title": "First day in London was good (even with a runny nose)",
+      "text": "First day in London was good (even with a runny nose)",
+      "created_at": "2026-11-15T18:11:57Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2122029856926187687",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HXL2WJAW8AAoAye.jpg",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 34,
+        "reposts": 0,
+        "replies": 2,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 790
+      },
+      "citations": 38
+    },
+    {
       "id": "2111723784340398429",
       "title": "Not sure if people are aware of /grill-me skill. I have started using it recently. Its very helpful for…",
       "text": "Not sure if people are aware of /grill-me skill. I have started using it recently. Its very helpful for loose ends in your idea.",
@@ -950,32 +978,32 @@
       "citations": 38
     },
     {
-      "id": "2122029856926187687",
-      "title": "First day in London was good (even with a runny nose)",
-      "text": "First day in London was good (even with a runny nose)",
-      "created_at": "2026-11-15T18:11:57Z",
+      "id": "2116226971973927033",
+      "title": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not…",
+      "text": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not preparing for Roadies lol.",
+      "created_at": "2026-10-30T17:53:22Z",
       "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2122029856926187687",
+      "month": "Oct 2026",
+      "url": "https://x.com/vibespersecond/status/2116226971973927033",
       "external_urls": [],
       "category": "AI Commentary & Reflections",
       "archetype": "Personal Reflection & Researcher Life",
       "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HXL2WJAW8AAoAye.jpg",
+      "media_url": "https://pbs.twimg.com/amplify_video_thumb/2116226877472083968/img/bU7HLtk1TbR2f2sW.jpg",
       "is_quote": false,
       "coauthors": [],
       "pinned": false,
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 33,
-        "reposts": 0,
+        "likes": 24,
+        "reposts": 1,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
-        "views": 790
+        "views": 1044
       },
-      "citations": 37
+      "citations": 31
     },
     {
       "id": "2114255873589813379",
@@ -1035,34 +1063,6 @@
         "views": 882
       },
       "citations": 30
-    },
-    {
-      "id": "2116226971973927033",
-      "title": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not…",
-      "text": "Back to being a calisthenics beginner after shoulder and knee injuries. Feels good. And no, I am not preparing for Roadies lol.",
-      "created_at": "2026-10-30T17:53:22Z",
-      "year": 2026,
-      "month": "Oct 2026",
-      "url": "https://x.com/vibespersecond/status/2116226971973927033",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/amplify_video_thumb/2116226877472083968/img/bU7HLtk1TbR2f2sW.jpg",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 24,
-        "reposts": 1,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 1044
-      },
-      "citations": 29
     },
     {
       "id": "2114615054855553114",
@@ -1205,6 +1205,34 @@
       "citations": 24
     },
     {
+      "id": "2118676908363911510",
+      "title": "Messages like this",
+      "text": "Messages like this",
+      "created_at": "2026-11-06T12:08:32Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2118676908363911510",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": true,
+      "media_url": "https://pbs.twimg.com/media/HWcM6QMbUAAWK-m.png",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 21,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 1,
+        "views": 309
+      },
+      "citations": 23
+    },
+    {
       "id": "2111391054301962436",
       "title": "Gemini Argon's quota is restored.",
       "text": "Gemini Argon's quota is restored.",
@@ -1259,34 +1287,6 @@
         "views": 566
       },
       "citations": 23
-    },
-    {
-      "id": "2118676908363911510",
-      "title": "Messages like this",
-      "text": "Messages like this",
-      "created_at": "2026-11-06T12:08:32Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2118676908363911510",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": true,
-      "media_url": "https://pbs.twimg.com/media/HWcM6QMbUAAWK-m.png",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 20,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 1,
-        "views": 309
-      },
-      "citations": 22
     },
     {
       "id": "2115032096066711753",
