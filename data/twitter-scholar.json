@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 2077,
+    "followers": 2225,
     "following": 626,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-21T19:36:40Z",
+  "last_synced": "2026-11-22T01:28:23Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -175,6 +175,34 @@
       "citations": 649
     },
     {
+      "id": "2124173420279558589",
+      "title": "I am back at @GoogleDeepMind as Research Engineer. Couldn't stay away for long. Feels good to be in London…",
+      "text": "I am back at @GoogleDeepMind as Research Engineer. Couldn't stay away for long. Feels good to be in London and diving back into research with Neon :)",
+      "created_at": "2026-11-21T16:09:43Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2124173420279558589",
+      "external_urls": [],
+      "category": "Paper Releases & Conferences",
+      "archetype": "Research Milestone & Conference Update",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 517,
+        "reposts": 0,
+        "replies": 38,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 17410
+      },
+      "citations": 593
+    },
+    {
       "id": "2089017016401457581",
       "title": "Created this FAQ for @GoogleDeepMind India's Pre Doctoral Research / AI Residency program sometime back.",
       "text": "Created this FAQ for @GoogleDeepMind India's Pre Doctoral Research / AI Residency program sometime back. \n\nHope this helps anyone considering applying! :)",
@@ -219,14 +247,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 327,
+        "likes": 328,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1800
       },
-      "citations": 331
+      "citations": 332
     },
     {
       "id": "1888616302777974970",
@@ -337,14 +365,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 114,
+        "likes": 116,
         "reposts": 3,
         "replies": 6,
         "quotes": 1,
         "bookmarks": 19,
         "views": 4104
       },
-      "citations": 175
+      "citations": 177
     },
     {
       "id": "1943952405315695087",
@@ -940,14 +968,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 32,
+        "likes": 33,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 790
       },
-      "citations": 36
+      "citations": 37
     },
     {
       "id": "2114255873589813379",
@@ -1497,6 +1525,34 @@
       "citations": 19
     },
     {
+      "id": "2123755662224007583",
+      "title": "I think I need to work on my memory before agent's memory.",
+      "text": "I think I need to work on my memory before agent's memory.",
+      "created_at": "2026-11-20T12:29:42Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2123755662224007583",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 18,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 450
+      },
+      "citations": 18
+    },
+    {
       "id": "2115421200021381328",
       "title": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
       "text": "This is how I used to pitch startups on linkedin for opportunities during my undergrad days.",
@@ -1577,34 +1633,6 @@
         "views": 963
       },
       "citations": 18
-    },
-    {
-      "id": "2123755662224007583",
-      "title": "I think I need to work on my memory before agent's memory.",
-      "text": "I think I need to work on my memory before agent's memory.",
-      "created_at": "2026-11-20T12:29:42Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2123755662224007583",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 17,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 450
-      },
-      "citations": 17
     },
     {
       "id": "2114626763225752031",
