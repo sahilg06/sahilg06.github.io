@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 2448,
+    "followers": 2476,
     "following": 626,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-23T01:53:35Z",
+  "last_synced": "2026-11-23T13:25:17Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -137,14 +137,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 790,
+        "likes": 794,
         "reposts": 0,
         "replies": 48,
         "quotes": 0,
         "bookmarks": 0,
         "views": 17410
       },
-      "citations": 886
+      "citations": 890
     },
     {
       "id": "1917985915458474258",
@@ -445,6 +445,34 @@
       "citations": 167
     },
     {
+      "id": "2124552488762106344",
+      "title": "Btw I was an AI Resident previously in DeepMind India team where I worked on vision, efficient ML and…",
+      "text": "Btw I was an AI Resident previously in DeepMind India team where I worked on vision, efficient ML and pretraining across Veo and Gemini. \n\nPivoting to Continual Learning and Agent Memory for now. Wish my agents luck to remember what they learn!",
+      "created_at": "2026-11-22T17:16:00Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2124552488762106344",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 141,
+        "reposts": 0,
+        "replies": 9,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 2900
+      },
+      "citations": 159
+    },
+    {
       "id": "2119334845268832330",
       "title": "When I prepared for ML coding questions for interviews few months back. I used  for quickly practising…",
       "text": "When I prepared for ML coding questions for interviews few months back. I used  for quickly practising implementing different parts of transformer architecture in PyTorch. \nWhoever owned TensorGym, Thank you.",
@@ -560,34 +588,6 @@
       "citations": 109
     },
     {
-      "id": "2124552488762106344",
-      "title": "Btw I was an AI Resident previously in DeepMind India team where I worked on vision, efficient ML and…",
-      "text": "Btw I was an AI Resident previously in DeepMind India team where I worked on vision, efficient ML and pretraining across Veo and Gemini. \n\nPivoting to Continual Learning and Agent Memory for now. Wish my agents luck to remember what they learn!",
-      "created_at": "2026-11-22T17:16:00Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2124552488762106344",
-      "external_urls": [],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 85,
-        "reposts": 0,
-        "replies": 7,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 2900
-      },
-      "citations": 99
-    },
-    {
       "id": "2111713521079902570",
       "title": "Something needs to change about publishing in conferences. I had a small project about evals in vision…",
       "text": "Something needs to change about publishing in conferences. I had a small project about evals in vision domain. Gave that project folder to Gemini Argon and asked to generate a conference paper. It iterated and iterated. Again with just single (slightly detailed) prompt, it gave a good paper with dangerously good figures and all. Idk how publishing makes sense anymore.",
@@ -690,14 +690,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 51,
+        "likes": 55,
         "reposts": 0,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1580
       },
-      "citations": 53
+      "citations": 57
     },
     {
       "id": "2118633461389099170",
