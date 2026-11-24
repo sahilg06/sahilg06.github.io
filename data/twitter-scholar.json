@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 2476,
+    "followers": 2482,
     "following": 626,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-23T13:25:17Z",
+  "last_synced": "2026-11-24T02:27:10Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -137,14 +137,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 794,
+        "likes": 798,
         "reposts": 0,
-        "replies": 48,
+        "replies": 49,
         "quotes": 0,
         "bookmarks": 0,
         "views": 17410
       },
-      "citations": 890
+      "citations": 896
     },
     {
       "id": "1917985915458474258",
@@ -463,14 +463,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 141,
+        "likes": 144,
         "reposts": 0,
         "replies": 9,
         "quotes": 0,
         "bookmarks": 0,
         "views": 2900
       },
-      "citations": 159
+      "citations": 162
     },
     {
       "id": "2119334845268832330",
@@ -491,14 +491,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 124,
+        "likes": 125,
         "reposts": 0,
         "replies": 5,
         "quotes": 0,
         "bookmarks": 0,
         "views": 3850
       },
-      "citations": 134
+      "citations": 135
     },
     {
       "id": "2115724072344801467",
@@ -690,14 +690,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 55,
+        "likes": 57,
         "reposts": 0,
         "replies": 1,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1580
       },
-      "citations": 57
+      "citations": 59
     },
     {
       "id": "2118633461389099170",
