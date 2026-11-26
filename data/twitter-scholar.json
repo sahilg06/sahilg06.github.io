@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-25T19:29:44Z",
+  "last_synced": "2026-11-26T03:41:39Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -137,14 +137,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 797,
+        "likes": 798,
         "reposts": 0,
         "replies": 49,
         "quotes": 0,
         "bookmarks": 0,
         "views": 17410
       },
-      "citations": 895
+      "citations": 896
     },
     {
       "id": "1917985915458474258",
@@ -247,14 +247,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 328,
+        "likes": 329,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1800
       },
-      "citations": 332
+      "citations": 333
     },
     {
       "id": "1888616302777974970",
@@ -1433,6 +1433,34 @@
       "citations": 22
     },
     {
+      "id": "2125203345631822315",
+      "title": "Got to collaborate with @FeinbergVlad and team few months back while working on Gemini pretraining. He and…",
+      "text": "Got to collaborate with @FeinbergVlad and team few months back while working on Gemini pretraining. He and his team are awesome!",
+      "created_at": "2026-11-24T12:22:16Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2125203345631822315",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 21,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 570
+      },
+      "citations": 21
+    },
+    {
       "id": "2116119121175974312",
       "title": "People in tech need to realize that even if the handcuffs are golden, they're still handcuffs.",
       "text": "People in tech need to realize that even if the handcuffs are golden, they're still handcuffs.",
@@ -1517,34 +1545,6 @@
         "views": 978
       },
       "citations": 21
-    },
-    {
-      "id": "2125203345631822315",
-      "title": "Got to collaborate with @FeinbergVlad and team few months back while working on Gemini pretraining. He and…",
-      "text": "Got to collaborate with @FeinbergVlad and team few months back while working on Gemini pretraining. He and his team are awesome!",
-      "created_at": "2026-11-24T12:22:16Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2125203345631822315",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 20,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 570
-      },
-      "citations": 20
     },
     {
       "id": "2123755662224007583",
