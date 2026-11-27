@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-26T17:11:16Z",
+  "last_synced": "2026-11-27T01:51:21Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -137,14 +137,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 799,
+        "likes": 797,
         "reposts": 0,
         "replies": 49,
         "quotes": 0,
         "bookmarks": 0,
         "views": 17410
       },
-      "citations": 897
+      "citations": 895
     },
     {
       "id": "1917985915458474258",
@@ -465,12 +465,12 @@
       "metrics": {
         "likes": 145,
         "reposts": 0,
-        "replies": 9,
+        "replies": 10,
         "quotes": 0,
         "bookmarks": 0,
         "views": 2900
       },
-      "citations": 163
+      "citations": 165
     },
     {
       "id": "2119334845268832330",
