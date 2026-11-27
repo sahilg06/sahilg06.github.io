@@ -4,7 +4,7 @@
     "handle": "@vibespersecond",
     "affiliation": "ML Researcher · ex-Google DeepMind (Veo, Gemini), Adobe Research · IIT Roorkee",
     "verified_domain": "sahilg06.github.io",
-    "followers": 2490,
+    "followers": 2491,
     "following": 626,
     "joined": "Dec 2022",
     "avatar": "./img/sahil_goyal.png",
@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-27T12:54:45Z",
+  "last_synced": "2026-11-27T23:37:56Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -247,14 +247,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 327,
+        "likes": 329,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1800
       },
-      "citations": 331
+      "citations": 333
     },
     {
       "id": "1888616302777974970",
@@ -365,14 +365,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 117,
+        "likes": 118,
         "reposts": 3,
         "replies": 7,
         "quotes": 1,
         "bookmarks": 19,
         "views": 4104
       },
-      "citations": 180
+      "citations": 181
     },
     {
       "id": "1943952405315695087",
@@ -1859,34 +1859,6 @@
       "citations": 16
     },
     {
-      "id": "2124875880988119060",
-      "title": "It's so easy to think about looping in continuous visual generative models.",
-      "text": "It's so easy to think about looping in continuous visual generative models.",
-      "created_at": "2026-11-23T14:41:02Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2124875880988119060",
-      "external_urls": [],
-      "category": "Efficient ML & Generative Models",
-      "archetype": "Technical Deep-Dive / Paper Thread",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 15,
-        "reposts": 0,
-        "replies": 0,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 420
-      },
-      "citations": 15
-    },
-    {
       "id": "2121960377944592533",
       "title": "My first meal in london was from some place called \"chaiwala\" lol",
       "text": "My first meal in london was from some place called \"chaiwala\" lol",
@@ -1969,6 +1941,62 @@
         "views": 308
       },
       "citations": 15
+    },
+    {
+      "id": "2126339316033184130",
+      "title": "my swarm is swarming.",
+      "text": "my swarm is swarming.",
+      "created_at": "2026-11-27T15:36:13Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2126339316033184130",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 12,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 410
+      },
+      "citations": 14
+    },
+    {
+      "id": "2124875880988119060",
+      "title": "It's so easy to think about looping in continuous visual generative models.",
+      "text": "It's so easy to think about looping in continuous visual generative models.",
+      "created_at": "2026-11-23T14:41:02Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2124875880988119060",
+      "external_urls": [],
+      "category": "Efficient ML & Generative Models",
+      "archetype": "Technical Deep-Dive / Paper Thread",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 14,
+        "reposts": 0,
+        "replies": 0,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 420
+      },
+      "citations": 14
     },
     {
       "id": "2119709586542538788",
