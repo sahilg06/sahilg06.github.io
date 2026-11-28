@@ -19,7 +19,7 @@
     ],
     "citation_formula": "Likes + 2×Bookmarks + 3×Reposts + 2×Replies"
   },
-  "last_synced": "2026-11-28T08:14:16Z",
+  "last_synced": "2026-11-28T17:41:34Z",
   "tweets": [
     {
       "id": "2098413758154740039",
@@ -247,14 +247,14 @@
       "thread_ids": [],
       "thread_count": 1,
       "metrics": {
-        "likes": 329,
+        "likes": 328,
         "reposts": 0,
         "replies": 2,
         "quotes": 0,
         "bookmarks": 0,
         "views": 1800
       },
-      "citations": 333
+      "citations": 332
     },
     {
       "id": "1888616302777974970",
@@ -1032,6 +1032,34 @@
         "views": 874
       },
       "citations": 38
+    },
+    {
+      "id": "2126698807190564980",
+      "title": "London made me more independent in a couple of weeks than Bangalore did in a couple of years.",
+      "text": "London made me more independent in a couple of weeks than Bangalore did in a couple of years.",
+      "created_at": "2026-11-28T15:24:42Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2126698807190564980",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 30,
+        "reposts": 0,
+        "replies": 3,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 1050
+      },
+      "citations": 36
     },
     {
       "id": "2116226971973927033",
@@ -1859,6 +1887,62 @@
       "citations": 16
     },
     {
+      "id": "2126697977179951449",
+      "title": "paid 20 pounds for a beard trim today. for my own mental health I no longer convert pounds to rupees.",
+      "text": "paid 20 pounds for a beard trim today. for my own mental health I no longer convert pounds to rupees.",
+      "created_at": "2026-11-28T15:21:24Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2126697977179951449",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 13,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 440
+      },
+      "citations": 15
+    },
+    {
+      "id": "2126339316033184130",
+      "title": "my swarm is swarming.",
+      "text": "my swarm is swarming.",
+      "created_at": "2026-11-27T15:36:13Z",
+      "year": 2026,
+      "month": "Nov 2026",
+      "url": "https://x.com/vibespersecond/status/2126339316033184130",
+      "external_urls": [],
+      "category": "AI Commentary & Reflections",
+      "archetype": "Personal Reflection & Researcher Life",
+      "has_media": false,
+      "media_url": "",
+      "is_quote": false,
+      "coauthors": [],
+      "pinned": false,
+      "thread_ids": [],
+      "thread_count": 1,
+      "metrics": {
+        "likes": 13,
+        "reposts": 0,
+        "replies": 1,
+        "quotes": 0,
+        "bookmarks": 0,
+        "views": 410
+      },
+      "citations": 15
+    },
+    {
       "id": "2121960377944592533",
       "title": "My first meal in london was from some place called \"chaiwala\" lol",
       "text": "My first meal in london was from some place called \"chaiwala\" lol",
@@ -1941,34 +2025,6 @@
         "views": 308
       },
       "citations": 15
-    },
-    {
-      "id": "2126339316033184130",
-      "title": "my swarm is swarming.",
-      "text": "my swarm is swarming.",
-      "created_at": "2026-11-27T15:36:13Z",
-      "year": 2026,
-      "month": "Nov 2026",
-      "url": "https://x.com/vibespersecond/status/2126339316033184130",
-      "external_urls": [],
-      "category": "AI Commentary & Reflections",
-      "archetype": "Personal Reflection & Researcher Life",
-      "has_media": false,
-      "media_url": "",
-      "is_quote": false,
-      "coauthors": [],
-      "pinned": false,
-      "thread_ids": [],
-      "thread_count": 1,
-      "metrics": {
-        "likes": 12,
-        "reposts": 0,
-        "replies": 1,
-        "quotes": 0,
-        "bookmarks": 0,
-        "views": 410
-      },
-      "citations": 14
     },
     {
       "id": "2124875880988119060",
